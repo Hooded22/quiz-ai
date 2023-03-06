@@ -1,3 +1,4 @@
+import { MakeAnswerForm } from "@/components/MakeAnswerForm";
 import { promises as fs } from "fs";
 import path from "path";
 
@@ -10,7 +11,7 @@ interface QuestionCategoryProps {
 }
 
 async function getQuestionsFromJSONFile(): Promise<string[]> {
-  const jsonDirectory = path.join(process.cwd(), "src/app/json");
+  const jsonDirectory = path.join(process.cwd(), "/app/json");
   try {
     const fileContents = await fs.readFile(
       `${jsonDirectory}/javascript-interview.json`,
@@ -23,24 +24,16 @@ async function getQuestionsFromJSONFile(): Promise<string[]> {
   }
 }
 
-function getRandomQuestion(questions: string[]) {
-    const min = 0
-    const max = Math.floor(questions.length - 1);
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    return questions[randomNumber];
-  }
+
 
 export default async function QuestionCategory(props: QuestionCategoryProps) {
-  const { id } = props.params;
   const questions = await getQuestionsFromJSONFile();
-  const randomQuestion = getRandomQuestion(questions);
 
 
-  //TODO: Component to draw question and add answer
   //TODO: Connect with GPT
   return (
-    <div>
-      <h1>{randomQuestion}</h1>
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100%"}}>
+      <MakeAnswerForm questions={questions}/>
     </div>
   );
 }
