@@ -19,7 +19,7 @@ export function prepareGPTPrompt(question: string, answer: string) {
 }
 
 export function prepareGPTPromptWithCorrectAnswer(question: string, myAnswer: string, correctAnswer: string) {
-  const order = 'I want you to be teacher and check if my answer is a correct answer for question. I will provide you also correct answer which you should use as a point of comparison. If my answer will be correct then display "Correct answer" else display "Not correct answer" and explain why my answer was not correct.';
+  const order = 'I want you to be teacher and check if my answer is a correct answer for question. I will provide you also correct answer which you should use as a point of comparison. If my answer will be correct then display "Correct answer" else display "Not correct answer", show correct answer and explain why my answer was not correct.';
   const prompt = `${order} \n Question: ${question} \n My answer: ${myAnswer} \n Correct answer: ${correctAnswer}`;
   return prompt
 }
@@ -49,7 +49,7 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[]) =
   const { register, reset, handleSubmit } = useForm<FormValues>();
 
   const drawNewQuestion = useCallback(() => {
-    reset();
+    reset({answer: ""});
     dispatch({type: "clearForm"})
     setDrawnQuestion(getRandomQuestion<QuestionsWithAnswer>(questionsWithAnswers));
   }, [questionsWithAnswers, reset]);

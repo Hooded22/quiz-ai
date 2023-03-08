@@ -35,7 +35,7 @@ export function MakeAnswerForm({ questionsWithAnswers }: MakeAnswerFormProps) {
         )}
         <textarea
           title="answer"
-          className="textarea textarea-bordered mb-10 mt-5 resize-none"
+          className="textarea textarea-bordered mb-10 mt-5 resize-none text-lg"
           {...register("answer")}
           rows={5}
         />
