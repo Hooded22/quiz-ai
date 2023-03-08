@@ -37,3 +37,8 @@ export interface FormValues {
     answer: string;
   }
 
+
+  export type QuestionsWithAnswer = {
+    question: string,
+    answer: string | undefined
+  }

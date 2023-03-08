@@ -2,25 +2,47 @@
 
 import { useMakeAnswerForm } from "./useMakeAnswerForm";
 import { Loader } from "../Loader";
+import { QuestionsWithAnswer } from "./types";
 
 interface MakeAnswerFormProps {
-  questions: string[];
+  questionsWithAnswers: QuestionsWithAnswer[];
 }
 
-export function MakeAnswerForm({ questions }: MakeAnswerFormProps) {
+export function MakeAnswerForm({ questionsWithAnswers }: MakeAnswerFormProps) {
   const { register, onSubmit, drawNewQuestion, drawnQuestion, state } =
-    useMakeAnswerForm(questions);
+    useMakeAnswerForm(questionsWithAnswers);
 
   const isLoading = state.type === "WAITING_FOR_RESPONSE" && state.loading;
 
   return (
     <div className="card bg-neutral w-3/5 relative">
-      <Loader loading={isLoading} text="Waiting for GPT response"/>
+      <Loader loading={isLoading} text="Waiting for GPT response" />
       <div className="card-body">
-        <h1 className="text-2xl text-center mb-5">{drawnQuestion}</h1>
-        <textarea className="textarea textarea-bordered mb-10 resize-none" {...register("answer")} rows={5}/>
+        <h1 className="text-2xl text-center" data-testid="current-question">
+          {drawnQuestion.question}
+        </h1>
+        {!!drawnQuestion.answer && (
+          <div className="flex w-full justify-center">
+            <div
+              className="tooltip tooltip-bottom"
+              data-tip={drawnQuestion.answer}
+            >
+              <div className="badge badge-primary badge-outline uppercase mt-1">
+                answer available
+              </div>
+            </div>
+          </div>
+        )}
+        <textarea
+          title="answer"
+          className="textarea textarea-bordered mb-10 mt-5 resize-none"
+          {...register("answer")}
+          rows={5}
+        />
         {state.type === "SUCCESS" && (
-          <p className="text-white text-xl text-justify pb-5">{state.response}</p>
+          <p className="text-white text-xl text-justify pb-5">
+            {state.response}
+          </p>
         )}
         <div className="card-actions justify-between">
           <button className="btn btn-error" onClick={drawNewQuestion}>

@@ -1,22 +1,27 @@
 import { sendPromptToGPT } from "@/utils";
 import { useCallback, useEffect, useReducer, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Actions, FormValues, GPTAnswerState } from "./types";
+import { Actions, FormValues, GPTAnswerState, QuestionsWithAnswer } from "./types";
 
-function getRandomQuestion(questions: string[]) {
+function getRandomQuestion<T>(questions: T[]) {
   const min = 0;
   const max = Math.floor(questions.length - 1);
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
   return questions[randomNumber];
 }
 
-function prepareGPTPrompt(question: string, answer: string) {
-  const defaultPrompt =
-    'Below are two things, "Question" (the sentence after "Question:" word) and my answer (the sentences after "Answer:" word). Answer not always is true. Your task is to get correct answer for this question and compare with my answer. If my answer is correct and correct and explains completely the question then display "Correct answer!". In other case display word "Icorect answer" and correct answer.';
+export function prepareGPTPrompt(question: string, answer: string) {
+  const order = 'Below are two things: "Question" (the sentence after "Question:" word) and "My answer" (the sentences after "Answer:" word). Remember that My Answer is not always true. Your task is to get a correct answer for this question and compare it with my answer. If my answer is correct display "Correct answer!" else display "Incorrect answer" and explain why my answer was incorrect. Remember that all topics are related to the Javascript interview.'
   const questionPrompt = `Question: ${question}`;
-  const answerPrompt = `Answer: ${answer}`;
-  const finalPrompt = `${defaultPrompt} \n\n ${answerPrompt}\n${questionPrompt}`;
+  const answerPrompt = `My answer: ${answer}`;
+  const finalPrompt = `${order} \n\n ${answerPrompt}\n${questionPrompt}`;
   return finalPrompt;
+}
+
+export function prepareGPTPromptWithCorrectAnswer(question: string, myAnswer: string, correctAnswer: string) {
+  const order = 'I want you to be teacher and check if my answer is a correct answer for question. I will provide you also correct answer which you should use as a point of comparison. If my answer will be correct then display "Correct answer" else display "Not correct answer" and explain why my answer was not correct.';
+  const prompt = `${order} \n Question: ${question} \n My answer: ${myAnswer} \n Correct answer: ${correctAnswer}`;
+  return prompt
 }
 
 const reducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
@@ -38,24 +43,29 @@ const reducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
   }
 };
 
-export const useMakeAnswerForm = (questions: string[]) => {
+export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[]) => {
   const [state, dispatch] = useReducer(reducer, { type: "START" });
-  const [drawnQuestion, setDrawnQuestion] = useState<string>("");
+  const [drawnQuestion, setDrawnQuestion] = useState<QuestionsWithAnswer>({question: '', answer: undefined});
   const { register, reset, handleSubmit } = useForm<FormValues>();
 
   const drawNewQuestion = useCallback(() => {
     reset();
     dispatch({type: "clearForm"})
-    setDrawnQuestion(getRandomQuestion(questions));
-  }, [questions, reset]);
+    setDrawnQuestion(getRandomQuestion<QuestionsWithAnswer>(questionsWithAnswers));
+  }, [questionsWithAnswers, reset]);
 
   useEffect(() => {
     drawNewQuestion();
-  }, [questions, drawNewQuestion]);
+  }, [questionsWithAnswers, drawNewQuestion]);
 
   const checkCorrectAnswer = useCallback(
-    async (answer: string) => {
-      const GPTPrompt = prepareGPTPrompt(drawnQuestion, answer);
+    async (myAnswer: string) => {
+      let GPTPrompt;
+      if(drawnQuestion.answer) {
+        GPTPrompt = prepareGPTPromptWithCorrectAnswer(drawnQuestion.question, myAnswer, drawnQuestion.answer);
+      } else {
+        GPTPrompt = prepareGPTPrompt(drawnQuestion.question, myAnswer);
+      }
       try {
         dispatch({ type: "setLoadingForResponse" });
         const GPTResponse = await sendPromptToGPT(GPTPrompt);
