@@ -1,16 +1,6 @@
 "use client";
 
-import styled from "@emotion/styled";
-import {
-  Button,
-  Card,
-  CardContent,
-  CircularProgress,
-  Input,
-  TextField,
-} from "@mui/material";
 import { useMakeAnswerForm } from "./useMakeAnswerForm";
-import styles from "./styles.module.css";
 import { Loader } from "../Loader";
 
 interface MakeAnswerFormProps {
@@ -24,29 +14,23 @@ export function MakeAnswerForm({ questions }: MakeAnswerFormProps) {
   const isLoading = state.type === "WAITING_FOR_RESPONSE" && state.loading;
 
   return (
-    <Card className={styles.container}>
-      <Loader loading={isLoading} />
-      <CardContent className={styles.content}>
-        <h1 className={styles.question}>{drawnQuestion}</h1>
-        <TextField
-          {...register("answer")}
-          multiline
-          fullWidth
-          variant="outlined"
-          minRows={4}
-        />
+    <div className="card bg-neutral w-3/5 relative">
+      <Loader loading={isLoading} text="Waiting for GPT response"/>
+      <div className="card-body">
+        <h1 className="text-2xl text-center mb-5">{drawnQuestion}</h1>
+        <textarea className="textarea textarea-bordered mb-10 resize-none" {...register("answer")} rows={5}/>
         {state.type === "SUCCESS" && (
-          <p className={styles.response}>{state.response}</p>
+          <p className="text-white text-xl text-justify pb-5">{state.response}</p>
         )}
-        <div className={styles.buttonsWrapper}>
-          <Button onClick={onSubmit} variant="outlined">
-            Send answer
-          </Button>
-          <Button onClick={drawNewQuestion} variant="outlined">
+        <div className="card-actions justify-between">
+          <button className="btn btn-error" onClick={drawNewQuestion}>
             Get new question
-          </Button>
+          </button>
+          <button className="btn btn-primary" onClick={onSubmit}>
+            Send answer
+          </button>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

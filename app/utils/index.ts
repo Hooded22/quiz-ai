@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export async function sendPromptToGPT(prompt: string) {
+    console.log("ENV: ", process.env)
     try {
       const response = await axios.post(
         "https://api.openai.com/v1/completions",
@@ -13,7 +14,7 @@ export async function sendPromptToGPT(prompt: string) {
         {
           headers: {
             Authorization:
-              "Bearer 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",
+              `Bearer ${process.env.GPT_API_KEY}`,
           },
         }
       );

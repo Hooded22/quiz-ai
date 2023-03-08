@@ -2,7 +2,14 @@
 const nextConfig = {
   experimental: {
     appDir: true,
-  },
+  }
 }
 
-module.exports = nextConfig
+module.exports = () => {
+  return {
+    ...nextConfig,
+    env: {
+      GPT_API_KEY: process.env.GPT_API_KEY
+    }
+  }
+}

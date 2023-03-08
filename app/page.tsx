@@ -1,20 +1,38 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "./page.module.css";
 import Link from "next/link";
-import { QueryClient, QueryClientProvider } from "react-query";
 
-const inter = Inter({ subsets: ["latin"] });
+type QuestionCategory = {
+  id: string;
+  name: string;
+};
+
+const categories: QuestionCategory[] = [
+  {
+    id: "javascript-interview",
+    name: "JavaScript Interview",
+  },
+  {
+    id: "nodejs-interview",
+    name: "Node.js Interview",
+  },
+];
 
 export default function Home() {
   return (
-      <main className={styles.main}>
-        <div>
-          <h1 className="text-3xl font-bold underline">Hej</h1>
-          <Link href={"questions/javascript-interview"} className="text-white">
-            Click here
-          </Link>
-        </div>
-      </main>
+    <main className="flex flex-col justify-between items-center p-6 min-h-full pt-[112px]">
+      <div className="mt-10">
+        <h1 className="text-3xl font-bold">Choose questions category</h1>
+        <ol className="list-disc">
+          {categories.map((category) => (
+            <Link
+              href={"questions/javascript-interview"}
+              className="text-white"
+              key={category.id}
+            >
+              <li className="py-5 border-b border-white">{category.name}</li>
+            </Link>
+          ))}
+        </ol>
+      </div>
+    </main>
   );
 }

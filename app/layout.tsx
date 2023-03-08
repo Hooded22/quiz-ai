@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 
 export const metadata = {
@@ -11,8 +12,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" data-theme="forest">
+      <body>
+      <nav className="bg-neutral p-10 fixed w-full">
+        <Link href={"/"} className="block w-full text-center text-2xl text-white">
+          Quiz AI
+        </Link>
+      </nav>
+      {children}
+      </body>
     </html>
   )
 }

@@ -1,5 +1,5 @@
-import { CircularProgress } from "@mui/material";
-import styles from "./index.module.css";
+
+import "./index.css";
 
 export const Loader = ({
   text,
@@ -9,8 +9,8 @@ export const Loader = ({
   loading: boolean;
 }) =>
   loading ? (
-    <div className={styles.loader}>
-      <CircularProgress />
-      {text && <p>{text}</p>}
+    <div className="absolute top-0 left-0 bg-neutral/80 w-full h-full flex flex-col justify-center items-center">
+      <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+      {text && <p className="text-white text-lg mt-5">{text}</p>}
     </div>
   ) : null;

@@ -45,6 +45,7 @@ export const useMakeAnswerForm = (questions: string[]) => {
 
   const drawNewQuestion = useCallback(() => {
     reset();
+    dispatch({type: "clearForm"})
     setDrawnQuestion(getRandomQuestion(questions));
   }, [questions, reset]);
 
