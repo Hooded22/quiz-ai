@@ -18,7 +18,7 @@ export function MakeAnswerForm({ questionsWithAnswers }: MakeAnswerFormProps) {
     <div className="card bg-neutral w-3/5 relative">
       <Loader loading={isLoading} text="Waiting for GPT response" />
       <div className="card-body">
-        <h1 className="text-2xl text-center" data-testid="current-question">
+        <h1 className="text-xl text-center" data-testid="current-question">
           {drawnQuestion.question}
         </h1>
         {!!drawnQuestion.answer && (
@@ -35,12 +35,12 @@ export function MakeAnswerForm({ questionsWithAnswers }: MakeAnswerFormProps) {
         )}
         <textarea
           title="answer"
-          className="textarea textarea-bordered mb-10 mt-5 resize-none text-lg"
+          className="textarea textarea-bordered mb-10 mt-5 resize-none text-sm"
           {...register("answer")}
           rows={5}
         />
         {state.type === "SUCCESS" && (
-          <p className="text-white text-xl text-justify pb-5">
+          <p className="text-white text-sm text-justify pb-5">
             {state.response}
           </p>
         )}
