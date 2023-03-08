@@ -14,8 +14,8 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="forest">
       <body>
-      <nav className="bg-neutral p-10 fixed w-full">
-        <Link href={"/"} className="block w-full text-center text-2xl text-white">
+      <nav className="bg-neutral p-5 fixed w-full">
+        <Link href={"/"} className="block w-full text-center text-xl text-white">
           Quiz AI
         </Link>
       </nav>
