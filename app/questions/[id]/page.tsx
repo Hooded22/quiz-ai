@@ -62,7 +62,7 @@ export default async function QuestionCategory(props: QuestionCategoryProps) {
 
   return (
     <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100%"}}>
-      <MakeAnswerForm questionsWithAnswers={questionsWithAnswers}/>
+      <MakeAnswerForm questionsWithAnswers={questionsWithAnswers} topic={props.params.id}/>
     </div>
   );
 }

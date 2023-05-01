@@ -6,11 +6,12 @@ import { QuestionsWithAnswer } from "./types";
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
+  topic: string;
 }
 
-export function MakeAnswerForm({ questionsWithAnswers }: MakeAnswerFormProps) {
+export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormProps) {
   const { register, onSubmit, drawNewQuestion, drawnQuestion, state } =
-    useMakeAnswerForm(questionsWithAnswers);
+    useMakeAnswerForm(questionsWithAnswers, topic);
 
   const isLoading = state.type === "WAITING_FOR_RESPONSE" && state.loading;
 
