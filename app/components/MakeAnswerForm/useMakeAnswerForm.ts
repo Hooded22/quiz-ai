@@ -10,17 +10,18 @@ function getRandomQuestion<T>(questions: T[]) {
   return questions[randomNumber];
 }
 
-export function prepareGPTPrompt(question: string, answer: string) {
-  const order = 'Below are two things: "Question" (the sentence after "Question:" word) and "My answer" (the sentences after "Answer:" word). Remember that My Answer is not always true. Your task is to get a correct answer for this question and compare it with my answer. If my answer is correct display "Correct answer!" else display "Incorrect answer" and explain why my answer was incorrect. Remember that all topics are related to the Javascript interview.'
-  const questionPrompt = `Question: ${question}`;
-  const answerPrompt = `My answer: ${answer}`;
-  const finalPrompt = `${order} \n\n ${answerPrompt}\n${questionPrompt}`;
+export function prepareGPTPrompt(question: string, answer: string, topic: string) {
+  const order = `Act as world calss teacher and expert in ${topic} Below are two things: a "Question" related to a ${topic} (the sentence after "Question:") and "My answer" (the sentences after "Answer:"). Keep in mind that "My answer" might not always be true. Your task is to determine the correct answer for this question and compare it with "My answer." If "My answer" is correct, display "Correct answer!" Otherwise, display "Incorrect answer" and explain why "My answer" was incorrect.`
+  const questionPrompt = `Question\n${question}`;
+  const answerPrompt = `My answer\n${answer}`;
+  const finalPrompt = `${order}\n\n ${answerPrompt}\n\n${questionPrompt}\n\n`;
   return finalPrompt;
 }
 
-export function prepareGPTPromptWithCorrectAnswer(question: string, myAnswer: string, correctAnswer: string) {
-  const order = 'I want you to be teacher and check if my answer is a correct answer for question. I will provide you also correct answer which you should use as a point of comparison. If my answer will be correct then display "Correct answer" else display "Not correct answer", show correct answer and explain why my answer was not correct.';
-  const prompt = `${order} \n Question: ${question} \n My answer: ${myAnswer} \n Correct answer: ${correctAnswer}`;
+export function prepareGPTPromptWithCorrectAnswer(question: string, myAnswer: string, correctAnswer: string, topic: string) {
+  const order = `As a teacher, check if my answer is correct for a question related to ${topic}. I will provide the correct answer for comparison. If my answer is correct, respond with 'Correct answer.' If it is not correct, respond with 'Not correct answer,' show the correct answer, and explain why my answer was not correct.`
+  const prompt = `${order}\n\nQuestion\n ${question}\n\nMy answer\n${myAnswer}\n\nCorrect answer\n${correctAnswer}\n\n`;
+  console.log("PROMPT: ", prompt);
   return prompt
 }
 
@@ -43,7 +44,7 @@ const reducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
   }
 };
 
-export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[]) => {
+export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], topic: string) => {
   const [state, dispatch] = useReducer(reducer, { type: "START" });
   const [drawnQuestion, setDrawnQuestion] = useState<QuestionsWithAnswer>({question: '', answer: undefined});
   const { register, reset, handleSubmit } = useForm<FormValues>();
@@ -62,9 +63,9 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[]) =
     async (myAnswer: string) => {
       let GPTPrompt;
       if(drawnQuestion.answer) {
-        GPTPrompt = prepareGPTPromptWithCorrectAnswer(drawnQuestion.question, myAnswer, drawnQuestion.answer);
+        GPTPrompt = prepareGPTPromptWithCorrectAnswer(drawnQuestion.question, myAnswer, drawnQuestion.answer, topic);
       } else {
-        GPTPrompt = prepareGPTPrompt(drawnQuestion.question, myAnswer);
+        GPTPrompt = prepareGPTPrompt(drawnQuestion.question, myAnswer, topic);
       }
       try {
         dispatch({ type: "setLoadingForResponse" });
