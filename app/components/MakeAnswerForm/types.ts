@@ -1,3 +1,5 @@
+import { Question } from "@/types/question";
+
 export type GPTAnswerState =
 | {
     type: "START";
@@ -38,7 +40,4 @@ export interface FormValues {
   }
 
 
-  export type QuestionsWithAnswer = {
-    question: string,
-    answer: string | undefined
-  }
+  export type QuestionsWithAnswer = Question

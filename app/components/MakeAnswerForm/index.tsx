@@ -20,7 +20,7 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
       <Loader loading={isLoading} text="Waiting for GPT response" />
       <div className="card-body">
         <h1 className="text-xl text-center" data-testid="current-question">
-          {drawnQuestion.question}
+          {drawnQuestion.title}
         </h1>
         {!!drawnQuestion.answer && (
           <div className="flex w-full justify-center">

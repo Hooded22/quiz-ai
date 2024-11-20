@@ -14,6 +14,10 @@ const categories: QuestionCategory[] = [
     id: "nodejs-interview",
     name: "Node.js Interview",
   },
+  {
+    id: "java-interview",
+    name: "Java Interview",
+  },
 ];
 
 export default function Home() {
