@@ -1,5 +1,5 @@
-import { MakeAnswerForm } from "@/components/MakeAnswerForm";
-import { Question } from "@/types/question";
+import { MakeAnswerForm } from "../../../components/MakeAnswerForm";
+import { Question } from "../../../types/question";
 import { promises as fs } from "fs";
 import path from "path";
 
@@ -10,7 +10,7 @@ interface QuestionCategoryProps {
 }
 
 async function getDataFromJSONFile(id: string): Promise<Question[]> {
-  const jsonDirectory = path.join(process.cwd(), "/app/json");
+  const jsonDirectory = path.join(process.cwd(), "/data");
   try {
     const fileContents = await fs.readFile(
       `${jsonDirectory}/${id}.json`,
