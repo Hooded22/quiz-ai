@@ -3,7 +3,7 @@
 import { useMakeAnswerForm } from "./useMakeAnswerForm";
 import { Loader } from "../Loader";
 import { QuestionsWithAnswer } from "./types";
-import {MarkdownRenderer} from "@/components/MarkdownRenderer/MarkdownRenderer";
+import {MarkdownRenderer} from "../MarkdownRenderer/MarkdownRenderer";
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];

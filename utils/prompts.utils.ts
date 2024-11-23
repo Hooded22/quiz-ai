@@ -1,4 +1,4 @@
-import {gptMessagesType} from "@/utils/index";
+import {gptMessagesType} from "./index";
 
 export function prepareGPTPrompt(questionTitle: string, answer: string, topic: string): gptMessagesType[] {
     const systemRoleDescription = `Act as world calss teacher and expert in ${topic} Below are two things: a "Question" related to a ${topic} (the sentence after "Question:") and "My answer" (the sentences after "Answer:"). Keep in mind that "My answer" might not always be true. Your task is to determine the correct answer for this question and compare it with "My answer." If "My answer" is correct, display "Correct answer!" Otherwise, display "Incorrect answer" and explain why "My answer" was incorrect.`

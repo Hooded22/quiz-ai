@@ -1,12 +1,12 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { MakeAnswerForm } from ".";
-import * as utils from '@/utils';
+import { MakeAnswerForm } from "./index";
+import * as utils from 'utils';
 import { prepareGPTPrompt, prepareGPTPromptWithCorrectAnswer } from "./useMakeAnswerForm";
 
-jest.mock('@/utils', () => {
+jest.mock('utils', () => {
     return {
       __esModule: true,    //    <----- this __esModule: true is important
-      ...jest.requireActual('@/utils')
+      ...jest.requireActual('utils')
     };
   });
 

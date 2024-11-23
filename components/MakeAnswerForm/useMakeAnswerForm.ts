@@ -1,10 +1,10 @@
-import {gptMessagesType, sendPromptToGPT} from "@/utils";
+import {gptMessagesType, sendPromptToGPT} from "utils";
 import { useCallback, useEffect, useReducer, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Actions, FormValues, GPTAnswerState, QuestionsWithAnswer } from "./types";
-import {Question} from "@/types/question";
-import {prepareGPTPrompt, prepareGPTPromptWithCorrectAnswer} from "@/utils/prompts.utils";
-import {getAnswerCheckResponseWithCorrectAnswer, getRandomQuestion} from "@/utils/question.utils";
+import {Question} from "../../types/question";
+import {prepareGPTPrompt, prepareGPTPromptWithCorrectAnswer} from "../../utils/prompts.utils";
+import {getAnswerCheckResponseWithCorrectAnswer, getRandomQuestion} from "../../utils/question.utils";
 
 const modelAnswerReducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
   switch (action.type) {
@@ -64,7 +64,8 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], t
         }
 
       } catch (error: any) {
-        dispatch({ type: "setError", payload: { errorMessage: error } });
+        console.log("ERR: ", error)
+        dispatch({ type: "setError", payload: { errorMessage: error.message || "Something went wrong" } });
       }
     },
     [drawnQuestion]
