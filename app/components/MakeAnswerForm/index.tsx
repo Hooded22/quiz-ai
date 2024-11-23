@@ -44,6 +44,11 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
         {state.type === "SUCCESS" && (
             <MarkdownRenderer content={state.response}/>
         )}
+        {state.type === "ERROR" && (
+            <p className="text-white text-sm text-justify pb-5">
+              {state.errorMessage}
+            </p>
+        )}
         <div className="card-actions justify-between pt-4">
           <div className='justify-between gap-8 flex'>
             <button className="btn btn-error" onClick={drawNewQuestion}>
