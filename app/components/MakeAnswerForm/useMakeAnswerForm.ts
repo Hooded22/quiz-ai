@@ -2,42 +2,11 @@ import {gptMessagesType, sendPromptToGPT} from "@/utils";
 import { useCallback, useEffect, useReducer, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Actions, FormValues, GPTAnswerState, QuestionsWithAnswer } from "./types";
+import {Question} from "@/types/question";
+import {prepareGPTPrompt, prepareGPTPromptWithCorrectAnswer} from "@/utils/prompts.utils";
+import {getRandomQuestion} from "@/utils/question.utils";
 
-function getRandomQuestion<T>(questions: T[]) {
-  const min = 0;
-  const max = Math.floor(questions.length - 1);
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  return questions[randomNumber];
-}
-
-export function prepareGPTPrompt(question: string, answer: string, topic: string): gptMessagesType[] {
-  const systemRoleDescription = `Act as world calss teacher and expert in ${topic} Below are two things: a "Question" related to a ${topic} (the sentence after "Question:") and "My answer" (the sentences after "Answer:"). Keep in mind that "My answer" might not always be true. Your task is to determine the correct answer for this question and compare it with "My answer." If "My answer" is correct, display "Correct answer!" Otherwise, display "Incorrect answer" and explain why "My answer" was incorrect.`
-  const systemMessage = `${systemRoleDescription}\nQuestion:\n${question}`;
-  const userMessage = `Answer:\n${answer}`;
-  const gptMessages: gptMessagesType[] = [
-    {role: "system", content: systemMessage},
-    {role: "user", content: userMessage }
-  ]
-
-
-  return gptMessages;
-}
-
-export function prepareGPTPromptWithCorrectAnswer(question: string, myAnswer: string, correctAnswer: string, topic: string): gptMessagesType[] {
-  const systemRoleDescription = `As a teacher, check if my answer is correct for a question related to ${topic}. I will provide the correct answer for comparison. If my answer is correct, respond with 'Correct answer.' If it is not correct, respond with 'Not correct answer,' show the correct answer, and explain why my answer was not correct.`
-  const systemMessage = `${systemRoleDescription}\n\nQuestion\n ${question}Correct answer\n${correctAnswer}\n\n`;
-  const userMessage = `My answer: ${myAnswer}`
-
-  const gptMessages: gptMessagesType[] = [
-    {role: 'system', content: systemMessage},
-    {role: "user", content: userMessage}
-  ]
-
-  console.log("PROMPT: ", gptMessages);
-  return gptMessages
-}
-
-const reducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
+const modelAnswerReducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
   switch (action.type) {
     case "clearForm":
       return { type: "START" };
@@ -57,8 +26,8 @@ const reducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
 };
 
 export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], topic: string) => {
-  const [state, dispatch] = useReducer(reducer, { type: "START" });
-  const [drawnQuestion, setDrawnQuestion] = useState<QuestionsWithAnswer>({question: '', answer: undefined});
+  const [state, dispatch] = useReducer(modelAnswerReducer, { type: "START" });
+  const [drawnQuestion, setDrawnQuestion] = useState<Question>();
   const { register, reset, handleSubmit } = useForm<FormValues>();
 
   const drawNewQuestion = useCallback(() => {
@@ -67,18 +36,17 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], t
     setDrawnQuestion(getRandomQuestion<QuestionsWithAnswer>(questionsWithAnswers));
   }, [questionsWithAnswers, reset]);
 
-  useEffect(() => {
-    drawNewQuestion();
-  }, [questionsWithAnswers, drawNewQuestion]);
-
   const checkCorrectAnswer = useCallback(
     async (myAnswer: string) => {
-      let GPTPrompt;
-      if(drawnQuestion.answer) {
-        GPTPrompt = prepareGPTPromptWithCorrectAnswer(drawnQuestion.question, myAnswer, drawnQuestion.answer, topic);
-      } else {
-        GPTPrompt = prepareGPTPrompt(drawnQuestion.question, myAnswer, topic);
+      if(!drawnQuestion) {
+        dispatch({ type: "setError", payload: { errorMessage: "Question doesn't exist" } });
+        return
       }
+
+      const GPTPrompt = drawnQuestion.answer
+          ? prepareGPTPromptWithCorrectAnswer(drawnQuestion.title, myAnswer, drawnQuestion.answer, topic)
+          : prepareGPTPrompt(drawnQuestion?.title, myAnswer, topic)
+
       try {
         dispatch({ type: "setLoadingForResponse" });
         const GPTResponse = await sendPromptToGPT(GPTPrompt);
@@ -90,11 +58,21 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], t
     [drawnQuestion]
   );
 
+  const repeatQuestion = () => {
+    dispatch({type: "clearForm"});
+    reset({answer: ""});
+  }
+
+  useEffect(() => {
+    drawNewQuestion();
+  }, [questionsWithAnswers, drawNewQuestion]);
+
   return {
     drawnQuestion,
     state,
     register,
     drawNewQuestion,
+    repeatQuestion,
     onSubmit: handleSubmit((values: FormValues) => checkCorrectAnswer(values.answer))
   };
 };
