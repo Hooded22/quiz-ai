@@ -1,26 +1,27 @@
-import axios from "axios";
-
-export type gptMessagesType = {role: "system" | "user", content: string}
+export type gptMessagesType = { role: "system" | "user", content: string };
 
 export async function sendPromptToGPT(prompt: gptMessagesType[]) {
-  try {
-    const response = await axios.post(
-      "https://api.openai.com/v1/chat/completions",
-      {
-        model: "gpt-4o",
-        temperature: 0.7,
-        max_tokens: 3072,
-        messages: prompt,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.GPT_API_KEY}`,
-        },
-      }
-    );
+   try {
+       const response = await fetch("/api/sendAIRequest", {
+           method: "POST",
+           headers: {
+               "Content-Type": "application/json"
+           },
+           body: JSON.stringify({prompt})
+       })
 
-    return response.data.choices[0].message.content;
-  } catch (error) {
-    throw error;
-  }
+       console.log("DATA: ", response)
+
+
+       const data = await response.json();
+
+       if(response.ok) {
+           console.log("DATA: ", data)
+           return data.content
+       } else {
+           throw new Error(data.error)
+       }
+   } catch (error: any) {
+       throw new Error(error)
+   }
 }

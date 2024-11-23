@@ -64,7 +64,8 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], t
         }
 
       } catch (error: any) {
-        dispatch({ type: "setError", payload: { errorMessage: error } });
+        console.log("ERR: ", error)
+        dispatch({ type: "setError", payload: { errorMessage: error.message || "Something went wrong" } });
       }
     },
     [drawnQuestion]
