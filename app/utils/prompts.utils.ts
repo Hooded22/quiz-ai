@@ -14,8 +14,13 @@ export function prepareGPTPrompt(questionTitle: string, answer: string, topic: s
 }
 
 export function prepareGPTPromptWithCorrectAnswer(question: string, myAnswer: string, correctAnswer: string, topic: string): gptMessagesType[] {
-    const systemRoleDescription = `As a teacher, check if my answer is correct for a question related to ${topic}. I will provide the correct answer for comparison. If my answer is correct, respond with 'Correct answer.' If it is not correct, respond with 'Not correct answer,' show the correct answer, and explain why my answer was not correct.`
-    const systemMessage = `${systemRoleDescription}\n\nQuestion\n ${question}Correct answer\n${correctAnswer}\n\n`;
+    const systemRoleDescription = `As a teacher, check if user response is a correct answer for a question related to ${topic}. I will provide question, and the correct answer for comparison. Based on provided correct answer and user's response check if user's answer is correct. 
+    
+    \n\n If user's input is correct respond with 'CORRECT' string and nothing more. If it is not correct, respond with 'INCORRECT' and nothing more.`
+    const systemMessage = `${systemRoleDescription}
+    \n\n###Question\n ${question}
+    \n\n###Correct answer:\n${correctAnswer}
+    `;
     const userMessage = `My answer: ${myAnswer}`
 
     const gptMessages: gptMessagesType[] = [

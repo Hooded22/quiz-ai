@@ -27,8 +27,12 @@ export type GPTAnswerState =
       type: "setLoadingForResponse";
     }
   | {
-      type: "setResponse";
+      type: "setAIModelResponse";
       payload: { response: string };
+    }
+  | {
+      type: "setResponseWithKnownCorrectAnswer";
+      payload: { response: string, correctAnswer: string };
     }
   | {
       type: "setError";

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { Actions, FormValues, GPTAnswerState, QuestionsWithAnswer } from "./types";
 import {Question} from "@/types/question";
 import {prepareGPTPrompt, prepareGPTPromptWithCorrectAnswer} from "@/utils/prompts.utils";
-import {getRandomQuestion} from "@/utils/question.utils";
+import {getAnswerCheckResponseWithCorrectAnswer, getRandomQuestion} from "@/utils/question.utils";
 
 const modelAnswerReducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
   switch (action.type) {
@@ -12,7 +12,13 @@ const modelAnswerReducer = (state: GPTAnswerState, action: Actions): GPTAnswerSt
       return { type: "START" };
     case "setLoadingForResponse":
       return { type: "WAITING_FOR_RESPONSE", loading: true };
-    case "setResponse":
+    case "setResponseWithKnownCorrectAnswer":
+      return {
+        type: "SUCCESS",
+        modalOpen: true,
+        response: getAnswerCheckResponseWithCorrectAnswer(action.payload.response, action.payload.correctAnswer),
+      };
+    case "setAIModelResponse":
       return {
         type: "SUCCESS",
         modalOpen: true,
@@ -50,7 +56,13 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], t
       try {
         dispatch({ type: "setLoadingForResponse" });
         const GPTResponse = await sendPromptToGPT(GPTPrompt);
-        dispatch({ type: "setResponse", payload: { response: GPTResponse } });
+
+        if(drawnQuestion.answer) {
+          dispatch({ type: "setResponseWithKnownCorrectAnswer", payload: { response: GPTResponse, correctAnswer: drawnQuestion.answer } });
+        } else {
+          dispatch({ type: "setAIModelResponse", payload: { response: GPTResponse} });
+        }
+
       } catch (error: any) {
         dispatch({ type: "setError", payload: { errorMessage: error } });
       }
@@ -58,10 +70,10 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], t
     [drawnQuestion]
   );
 
-  const repeatQuestion = () => {
+  const repeatQuestion = useCallback(() => {
     dispatch({type: "clearForm"});
     reset({answer: ""});
-  }
+  }, [])
 
   useEffect(() => {
     drawNewQuestion();

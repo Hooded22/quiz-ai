@@ -3,6 +3,7 @@
 import { useMakeAnswerForm } from "./useMakeAnswerForm";
 import { Loader } from "../Loader";
 import { QuestionsWithAnswer } from "./types";
+import {MarkdownRenderer} from "@/components/MarkdownRenderer/MarkdownRenderer";
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
@@ -41,17 +42,17 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
           rows={5}
         />
         {state.type === "SUCCESS" && (
-          <p className="text-white text-sm text-justify pb-5">
-            {state.response}
-          </p>
+            <MarkdownRenderer content={state.response}/>
         )}
-        <div className="card-actions justify-between">
-          <button className="btn btn-error" onClick={drawNewQuestion}>
-            Get new question
-          </button>
-          <button className="btn btn-secondary" onClick={repeatQuestion}>
-            Repeat question
-          </button>
+        <div className="card-actions justify-between pt-4">
+          <div className='justify-between gap-8 flex'>
+            <button className="btn btn-error" onClick={drawNewQuestion}>
+              Get new question
+            </button>
+            <button className="btn btn-secondary" disabled={state.type !== "SUCCESS"} onClick={repeatQuestion}>
+              Repeat question
+            </button>
+          </div>
           <button className="btn btn-primary" onClick={onSubmit}>
             Send answer
           </button>
