@@ -1,116 +1,450 @@
-{
-  "questions": [
-    "Q1: What npm is used for?",
-    "Q2: Why does Node.js prefer Error-First Callback?",
-    "Q3: What is Callback Hell and what is the main cause of it?",
-    "Q4: What is Callback?",
-    "Q5: What are the key features of Node.js?",
-    "Q6: Explain the difference between local and global npm packages installation",
-    "Q7: What do you mean by Asynchronous API?",
-    "Q8: What are the benefits of using Node.js?",
-    "Q9: What is libuv?",
-    "Q10: What is V8?",
-    "Q11: What is the difference between returning a callback and just calling a callback?",
-    "Q12: What is the file package.json?",
-    "Q13: Name some Built-in Globals in Node.js",
-    "Q14: What does Promisifying technique mean in Node.js?",
-    "Q15: What's the difference between process.cwd() vs __dirname?",
-    "Q16: Why we always require modules at the top of a file? Can we require modules inside of functions?",
-    "Q17: What is Stream Chaining in Node.js?",
-    "Q18: What are Event Emitters?",
-    "Q19: How does concurrency work in Node.js?",
-    "Q20: What Are Buffer and why to use them in Node.js?",
-    "Q21: What is N-API in Node.js?",
-    "Q22: Are you familiar with differences between Node.js modules and ES6 modules?",
-    "Q23: What is the difference between setTimeout(fn,0) vs setImmediate(fn)?",
-    "Q24: Could we run an external process with Node.js?",
-    "Q25: How do you debug Node.js applications?",
-    "Q26: What's the Event Loop?",
-    "Q27: How to avoid Callback Hell in Node.js?",
-    "Q28: Explain how does Node.js work?",
-    "Q29: How does Node.js handle Child Threads?",
-    "Q30: What is the relationship between Node.js and V8?",
-    "Q31: Explain the concept of Domain in Node.js",
-    "Q32: What is stream and what are types of streams available in Node.js?",
-    "Q33: What is Event Loop in Node.js?",
-    "Q34: What is the preferred method of resolving unhandled exceptions in Node.js?",
-    "Q35: What is a Blocking Code in Node.js?",
-    "Q36: When should we use Node.js?",
-    "Q37: When should I use EventEmitter?",
-    "Q38: What is difference between synchronous and asynchronous method of fs module?",
-    "Q39: What are the use cases for the Node.js vm core module?",
-    "Q40: Provide your favourite reasons to use Node.js",
-    "Q41: Provide some of the reasons not to use Node.js",
-    "Q42: What exactly does module.exports do in Node.js, and what would a simple example be?",
-    "Q43: What is the difference between require(x) and ES6 import x in Node.js?",
-    "Q44: What is export default in JavaScript?",
-    "Q45: Explain the order of Event Listeners execution in Node.js",
-    "Q46: Is an Event Emitter Synchronous or Asynchronous?",
-    "Q47: How do I run a Node.js app as a background service?",
-    "Q48: What is the purpose of pm2 save?",
-    "Q49: When would you use cluster module in Node.js?",
-    "Q50: Which one is better: Node.js built in cluster or PM2 clustering?",
-    "Q51: What is the meaning of the @ prefix on npm package?",
-    "Q52: Would you use Node.js assert library vs. other assert libraries like chai? Why?",
-    "Q53: What is Mocha in Node.js userland?",
-    "Q54: What is chai and chai-http in Node.js userland?",
-    "Q55: What is the purpose of using assert module in Node.js",
-    "Q56: What is the difference between browser global scope and Node.js global scope?",
-    "Q57: How to use global variable in Node.js?",
-    "Q58: When would you use global variables in Node.js? Are they always bad?",
-    "Q59: What is the difference between cluster and worker_threads packages in Node.js?",
-    "Q60: Is there any difference between res.send and return res.send in Express.js?",
-    "Q61: What are express.json() and express.urlencoded() in Express.js?",
-    "Q62: How to gracefully shutdown Node.js server?",
-    "Q63: Why to use Buffer instead of binary string to handle binary data ?",
-    "Q64: How the V8 engine works?",
-    "Q65: Does Node.js support multi-core platforms? And is it capable of utilizing all the cores?",
-    "Q66: Is it possible to use Class in Node.js?",
-    "Q67: What is LTS releases of Node.js why should you care?",
-    "Q68: Is Node.js entirely based on a single-thread?",
-    "Q69: When not to use Node.js?",
-    "Q70: What is Piping in Node?",
-    "Q71: What is the purpose of __filename variable in Node.js?",
-    "Q72: What's the difference between dependencies, devDependencies and peerDependencies in package.json file?",
-    "Q73: How would you handle errors for async code in Node.js?",
-    "Q74: Can Node.js work without V8?",
-    "Q75: What are async functions in Node? Provide some examples.",
-    "Q76: What are the Timing features of Node.js?",
-    "Q77: Explain usage of NODE_ENV",
-    "Q78: How does the Cluster module work? What’s the difference between it and a load balancer?",
-    "Q79: When to use Synchronous vs Asynchronous code in Node.js?",
-    "Q80: Does JavaScript have a map function to iterate over an object properties?",
-    "Q81: When would you use import * as X from 'X' ?",
-    "Q82: How would you prevent Callback Hell without using promises, async or generators?",
-    "Q83: What is the difference between pm2 restart and pm2 reload?",
-    "Q84: What is the difference between Cluster and Fork mode in PM2?",
-    "Q85: Compare PM2 Cluster Mode vs. Node.js Cluster module usage",
-    "Q86: What is the difference between the child_process spawn and execute functions in Node.js? When to use each one?",
-    "Q87: What is the difference between fork() & spawn() in Node.js?",
-    "Q88: Explain what is Arrange-Act-Assert pattern?",
-    "Q89: Compare strict vs legacy mode for Assert module in Node.js",
-    "Q90: Is an Event Emitter synchronous or asynchronous?",
-    "Q91: List some differences between CommonJS module loader and ECMAScript module loader",
-    "Q92: How can you have one global variable between all clustered workers in Node.js?",
-    "Q93: Do I need Dependency Injection in Node.js and how to deal with it?",
-    "Q94: How does libuv work under the hood?",
-    "Q95: Explain what is Reactor Pattern in Node.js?",
-    "Q96: Can Node.js use other engines than V8?",
-    "Q97: Why Node.js devs tend to lean towards the Module Requiring vs Dependency Injection?",
-    "Q98: How to solve Process out of Memory Exception in Node.js ?",
-    "Q99: How would you scale Node application?",
-    "Q100: What is the difference between process.nextTick() and setImmediate()?",
-    "Q101: Explain some Error Handling approaches in Node.js you know about. Which one will you use?",
-    "Q102: What is the purpose of using hidden classes in V8?",
-    "Q103: Why do we need C++ Addons in Node.js?",
-    "Q104: Why should you separate Express app and server?",
-    "Q105: What is V8 Templates?",
-    "Q106: How V8 compiles JavaScript code?",
-    "Q107: How many threads does Node actually create?",
-    "Q108: Does JavaScript pass by references or pass by values?",
-    "Q109: What's the difference between pm2 and pm2-runtime and when to use one?",
-    "Q110: Does the cluster in Node.js utilizes same event loop?",
-    "Q111: What is the difference between cluster.fork() vs child_process.fork() in Node.js?",
-    "Q112:  How would you implement process communication when using cluster module in Node.js?"
-  ]
-}
+[
+  {
+    "id": 1,
+    "title": "Q1: What npm is used for?"
+  },
+  {
+    "id": 2,
+    "title": "Q2: Why does Node.js prefer Error-First Callback?"
+  },
+  {
+    "id": 3,
+    "title": "Q3: What is Callback Hell and what is the main cause of it?"
+  },
+  {
+    "id": 4,
+    "title": "Q4: What is Callback?"
+  },
+  {
+    "id": 5,
+    "title": "Q5: What are the key features of Node.js?"
+  },
+  {
+    "id": 6,
+    "title": "Q6: Explain the difference between local and global npm packages installation"
+  },
+  {
+    "id": 7,
+    "title": "Q7: What do you mean by Asynchronous API?"
+  },
+  {
+    "id": 8,
+    "title": "Q8: What are the benefits of using Node.js?"
+  },
+  {
+    "id": 9,
+    "title": "Q9: What is libuv?"
+  },
+  {
+    "id": 10,
+    "title": "Q10: What is V8?"
+  },
+  {
+    "id": 11,
+    "title": "Q11: What is the difference between returning a callback and just calling a callback?"
+  },
+  {
+    "id": 12,
+    "title": "Q12: What is the file package.json?"
+  },
+  {
+    "id": 13,
+    "title": "Q13: Name some Built-in Globals in Node.js"
+  },
+  {
+    "id": 14,
+    "title": "Q14: What does Promisifying technique mean in Node.js?"
+  },
+  {
+    "id": 15,
+    "title": "Q15: What's the difference between process.cwd() vs __dirname?"
+  },
+  {
+    "id": 16,
+    "title": "Q16: Why we always require modules at the top of a file? Can we require modules inside of functions?"
+  },
+  {
+    "id": 17,
+    "title": "Q17: What is Stream Chaining in Node.js?"
+  },
+  {
+    "id": 18,
+    "title": "Q18: What are Event Emitters?"
+  },
+  {
+    "id": 19,
+    "title": "Q19: How does concurrency work in Node.js?"
+  },
+  {
+    "id": 20,
+    "title": "Q20: What Are Buffer and why to use them in Node.js?"
+  },
+  {
+    "id": 21,
+    "title": "Q21: What is N-API in Node.js?"
+  },
+  {
+    "id": 22,
+    "title": "Q22: Are you familiar with differences between Node.js modules and ES6 modules?"
+  },
+  {
+    "id": 23,
+    "title": "Q23: What is the difference between setTimeout(fn,0) vs setImmediate(fn)?"
+  },
+  {
+    "id": 24,
+    "title": "Q24: Could we run an external process with Node.js?"
+  },
+  {
+    "id": 25,
+    "title": "Q25: How do you debug Node.js applications?"
+  },
+  {
+    "id": 26,
+    "title": "Q26: What's the Event Loop?"
+  },
+  {
+    "id": 27,
+    "title": "Q27: How to avoid Callback Hell in Node.js?"
+  },
+  {
+    "id": 28,
+    "title": "Q28: Explain how does Node.js work?"
+  },
+  {
+    "id": 29,
+    "title": "Q29: How does Node.js handle Child Threads?"
+  },
+  {
+    "id": 30,
+    "title": "Q30: What is the relationship between Node.js and V8?"
+  },
+  {
+    "id": 31,
+    "title": "Q31: Explain the concept of Domain in Node.js"
+  },
+  {
+    "id": 32,
+    "title": "Q32: What is stream and what are types of streams available in Node.js?"
+  },
+  {
+    "id": 33,
+    "title": "Q33: What is Event Loop in Node.js?"
+  },
+  {
+    "id": 34,
+    "title": "Q34: What is the preferred method of resolving unhandled exceptions in Node.js?"
+  },
+  {
+    "id": 35,
+    "title": "Q35: What is a Blocking Code in Node.js?"
+  },
+  {
+    "id": 36,
+    "title": "Q36: When should we use Node.js?"
+  },
+  {
+    "id": 37,
+    "title": "Q37: When should I use EventEmitter?"
+  },
+  {
+    "id": 38,
+    "title": "Q38: What is difference between synchronous and asynchronous method of fs module?"
+  },
+  {
+    "id": 39,
+    "title": "Q39: What are the use cases for the Node.js vm core module?"
+  },
+  {
+    "id": 40,
+    "title": "Q40: Provide your favourite reasons to use Node.js"
+  },
+  {
+    "id": 41,
+    "title": "Q41: Provide some of the reasons not to use Node.js"
+  },
+  {
+    "id": 42,
+    "title": "Q42: What exactly does module.exports do in Node.js, and what would a simple example be?"
+  },
+  {
+    "id": 43,
+    "title": "Q43: What is the difference between require(x) and ES6 import x in Node.js?"
+  },
+  {
+    "id": 44,
+    "title": "Q44: What is export default in JavaScript?"
+  },
+  {
+    "id": 45,
+    "title": "Q45: Explain the order of Event Listeners execution in Node.js"
+  },
+  {
+    "id": 46,
+    "title": "Q46: Is an Event Emitter Synchronous or Asynchronous?"
+  },
+  {
+    "id": 47,
+    "title": "Q47: How do I run a Node.js app as a background service?"
+  },
+  {
+    "id": 48,
+    "title": "Q48: What is the purpose of pm2 save?"
+  },
+  {
+    "id": 49,
+    "title": "Q49: When would you use cluster module in Node.js?"
+  },
+  {
+    "id": 50,
+    "title": "Q50: Which one is better: Node.js built in cluster or PM2 clustering?"
+  },
+  {
+    "id": 51,
+    "title": "Q51: What is the meaning of the @ prefix on npm package?"
+  },
+  {
+    "id": 52,
+    "title": "Q52: Would you use Node.js assert library vs. other assert libraries like chai? Why?"
+  },
+  {
+    "id": 53,
+    "title": "Q53: What is Mocha in Node.js userland?"
+  },
+  {
+    "id": 54,
+    "title": "Q54: What is chai and chai-http in Node.js userland?"
+  },
+  {
+    "id": 55,
+    "title": "Q55: What is the purpose of using assert module in Node.js"
+  },
+  {
+    "id": 56,
+    "title": "Q56: What is the difference between browser global scope and Node.js global scope?"
+  },
+  {
+    "id": 57,
+    "title": "Q57: How to use global variable in Node.js?"
+  },
+  {
+    "id": 58,
+    "title": "Q58: When would you use global variables in Node.js? Are they always bad?"
+  },
+  {
+    "id": 59,
+    "title": "Q59: What is the difference between cluster and worker_threads packages in Node.js?"
+  },
+  {
+    "id": 60,
+    "title": "Q60: Is there any difference between res.send and return res.send in Express.js?"
+  },
+  {
+    "id": 61,
+    "title": "Q61: What are express.json() and express.urlencoded() in Express.js?"
+  },
+  {
+    "id": 62,
+    "title": "Q62: How to gracefully shutdown Node.js server?"
+  },
+  {
+    "id": 63,
+    "title": "Q63: Why to use Buffer instead of binary string to handle binary data ?"
+  },
+  {
+    "id": 64,
+    "title": "Q64: How the V8 engine works?"
+  },
+  {
+    "id": 65,
+    "title": "Q65: Does Node.js support multi-core platforms? And is it capable of utilizing all the cores?"
+  },
+  {
+    "id": 66,
+    "title": "Q66: Is it possible to use Class in Node.js?"
+  },
+  {
+    "id": 67,
+    "title": "Q67: What is LTS releases of Node.js why should you care?"
+  },
+  {
+    "id": 68,
+    "title": "Q68: Is Node.js entirely based on a single-thread?"
+  },
+  {
+    "id": 69,
+    "title": "Q69: When not to use Node.js?"
+  },
+  {
+    "id": 70,
+    "title": "Q70: What is Piping in Node?"
+  },
+  {
+    "id": 71,
+    "title": "Q71: What is the purpose of __filename variable in Node.js?"
+  },
+  {
+    "id": 72,
+    "title": "Q72: What's the difference between dependencies, devDependencies and peerDependencies in package.json file?"
+  },
+  {
+    "id": 73,
+    "title": "Q73: How would you handle errors for async code in Node.js?"
+  },
+  {
+    "id": 74,
+    "title": "Q74: Can Node.js work without V8?"
+  },
+  {
+    "id": 75,
+    "title": "Q75: What are async functions in Node? Provide some examples."
+  },
+  {
+    "id": 76,
+    "title": "Q76: What are the Timing features of Node.js?"
+  },
+  {
+    "id": 77,
+    "title": "Q77: Explain usage of NODE_ENV"
+  },
+  {
+    "id": 78,
+    "title": "Q78: How does the Cluster module work? What’s the difference between it and a load balancer?"
+  },
+  {
+    "id": 79,
+    "title": "Q79: When to use Synchronous vs Asynchronous code in Node.js?"
+  },
+  {
+    "id": 80,
+    "title": "Q80: Does JavaScript have a map function to iterate over an object properties?"
+  },
+  {
+    "id": 81,
+    "title": "Q81: When would you use import * as X from 'X' ?"
+  },
+  {
+    "id": 82,
+    "title": "Q82: How would you prevent Callback Hell without using promises, async or generators?"
+  },
+  {
+    "id": 83,
+    "title": "Q83: What is the difference between pm2 restart and pm2 reload?"
+  },
+  {
+    "id": 84,
+    "title": "Q84: What is the difference between Cluster and Fork mode in PM2?"
+  },
+  {
+    "id": 85,
+    "title": "Q85: Compare PM2 Cluster Mode vs. Node.js Cluster module usage"
+  },
+  {
+    "id": 86,
+    "title": "Q86: What is the difference between the child_process spawn and execute functions in Node.js? When to use each one?"
+  },
+  {
+    "id": 87,
+    "title": "Q87: What is the difference between fork() & spawn() in Node.js?"
+  },
+  {
+    "id": 88,
+    "title": "Q88: Explain what is Arrange-Act-Assert pattern?"
+  },
+  {
+    "id": 89,
+    "title": "Q89: Compare strict vs legacy mode for Assert module in Node.js"
+  },
+  {
+    "id": 90,
+    "title": "Q90: Is an Event Emitter synchronous or asynchronous?"
+  },
+  {
+    "id": 91,
+    "title": "Q91: List some differences between CommonJS module loader and ECMAScript module loader"
+  },
+  {
+    "id": 92,
+    "title": "Q92: How can you have one global variable between all clustered workers in Node.js?"
+  },
+  {
+    "id": 93,
+    "title": "Q93: Do I need Dependency Injection in Node.js and how to deal with it?"
+  },
+  {
+    "id": 94,
+    "title": "Q94: How does libuv work under the hood?"
+  },
+  {
+    "id": 95,
+    "title": "Q95: Explain what is Reactor Pattern in Node.js?"
+  },
+  {
+    "id": 96,
+    "title": "Q96: Can Node.js use other engines than V8?"
+  },
+  {
+    "id": 97,
+    "title": "Q97: Why Node.js devs tend to lean towards the Module Requiring vs Dependency Injection?"
+  },
+  {
+    "id": 98,
+    "title": "Q98: How to solve Process out of Memory Exception in Node.js ?"
+  },
+  {
+    "id": 99,
+    "title": "Q99: How would you scale Node application?"
+  },
+  {
+    "id": 100,
+    "title": "Q100: What is the difference between process.nextTick() and setImmediate()?"
+  },
+  {
+    "id": 101,
+    "title": "Q101: Explain some Error Handling approaches in Node.js you know about. Which one will you use?"
+  },
+  {
+    "id": 102,
+    "title": "Q102: What is the purpose of using hidden classes in V8?"
+  },
+  {
+    "id": 103,
+    "title": "Q103: Why do we need C++ Addons in Node.js?"
+  },
+  {
+    "id": 104,
+    "title": "Q104: Why should you separate Express app and server?"
+  },
+  {
+    "id": 105,
+    "title": "Q105: What is V8 Templates?"
+  },
+  {
+    "id": 106,
+    "title": "Q106: How V8 compiles JavaScript code?"
+  },
+  {
+    "id": 107,
+    "title": "Q107: How many threads does Node actually create?"
+  },
+  {
+    "id": 108,
+    "title": "Q108: Does JavaScript pass by references or pass by values?"
+  },
+  {
+    "id": 109,
+    "title": "Q109: What's the difference between pm2 and pm2-runtime and when to use one?"
+  },
+  {
+    "id": 110,
+    "title": "Q110: Does the cluster in Node.js utilizes same event loop?"
+  },
+  {
+    "id": 111,
+    "title": "Q111: What is the difference between cluster.fork() vs child_process.fork() in Node.js?"
+  },
+  {
+    "id": 112,
+    "title": "Q112:  How would you implement process communication when using cluster module in Node.js?"
+  }
+]

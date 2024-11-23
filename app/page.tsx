@@ -14,6 +14,10 @@ const categories: QuestionCategory[] = [
     id: "nodejs-interview",
     name: "Node.js Interview",
   },
+  {
+    id: "java-interview",
+    name: "Java Interview",
+  },
 ];
 
 export default function Home() {
@@ -24,7 +28,7 @@ export default function Home() {
         <ol className="list-disc">
           {categories.map((category) => (
             <Link
-              href={"questions/javascript-interview"}
+              href={`questions/${category.id}`}
               className="text-white"
               key={category.id}
             >

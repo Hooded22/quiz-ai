@@ -1,17 +1,16 @@
 import axios from "axios";
 
-export async function sendPromptToGPT(prompt: string) {
+export type gptMessagesType = {role: "system" | "user", content: string}
+
+export async function sendPromptToGPT(prompt: gptMessagesType[]) {
   try {
     const response = await axios.post(
-      "https://api.openai.com/v1/completions",
+      "https://api.openai.com/v1/chat/completions",
       {
-        model: "text-davinci-003",
+        model: "gpt-4o",
         temperature: 0.7,
-        max_tokens: 1250,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0.6,
-        prompt,
+        max_tokens: 3072,
+        messages: prompt,
       },
       {
         headers: {
@@ -20,7 +19,7 @@ export async function sendPromptToGPT(prompt: string) {
       }
     );
 
-    return response.data.choices[0].text;
+    return response.data.choices[0].message.content;
   } catch (error) {
     throw error;
   }

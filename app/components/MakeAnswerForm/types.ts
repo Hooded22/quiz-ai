@@ -1,3 +1,5 @@
+import { Question } from "@/types/question";
+
 export type GPTAnswerState =
 | {
     type: "START";
@@ -25,8 +27,12 @@ export type GPTAnswerState =
       type: "setLoadingForResponse";
     }
   | {
-      type: "setResponse";
+      type: "setAIModelResponse";
       payload: { response: string };
+    }
+  | {
+      type: "setResponseWithKnownCorrectAnswer";
+      payload: { response: string, correctAnswer: string };
     }
   | {
       type: "setError";
@@ -38,7 +44,4 @@ export interface FormValues {
   }
 
 
-  export type QuestionsWithAnswer = {
-    question: string,
-    answer: string | undefined
-  }
+  export type QuestionsWithAnswer = Question
