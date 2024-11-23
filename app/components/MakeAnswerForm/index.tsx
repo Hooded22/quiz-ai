@@ -3,6 +3,7 @@
 import { useMakeAnswerForm } from "./useMakeAnswerForm";
 import { Loader } from "../Loader";
 import { QuestionsWithAnswer } from "./types";
+import {MarkdownRenderer} from "@/components/MarkdownRenderer/MarkdownRenderer";
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
@@ -10,7 +11,7 @@ interface MakeAnswerFormProps {
 }
 
 export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormProps) {
-  const { register, onSubmit, drawNewQuestion, drawnQuestion, state } =
+  const { register, onSubmit, drawNewQuestion, drawnQuestion, repeatQuestion, state } =
     useMakeAnswerForm(questionsWithAnswers, topic);
 
   const isLoading = state.type === "WAITING_FOR_RESPONSE" && state.loading;
@@ -20,9 +21,9 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
       <Loader loading={isLoading} text="Waiting for GPT response" />
       <div className="card-body">
         <h1 className="text-xl text-center" data-testid="current-question">
-          {drawnQuestion.title}
+          {drawnQuestion?.title}
         </h1>
-        {!!drawnQuestion.answer && (
+        {!!drawnQuestion?.answer && (
           <div className="flex w-full justify-center">
             <div
               className="tooltip tooltip-bottom"
@@ -41,14 +42,22 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
           rows={5}
         />
         {state.type === "SUCCESS" && (
-          <p className="text-white text-sm text-justify pb-5">
-            {state.response}
-          </p>
+            <MarkdownRenderer content={state.response}/>
         )}
-        <div className="card-actions justify-between">
-          <button className="btn btn-error" onClick={drawNewQuestion}>
-            Get new question
-          </button>
+        {state.type === "ERROR" && (
+            <p className="text-white text-sm text-justify pb-5">
+              {state.errorMessage}
+            </p>
+        )}
+        <div className="card-actions justify-between pt-4">
+          <div className='justify-between gap-8 flex'>
+            <button className="btn btn-error" onClick={drawNewQuestion}>
+              Get new question
+            </button>
+            <button className="btn btn-secondary" disabled={state.type !== "SUCCESS"} onClick={repeatQuestion}>
+              Repeat question
+            </button>
+          </div>
           <button className="btn btn-primary" onClick={onSubmit}>
             Send answer
           </button>
