@@ -13,10 +13,16 @@ interface MakeAnswerFormProps {
 }
 
 export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormProps) {
-  //get 5 questions from all
-  //set current question
+  /**This component should be for whole interview process
+    * showing current question
+    * interaction with Interviewer
+    * moving to next question
+  **/
+
+
+  //set current question from 5 randomly selected on parent page
   //when next question set new question reset form
-  //when all questions done move to next screen
+  //when all questions done set quiz results to quiz state and move to next screen
 
   const { register, onSubmit, drawNewQuestion, drawnQuestion, repeatQuestion, state } =
     useMakeAnswerForm(questionsWithAnswers, topic);

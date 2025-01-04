@@ -26,6 +26,8 @@ async function getDataFromJSONFile(id: string): Promise<Question[]> {
 }
 
 export default async function QuestionCategory(props: QuestionCategoryProps) {
+  //based on query params get random number of question for chosen interview
+
   const questionsWithAnswers = await getDataFromJSONFile(props.params.id);
 
 
