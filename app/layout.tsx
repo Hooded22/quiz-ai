@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import './globals.css'
+import StyledComponentsRegistry from "../lib/registry";
 
 export const metadata = {
   title: 'Create Next App',
@@ -19,7 +20,9 @@ export default function RootLayout({
           Quiz AI
         </Link>
       </nav>
-      {children}
+      <StyledComponentsRegistry>
+          {children}
+      </StyledComponentsRegistry>
       </body>
     </html>
   )

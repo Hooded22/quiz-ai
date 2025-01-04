@@ -4,6 +4,8 @@ import { useMakeAnswerForm } from "./useMakeAnswerForm";
 import { Loader } from "../Loader";
 import { QuestionsWithAnswer } from "./types";
 import {MarkdownRenderer} from "../MarkdownRenderer/MarkdownRenderer";
+import {Styled} from "./styles";
+import {Tooltip} from "../Tooltip/Tooltip";
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
@@ -11,58 +13,62 @@ interface MakeAnswerFormProps {
 }
 
 export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormProps) {
+  //get 5 questions from all
+  //set current question
+  //when next question set new question reset form
+  //when all questions done move to next screen
+
   const { register, onSubmit, drawNewQuestion, drawnQuestion, repeatQuestion, state } =
     useMakeAnswerForm(questionsWithAnswers, topic);
 
   const isLoading = state.type === "WAITING_FOR_RESPONSE" && state.loading;
 
   return (
-    <div className="card bg-neutral w-3/5 relative">
+    <Styled.Wrapper>
       <Loader loading={isLoading} text="Waiting for GPT response" />
-      <div className="card-body">
-        <h1 className="text-xl text-center" data-testid="current-question">
-          {drawnQuestion?.title}
-        </h1>
-        {!!drawnQuestion?.answer && (
-          <div className="flex w-full justify-center">
-            <div
-              className="tooltip tooltip-bottom"
-              data-tip={drawnQuestion.answer}
-            >
-              <div className="badge badge-primary badge-outline uppercase mt-1">
-                answer available
-              </div>
-            </div>
-          </div>
-        )}
-        <textarea
-          title="answer"
-          className="textarea textarea-bordered mb-10 mt-5 resize-none text-sm"
-          {...register("answer")}
-          rows={5}
-        />
-        {state.type === "SUCCESS" && (
-            <MarkdownRenderer content={state.response}/>
-        )}
-        {state.type === "ERROR" && (
-            <p className="text-white text-sm text-justify pb-5">
-              {state.errorMessage}
-            </p>
-        )}
-        <div className="card-actions justify-between pt-4">
-          <div className='justify-between gap-8 flex'>
-            <button className="btn btn-error" onClick={drawNewQuestion}>
-              Get new question
-            </button>
-            <button className="btn btn-secondary" disabled={state.type !== "SUCCESS"} onClick={repeatQuestion}>
+      <Styled.Content>
+        <Styled.QuestionHeader>
+          <Styled.QuestionTitle className="text-xl text-center" data-testid="current-question">
+            {drawnQuestion?.title}
+          </Styled.QuestionTitle>
+          {!!drawnQuestion?.answer && (
+              <Tooltip title={"Answer available"} details={drawnQuestion.answer}/>
+          )}
+        </Styled.QuestionHeader>
+        <Styled.ConversationContainer>
+          {state.type === "SUCCESS" && (
+              <MarkdownRenderer content={state.response}/>
+          )}
+          {state.type === "ERROR" && (
+              <p className="text-white text-sm text-justify pb-5">
+                {state.errorMessage}
+              </p>
+          )}
+        </Styled.ConversationContainer>
+
+        <Styled.UserInputContainer>
+          <textarea
+              title="answer"
+              className="textarea textarea-bordered mb-10 mt-5 resize-none text-sm"
+              {...register("answer")}
+              rows={5}
+          />
+          <div className="card-actions justify-between pt-4">
+            <button className="btn btn-error" disabled={state.type !== "SUCCESS"} onClick={repeatQuestion}>
               Repeat question
             </button>
+            <div className='justify-between gap-8 flex'>
+              <button className="btn btn-primary" onClick={onSubmit}>
+                Send answer
+              </button>
+              <button className="btn btn-active" onClick={drawNewQuestion}>
+                Next question
+              </button>
+            </div>
           </div>
-          <button className="btn btn-primary" onClick={onSubmit}>
-            Send answer
-          </button>
-        </div>
-      </div>
-    </div>
+        </Styled.UserInputContainer>
+
+      </Styled.Content>
+    </Styled.Wrapper>
   );
 }

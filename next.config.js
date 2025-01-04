@@ -10,6 +10,9 @@ module.exports = () => {
     ...nextConfig,
     env: {
       GPT_API_KEY: process.env.GPT_API_KEY
+    },
+    compiler: {
+      styledComponents: true
     }
   }
 }
