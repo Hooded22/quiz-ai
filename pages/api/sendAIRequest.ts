@@ -24,6 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         res.status(200).json({ content: response.choices[0].message?.content });
     } catch (error) {
+        console.log("ERR: ", error)
         res.status(500).json({ error: 'Failed to fetch from OpenAI API' });
     }
 }

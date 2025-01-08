@@ -1,0 +1,44 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formElement {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.label {
+    font-weight: bold;
+    color: #333;
+}
+
+.select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.checkbox {
+    margin-left: 5px;
+}
+
+.button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0070f3;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #005bb5;
+}
