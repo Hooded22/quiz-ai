@@ -37,6 +37,8 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], t
   const { register, reset, handleSubmit } = useForm<FormValues>();
 
   const drawNewQuestion = useCallback(() => {
+    console.log("Drawing question", questionsWithAnswers)
+
     reset({answer: ""});
     dispatch({type: "clearForm"})
     setDrawnQuestion(getRandomQuestion<QuestionsWithAnswer>(questionsWithAnswers));
@@ -77,7 +79,9 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], t
   }, [])
 
   useEffect(() => {
-    drawNewQuestion();
+    if(!drawnQuestion) {
+      drawNewQuestion();
+    }
   }, [questionsWithAnswers, drawNewQuestion]);
 
   return {
