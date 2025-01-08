@@ -2,20 +2,20 @@
 
 import {useState} from "react";
 import styles from './styles.module.css'
-
+import {InterviewConfig, QuestionsNumber, RoleType, SeniorityLevel, TimeLimit} from "../../types/interviewConfig";
+import {useRouter} from "next/navigation";
 
 
 const QuestionForm = () => {
-    const [formState, setFormState] = useState({
-        roleType: '',
+    const [formState, setFormState] = useState<Partial<InterviewConfig>>({
         seniorityLevel: 'All',
-        questionsNumber: '',
         timeLimit: 'none',
         questionsCanRepeat: false,
     });
 
     const [errorMessages, setErrorMessages] = useState<string[]>([]);
     const [submissionStatus, setSubmissionStatus] = useState<string | null>(null);
+const {push} = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
         const { name, value, type } = e.target;
@@ -27,46 +27,39 @@ const QuestionForm = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        // Clear any previous error messages and submission status
         setErrorMessages([]);
         setSubmissionStatus(null);
 
-        try {
-            const response = await fetch('/api/form-submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formState),
-            });
-            const result = await response.json();
-
-            if (result.status === 'error') {
-                setErrorMessages(result.errors.map((err: any) => err.message));
-                return;
-            }
-
-            setSubmissionStatus('Form submitted successfully!');
-            // Reset form if needed
-            setFormState({
-                roleType: '',
-                seniorityLevel: 'All',
-                questionsNumber: '',
-                timeLimit: 'none',
-                questionsCanRepeat: false,
-            });
-        } catch (error) {
-            setErrorMessages(['Failed to submit form. Please try again later.']);
+        if (!formState.roleType) {
+            return setErrorMessages(['Invalid or missing role type.']);
         }
+
+        if (!formState.questionsNumber) {
+            return setErrorMessages(['Invalid or missing number of questions.']);
+        }
+
+        const searchParams = new URLSearchParams({
+            seniorityLevel: formState.seniorityLevel || "All",
+            questionsNumber: formState.questionsNumber.toString(),
+            timeLimit: formState.timeLimit || "none",
+            questionsCanRepeat: formState.questionsCanRepeat?.toString() || '',
+        });
+
+        const redirectUrl = `/interview/${formState.roleType.toLowerCase()}/?${searchParams.toString()}`;
+       push(redirectUrl)
     };
 
     return (
         <div className={styles.formContainer}>
             <h2>Create Quiz</h2>
-            <div className={styles.formElement} onSubmit={handleSubmit}>
+            <form className={styles.formElement} onSubmit={handleSubmit}>
                 <div>
                     <label className={styles.label} htmlFor="roleType">Role Type *</label>
                     <select className={styles.select} id="roleType" name="roleType" value={formState.roleType} onChange={handleChange}>
                         <option value="">Select...</option>
                         <option value="Javascript">Javascript</option>
-                        <option value="Node.js">Node.js</option>
+                        <option value="NodeJs">Node.js</option>
                         <option value="Java">Java</option>
                     </select>
                 </div>
@@ -113,7 +106,7 @@ const QuestionForm = () => {
                 </div>
 
                 <button className={styles.button} type="submit">Submit</button>
-            </div>
+            </form>
             {errorMessages.length > 0 && <div>{errorMessages.map(msg => <p key={msg}>{msg}</p>)}</div>}
             {submissionStatus && <div>{submissionStatus}</div>}
         </div>

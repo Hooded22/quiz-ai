@@ -2,6 +2,6 @@ import InterviewConfigForm from "../../components/InterviewConfigForm/InterviewC
 
 export default function Page() {
     return (
-        <InterviewConfigForm/>
+        <InterviewConfigForm />
     )
 }

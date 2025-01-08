@@ -22,4 +22,4 @@ function transformIntoJson(filePath) {
 
 }
 
-transformIntoJson('app/json/javascript-interview.json');
+transformIntoJson('app/json/javascript.json');

@@ -2,11 +2,13 @@ import { MakeAnswerForm } from "../../../components/MakeAnswerForm";
 import { Question } from "../../../types/question";
 import { promises as fs } from "fs";
 import path from "path";
+import {InterviewConfig} from "../../../types/interviewConfig";
 
 interface QuestionCategoryProps {
   params: {
     id: string;
   };
+  searchParams: InterviewConfig
 }
 
 async function getDataFromJSONFile(id: string): Promise<Question[]> {
@@ -27,6 +29,8 @@ async function getDataFromJSONFile(id: string): Promise<Question[]> {
 
 export default async function QuestionCategory(props: QuestionCategoryProps) {
   //based on query params get random number of question for chosen interview
+
+  console.log("props.params.id", props.searchParams)
 
   const questionsWithAnswers = await getDataFromJSONFile(props.params.id);
 
