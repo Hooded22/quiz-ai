@@ -6,6 +6,7 @@ import { QuestionsWithAnswer } from "./types";
 import {MarkdownRenderer} from "../MarkdownRenderer/MarkdownRenderer";
 import {Styled} from "./styles";
 import {Tooltip} from "../Tooltip/Tooltip";
+import {useInterviewProcess} from "./useInterviewProcess";
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
@@ -13,21 +14,21 @@ interface MakeAnswerFormProps {
 }
 
 export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormProps) {
-  /**This component should be for whole interview process
-    * showing current question
-    * interaction with Interviewer
-    * moving to next question
-  **/
 
 
-  //set current question from 5 randomly selected on parent page
-  //when next question set new question reset form
-  //when all questions done set quiz results to quiz state and move to next screen
+  //TODO: when all questions done set quiz results to quiz state and move to next screen
+  //TODO: Change text are component to show submit button inside it
 
-  const { register, onSubmit, drawNewQuestion, drawnQuestion, repeatQuestion, state } =
-    useMakeAnswerForm(questionsWithAnswers, topic);
+  const {isQuestionsLimitReached, currentQuestion, nextQuestion} = useInterviewProcess({allQuestions: questionsWithAnswers})
+  const { register, onSubmit, resetForm, aiAnswer } =
+    useMakeAnswerForm({currentQuestion, topic});
 
-  const isLoading = state.type === "WAITING_FOR_RESPONSE" && state.loading;
+  const onNextQuestionButtonClick = () => {
+    resetForm();
+    nextQuestion()
+  }
+
+  const isLoading = aiAnswer.type === "WAITING_FOR_RESPONSE" && aiAnswer.loading;
 
   console.log("questionsWithAnswers", questionsWithAnswers)
 
@@ -37,19 +38,19 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
       <Styled.Content>
         <Styled.QuestionHeader>
           <Styled.QuestionTitle className="text-xl text-center" data-testid="current-question">
-            {drawnQuestion?.title}
+            {currentQuestion?.title}
           </Styled.QuestionTitle>
-          {!!drawnQuestion?.answer && (
-              <Tooltip title={"Answer available"} details={drawnQuestion.answer}/>
+          {!!currentQuestion?.answer && (
+              <Tooltip title={"Answer available"} details={currentQuestion.answer}/>
           )}
         </Styled.QuestionHeader>
         <Styled.ConversationContainer>
-          {state.type === "SUCCESS" && (
-              <MarkdownRenderer content={state.response}/>
+          {aiAnswer.type === "SUCCESS" && (
+              <MarkdownRenderer content={aiAnswer.response}/>
           )}
-          {state.type === "ERROR" && (
+          {aiAnswer.type === "ERROR" && (
               <p className="text-white text-sm text-justify pb-5">
-                {state.errorMessage}
+                {aiAnswer.errorMessage}
               </p>
           )}
         </Styled.ConversationContainer>
@@ -62,16 +63,19 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
               rows={5}
           />
           <div className="card-actions justify-between pt-4">
-            <button className="btn btn-error" disabled={state.type !== "SUCCESS"} onClick={repeatQuestion}>
+            <button className="btn btn-error" disabled={aiAnswer.type !== "SUCCESS"} onClick={resetForm}>
               Repeat question
             </button>
             <div className='justify-between gap-8 flex'>
               <button className="btn btn-primary" onClick={onSubmit}>
                 Send answer
               </button>
-              <button className="btn btn-active" onClick={drawNewQuestion}>
+              {!isQuestionsLimitReached && <button className="btn btn-active" onClick={onNextQuestionButtonClick}>
                 Next question
-              </button>
+              </button>}
+              {isQuestionsLimitReached && aiAnswer.type === "SUCCESS" && <button className="btn btn-active" onClick={onNextQuestionButtonClick}>
+               Finish quiz
+              </button>}
             </div>
           </div>
         </Styled.UserInputContainer>

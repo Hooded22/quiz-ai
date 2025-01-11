@@ -6,6 +6,11 @@ import {Question} from "../../types/question";
 import {prepareGPTPrompt, prepareGPTPromptWithCorrectAnswer} from "../../utils/prompts.utils";
 import {getAnswerCheckResponseWithCorrectAnswer, getRandomQuestion} from "../../utils/question.utils";
 
+export interface UseMakeAnswerFormProps {
+  currentQuestion: Question;
+  topic: string
+}
+
 const modelAnswerReducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
   switch (action.type) {
     case "clearForm":
@@ -31,36 +36,33 @@ const modelAnswerReducer = (state: GPTAnswerState, action: Actions): GPTAnswerSt
   }
 };
 
-export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], topic: string) => {
-  const [state, dispatch] = useReducer(modelAnswerReducer, { type: "START" });
-  const [drawnQuestion, setDrawnQuestion] = useState<Question>();
+export const useMakeAnswerForm = ({topic, currentQuestion}: UseMakeAnswerFormProps) => {
+  const [aiAnswer, dispatch] = useReducer(modelAnswerReducer, { type: "START" });
   const { register, reset, handleSubmit } = useForm<FormValues>();
 
-  const drawNewQuestion = useCallback(() => {
-    console.log("Drawing question", questionsWithAnswers)
 
+  const resetForm = () => {
     reset({answer: ""});
     dispatch({type: "clearForm"})
-    setDrawnQuestion(getRandomQuestion<QuestionsWithAnswer>(questionsWithAnswers));
-  }, [questionsWithAnswers, reset]);
+  }
 
   const checkCorrectAnswer = useCallback(
     async (myAnswer: string) => {
-      if(!drawnQuestion) {
+      if(!currentQuestion) {
         dispatch({ type: "setError", payload: { errorMessage: "Question doesn't exist" } });
         return
       }
 
-      const GPTPrompt = drawnQuestion.answer
-          ? prepareGPTPromptWithCorrectAnswer(drawnQuestion.title, myAnswer, drawnQuestion.answer, topic)
-          : prepareGPTPrompt(drawnQuestion?.title, myAnswer, topic)
+      const GPTPrompt = currentQuestion.answer
+          ? prepareGPTPromptWithCorrectAnswer(currentQuestion.title, myAnswer, currentQuestion.answer, topic)
+          : prepareGPTPrompt(currentQuestion?.title, myAnswer, topic)
 
       try {
         dispatch({ type: "setLoadingForResponse" });
         const GPTResponse = await sendPromptToGPT(GPTPrompt);
 
-        if(drawnQuestion.answer) {
-          dispatch({ type: "setResponseWithKnownCorrectAnswer", payload: { response: GPTResponse, correctAnswer: drawnQuestion.answer } });
+        if(currentQuestion.answer) {
+          dispatch({ type: "setResponseWithKnownCorrectAnswer", payload: { response: GPTResponse, correctAnswer: currentQuestion.answer } });
         } else {
           dispatch({ type: "setAIModelResponse", payload: { response: GPTResponse} });
         }
@@ -70,26 +72,14 @@ export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], t
         dispatch({ type: "setError", payload: { errorMessage: error.message || "Something went wrong" } });
       }
     },
-    [drawnQuestion]
+    [currentQuestion]
   );
 
-  const repeatQuestion = useCallback(() => {
-    dispatch({type: "clearForm"});
-    reset({answer: ""});
-  }, [])
-
-  useEffect(() => {
-    if(!drawnQuestion) {
-      drawNewQuestion();
-    }
-  }, [questionsWithAnswers, drawNewQuestion]);
 
   return {
-    drawnQuestion,
-    state,
+    aiAnswer,
     register,
-    drawNewQuestion,
-    repeatQuestion,
+    resetForm,
     onSubmit: handleSubmit((values: FormValues) => checkCorrectAnswer(values.answer))
   };
 };
