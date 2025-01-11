@@ -29,6 +29,8 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
 
   const isLoading = state.type === "WAITING_FOR_RESPONSE" && state.loading;
 
+  console.log("questionsWithAnswers", questionsWithAnswers)
+
   return (
     <Styled.Wrapper>
       <Loader loading={isLoading} text="Waiting for GPT response" />
