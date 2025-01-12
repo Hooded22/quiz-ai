@@ -1,0 +1,488 @@
+[
+  {
+    "id": 1,
+    "title": "Q1: What is TypeScript and why one should use it?",
+    "answer": "TypeScript is a superset of JavaScript that adds optional static typing and other features to enhance development and maintenance.",
+    "level": "junior"
+  },
+  {
+    "id": 2,
+    "title": "Q2: What are the benefits of TypeScript?",
+    "answer": "TypeScript offers static typing, better tooling and refactoring support, and early error detection.",
+    "level": "junior"
+  },
+  {
+    "id": 3,
+    "title": "Q3: What is TypeScript and why would I use it in place of JavaScript?",
+    "answer": "TypeScript provides a stronger syntax, detects errors at compile time, and improves code readability.",
+    "level": "junior"
+  },
+  {
+    "id": 4,
+    "title": "Q4: Explain generics in TypeScript",
+    "answer": "Generics allow creating components that can work with any data type, enhancing code reusability and type safety.",
+    "level": "mid"
+  },
+  {
+    "id": 5,
+    "title": "Q5: What are Modules in Typescript?",
+    "answer": "Modules in TypeScript segregate code into separate, reusable pieces, boosting code organization and scope isolation.",
+    "level": "junior"
+  },
+  {
+    "id": 6,
+    "title": "Q6: List the built-in types in Typescript",
+    "answer": "Built-in types include string, number, boolean, void, null, undefined, symbol, any, unknown, and never.",
+    "level": "junior"
+  },
+  {
+    "id": 7,
+    "title": "Q7: How to call base class constructor from child class in TypeScript?",
+    "answer": "Use `super()` in the child class constructor to call the base class's constructor.",
+    "level": "junior"
+  },
+  {
+    "id": 8,
+    "title": "Q8: Do we need to compile TypeScript files and why?",
+    "answer": "Yes, TypeScript must be compiled into JavaScript because the browser understands only JavaScript.",
+    "level": "junior"
+  },
+  {
+    "id": 9,
+    "title": "Q9: What is TypeScript and why do we need it?",
+    "answer": "TypeScript is a superset of JavaScript offering optional static typing for error detection and enhanced tooling.",
+    "level": "junior"
+  },
+  {
+    "id": 10,
+    "title": "Q10: How to perform string interpolation in TypeScript?",
+    "answer": "Use template literals, enclosed by backticks, and include expressions with `${expression}`.",
+    "level": "junior"
+  },
+  {
+    "id": 11,
+    "title": "Q11: What is the difference between .ts and .tsx extensions in TypeScript?",
+    "answer": ".ts is for regular TypeScript files, while .tsx allows embedding JSX, typically in React projects.",
+    "level": "mid"
+  },
+  {
+    "id": 12,
+    "title": "Q12: What is Decorators in TypeScript?",
+    "answer": "Decorators are special functions that can be used to modify classes, properties, and methods at design time.",
+    "level": "senior"
+  },
+  {
+    "id": 13,
+    "title": "Q13: What is Interface in TypeScript?",
+    "answer": "An interface defines a contract for objects, specifying what properties and types they should have.",
+    "level": "junior"
+  },
+  {
+    "id": 14,
+    "title": "Q14: What is the difference between Classes and Interfaces in Typescript?",
+    "answer": "Classes provide implementation for constructing objects, while interfaces only define the structure.",
+    "level": "mid"
+  },
+  {
+    "id": 15,
+    "title": "Q15: How to implement class constants in TypeScript?",
+    "answer": "Use the readonly modifier on a class property to define a constant that cannot be changed after initialization.",
+    "level": "mid"
+  },
+  {
+    "id": 16,
+    "title": "Q16: What is getters/setters in TypeScript?",
+    "answer": "Getters and setters are methods that control access to object properties, allowing encapsulation.",
+    "level": "junior"
+  },
+  {
+    "id": 17,
+    "title": "Q17: Does TypeScript support all object oriented principles?",
+    "answer": "Yes, TypeScript supports encapsulation, inheritance, abstraction, and polymorphism.",
+    "level": "mid"
+  },
+  {
+    "id": 18,
+    "title": "Q18: When to use interfaces and when to use classes in TypeScript?",
+    "answer": "Use interfaces for types and structural contracts and classes for object creation and behavioural programming.",
+    "level": "mid"
+  },
+  {
+    "id": 19,
+    "title": "Q19: How could you check null and undefined in TypeScript?",
+    "answer": "Use explicit comparisons, the nullish coalescing operator (??), or optional chaining.",
+    "level": "junior"
+  },
+  {
+    "id": 20,
+    "title": "Q20: Which object oriented terms are supported by TypeScript?",
+    "answer": "TypeScript supports classes, interfaces, inheritance, encapsulation, abstraction, and polymorphism.",
+    "level": "junior"
+  },
+  {
+    "id": 21,
+    "title": "Q21: What are the difference between Typescript and JavaScript?",
+    "answer": "TypeScript is statically typed and compiled, while JavaScript is dynamically typed and interpreted.",
+    "level": "junior"
+  },
+  {
+    "id": 22,
+    "title": "Q22: What is a TypeScript Map file?",
+    "answer": "A Map file maps transformed JavaScript code back to the original TypeScript code for debugging.",
+    "level": "mid"
+  },
+  {
+    "id": 23,
+    "title": "Q23: Could we use TypeScript on backend and how?",
+    "answer": "Yes, TypeScript can be used on the backend using Node.js to write type-safe server-side applications.",
+    "level": "mid"
+  },
+  {
+    "id": 24,
+    "title": "Q24: What is the difference between types String and string in TypeScript?",
+    "answer": "Typescript's 'string' is a primitive type, while 'String' is an object wrapper.",
+    "level": "mid"
+  },
+  {
+    "id": 25,
+    "title": "Q25: What is Type Erasure in TypeScript?",
+    "answer": "Type Erasure means that TypeScript types are removed during compilation, leaving just JavaScript.",
+    "level": "senior"
+  },
+  {
+    "id": 26,
+    "title": "Q26: How do we create an enum with string values?",
+    "answer": "Use enum syntax and assign string values explicitly: `enum Color { Red = 'red', Blue = 'blue' }`.",
+    "level": "mid"
+  },
+  {
+    "id": 27,
+    "title": "Q27: What does the pipe, | mean in TypeScript?",
+    "answer": "The pipe is a union type that allows variables to hold multiple specified types.",
+    "level": "mid"
+  },
+  {
+    "id": 28,
+    "title": "Q28: Describe what are conditional types in TypeScript?",
+    "answer": "Conditional types use a union or intersection in TypeScript resolved during compile time.",
+    "level": "senior"
+  },
+  {
+    "id": 29,
+    "title": "Q29: How to make Arrays that can only be read, TypeScript?",
+    "answer": "Use the `readonly` modifier: `readonly number[]` ensures the array cannot be modified after creation.",
+    "level": "mid"
+  },
+  {
+    "id": 30,
+    "title": "Q30: How can we use optional chaining in TypeScript?",
+    "answer": "Use the `?.` operator to safely access nested object properties without risking null/undefined errors.",
+    "level": "mid"
+  },
+  {
+    "id": 31,
+    "title": "Q31: What is Optional Chaining in TypeScript?",
+    "answer": "Optional Chaining allows safe property access, returning undefined instead of throwing errors.",
+    "level": "junior"
+  },
+  {
+    "id": 32,
+    "title": "Q32: What is the purpose of Nullish Coalescing operator?",
+    "answer": "It returns the right-hand expression when the left is null or undefined, improving default handling.",
+    "level": "mid"
+  },
+  {
+    "id": 33,
+    "title": "Q33: What are assertion functions?",
+    "answer": "Assertion functions are used to assert types, aiding the compiler in narrowing types in control flow.",
+    "level": "senior"
+  },
+  {
+    "id": 34,
+    "title": "Q34: Which access modifiers are implied when not specified?",
+    "answer": "When not specified, properties and methods are public by default.",
+    "level": "junior"
+  },
+  {
+    "id": 35,
+    "title": "Q35: What is Typings in Typescript?",
+    "answer": "Typings provide type definitions for JavaScript libraries to be used in a TypeScript context.",
+    "level": "mid"
+  },
+  {
+    "id": 36,
+    "title": "Q36: What is the default access modifier for members of a class in TypeScript?",
+    "answer": "The default access modifier is public.",
+    "level": "junior"
+  },
+  {
+    "id": 37,
+    "title": "Q37: How TypeScript is optionally statically typed language?",
+    "answer": "TypeScript allows static typing but can also infer types, making typing optional yet available.",
+    "level": "mid"
+  },
+  {
+    "id": 38,
+    "title": "Q38: How to use external plain JavaScript libraries in TypeScript?",
+    "answer": "Use declaration files (.d.ts) to provide type definitions for the JavaScript library.",
+    "level": "mid"
+  },
+  {
+    "id": 39,
+    "title": "Q39: Does TypeScript supports function overloading?",
+    "answer": "Yes, TypeScript supports defining multiple type signatures for a single function.",
+    "level": "mid"
+  },
+  {
+    "id": 40,
+    "title": "Q40: Explain how and why we could use property decorators in TS?",
+    "answer": "Property decorators are used to observe, modify, or replace a class's properties at design time.",
+    "level": "senior"
+  },
+  {
+    "id": 41,
+    "title": "Q41: What are different components of TypeScript?",
+    "answer": "Key components include the TypeScript language, the TypeScript compiler, and the TypeScript editor.",
+    "level": "mid"
+  },
+  {
+    "id": 42,
+    "title": "Q42: How can you allow classes defined in a module to be accessible outside of the module?",
+    "answer": "Export the class using `export` keyword to make it accessible outside the module.",
+    "level": "mid"
+  },
+  {
+    "id": 43,
+    "title": "Q43: What is the difference between Private and Protected variables in TypeScript?",
+    "answer": "Private variables are accessible only within the class, while protected variables are accessible in subclass.",
+    "level": "mid"
+  },
+  {
+    "id": 44,
+    "title": "Q44: What is the difference between enum and const enums?",
+    "answer": "Const enums enable compiler to inline enum values, reducing runtime overhead.",
+    "level": "mid"
+  },
+  {
+    "id": 45,
+    "title": "Q45: Why do we need to use abstract keyword for classes and their methods in TypeScript?",
+    "answer": "It defines base classes and methods that other classes must implement without providing full implementation.",
+    "level": "mid"
+  },
+  {
+    "id": 46,
+    "title": "Q46: What is Structural Typing?",
+    "answer": "Structural typing ensures compatibility by comparing object members rather than names or types.",
+    "level": "senior"
+  },
+  {
+    "id": 47,
+    "title": "Q47: What is Mixin Class in TypeScript?",
+    "answer": "Mixin class allows composition of classes from reusable components to achieve multiple inheritance-like behavior.",
+    "level": "senior"
+  },
+  {
+    "id": 48,
+    "title": "Q48: What is the unique symbol is used for?",
+    "answer": "Unique symbols create globally unique values useful for properties that must not conflict.",
+    "level": "senior"
+  },
+  {
+    "id": 49,
+    "title": "Q49: How to make a readonly tuple type in TypeScript?",
+    "answer": "Use the `readonly` modifier before the tuple definition: `readonly [number, string]`.",
+    "level": "mid"
+  },
+  {
+    "id": 50,
+    "title": "Q50: Explain Project References and its benefits",
+    "answer": "Project references allow TypeScript projects to depend on other projects, enabling incremental builds.",
+    "level": "senior"
+  },
+  {
+    "id": 51,
+    "title": "Q51: What are the use cases for a const assertion?",
+    "answer": "Const assertions deduce exact literal values and immutable array types, aiding in safer inferences.",
+    "level": "mid"
+  },
+  {
+    "id": 52,
+    "title": "Q52: How to choose between never, unknown, and any in TypeScript?",
+    "answer": "Use 'never' for impossible types, 'unknown' for types that need validation, 'any' for flexible usage without checks.",
+    "level": "senior"
+  },
+  {
+    "id": 53,
+    "title": "Q53: What is the fundamental difference between Optional Chaining (?.) and Non-null assertion operator (!) in TypeScript?",
+    "answer": "Optional chaining returns undefined for nullish properties while non-null assertion trusts its operand is non-null.",
+    "level": "mid"
+  },
+  {
+    "id": 54,
+    "title": "Q54: What does Short-Circuiting mean in TypeScript?",
+    "answer": "Short-circuiting evaluates Boolean expressions from left to right, stopping once the result is determined.",
+    "level": "junior"
+  },
+  {
+    "id": 55,
+    "title": "Q55: List a few rules of private fields in TypeScript",
+    "answer": "Private fields use # and are only accessible within the declaring class.",
+    "level": "mid"
+  },
+  {
+    "id": 56,
+    "title": "Q56: What are some use cases of template literal types in TypeScript?",
+    "answer": "Template literal types facilitate complex string manipulation, enforce formats, and infer patterns for type safety.",
+    "level": "senior"
+  },
+  {
+    "id": 57,
+    "title": "Q57: How to check the type of a variable or constant in TypeScript?",
+    "answer": "Use typeof or type guards to determine and narrow the type of a value.",
+    "level": "junior"
+  },
+  {
+    "id": 58,
+    "title": "Q58: How to add types to an interface from another interface or extend types in TypeScript?",
+    "answer": "Use the `extends` keyword to add types from one interface to another.",
+    "level": "mid"
+  },
+  {
+    "id": 59,
+    "title": "Q59: What is the difference between type and interface in TypeScript?",
+    "answer": "Interfaces are for defining object shapes. Types can represent any structure, including primitives and unions.",
+    "level": "mid"
+  },
+  {
+    "id": 60,
+    "title": "Q60: What is the difference between interface vs type statements?",
+    "answer": "Interfaces augment objects; types are more versatile, handling primitives, unions, and intersections.",
+    "level": "mid"
+  },
+  {
+    "id": 61,
+    "title": "Q61: How does override keyword works in TypeScript?",
+    "answer": "Override explicitly states a method in a subclass should override the base class method.",
+    "level": "mid"
+  },
+  {
+    "id": 62,
+    "title": "Q62: What is Mixin Constructor Type?",
+    "answer": "Mixin constructor types help combine behaviors of multiple classes into one.",
+    "level": "senior"
+  },
+  {
+    "id": 63,
+    "title": "Q63: What is dynamic import expression?",
+    "answer": "Dynamic import allows runtime import of modules, useful for code splitting and lazy loading.",
+    "level": "mid"
+  },
+  {
+    "id": 64,
+    "title": "Q64: Explain what is never datatype in TypeScript?",
+    "answer": "The never type represents values that never occur, used for wholly unreachable code.",
+    "level": "mid"
+  },
+  {
+    "id": 65,
+    "title": "Q65: Explain what is Currying in TypeScript?",
+    "answer": "Currying transforms a function to take arguments one at a time, creating a sequence of functions.",
+    "level": "senior"
+  },
+  {
+    "id": 66,
+    "title": "Q66: Why is the infer keyword needed in TypeScript?",
+    "answer": "Infer in conditional types helps extract and manipulate types directly, enhancing type transformations.",
+    "level": "senior"
+  },
+  {
+    "id": 67,
+    "title": "Q67: What is the difference between unknown and any type?",
+    "answer": "Unknown is safer needing type checks; any disables type checks.",
+    "level": "mid"
+  },
+  {
+    "id": 68,
+    "title": "Q68: How to exclude property from type in TypeScript?",
+    "answer": "Use the Omit utility type: `Omit<Type, Property>`.",
+    "level": "mid"
+  },
+  {
+    "id": 69,
+    "title": "Q69: Why we need Index Signature in TypeScript?",
+    "answer": "Index signatures allow flexible access to object properties through dynamic keys.",
+    "level": "mid"
+  },
+  {
+    "id": 70,
+    "title": "Q70: How to define a TypeScript class which has an index signature?",
+    "answer": "Include an index signature within the class: `[key: string]: string`.",
+    "level": "mid"
+  },
+  {
+    "id": 71,
+    "title": "Q71: What is one thing you would change about TypeScript?",
+    "answer": "Potentially, ease of tooling integration could be further improved for smoother initial setup.",
+    "level": "junior"
+  },
+  {
+    "id": 72,
+    "title": "Q72: Explain when to use declare keyword in TypeScript",
+    "answer": "Use declare for ambient declarations to introduce types in TypeScript without explicit implementation.",
+    "level": "mid"
+  },
+  {
+    "id": 73,
+    "title": "Q73: Is it possible to generate TypeScript declaration files from JS library?",
+    "answer": "Yes, use tools like TypeScript compiler or third-party tools to generate these declaration files.",
+    "level": "mid"
+  },
+  {
+    "id": 74,
+    "title": "Q74: What are Ambients in TypeScripts and when to use them?",
+    "answer": "Ambients declare external code types not written in TypeScript, using declare statements for libraries.",
+    "level": "mid"
+  },
+  {
+    "id": 75,
+    "title": "Q75: Explain the difference between declare enum vs declare const enum",
+    "answer": "Declare enum outlines an enum type, while declare const enum allows inlining for performance.",
+    "level": "senior"
+  },
+  {
+    "id": 76,
+    "title": "Q76: How the never datatype can be useful?",
+    "answer": "Never is useful for unreachable function returns or error handling, informing the developer of missteps.",
+    "level": "mid"
+  },
+  {
+    "id": 77,
+    "title": "Q77: What is the need of --incremental flag in TypeScript?",
+    "answer": "The --incremental flag speeds up compilation by storing build info and skipping unchanged files.",
+    "level": "senior"
+  },
+  {
+    "id": 78,
+    "title": "Q78: What are the differences between the private keyword and private fields in TypeScript?",
+    "answer": "Private keyword controls TypeScript visibility, while private fields with # are truly private at runtime.",
+    "level": "mid"
+  },
+  {
+    "id": 79,
+    "title": "Q79: What is the benefit of import assertions features in TypeScript?",
+    "answer": "Import assertions ensure compatibility and correctness by verifying expected module formats and types.",
+    "level": "senior"
+  },
+  {
+    "id": 80,
+    "title": "Q80: How to make a union type from a type alias or interface properties in TypeScript?",
+    "answer": "Extract with keyof to form union types across type or interface properties.",
+    "level": "senior"
+  },
+  {
+    "id": 81,
+    "title": "Q81: What does the tsconfig option lib do?",
+    "answer": "The lib option in tsconfig.json specifies TypeScript library files that provide environment-specific APIs.",
+    "level": "mid"
+  }
+]
