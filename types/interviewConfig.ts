@@ -1,10 +1,10 @@
 
 export const RoleType = {
-    FE_DEV_REACT: "FrontDeveloperReact",
-    FE_DEV: "FrontDeveloper",
-    FULL_STACK_NODE_REACT: "FullStackReactNodeDev",
-    BE_NODE: "NodeJsDev",
-    BE_JAVA: "JavaDev",
+    FE_DEV_REACT: "fe-react",
+    FE_DEV: "fe-general",
+    FULL_STACK_NODE_REACT: "full-stack-node-react",
+    BE_NODE: "be-node",
+    BE_JAVA: "be-java",
 } as const;
 
 export const QuestionsSets = {

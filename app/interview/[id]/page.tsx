@@ -2,11 +2,12 @@ import { MakeAnswerForm } from "../../../components/MakeAnswerForm";
 import { Question } from "../../../types/question";
 import { promises as fs } from "fs";
 import path from "path";
-import {InterviewConfig} from "../../../types/interviewConfig";
+import {InterviewConfig, QuestionsSets, QuestionsSetsValues, RoleType} from "../../../types/interviewConfig";
+import {RolesConfig} from "../../../constants/rolesConfig";
 
 interface QuestionCategoryProps {
   params: {
-    id: string;
+    id: RoleType;
   };
   searchParams: InterviewConfig
 }
@@ -49,6 +50,20 @@ async function getDataFromJSONFile(id: string, questionsNumber: number): Promise
   }
 }
 
+async function getQuestionsSetForSelectedRole(role: RoleType, questionsLimit: number) {
+  const rolesSets = RolesConfig[role]
+  const rolesSetsIds = Object.keys(rolesSets) as QuestionsSetsValues[]
+
+  const questionsForRole:Question[] = [];
+
+  for (const rolesSetsIdsKey of rolesSetsIds) {
+    const questionsForSet = await getDataFromJSONFile(rolesSetsIdsKey, 1);
+    questionsForRole.push(...questionsForSet)
+  }
+
+  return questionsForRole;
+}
+
 export default async function QuestionCategory(props: QuestionCategoryProps) {
   //based on query params get random number of question for chosen interview
 
@@ -56,7 +71,7 @@ export default async function QuestionCategory(props: QuestionCategoryProps) {
   const roleId = props.params.id
   const questionsNumber = props.searchParams.questionsNumber ? parseInt(props.searchParams.questionsNumber) : 0
 
-  const questionsWithAnswers = await getDataFromJSONFile(roleId, questionsNumber);
+  const questionsWithAnswers = await getQuestionsSetForSelectedRole(roleId, questionsNumber);
 
   return (
     <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100%"}}>

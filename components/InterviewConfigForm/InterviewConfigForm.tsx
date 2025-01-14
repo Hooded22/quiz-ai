@@ -58,9 +58,11 @@ const {push} = useRouter();
                     <label className={styles.label} htmlFor="roleType">Role Type *</label>
                     <select className={styles.select} id="roleType" name="roleType" value={formState.roleType} onChange={handleChange}>
                         <option value="">Select...</option>
-                        <option value="Javascript">Javascript</option>
-                        <option value="NodeJs">Node.js</option>
-                        <option value="Java">Java</option>
+                        <option value={RoleType.FE_DEV_REACT}>Front-end with React</option>
+                        <option value={RoleType.FE_DEV}>Front-end</option>
+                        <option value={RoleType.BE_JAVA}>Back-end with Java</option>
+                        <option value={RoleType.BE_NODE}>Back-end with Node</option>
+                        <option value={RoleType.FULL_STACK_NODE_REACT}>Full-stack with React and Node</option>
                     </select>
                 </div>
 

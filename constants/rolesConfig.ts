@@ -1,6 +1,10 @@
 import {QuestionsSets, QuestionsSetsValues, RoleType} from "../types/interviewConfig";
 
-export type RolesConfigType = {[key in RoleType]: {[key in string]: number}}
+export type RolesConfigType = {
+    [key in RoleType]: Partial<{
+        [key in QuestionsSetsValues]: number;
+    }>
+};
 
 export const RolesConfig: RolesConfigType = {
     [RoleType.FE_DEV]: {
