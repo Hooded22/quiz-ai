@@ -50,15 +50,44 @@ async function getDataFromJSONFile(id: string, questionsNumber: number): Promise
   }
 }
 
-async function getQuestionsSetForSelectedRole(role: RoleType, questionsLimit: number) {
-  const rolesSets = RolesConfig[role]
-  const rolesSetsIds = Object.keys(rolesSets) as QuestionsSetsValues[]
+async function getQuestionsSetForSelectedRole(
+    role: RoleType,
+    questionsLimit: number
+) {
+  const rolesSets = RolesConfig[role];
+  const sortedRoleSets = Object.entries(rolesSets).sort(
+      ([, a], [, b]) => b - a
+  ) as [QuestionsSetsValues, number][]; // Sort by percentage
 
-  const questionsForRole:Question[] = [];
+  const questionsForRole: Question[] = [];
 
-  for (const rolesSetsIdsKey of rolesSetsIds) {
-    const questionsForSet = await getDataFromJSONFile(rolesSetsIdsKey, 1);
-    questionsForRole.push(...questionsForSet)
+  const questionsNeeded = new Map<QuestionsSetsValues, number>();
+  let totalAssigned = 0;
+
+  // Calculate initial question numbers based on percentages
+  for (const [key, percentage] of sortedRoleSets) {
+    const numQuestions = Math.floor((percentage / 100) * questionsLimit);
+    if (totalAssigned + numQuestions <= questionsLimit) {
+      questionsNeeded.set(key, numQuestions);
+      totalAssigned += numQuestions;
+    }
+  }
+
+  // Adjust by adding questions to the highest priority set if needed
+  if (totalAssigned < questionsLimit) {
+    for (const [key] of sortedRoleSets) {
+      const currentCount = questionsNeeded.get(key) || 0;
+      if (totalAssigned + 1 <= questionsLimit) {
+        questionsNeeded.set(key, currentCount + 1);
+        totalAssigned++;
+      }
+    }
+  }
+
+  // Fetch questions for each set
+  for (const [key, count] of Array.from(questionsNeeded)) {
+    const questionsForSet = await getDataFromJSONFile(key, count);
+    questionsForRole.push(...questionsForSet.slice(0, count));
   }
 
   return questionsForRole;
@@ -71,7 +100,11 @@ export default async function QuestionCategory(props: QuestionCategoryProps) {
   const roleId = props.params.id
   const questionsNumber = props.searchParams.questionsNumber ? parseInt(props.searchParams.questionsNumber) : 0
 
+
   const questionsWithAnswers = await getQuestionsSetForSelectedRole(roleId, questionsNumber);
+
+  console.log("questionsForRole",questionsWithAnswers)
+
 
   return (
     <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100%"}}>

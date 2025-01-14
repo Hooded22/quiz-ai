@@ -12,8 +12,20 @@ export const RolesConfig: RolesConfigType = {
         [QuestionsSets.CSS]: 10,
         [QuestionsSets.JAVASCRIPT]: 70
     },
-    [RoleType.FE_DEV_REACT]: {},
-    [RoleType.BE_JAVA]: {},
-    [RoleType.BE_NODE]: {},
-    [RoleType.FULL_STACK_NODE_REACT]: {}
+    [RoleType.FE_DEV_REACT]: {
+        [QuestionsSets.JAVASCRIPT]: 50,
+        [QuestionsSets.REACT]: 50
+    },
+    [RoleType.BE_JAVA]: {
+        [QuestionsSets.JAVA]: 100
+    },
+    [RoleType.BE_NODE]: {
+        [QuestionsSets.JAVASCRIPT]: 50,
+        [QuestionsSets.NODEJS]: 50
+    },
+    [RoleType.FULL_STACK_NODE_REACT]: {
+        [QuestionsSets.JAVASCRIPT]: 60,
+        [QuestionsSets.NODEJS]: 20,
+        [QuestionsSets.REACT]: 20
+    }
 }
