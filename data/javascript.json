@@ -1,518 +1,604 @@
 [
   {
-    "id":1,
-    "title":"Q1: What is the object type?",
+    "id":"javascript-1",
+    "title":"What is the object type?",
     "answer":"The object type depends on the context in which it is used. For example, if the object is a student, the object type would be 'student'.",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":2,
-    "title":"Q2: Explain arrays in JavaScript",
+    "id":"javascript-2",
+    "title":"Explain arrays in JavaScript",
     "answer":"Arrays in JavaScript are ordered lists of values that can be of any type, including strings, numbers, objects, and even other arrays. They are index-based, meaning that...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":3,
-    "title":"Q3: What is typeof operator?",
+    "id":"javascript-3",
+    "title":"What is typeof operator?",
     "answer":"The typeof operator is a JavaScript operator that returns the data type of its operand in the form of a string. It can be used to determine the type of a variable, a literal, an object, or any other value.",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":4,
-    "title":"Q4: Explain equality in JavaScript",
+    "id":"javascript-4",
+    "title":"Explain equality in JavaScript",
     "answer":"Equality in JavaScript is expressed through the double equals operator (==). This operator checks... For example, '5' == 5 would return true.",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":5,
-    "title":"Q5: What is Scope in JavaScript?",
+    "id":"javascript-5",
+    "title":"What is Scope in JavaScript?",
     "answer":"Scope in JavaScript refers to the current context of execution. It determines the visibility of variables and functions defined in the code, as well as other aspects of the execution environment...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":6,
-    "title":"Q6: Explain what is Linear (Sequential) Search and when may we use one? JSPY",
+    "id":"javascript-6",
+    "title":"Explain what is Linear (Sequential) Search and when may we use one? JSPY",
     "answer":"Linear (sequential) search is a method of searching for a particular item in a collection of items by checking each item in order one-by-one until the desired item is found...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":7,
-    "title":"Q7: Explain Values and Types in JavaScript",
+    "id":"javascript-7",
+    "title":"Explain Values and Types in JavaScript",
     "answer":"",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":8,
-    "title":"Q8: What is let keyword in JavaScript?",
+    "id":"javascript-8",
+    "title":"What is let keyword in JavaScript?",
     "answer":"The let keyword is used to declare a block-scoped local variable. Variables declared using let are accessible only within the block they are defined in, unlike variables declared with the var keyword...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":9,
-    "title":"Q9: Explain what is Binary Search JSJavaPY",
+    "id":"javascript-9",
+    "title":"Explain what is Binary Search JSJavaPY",
     "answer":"Binary Search is a search algorithm used to locate an element within a sorted array...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":10,
-    "title":"Q10: Explain the same-origin policy with regards to JavaScript.",
+    "id":"javascript-10",
+    "title":"Explain the same-origin policy with regards to JavaScript.",
     "answer":"The same-origin policy is a security measure that restricts how a script hosted on one origin can interact with resources on a different origin...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":12,
-    "title":"Q12: Is there anyway to force using strict mode in Node.js?:",
+    "id":"javascript-12",
+    "title":"Is there anyway to force using strict mode in Node.js?:",
     "answer":"Yes, it is possible to force the use of strict mode in Node.js. This can be done by adding the following line of code at the top of the Node.js file: 'use strict';",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":13,
-    "title":"Q13: Why would you use something like the load event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?:",
+    "id":"javascript-13",
+    "title":"Why would you use something like the load event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?:",
     "answer":"The load event is used to detect when a web page or resource has finished loading...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":14,
-    "title":"Q14: What is strict mode?:",
+    "id":"javascript-14",
+    "title":"What is strict mode?:",
     "answer":"Strict mode is a feature in ECMAScript 5 (ES5) that allows you to place a program, or a function, in a 'strict' operating context...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":15,
-    "title":"Q15: What's the difference between Host objects and Native objects?:",
+    "id":"javascript-15",
+    "title":"What's the difference between Host objects and Native objects?:",
     "answer":"Host objects are provided by the host environment (such as the browser) and are not part of the JavaScript language...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":16,
-    "title":"Q16: What language constructions do you use for iterating over object properties and array items?:",
+    "id":"javascript-16",
+    "title":"What language constructions do you use for iterating over object properties and array items?:",
     "answer":"For iterating over object properties, the most common language constructions are for-in loops and Object.keys()...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":17,
-    "title":"Q17: What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?:",
+    "id":"javascript-17",
+    "title":"What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?:",
     "answer":"",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":18,
-    "title":"Q18: Explain event bubbling and how one may prevent it:",
+    "id":"javascript-18",
+    "title":"Explain event bubbling and how one may prevent it:",
     "answer":"Event bubbling is a process by which the event is propagated from the targeted element to its parent elements...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":19,
-    "title":"Q19: What does use strict do?:",
+    "id":"javascript-19",
+    "title":"What does use strict do?:",
     "answer":"Use strict is a keyword in JavaScript that enables strict mode, which is a way to write secure and more optimized code...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":20,
-    "title":"Q20: Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?:",
+    "id":"javascript-20",
+    "title":"Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?:",
     "answer":"It is important to leave the global scope of a website as-is for a number of reasons...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":21,
-    "title":"Q21: What is a Polyfill?:",
+    "id":"javascript-21",
+    "title":"What is a Polyfill?:",
     "answer":"A polyfill is a piece of code (usually JavaScript) used to provide modern functionality on older browsers that do not natively support it...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":22,
-    "title":"Q22: Explain Null and Undefined in JavaScript:Null:",
+    "id":"javascript-22",
+    "title":"Explain Null and Undefined in JavaScript:Null:",
     "answer":"Null is a special data type in JavaScript which can have only one value: null...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":23,
-    "title":"Q23: What's the difference between throw Error('msg') vs throw new Error('msg')?:",
+    "id":"javascript-23",
+    "title":"What's the difference between throw Error('msg') vs throw new Error('msg')?:",
     "answer":"The difference is that throw Error('msg') will throw a generic JavaScript error, while throw new Error('msg') will throw an instance of the JavaScript Error object...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":24,
-    "title":"Q24: What is Callback Hell and what is the main cause of it? :",
+    "id":"javascript-24",
+    "title":"What is Callback Hell and what is the main cause of it? :",
     "answer":"Callback Hell is a term used to describe a coding style in which callbacks or functions are nested within each other, leading to unreadable and hard-to-debug code...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":25,
-    "title":"Q25: Explain what is Interpolation Search JSPY :",
+    "id":"javascript-25",
+    "title":"Explain what is Interpolation Search JSPY :",
     "answer":"Interpolation Search is an algorithm used for searching for a given item in a sorted list by using the information about the relative location of the desired item...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":26,
-    "title":"Q26: What is IIFEs (Immediately Invoked Function Expressions)?:",
+    "id":"javascript-26",
+    "title":"What is IIFEs (Immediately Invoked Function Expressions)?:",
     "answer":"An immediately-invoked function expression (IIFE) is a JavaScript function that runs as soon as it is defined...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":27,
-    "title":"Q27: What is Coercion in JavaScript?:",
+    "id":"javascript-27",
+    "title":"What is Coercion in JavaScript?:",
     "answer":"Coercion in JavaScript is the process of converting a value from one type to another...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":28,
-    "title":"Q28: What is the difference between a shim and a polyfill?:",
+    "id":"javascript-28",
+    "title":"What is the difference between a shim and a polyfill?:",
     "answer":"A shim is a piece of code that adds a feature that is missing from a browser or environment...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":29,
-    "title":"Q29: What is a Jump (or Block) Search? JSJavaPY :",
+    "id":"javascript-29",
+    "title":"What is a Jump (or Block) Search? JSJavaPY :",
     "answer":"A jump search, or block search, is a searching algorithm that works by jumping ahead a set number of elements at a time...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":30,
-    "title":"Q30: What is the definition of a Higher-Order Function?:",
+    "id":"javascript-30",
+    "title":"What is the definition of a Higher-Order Function?:",
     "answer":"A Higher-Order Function is a function that takes one or more functions as arguments, or returns a function as a result.",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":31,
-    "title":"Q31: What do you think of AMD vs CommonJS?:",
+    "id":"javascript-31",
+    "title":"What do you think of AMD vs CommonJS?:",
     "answer":"AMD (Asynchronous Module Definition) and CommonJS are both popular module systems used in JavaScript development...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":32,
-    "title":"Q32: Explain the differences on the usage of foo between function foo() {} and var foo = function() {}:",
+    "id":"javascript-32",
+    "title":"Explain the differences on the usage of foo between function foo() {} and var foo = function() {}:",
     "answer":"The main difference between the two is that the first one creates a named function called foo, and the second one creates an anonymous function assigned to a variable called foo...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":33,
-    "title":"Q33: What is the drawback of creating true private in JavaScript?:",
+    "id":"javascript-33",
+    "title":"What is the drawback of creating true private in JavaScript?:",
     "answer":"The main drawback of creating true private variables in JavaScript is that it requires more effort to implement than using standard public variables...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":34,
-    "title":"Q34: What's the difference between .call and .apply?:",
+    "id":"javascript-34",
+    "title":"What's the difference between .call and .apply?:",
     "answer":"The main difference between .call and .apply is the way in which arguments are passed to the function...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":35,
-    "title":"Q35: What is the preferred syntax for defining enums in JavaScript?:",
+    "id":"javascript-35",
+    "title":"What is the preferred syntax for defining enums in JavaScript?:",
     "answer":"The preferred syntax for defining enums in JavaScript is the object literal syntax...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":36,
-    "title":"Q36: Describe Closure concept in JavaScript as best as you could:",
+    "id":"javascript-36",
+    "title":"Describe Closure concept in JavaScript as best as you could:",
     "answer":"A closure is a feature in JavaScript that allows a function to have access to its surrounding state or environment, even after the outer function has returned...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":37,
-    "title":"Q37: Could you explain the difference between ES5 and ES6?:",
+    "id":"javascript-37",
+    "title":"Could you explain the difference between ES5 and ES6?:",
     "answer":"ES5 (ECMAScript 5) is the fifth version of the ECMAScript language specification. It was finalized in 2009 and is supported by most modern browsers...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":38,
-    "title":"Q38: When should we use generators in ES6?:",
+    "id":"javascript-38",
+    "title":"When should we use generators in ES6?:",
     "answer":"Generators can be used to pause and resume functions in ES6. Generators are useful for asynchronous programming...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":39,
-    "title":"Q39: Explain Function.prototype.bind.:",
+    "id":"javascript-39",
+    "title":"Explain Function.prototype.bind.:",
     "answer":"Function.prototype.bind is a method on all functions that allows you to create a new function with the same body and scope as the original function...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":40,
-    "title":"Q40: What are the benefits of using spread syntax in ES6 and how is it different from rest syntax?:",
+    "id":"javascript-40",
+    "title":"What are the benefits of using spread syntax in ES6 and how is it different from rest syntax?:",
     "answer":"Spread syntax allows developers to expand an iterable collection of elements (such as an array or object) into individual elements...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":41,
-    "title":"Q41: When should I use Arrow Functions in ES6?:",
+    "id":"javascript-41",
+    "title":"When should I use Arrow Functions in ES6?:",
     "answer":"Arrow functions should be used when you need to write a function that has a concise syntax...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":42,
-    "title":"Q42: Explain the difference between undefined and not defined in JavaScript?:",
+    "id":"javascript-42",
+    "title":"Explain the difference between undefined and not defined in JavaScript?:",
     "answer":"Undefined is a variable that has been declared but has not yet been assigned a value...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":43,
-    "title":"Q43: What are the advantages and disadvantages of using use strict?:",
+    "id":"javascript-43",
+    "title":"What are the advantages and disadvantages of using use strict?:",
     "answer":"",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":44,
-    "title":"Q44: What is Currying?:",
+    "id":"javascript-44",
+    "title":"What is Currying?:",
     "answer":"Currying is a technique in functional programming in which a function is broken down into a series of functions that each take a single argument...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":45,
-    "title":"Q45: What are the differences between ES6 class and ES5 function constructors?:",
+    "id":"javascript-45",
+    "title":"What are the differences between ES6 class and ES5 function constructors?:",
     "answer":"ES6 classes are syntactical sugar over the ES5 function constructors. The differences between the two are...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":46,
-    "title":"Q46: Why should we use ES6 classes?:",
+    "id":"javascript-46",
+    "title":"Why should we use ES6 classes?:",
     "answer":"ES6 classes provide a much simpler and clear syntax to create objects and deal with inheritance...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":47,
-    "title":"Q47: Explain the difference between Object.freeze() vs const:",
+    "id":"javascript-47",
+    "title":"Explain the difference between Object.freeze() vs const:",
     "answer":"Object.freeze() is a method used to prevent any modifications to an object, preventing properties from being added, removed or changed...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":48,
-    "title":"Q48: How to compare two objects in JavaScript?:",
+    "id":"javascript-48",
+    "title":"How to compare two objects in JavaScript?:",
     "answer":"You can use the JavaScript comparison operators (== and ===) to compare two objects...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":50,
-    "title":"Q50: What is a closure, and how/why would you use one?:",
+    "id":"javascript-50",
+    "title":"What is a closure, and how/why would you use one?:",
     "answer":"A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":52,
-    "title":"Q52: What's a typical use case for anonymous functions?:",
+    "id":"javascript-52",
+    "title":"What's a typical use case for anonymous functions?:",
     "answer":"Anonymous functions are often used as callback functions, which are functions that are passed as arguments to other functions...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":53,
-    "title":"Q53: Suggest one simple way of removing duplicates from an array using ES6:",
+    "id":"javascript-53",
+    "title":"Suggest one simple way of removing duplicates from an array using ES6:",
     "answer":"",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":54,
-    "title":"Q54: What is generator in JS?:",
+    "id":"javascript-54",
+    "title":"What is generator in JS?:",
     "answer":"A generator in JavaScript is a function that can be paused and resumed at any time, allowing it to produce sequence of values, and potentially infinite sequences...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":55,
-    "title":"Q55: What is the difference between document load event and document DOMContentLoaded event?:",
+    "id":"javascript-55",
+    "title":"What is the difference between document load event and document DOMContentLoaded event?:",
     "answer":"The document load event is fired when the whole page, including all dependent resources, such as images and stylesheets, are loaded...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":56,
-    "title":"Q56: What's the difference between using let and var to declare a variable in ES6?:",
+    "id":"javascript-56",
+    "title":"What's the difference between using let and var to declare a variable in ES6?:",
     "answer":"The main difference between let and var is the scope in which the variables are declared...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":57,
-    "title":"Q57: What is the motivation for bringing Symbol to ES6?:",
+    "id":"javascript-57",
+    "title":"What is the motivation for bringing Symbol to ES6?:",
     "answer":"Symbol was added to ES6 to provide developers with a way to create unique, immutable, and private property keys...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":58,
-    "title":"Q58: Why is extending built-in JavaScript objects not a good idea?:",
+    "id":"javascript-58",
+    "title":"Why is extending built-in JavaScript objects not a good idea?:",
     "answer":"Extending built-in JavaScript objects can lead to unexpected and inconsistent behavior...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":59,
-    "title":"Q59: What advantages are using arrow functions?:",
+    "id":"javascript-59",
+    "title":"What advantages are using arrow functions?:",
     "answer":"",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":60,
-    "title":"Q60: What is the difference between Anonymous and Named functions?:",
+    "id":"javascript-60",
+    "title":"What is the difference between Anonymous and Named functions?:",
     "answer":"Anonymous functions are those that are declared without a name, usually as part of a larger statement...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":61,
-    "title":"Q61: What is export default in JavaScript? :",
+    "id":"javascript-61",
+    "title":"What is export default in JavaScript? :",
     "answer":"Export default in JavaScript is a special keyword that is used to export a single module or value from a script file...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":62,
-    "title":"Q62: What is the new keyword in JavaScript?:",
+    "id":"javascript-62",
+    "title":"What is the new keyword in JavaScript?:",
     "answer":"The new keyword in JavaScript is used to create a new instance of an object...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":63,
-    "title":"Q63: Explain Prototype Inheritance in JavaScript?:",
+    "id":"javascript-63",
+    "title":"Explain Prototype Inheritance in JavaScript?:",
     "answer":"Prototype inheritance in JavaScript is a way of sharing properties and methods between different objects...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":64,
-    "title":"Q64: What does the term Transpiling stand for?:",
+    "id":"javascript-64",
+    "title":"What does the term Transpiling stand for?:",
     "answer":"Transpiling is a term used to describe the process of converting code written in one programming language into another...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":65,
-    "title":"Q65: Can you give an example for destructuring an object or an array in ES6?:",
+    "id":"javascript-65",
+    "title":"Can you give an example for destructuring an object or an array in ES6?:",
     "answer":"",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":66,
-    "title":"Q66: Explain the Prototype Design Pattern:",
+    "id":"javascript-66",
+    "title":"Explain the Prototype Design Pattern:",
     "answer":"Prototype design pattern is a creational design pattern that is used to create objects by cloning an existing object...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":67,
-    "title":"Q67: Describe the JS module design pattern:",
+    "id":"javascript-67",
+    "title":"Describe the JS module design pattern:",
     "answer":"The JavaScript Module design pattern is a commonly used approach to organizing code into reusable chunks...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":68,
-    "title":"Q68: Can you describe the main difference between a .forEach loop and a .map() loop and why you would pick one versus the other?:",
+    "id":"javascript-68",
+    "title":"Can you describe the main difference between a .forEach loop and a .map() loop and why you would pick one versus the other?:",
     "answer":"The main difference between a .forEach loop and a .map() loop is that the .forEach loop does not return a new array...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":70,
-    "title":"Q70: How can you share code between files?:",
+    "id":"javascript-70",
+    "title":"How can you share code between files?:",
     "answer":"You can share code between files by using a library, creating a module, or using a source code management system...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":71,
-    "title":"Q71: What are the actual uses of ES6 WeakMap?:",
+    "id":"javascript-71",
+    "title":"What are the actual uses of ES6 WeakMap?:",
     "answer":"ES6 WeakMap objects are used to store key/value pairs in which the keys are objects and the values can be arbitrary values...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":72,
-    "title":"Q72: Explain difference between: function Person(){}, var person = Person(), and var person = new Person()?:",
+    "id":"javascript-72",
+    "title":"Explain difference between: function Person(){}, var person = Person(), and var person = new Person()?:",
     "answer":"Function Person(){} is a function declaration that creates a function object...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":73,
-    "title":"Q73: Check if a given string is a isomorphic:",
+    "id":"javascript-73",
+    "title":"Check if a given string is a isomorphic:",
     "answer":"Yes, a given string can be isomorphic...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":74,
-    "title":"Q74: What is Hoisting in JavaScript?:",
+    "id":"javascript-74",
+    "title":"What is Hoisting in JavaScript?:",
     "answer":"Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":75,
-    "title":"Q75: When should you NOT use arrow functions in ES6? Name three or more cases.:",
+    "id":"javascript-75",
+    "title":"When should you NOT use arrow functions in ES6? Name three or more cases.:",
     "answer":"",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":76,
-    "title":"Q76: What's the difference between a variable that is: null, undefined or undeclared? How would you go about checking for any of these states?:",
+    "id":"javascript-76",
+    "title":"What's the difference between a variable that is: null, undefined or undeclared? How would you go about checking for any of these states?:",
     "answer":"Null is a value that is explicitly assigned to a variable that means it has no value...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":77,
-    "title":"Q77: What is the Temporal Dead Zone in ES6?:",
+    "id":"javascript-77",
+    "title":"What is the Temporal Dead Zone in ES6?:",
     "answer":"The Temporal Dead Zone (TDZ) is a mechanism in ECMAScript 6 (ES6) which prevents the use of a variable before it has been declared...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":78,
-    "title":"Q78: Explain how JSONP works (and how it's not really Ajax):",
+    "id":"javascript-78",
+    "title":"Explain how JSONP works (and how it's not really Ajax):",
     "answer":"JSONP (JSON with padding) is an unconventional technique used to bypass the same-origin policy enforced by modern browsers...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":79,
-    "title":"Q79: Could you compare usage of Module Pattern vs Constructor/Prototype pattern?:",
+    "id":"javascript-79",
+    "title":"Could you compare usage of Module Pattern vs Constructor/Prototype pattern?:",
     "answer":"The Module Pattern is a design pattern used to create a single global object with a set of private properties and methods...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":80,
-    "title":"Q80: What tools can be used to assure consistent code style?:",
+    "id":"javascript-80",
+    "title":"What tools can be used to assure consistent code style?:",
     "answer":"Answer: Commonly used tools to ensure consistent code style include code linters, code formatters, and code style checkers...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":81,
-    "title":"Q81: Does JavaScript have a map function to iterate over an object properties? :",
+    "id":"javascript-81",
+    "title":"Does JavaScript have a map function to iterate over an object properties? :",
     "answer":"Yes, JavaScript has a map function which can be used to iterate over an object's properties.",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":82,
-    "title":"Q82: When would you use import * as X from 'X' ? :",
+    "id":"javascript-82",
+    "title":"When would you use import * as X from 'X' ? :",
     "answer":"You would use 'import * as X from 'X'' when you want to import all of the exports from a module and assign them to a single variable called X...",
-    "level":"junior"
+    "level":"junior",
+    "category":"javascript"
   },
   {
-    "id":84,
-    "title":"Q84: What's the difference between ES6 Map and WeakMap?:",
+    "id":"javascript-84",
+    "title":"What's the difference between ES6 Map and WeakMap?:",
     "answer":"The main difference between ES6 Map and WeakMap is that a WeakMap only holds objects as keys and does not have any methods for iteration...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":85,
-    "title":"Q85: What is the difference between the await keyword and the yield keyword?:",
+    "id":"javascript-85",
+    "title":"What is the difference between the await keyword and the yield keyword?:",
     "answer":"The await keyword is used to pause the execution of an async function and wait for the promise to be resolved...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":86,
-    "title":"Q86: Compare Async/Await and Generators usage to achieve same functionality:",
+    "id":"javascript-86",
+    "title":"Compare Async/Await and Generators usage to achieve same functionality:",
     "answer":"Both Async/Await and Generators can be used to achieve asynchronous programming in JavaScript.",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":87,
-    "title":"Q87: How to deep-freeze object in JavaScript?:",
+    "id":"javascript-87",
+    "title":"How to deep-freeze object in JavaScript?:",
     "answer":"You can't deep-freeze an object in JavaScript. However, you can use Object.freeze() to freeze the object at the root level...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":88,
-    "title":"Q88: Is it possible to reset an ECMAScript 6 generator to its initial state?:",
+    "id":"javascript-88",
+    "title":"Is it possible to reset an ECMAScript 6 generator to its initial state?:",
     "answer":"Yes, it is possible to reset an ECMAScript 6 generator to its initial state...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":90,
-    "title":"Q90: In JavaScript, why is the this operator inconsistent?:",
+    "id":"javascript-90",
+    "title":"In JavaScript, why is the this operator inconsistent?:",
     "answer":"The this operator can be inconsistent in JavaScript because it depends on the context in which it is used...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   },
   {
-    "id":91,
-    "title":"Q91: Can you give an example of a curry function and why this syntax offers an advantage?:",
+    "id":"javascript-91",
+    "title":"Can you give an example of a curry function and why this syntax offers an advantage?:",
     "answer":"A curry function is a function that takes a function with multiple parameters and returns a function with fewer parameters...",
-    "level":"senior"
+    "level":"senior",
+    "category":"javascript"
   },
   {
-    "id":92,
-    "title":"Q92: Does JavaScript pass by references or pass by values?:",
+    "id":"javascript-92",
+    "title":"Does JavaScript pass by references or pass by values?:",
     "answer":"JavaScript passes variables by value when primitive data types (booleans, numbers, strings, etc.) are involved...",
-    "level":"mid"
+    "level":"mid",
+    "category":"javascript"
   }
 ]

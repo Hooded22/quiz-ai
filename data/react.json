@@ -1,416 +1,485 @@
 [
   {
-    "id":1,
-    "title":"Q1: Name the different lifecycle methods for a class component",
+    "id":"react-1",
+    "title":"Name the different lifecycle methods for a class component",
     "answer":"The lifecycle methods for class components include componentDidMount, componentDidUpdate, componentWillUnmount, and shouldComponentUpdate.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":2,
-    "title":"Q2: What is {this.props.children} and when you should use it?",
+    "id":"react-2",
+    "title":"What is {this.props.children} and when you should use it?",
     "answer":"{this.props.children} is a special prop for passing elements or components as children of a component, used when rendering nested components.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":3,
-    "title":"Q3: How would you prevent a component from rendering in React?",
+    "id":"react-3",
+    "title":"How would you prevent a component from rendering in React?",
     "answer":"A component can be prevented from rendering by returning null from its render method or using React.memo to control render behavior for functional components.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":4,
-    "title":"Q4: What's the typical pattern for rendering a list of components from an array in React?",
+    "id":"react-4",
+    "title":"What's the typical pattern for rendering a list of components from an array in React?",
     "answer":"Use the Array.map method to transform items into components and ensure each component has a unique key prop.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":5,
-    "title":"Q5: What are Pure Components?",
+    "id":"react-5",
+    "title":"What are Pure Components?",
     "answer":"Pure Components are React components that only re-render when there is a change in state or props, providing a performance boost.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":6,
-    "title":"Q6: What's the typical flow of data like in a React + Redux app?",
+    "id":"react-6",
+    "title":"What's the typical flow of data like in a React + Redux app?",
     "answer":"In React with Redux, actions are dispatched from components, reducers update state based on actions, and components access the state using useSelector.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":7,
-    "title":"Q7: What are some limitations of things you shouldn't do in the component's render method in React?",
+    "id":"react-7",
+    "title":"What are some limitations of things you shouldn't do in the component's render method in React?",
     "answer":"Avoid performing side effects like API calls or state changes in the render method, as it should be a pure function.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":8,
-    "title":"Q8: How to bind methods or event handlers in JSX callbacks?",
+    "id":"react-8",
+    "title":"How to bind methods or event handlers in JSX callbacks?",
     "answer":"Bind methods using class constructor with 'func.bind(this)' or use arrow functions, which automatically bind to the class instance.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":9,
-    "title":"Q9: What is prop drilling and how can you avoid it?",
+    "id":"react-9",
+    "title":"What is prop drilling and how can you avoid it?",
     "answer":"Prop drilling is passing props through multiple layers; it can be avoided using React Context to share state across components.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":10,
-    "title":"Q10: What is the point of shouldComponentUpdate() method?",
+    "id":"react-10",
+    "title":"What is the point of shouldComponentUpdate() method?",
     "answer":"shouldComponentUpdate() allows fine control over a component's render process, potentially improving performance by preventing unnecessary updates.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":11,
-    "title":"Q11: What are forward refs?",
+    "id":"react-11",
+    "title":"What are forward refs?",
     "answer":"Forward refs allow a component to receive a ref from its parent, enabling direct interaction with the child's DOM node.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":12,
-    "title":"Q12: What do these three dots (...) in React do?",
+    "id":"react-12",
+    "title":"What do these three dots (...) in React do?",
     "answer":"The three dots are the spread operator, used for spreading array elements or object properties in lists or objects.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":13,
-    "title":"Q13: What are the lifecycle methods of ReactJS class components?",
+    "id":"react-13",
+    "title":"What are the lifecycle methods of ReactJS class components?",
     "answer":"The lifecycle methods for class components include componentDidMount, componentDidUpdate, componentWillUnmount, and shouldComponentUpdate.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":14,
-    "title":"Q14: What are the different phases of ReactJS component lifecycle?",
+    "id":"react-14",
+    "title":"What are the different phases of ReactJS component lifecycle?",
     "answer":"The phases include Initialization, Mounting, Updating, and Unmounting, each with specific methods executed during component lifecycle.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":15,
-    "title":"Q15: What is Key and benefit of using it in lists?",
+    "id":"react-15",
+    "title":"What is Key and benefit of using it in lists?",
     "answer":"Keys help React identify which elements have changed, improving performance by minimizing re-renders of unchanged elements.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":16,
-    "title":"Q16: What's the difference between an Element and a Component in React?",
+    "id":"react-16",
+    "title":"What's the difference between an Element and a Component in React?",
     "answer":"An Element is the smallest building block in React representing a DOM node, while a Component is a reusable piece of code that can have state and lifecycle methods.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":17,
-    "title":"Q17: What is the difference between ShadowDOM and VirtualDOM?",
+    "id":"react-17",
+    "title":"What is the difference between ShadowDOM and VirtualDOM?",
     "answer":"VirtualDOM is used by React to optimize UI rendering, while ShadowDOM encapsulates an element's DOM and styling, used in web components.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":18,
-    "title":"Q18: Why do class methods need to be bound to a class instance?",
+    "id":"react-18",
+    "title":"Why do class methods need to be bound to a class instance?",
     "answer":"Binding is necessary to ensure 'this' refers to the component instance, allowing access to instance properties and methods.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":19,
-    "title":"Q19: What are Stateless components in React?",
+    "id":"react-19",
+    "title":"What are Stateless components in React?",
     "answer":"Stateless components are components that render UI without maintaining internal state, typically through function components.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":20,
-    "title":"Q20: What is children prop?",
+    "id":"react-20",
+    "title":"What is children prop?",
     "answer":"The children prop is a special prop that allows passing JSX content between opening and closing tags of a component.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":21,
-    "title":"Q21: Why React uses className over class attribute?",
+    "id":"react-21",
+    "title":"Why React uses className over class attribute?",
     "answer":"React uses 'className' to avoid conflicts with the 'class' keyword in JavaScript and keep JSX HTML attributes consistent.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":22,
-    "title":"Q22: What does shouldComponentUpdate do and why is it important?",
+    "id":"react-22",
+    "title":"What does shouldComponentUpdate do and why is it important?",
     "answer":"shouldComponentUpdate allows control over component rendering, enabling performance optimizations by skipping unnecessary renders.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":23,
-    "title":"Q23: What is Lifting State Up in ReactJS?",
+    "id":"react-23",
+    "title":"What is Lifting State Up in ReactJS?",
     "answer":"Lifting state up involves moving state to a common ancestor so that multiple components can share and update it.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":24,
-    "title":"Q24: Why we should not update state directly?",
+    "id":"react-24",
+    "title":"Why we should not update state directly?",
     "answer":"Directly updating state can cause unexpected behavior and inconsistencies; always use setState to ensure updates are managed correctly.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":25,
-    "title":"Q25: What's the difference between useRef and createRef?",
+    "id":"react-25",
+    "title":"What's the difference between useRef and createRef?",
     "answer":"useRef is used in functional components, while createRef is used in class components; both provide a way to reference DOM nodes or store mutable values.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":26,
-    "title":"Q26: What is StrictMode in React?",
+    "id":"react-26",
+    "title":"What is StrictMode in React?",
     "answer":"StrictMode is a tool that highlights potential issues, such as deprecated methods or side effects, without rendering any visible UI.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":27,
-    "title":"Q27: What is the difference between createElement and cloneElement?",
+    "id":"react-27",
+    "title":"What is the difference between createElement and cloneElement?",
     "answer":"createElement creates a new element from scratch, while cloneElement copies an existing element, allowing props and children to be modified.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":28,
-    "title":"Q28: What is the significance of keys in ReactJS?",
+    "id":"react-28",
+    "title":"What is the significance of keys in ReactJS?",
     "answer":"Keys help React identify which items have changed, are added, or removed, enhancing the performance of lists or collection rendering.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":29,
-    "title":"Q29: What would be the common mistake of function being called every time the component renders?",
+    "id":"react-29",
+    "title":"What would be the common mistake of function being called every time the component renders?",
     "answer":"The mistake is invoking the function instead of passing a reference, often caused by including parentheses.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":30,
-    "title":"Q30: Are you familiar with Flux in the context of React?",
+    "id":"react-30",
+    "title":"Are you familiar with Flux in the context of React?",
     "answer":"Flux is an architectural pattern for managing data flow in applications, emphasizing a unidirectional data flow through actions, stores, and a dispatcher, serving as the foundation for Redux.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":31,
-    "title":"Q31: What is the difference between HTML and React event handling?",
+    "id":"react-31",
+    "title":"What is the difference between HTML and React event handling?",
     "answer":"React uses camelCase for event handlers and passes functions directly, whereas HTML uses string handlers or external JS methods with addEventListener.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":32,
-    "title":"Q32: What are Error Boundaries in ReactJS?",
+    "id":"react-32",
+    "title":"What are Error Boundaries in ReactJS?",
     "answer":"Error boundaries are components that catch JavaScript errors in their child component tree, logging errors and displaying fallback UI without crashing the whole app.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":33,
-    "title":"Q33: What are Uncontrolled components?",
+    "id":"react-33",
+    "title":"What are Uncontrolled components?",
     "answer":"Uncontrolled components do not rely on React state to track form data, instead using refs to access current values directly from DOM elements.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":34,
-    "title":"Q34: What's wrong with using Context in React?",
+    "id":"react-34",
+    "title":"What's wrong with using Context in React?",
     "answer":"Excessive reliance on Context can lead to performance issues due to re-renders and complex component hierarchies; misuse of provider nesting can also cause unwanted re-renders.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":35,
-    "title":"Q35: What is Components Composition in React?",
+    "id":"react-35",
+    "title":"What is Components Composition in React?",
     "answer":"Component composition in React is the practice of combining multiple components to create more complex and extensible components.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":36,
-    "title":"Q36: What does Batching mean in ReactJS? Related To: React Hooks",
+    "id":"react-36",
+    "title":"What does Batching mean in ReactJS? Related To: React Hooks",
     "answer":"Batching is the process of grouping state updates to improve rendering efficiency by triggering a single re-render instead of multiple.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":37,
-    "title":"Q37: What are the advantages of Batching in ReactJS? Related To: React Hooks",
+    "id":"react-37",
+    "title":"What are the advantages of Batching in ReactJS? Related To: React Hooks",
     "answer":"Batching in React reduces the number of re-renders, thereby optimizing performance and enabling efficient state management.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":38,
-    "title":"Q38: Which lifecycle methods of class component is replaced by useEffect in functional component? Related To: React Hooks",
+    "id":"react-38",
+    "title":"Which lifecycle methods of class component is replaced by useEffect in functional component? Related To: React Hooks",
     "answer":"useEffect can replace componentDidMount, componentDidUpdate, and componentWillUnmount in functional components.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":39,
-    "title":"Q39: Compare useState and useReducer implementations Related To: React Hooks",
+    "id":"react-39",
+    "title":"Compare useState and useReducer implementations Related To: React Hooks",
     "answer":"useState is simpler and suitable for local state while useReducer offers more control for complex state logic with reducers and actions.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":40,
-    "title":"Q40: Do React Hooks cover all use cases for class components? Related To: React Hooks",
+    "id":"react-40",
+    "title":"Do React Hooks cover all use cases for class components? Related To: React Hooks",
     "answer":"React Hooks cover most use cases except handling errors with getDerivedStateFromError and getSnapshotBeforeUpdate, yet plans for equivalents exist.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":41,
-    "title":"Q41: How can I make use of Error Boundaries in functional React components? Related To: React Hooks",
+    "id":"react-41",
+    "title":"How can I make use of Error Boundaries in functional React components? Related To: React Hooks",
     "answer":"Functional components themselves cannot act as error boundaries but can use a class-based error boundary parent to catch errors.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":42,
-    "title":"Q42: When would you use useRef? Related To: React Hooks",
+    "id":"react-42",
+    "title":"When would you use useRef? Related To: React Hooks",
     "answer":"useRef is useful for accessing the DOM directly, storing a value between renders, or maintaining non-reactive state such as tracking a draggable item’s position.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":43,
-    "title":"Q43: How would you pass data from child to parent component in React?",
+    "id":"react-43",
+    "title":"How would you pass data from child to parent component in React?",
     "answer":"Data can be passed using callback functions, event systems with CustomEvent, or state management libraries like Redux, MobX, or React Context.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":44,
-    "title":"Q44: What is the purpose of super(props)?",
+    "id":"react-44",
+    "title":"What is the purpose of super(props)?",
     "answer":"In a React class component, super(props) is used to pass props to the parent class constructor, allowing access to this.props within the constructor.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":45,
-    "title":"Q45: Explain the Virtual DOM concept in React",
+    "id":"react-45",
+    "title":"Explain the Virtual DOM concept in React",
     "answer":"The Virtual DOM is a lightweight, in-memory representation of the real DOM. React uses it to optimize UI updates by re-rendering only those components whose state or props have changed.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":46,
-    "title":"Q46: Describe Flux vs MVC? Related To: ASP.NET MVC",
+    "id":"react-46",
+    "title":"Describe Flux vs MVC? Related To: ASP.NET MVC",
     "answer":"Flux is a pattern focusing on unidirectional data flow to handle state changes, while MVC (Model-View-Controller) is a software design pattern that separates an app into three main logical components: model, view, and controller.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":47,
-    "title":"Q47: Can you force a React component to re-render without calling setState?",
+    "id":"react-47",
+    "title":"Can you force a React component to re-render without calling setState?",
     "answer":"Yes, you can force a React component to re-render by using the forceUpdate() method in class components.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":48,
-    "title":"Q48: Why does React use SyntheticEvents?",
+    "id":"react-48",
+    "title":"Why does React use SyntheticEvents?",
     "answer":"React's SyntheticEvents provide a cross-browser wrapper around the browser's native event system, allowing consistent event handling and improved performance via event pooling.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":49,
-    "title":"Q49: How would you go about investigating slow React application rendering?",
+    "id":"react-49",
+    "title":"How would you go about investigating slow React application rendering?",
     "answer":"Investigate slow rendering by using the React DevTools Profiler to analyze component rendering times and identify performance bottlenecks.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":50,
-    "title":"Q50: What's a Pure Functional Component in React?",
+    "id":"react-50",
+    "title":"What's a Pure Functional Component in React?",
     "answer":"A Pure Functional Component is a React component that returns the same output for the same input, optimizing performance by preventing unnecessary renders.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":51,
-    "title":"Q51: What is the second argument that can optionally be passed to setState and what is its purpose?",
+    "id":"react-51",
+    "title":"What is the second argument that can optionally be passed to setState and what is its purpose?",
     "answer":"The second argument to setState is a callback function executed once the state update is complete and the component has re-rendered.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":52,
-    "title":"Q52: When is it important to pass props to super(), and why?",
+    "id":"react-52",
+    "title":"When is it important to pass props to super(), and why?",
     "answer":"Props must be passed to super() when you need access to this.props inside the constructor of a React class component.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":53,
-    "title":"Q53: Why would you need to bind event handlers to this?",
+    "id":"react-53",
+    "title":"Why would you need to bind event handlers to this?",
     "answer":"In class components, event handlers must be bound to 'this' to ensure the correct context for accessing component instance methods and properties.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":54,
-    "title":"Q54: What is the difference between using constructor vs getInitialState in React?",
+    "id":"react-54",
+    "title":"What is the difference between using constructor vs getInitialState in React?",
     "answer":"constructor is used in ES6 class components for initializing state, whereas getInitialState is an older method used in ES5 class components written with React.createClass.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":55,
-    "title":"Q55: Why doesn't this.props.children.map work?",
+    "id":"react-55",
+    "title":"Why doesn't this.props.children.map work?",
     "answer":"this.props.children may not be an array, so if you want to use map, wrap it with React.Children.toArray or use React.Children.map.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":56,
-    "title":"Q56: How to create Props Proxy for HOC component?",
+    "id":"react-56",
+    "title":"How to create Props Proxy for HOC component?",
     "answer":"Create a Props Proxy by wrapping a component and passing new or modified props, using a higher-order component (HOC).",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":57,
-    "title":"Q57: How to conditionally add attributes to React components?",
+    "id":"react-57",
+    "title":"How to conditionally add attributes to React components?",
     "answer":"Use a ternary operator, JavaScript object spread, a separate variable, or conditionally rendered components to manage attributes.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":58,
-    "title":"Q58: Does React re-render all components and sub components every time setState is called?",
+    "id":"react-58",
+    "title":"Does React re-render all components and sub components every time setState is called?",
     "answer":"No, React only re-renders the component with the changed state and its children, thanks to the Virtual DOM and reconciliation.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":59,
-    "title":"Q59: Describe how events are handled in React",
+    "id":"react-59",
+    "title":"Describe how events are handled in React",
     "answer":"Events in React are handled using SyntheticEvents, allowing consistent cross-browser handling with handlers passed as props in camelCase.",
-    "level":"junior"
+    "level":"junior",
+    "category":"react"
   },
   {
-    "id":60,
-    "title":"Q60: How to apply validation on props in ReactJS?",
+    "id":"react-60",
+    "title":"How to apply validation on props in ReactJS?",
     "answer":"Use PropTypes or TypeScript to enforce prop validation at runtime or compile time, ensuring components receive props of correct types.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":61,
-    "title":"Q61: When would you use StrictMode component in React?",
+    "id":"react-61",
+    "title":"When would you use StrictMode component in React?",
     "answer":"StrictMode is used to identify potential problems, such as unsafe lifecycles, legacy context API usage, and unexpected side effects during development.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":62,
-    "title":"Q62: What's the difference between useCallback and useMemo in practice? Related To: React Hooks",
+    "id":"react-62",
+    "title":"What's the difference between useCallback and useMemo in practice? Related To: React Hooks",
     "answer":"useCallback memoizes functions to prevent unnecessary re-creation, while useMemo memoizes values like objects or arrays, maintaining references between renders.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":63,
-    "title":"Q63: Explain why and when would you use useMemo()? Related To: React Hooks",
+    "id":"react-63",
+    "title":"Explain why and when would you use useMemo()? Related To: React Hooks",
     "answer":"useMemo is useful for optimizing performance by memoizing expensive calculations or keeping object references stable for dependency-sensitive operations.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":64,
-    "title":"Q64: When to use useCallback, useMemo, and useEffect? Related To: React Hooks",
+    "id":"react-64",
+    "title":"When to use useCallback, useMemo, and useEffect? Related To: React Hooks",
     "answer":"Use useMemo for object reference stability, useCallback for stable function references, and useEffect for side effects, listeners, cleanup, and prop/state change handling.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":65,
-    "title":"Q65: Can you do Components Inheritance in React?",
+    "id":"react-65",
+    "title":"Can you do Components Inheritance in React?",
     "answer":"React does not support traditional inheritance but encourages composition via component composition, HOCs, and hooks to share functionality.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":67,
-    "title":"Q67: When would you use flushSync in ReactJS? Related To: React Hooks",
+    "id":"react-67",
+    "title":"When would you use flushSync in ReactJS? Related To: React Hooks",
     "answer":"flushSync is used to trigger immediate DOM updates, preventing React's default async batching behavior, in scenarios like pre-print state updates.",
-    "level":"senior"
+    "level":"senior",
+    "category":"react"
   },
   {
-    "id":69,
-    "title":"Q69: When to use useState vs useReducer? Related To: React Hooks",
+    "id":"react-69",
+    "title":"When to use useState vs useReducer? Related To: React Hooks",
     "answer":"Use useState for simple state management and useReducer for complex logic involving multiple sub-values or conditional state transitions.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":70,
-    "title":"Q70: How would you store non-state/instance variables in functional React components? Related To: React Hooks",
+    "id":"react-70",
+    "title":"How would you store non-state/instance variables in functional React components? Related To: React Hooks",
     "answer":"Store non-state/instance variables using useRef for persistent value storage or useMemo for expensive computation memoization across renders.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   },
   {
-    "id":71,
-    "title":"Q71: What is a JS closure?",
+    "id":"react-71",
+    "title":"What is a JS closure?",
     "answer":"A JavaScript closure is a function bundled with its lexical scope, enabling access to outer function variables even after the function execution context exits.",
-    "level":"mid"
+    "level":"mid",
+    "category":"react"
   }
 ]

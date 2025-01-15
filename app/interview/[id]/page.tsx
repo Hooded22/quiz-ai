@@ -2,7 +2,7 @@ import { MakeAnswerForm } from "../../../components/MakeAnswerForm";
 import { Question } from "../../../types/question";
 import { promises as fs } from "fs";
 import path from "path";
-import {InterviewConfig, QuestionsSets, QuestionsSetsValues, RoleType} from "../../../types/interviewConfig";
+import {InterviewConfig, QuestionsSetsValues, RoleType} from "../../../types/interviewConfig";
 import {RolesConfig} from "../../../constants/rolesConfig";
 
 interface QuestionCategoryProps {

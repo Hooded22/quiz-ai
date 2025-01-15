@@ -1,242 +1,282 @@
 [
   {
-    "id":1,
-    "title":"Q1: Explain the three main ways to apply CSS styles to a web page",
+    "id":"css-1",
+    "title":"Explain the three main ways to apply CSS styles to a web page",
     "answer":"CSS styles can be applied inline using the style attribute, embedded within a style tag in the HTML's head, or linked externally through a CSS file.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":2,
-    "title":"Q2: How to use variables in Sass?",
+    "id":"css-2",
+    "title":"How to use variables in Sass?",
     "answer":"Variables in Sass are defined using the $ symbol and can be used to store colors, font stacks, or any CSS value to be reused throughout the stylesheet.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":3,
-    "title":"Q3: What is CSS?",
+    "id":"css-3",
+    "title":"What is CSS?",
     "answer":"CSS (Cascading Style Sheets) is a stylesheet language used for describing the presentation of a document written in HTML or XML.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":4,
-    "title":"Q4: What existing CSS frameworks have you used locally, or in production? How would you change/improve them?",
+    "id":"css-4",
+    "title":"What existing CSS frameworks have you used locally, or in production? How would you change/improve them?",
     "answer":"Common CSS frameworks include Bootstrap, Tailwind CSS, and Foundation. Improvements could involve simplifying customization, reducing file size, or enhancing documentation.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":5,
-    "title":"Q5: What is a CSS rule?",
+    "id":"css-5",
+    "title":"What is a CSS rule?",
     "answer":"A CSS rule consists of a selector and a declaration block, where styles are defined for the elements matched by the selector.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":6,
-    "title":"Q6: Explain what is a @extend directive used for in Sass?",
+    "id":"css-6",
+    "title":"Explain what is a @extend directive used for in Sass?",
     "answer":"@extend allows one selector to inherit the styles of another selector, promoting code reuse and reducing duplication.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":7,
-    "title":"Q7: Have you played around with the new CSS Flexbox or Grid specs?",
+    "id":"css-7",
+    "title":"Have you played around with the new CSS Flexbox or Grid specs?",
     "answer":"Flexbox and Grid are modern CSS layout models for building responsive designs, Flexbox being more suited for one-dimensional layouts and Grid for two-dimensional layouts.",
-    "level":"senior"
+    "level":"senior",
+    "category":"css"
   },
   {
-    "id":8,
-    "title":"Q8: What is Sass?",
+    "id":"css-8",
+    "title":"What is Sass?",
     "answer":"Sass (Syntactically Awesome Style Sheets) is a CSS preprocessor that adds features like variables, nested rules, and mixins to CSS.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":9,
-    "title":"Q9: List out the key features for Sass",
+    "id":"css-9",
+    "title":"List out the key features for Sass",
     "answer":"Key features of Sass include variables, nested rules, mixins, inheritance, and partials with @import.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":10,
-    "title":"Q10: What is the difference between classes and IDs in CSS?",
+    "id":"css-10",
+    "title":"What is the difference between classes and IDs in CSS?",
     "answer":"Classes are reusable selectors for styling while IDs are unique to a page element and are used for specific styling.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":11,
-    "title":"Q11: Describe floats and how they work",
+    "id":"css-11",
+    "title":"Describe floats and how they work",
     "answer":"Float is a CSS positioning property that shifts an element to the left or right, allowing content to wrap around it.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":12,
-    "title":"Q12: What Selector Nesting in Sass is used for?",
+    "id":"css-12",
+    "title":"What Selector Nesting in Sass is used for?",
     "answer":"Selector nesting in Sass allows you to write nested selectors in a way that follows the HTML's hierarchy, enhancing readability and maintainability.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":13,
-    "title":"Q13: What is DOM (Document Object Model) and how is it linked to CSS?",
+    "id":"css-13",
+    "title":"What is DOM (Document Object Model) and how is it linked to CSS?",
     "answer":"The DOM is a programming interface for web documents, which represents the structure of a document. CSS uses selectors to style elements within this structure.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":14,
-    "title":"Q14: Explain the CSS box model and the layout components that it consists of",
+    "id":"css-14",
+    "title":"Explain the CSS box model and the layout components that it consists of",
     "answer":"The CSS box model is a layout model that consists of margins, borders, padding, and the content itself.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":15,
-    "title":"Q15: Explain CSS sprites, and how you would implement them on a page or site.",
+    "id":"css-15",
+    "title":"Explain CSS sprites, and how you would implement them on a page or site.",
     "answer":"CSS sprites are a technique to reduce HTTP requests by combining multiple images into one and using CSS to display specific parts of the image.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":16,
-    "title":"Q16: List out the data types that Sass supports.",
+    "id":"css-16",
+    "title":"List out the data types that Sass supports.",
     "answer":"Sass supports numbers, strings, colors, booleans, nulls, lists, and maps.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":17,
-    "title":"Q17: How is responsive design different from adaptive design?",
+    "id":"css-17",
+    "title":"How is responsive design different from adaptive design?",
     "answer":"Responsive design uses fluid grids to adapt to different screen sizes, while adaptive design uses fixed layouts, adjusting only at specific breakpoints.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":18,
-    "title":"Q18: What is CSS selectors? Name some.",
+    "id":"css-18",
+    "title":"What is CSS selectors? Name some.",
     "answer":"CSS selectors are patterns used to select the elements you want to style. Common selectors include class, ID, element, attribute, and pseudo-class selectors.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":19,
-    "title":"Q19: What does Accessibility (a11y) mean?",
+    "id":"css-19",
+    "title":"What does Accessibility (a11y) mean?",
     "answer":"Accessibility (a11y) refers to designing websites so they are usable by people with various disabilities, including visual, auditory, physical, and cognitive impairments.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":20,
-    "title":"Q20: Describe pseudo-elements and discuss what they are used for.",
+    "id":"css-20",
+    "title":"Describe pseudo-elements and discuss what they are used for.",
     "answer":"Pseudo-elements are used to style specific parts of an element, such as ::before and ::after for inserting content before or after an element's content.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":21,
-    "title":"Q21: How does CSS actually work (under the hood of browser)?",
+    "id":"css-21",
+    "title":"How does CSS actually work (under the hood of browser)?",
     "answer":"CSS is parsed by the browser to build a style sheet and match it with the DOM to produce the render tree, which is then used to paint the content on the screen.",
-    "level":"senior"
+    "level":"senior",
+    "category":"css"
   },
   {
-    "id":22,
-    "title":"Q22: Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.",
+    "id":"css-22",
+    "title":"Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.",
     "answer":"The box model consists of margins, borders, padding, and content. The box-sizing property in CSS can toggle between content-box and border-box models.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":23,
-    "title":"Q23: What is a Grid System in CSS?",
+    "id":"css-23",
+    "title":"What is a Grid System in CSS?",
     "answer":"A grid system in CSS is a layout structure for arranging content in a structured grid fashion, commonly used for responsive design.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":24,
-    "title":"Q24: How would you approach fixing browser-specific styling issues?",
+    "id":"css-24",
+    "title":"How would you approach fixing browser-specific styling issues?",
     "answer":"Use CSS resets, fallbacks, vendor prefixes, and conditional comments to fix browser-specific styling issues.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":25,
-    "title":"Q25: What are the advantages/disadvantages of using CSS preprocessors?",
+    "id":"css-25",
+    "title":"What are the advantages/disadvantages of using CSS preprocessors?",
     "answer":"Advantages include variables, nesting, and mixins, which enhance code reusability and maintainability. Disadvantages involve added compilation steps and potential complexity.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":26,
-    "title":"Q26: What's the difference between SCSS and Sass?",
+    "id":"css-26",
+    "title":"What's the difference between SCSS and Sass?",
     "answer":"Sass offers two syntaxes: SCSS (Sassy CSS) and the indented syntax. SCSS uses braces and semicolons, fitting more with standard CSS, while the indented syntax is more concise.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":27,
-    "title":"Q27: Explain the usage of table-layout property.",
+    "id":"css-27",
+    "title":"Explain the usage of table-layout property.",
     "answer":"The table-layout property governs the layout algorithm of a table. 'auto' adjusts the column width based on content, while 'fixed' maintains a consistent column width.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":28,
-    "title":"Q28: Have you ever worked with retina graphics? If so, when and what techniques did you use?",
+    "id":"css-28",
+    "title":"Have you ever worked with retina graphics? If so, when and what techniques did you use?",
     "answer":"Retina graphics cater to high-resolution displays using techniques like SVGs, responsive images, and CSS media queries for varying resolutions.",
-    "level":"senior"
+    "level":"senior",
+    "category":"css"
   },
   {
-    "id":29,
-    "title":"Q29: What's the difference between a relative, fixed, absolute and static ally positioned element?",
+    "id":"css-29",
+    "title":"What's the difference between a relative, fixed, absolute and static ally positioned element?",
     "answer":"Static is default with no positioning, relative is relative to its normal position, absolute is positioned relative to nearest positioned ancestor, and fixed is always relative to the viewport.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":30,
-    "title":"Q30: What’s the difference between resetting and normalizing CSS? Which would you choose, and why?",
+    "id":"css-30",
+    "title":"What’s the difference between resetting and normalizing CSS? Which would you choose, and why?",
     "answer":"Resetting removes all default browser styles, while normalizing preserves useful styles in a consistent way. Choice depends on desired consistency vs. needing a clean slate.",
-    "level":"senior"
+    "level":"senior",
+    "category":"css"
   },
   {
-    "id":31,
-    "title":"Q31: What is CSS preprocessor and why to use one?",
+    "id":"css-31",
+    "title":"What is CSS preprocessor and why to use one?",
     "answer":"A CSS preprocessor extends CSS with mechanisms like variables, functions, and nesting to write more maintainable and efficient code.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":32,
-    "title":"Q32: Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?",
+    "id":"css-32",
+    "title":"Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?",
     "answer":"translate() can be more efficient for animations as it is GPU-accelerated, while absolute positioning is more suitable for specific layout requirements.",
-    "level":"senior"
+    "level":"senior",
+    "category":"css"
   },
   {
-    "id":33,
-    "title":"Q33: What does * { box-sizing: border-box; } do? What are its advantages?",
+    "id":"css-33",
+    "title":"What does * { box-sizing: border-box; } do? What are its advantages?",
     "answer":"It sets all elements to calculate width and height including padding and border, simplifying layout calculations.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":34,
-    "title":"Q34: Describe z-index and how a stacking context is formed.",
+    "id":"css-34",
+    "title":"Describe z-index and how a stacking context is formed.",
     "answer":"z-index controls the stacking order of elements along the z-axis. A stacking context is formed by elements with a position value other than static and certain CSS properties.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":35,
-    "title":"Q35: Explain the purpose of clearing floats in CSS.",
+    "id":"css-35",
+    "title":"Explain the purpose of clearing floats in CSS.",
     "answer":"Clearing floats ensures that container elements correctly enclose floated items by preventing elements from collapsing in height.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":36,
-    "title":"Q36: Explain the basic rules of CSS Specificity.",
+    "id":"css-36",
+    "title":"Explain the basic rules of CSS Specificity.",
     "answer":"CSS specificity determines which rule overrides another based on hierarchy: inline styles, IDs, classes, attributes, and elements from highest to lowest priority.",
-    "level":"junior"
+    "level":"junior",
+    "category":"css"
   },
   {
-    "id":37,
-    "title":"Q37: Have you ever used a grid system, and if so, what do you prefer?",
+    "id":"css-37",
+    "title":"Have you ever used a grid system, and if so, what do you prefer?",
     "answer":"Grid systems like Bootstrap or CSS Grid assist in creating responsive layouts. Preference depends on project needs, complexity, and flexibility.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":38,
-    "title":"Q38: How do you optimize your webpages for print?",
+    "id":"css-38",
+    "title":"How do you optimize your webpages for print?",
     "answer":"Use a separate print stylesheet to adjust layout, hide unnecessary elements, and ensure readability with specific print styles.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":39,
-    "title":"Q39: Can you explain the difference between coding a website to be responsive versus using a mobile-first strategy?",
+    "id":"css-39",
+    "title":"Can you explain the difference between coding a website to be responsive versus using a mobile-first strategy?",
     "answer":"Responsive design ensures the layout adapts to any screen size, while mobile-first prioritizes mobile view in design and styling.",
-    "level":"mid"
+    "level":"mid",
+    "category":"css"
   },
   {
-    "id":40,
-    "title":"Q40: What are the different ways to visually hide content (and make it available only for screen readers)?",
+    "id":"css-40",
+    "title":"What are the different ways to visually hide content (and make it available only for screen readers)?",
     "answer":"Use CSS properties like clip-path, opacity: 0, or positioning off-screen while keeping accessibility concerns addressed with proper ARIA attributes.",
-    "level":"senior"
+    "level":"senior",
+    "category":"css"
   }
 ]
