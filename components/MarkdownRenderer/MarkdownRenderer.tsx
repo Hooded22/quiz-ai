@@ -12,7 +12,9 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) =
         <ReactMarkdown
             components={{
                 h2: ({node, ...props}) => <h2
-                    style={{fontSize: '1.5em', fontWeight: 'bold', marginBottom: '10px'}} {...props} />,
+                    style={{fontSize: '16px', fontWeight: 'bold', marginBottom: '10px'}} {...props} />,
+                p: ({node, ...props}) => <p
+                style={{fontSize: '14px', fontWeight: 'normal', marginBottom: '10px'}} {...props} />,
             }}
         >
             {content}

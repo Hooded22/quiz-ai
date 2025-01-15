@@ -5,10 +5,13 @@ export function getRandomQuestion<T>(questions: T[]) {
     return questions[randomNumber];
 }
 
+export const checkIsAnswerCorrect = (aiResponse: string) => aiResponse === "CORRECT"
+
 export function getAnswerCheckResponseWithCorrectAnswer(aiResponse: string, correctAnswer: string) {
     console.log("getAnswerCheckResponseWithCorrectAnswer", aiResponse, correctAnswer);
-    const isAnswerCorrect = aiResponse === "CORRECT";
+    const isAnswerCorrect = checkIsAnswerCorrect(aiResponse)
     const answerStatus = isAnswerCorrect ? "Correct answer, good job!" : "Sorry, your answer is incorrect!";
 
     return `## ${answerStatus}\n\n**Correct answer**:\n\n${correctAnswer}`.toString();
 }
+

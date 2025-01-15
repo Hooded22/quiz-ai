@@ -4,9 +4,10 @@ import { useMakeAnswerForm } from "./useMakeAnswerForm";
 import { Loader } from "../Loader";
 import { QuestionsWithAnswer } from "./types";
 import {MarkdownRenderer} from "../MarkdownRenderer/MarkdownRenderer";
-import {Styled} from "./styles";
+import styles from "./styles.module.css"
 import {Tooltip} from "../Tooltip/Tooltip";
 import {useInterviewProcess} from "./useInterviewProcess";
+import {DynamicTextarea} from "../DynamicTextArea/DynamicTextArea";
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
@@ -33,54 +34,61 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
   console.log("questionsWithAnswers", questionsWithAnswers)
 
   return (
-    <Styled.Wrapper>
-      <Loader loading={isLoading} text="Waiting for GPT response" />
-      <Styled.Content>
-        <Styled.QuestionHeader>
-          <Styled.QuestionTitle className="text-xl text-center" data-testid="current-question">
-            {currentQuestion?.title}
-          </Styled.QuestionTitle>
-          {!!currentQuestion?.answer && (
-              <Tooltip title={"Answer available"} details={currentQuestion.answer}/>
-          )}
-        </Styled.QuestionHeader>
-        <Styled.ConversationContainer>
-          {aiAnswer.type === "SUCCESS" && (
-              <MarkdownRenderer content={aiAnswer.response}/>
-          )}
-          {aiAnswer.type === "ERROR" && (
-              <p className="text-white text-sm text-justify pb-5">
-                {aiAnswer.errorMessage}
-              </p>
-          )}
-        </Styled.ConversationContainer>
-
-        <Styled.UserInputContainer>
-          <textarea
-              title="answer"
-              className="textarea textarea-bordered mb-10 mt-5 resize-none text-sm"
-              {...register("answer")}
-              rows={5}
-          />
-          <div className="card-actions justify-between pt-4">
-            <button className="btn btn-error" disabled={aiAnswer.type !== "SUCCESS"} onClick={resetForm}>
-              Repeat question
-            </button>
-            <div className='justify-between gap-8 flex'>
-              <button className="btn btn-primary" onClick={onSubmit}>
-                Send answer
+      <div className={styles.Wrapper}>
+        <Loader loading={isLoading} text="Waiting for GPT response"/>
+        <div className={styles.Content}>
+          <div className={styles.QuestionHeader}>
+            <h1 className={styles.QuestionTitle} data-testid="current-question">
+              {currentQuestion?.title}
+            </h1>
+            {!!currentQuestion?.answer && (
+                <Tooltip title={"Answer available"} details={currentQuestion.answer}/>
+            )}
+          </div>
+          <div className={styles.ConversationContainer}>
+            {aiAnswer.type === "SUCCESS" && (
+                <div className={styles.ConversationItem}>
+                  <MarkdownRenderer content={aiAnswer.response}/>
+                </div>
+            )}
+            {aiAnswer.type === "ERROR" && (
+                <p className="text-white text-sm text-justify pb-5">
+                  {aiAnswer.errorMessage}
+                </p>
+            )}
+          </div>
+          <div className={styles.BottomSection}>
+            <div className={styles.UserInputContainer}>
+              <DynamicTextarea register={register} name="answer"/>
+              <div className={styles.UserInputContainerButtonsWrapper}>
+                <button className={styles.SubmitButton} onClick={onSubmit}>
+                  Send answer
+                </button>
+              </div>
+            </div>
+            <div className={styles.ButtonContainer}>
+              <button
+                  className="btn btn-error"
+                  disabled={aiAnswer.type !== "SUCCESS"}
+                  onClick={resetForm}
+              >
+                Repeat question
               </button>
-              {!isQuestionsLimitReached && <button className="btn btn-active" onClick={onNextQuestionButtonClick}>
-                Next question
-              </button>}
-              {isQuestionsLimitReached && aiAnswer.type === "SUCCESS" && <button className="btn btn-active" onClick={onNextQuestionButtonClick}>
-               Finish quiz
-              </button>}
+              <div className='justify-between gap-8 flex'>
+                {!isQuestionsLimitReached && (
+                    <button className="btn btn-active" onClick={onNextQuestionButtonClick}>
+                      Next question
+                    </button>
+                )}
+                {isQuestionsLimitReached && aiAnswer.type === "SUCCESS" && (
+                    <button className="btn btn-active" onClick={onNextQuestionButtonClick}>
+                      Finish quiz
+                    </button>
+                )}
+              </div>
             </div>
           </div>
-        </Styled.UserInputContainer>
-
-      </Styled.Content>
-    </Styled.Wrapper>
+        </div>
+      </div>
   );
 }

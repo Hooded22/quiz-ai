@@ -96,15 +96,11 @@ async function getQuestionsSetForSelectedRole(
 export default async function QuestionCategory(props: QuestionCategoryProps) {
   //based on query params get random number of question for chosen interview
 
-  console.log("props.params.id", props.searchParams)
   const roleId = props.params.id
   const questionsNumber = props.searchParams.questionsNumber ? parseInt(props.searchParams.questionsNumber) : 0
 
 
   const questionsWithAnswers = await getQuestionsSetForSelectedRole(roleId, questionsNumber);
-
-  console.log("questionsForRole",questionsWithAnswers)
-
 
   return (
     <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100%"}}>

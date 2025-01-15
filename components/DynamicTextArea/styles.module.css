@@ -1,0 +1,9 @@
+.TextArea {
+    width: 100%;
+    min-height: 24px;
+    max-height: 200px;
+    resize: none;
+    font-size: 14px;
+    flex-shrink: 1;
+    background: #333333;
+}
