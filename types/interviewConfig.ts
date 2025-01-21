@@ -19,10 +19,9 @@ export const QuestionsSets = {
 
 export const SeniorityLevel = {
     ALL: "All",
-    ENTRY: "Entry",
-    JUNIOR: "Junior",
-    MID: "Mid",
-    SENIOR: "Senior",
+    JUNIOR: "junior",
+    MID: "mid",
+    SENIOR: "senior",
 } as const;
 
 export const QuestionsNumber = {

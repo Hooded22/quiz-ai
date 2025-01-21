@@ -69,11 +69,10 @@ const {push} = useRouter();
                 <div>
                     <label className={styles.label} htmlFor="seniorityLevel">Seniority Level</label>
                     <select className={styles.select} id="seniorityLevel" name="seniorityLevel" value={formState.seniorityLevel} onChange={handleChange}>
-                        <option value="All">All</option>
-                        <option value="Entry">Entry</option>
-                        <option value="Junior">Junior</option>
-                        <option value="Mid">Mid</option>
-                        <option value="Senior">Senior</option>
+                        <option value={SeniorityLevel.ALL}>All</option>
+                        <option value={SeniorityLevel.JUNIOR}>Junior</option>
+                        <option value={SeniorityLevel.MID}>Mid</option>
+                        <option value={SeniorityLevel.SENIOR}>Senior</option>
                     </select>
                 </div>
 

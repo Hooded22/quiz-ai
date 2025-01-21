@@ -1,8 +1,8 @@
 import { MakeAnswerForm } from "../../../components/MakeAnswerForm";
-import { Question } from "../../../types/question";
+import {Question} from "../../../types/question";
 import { promises as fs } from "fs";
 import path from "path";
-import {InterviewConfig, QuestionsSetsValues, RoleType} from "../../../types/interviewConfig";
+import {InterviewConfig, QuestionsSetsValues, RoleType, SeniorityLevel} from "../../../types/interviewConfig";
 import {RolesConfig} from "../../../constants/rolesConfig";
 
 interface QuestionCategoryProps {
@@ -28,23 +28,42 @@ function generateUniqueRandomNumbers(count: number, min: number, max: number) {
   return Array.from(uniqueNumbers);
 }
 
-function getRandomQuestions(questions: Question[], numberOfQuestionsToGet: number) {
-  const idsArray: number[] = generateUniqueRandomNumbers(numberOfQuestionsToGet, 0, questions.length-1);
+function getRandomQuestionsBasedOnLevel(
+    questions: Question[],
+    numberOfQuestionsToGet: number,
+    difficultyLevel: SeniorityLevel
+) {
+  // Filter questions based on difficulty level
+  const filteredQuestions = questions.filter(question => {
+    if(difficultyLevel === SeniorityLevel.ALL) {
+      return true;
+    }
 
-  return questions.filter((item, index) => idsArray.includes(index));
+    if (difficultyLevel === SeniorityLevel.JUNIOR) {
+      return question.level === SeniorityLevel.JUNIOR || question.level === SeniorityLevel.MID;
+    }
+
+    return question.level === SeniorityLevel.MID || question.level === SeniorityLevel.SENIOR;
+  });
+
+  const countToGet = Math.min(filteredQuestions.length, numberOfQuestionsToGet);
+
+  const idsArray: number[] = generateUniqueRandomNumbers(countToGet, 0, filteredQuestions.length - 1);
+
+  return filteredQuestions.filter((_, index) => idsArray.includes(index));
 }
 
-async function getDataFromJSONFile(id: string, questionsNumber: number): Promise<Question[]> {
+async function getRandomQuestionForTechnology(technologyId: string, questionsNumber: number, seniorityLevel: SeniorityLevel): Promise<Question[]> {
   const jsonDirectory = path.join(process.cwd(), "/data");
   try {
     const fileContents = await fs.readFile(
-      `${jsonDirectory}/${id}.json`,
+      `${jsonDirectory}/${technologyId}.json`,
       "utf8"
     );
     const questions: Question[] = JSON.parse(fileContents)
 
 
-    return getRandomQuestions(questions, questionsNumber);
+    return getRandomQuestionsBasedOnLevel(questions, questionsNumber, seniorityLevel);
   } catch (error) {
     return []
   }
@@ -52,7 +71,8 @@ async function getDataFromJSONFile(id: string, questionsNumber: number): Promise
 
 async function getQuestionsSetForSelectedRole(
     role: RoleType,
-    questionsLimit: number
+    questionsLimit: number,
+    seniorityLevel: SeniorityLevel,
 ) {
   const rolesSets = RolesConfig[role];
   const sortedRoleSets = Object.entries(rolesSets).sort(
@@ -86,7 +106,7 @@ async function getQuestionsSetForSelectedRole(
 
   // Fetch questions for each set
   for (const [key, count] of Array.from(questionsNeeded)) {
-    const questionsForSet = await getDataFromJSONFile(key, count);
+    const questionsForSet = await getRandomQuestionForTechnology(key, count, seniorityLevel);
     questionsForRole.push(...questionsForSet.slice(0, count));
   }
 
@@ -98,9 +118,10 @@ export default async function QuestionCategory(props: QuestionCategoryProps) {
 
   const roleId = props.params.id
   const questionsNumber = props.searchParams.questionsNumber ? parseInt(props.searchParams.questionsNumber) : 0
+  const seniorityLevel = props.searchParams.seniorityLevel ?? SeniorityLevel.ALL
 
 
-  const questionsWithAnswers = await getQuestionsSetForSelectedRole(roleId, questionsNumber);
+  const questionsWithAnswers = await getQuestionsSetForSelectedRole(roleId, questionsNumber, seniorityLevel);
 
   return (
     <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100%"}}>

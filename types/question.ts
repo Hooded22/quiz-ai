@@ -1,3 +1,4 @@
+import {SeniorityLevel} from "./interviewConfig";
 
 export const QuestionDifficultyEnum = {
     ENTRY: "ENTRY",
@@ -13,5 +14,5 @@ export interface Question {
     id: number,
     title: string,
     answer?: string;
-    difficulty?: QuestionDifficultyValues
+    level?: SeniorityLevel
 }

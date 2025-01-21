@@ -31,7 +31,7 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
 
   const isLoading = aiAnswer.type === "WAITING_FOR_RESPONSE" && aiAnswer.loading;
 
-  console.log("questionsWithAnswers", questionsWithAnswers)
+  console.log("currentQuestion", currentQuestion.level)
 
   return (
       <div className={styles.Wrapper}>
