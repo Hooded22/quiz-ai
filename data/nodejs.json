@@ -1,786 +1,786 @@
 [
   {
-    "id":"nodejs-1",
-    "title":"What npm is used for?",
-    "answer":"npm is a package manager for Node.js, allowing developers to install, update, and manage project dependencies.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-1",
+    "title": "What npm is used for?",
+    "answer": "npm is a package manager for Node.js, allowing developers to install, update, and manage project dependencies.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-2",
-    "title":"Why does Node.js prefer Error-First Callback?",
-    "answer":"Error-first callbacks provide a standard way of handling errors and results; the first argument is an error object, followed by any result data.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-2",
+    "title": "Why does Node.js prefer Error-First Callback?",
+    "answer": "Error-first callbacks provide a standard way of handling errors and results; the first argument is an error object, followed by any result data.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-3",
-    "title":"What is Callback Hell and what is the main cause of it?",
-    "answer":"Callback Hell refers to deeply nested callbacks, often caused by complex asynchronous calls, which make code difficult to read and maintain.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-3",
+    "title": "What is Callback Hell and what is the main cause of it?",
+    "answer": "Callback Hell refers to deeply nested callbacks, often caused by complex asynchronous calls, which make code difficult to read and maintain.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-4",
-    "title":"What is Callback?",
-    "answer":"A callback is a function passed as an argument to another function, called when a specific task completes.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-4",
+    "title": "What is Callback?",
+    "answer": "A callback is a function passed as an argument to another function, called when a specific task completes.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-5",
-    "title":"What are the key features of Node.js?",
-    "answer":"Key features include non-blocking I/O, event-driven architecture, single-threading, and fast execution due to V8 engine.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-5",
+    "title": "What are the key features of Node.js?",
+    "answer": "Key features include non-blocking I/O, event-driven architecture, single-threading, and fast execution due to V8 engine.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-6",
-    "title":"Explain the difference between local and global npm package installation.",
-    "answer":"Local installation makes package available in the project scope, while global installation makes it available system-wide.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-6",
+    "title": "Explain the difference between local and global npm package installation.",
+    "answer": "Local installation makes package available in the project scope, while global installation makes it available system-wide.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-7",
-    "title":"What do you mean by Asynchronous API?",
-    "answer":"An Asynchronous API allows for non-blocking operations, processing tasks without waiting for them to finish.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-7",
+    "title": "What do you mean by Asynchronous API?",
+    "answer": "An Asynchronous API allows for non-blocking operations, processing tasks without waiting for them to finish.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-8",
-    "title":"What are the benefits of using Node.js?",
-    "answer":"Benefits include high performance and scalability, due to non-blocking event-driven architecture.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-8",
+    "title": "What are the benefits of using Node.js?",
+    "answer": "Benefits include high performance and scalability, due to non-blocking event-driven architecture.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-9",
-    "title":"What is libuv?",
-    "answer":"libuv is a library used in Node.js to handle asynchronous I/O operations, providing event loops and file system abstraction.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-9",
+    "title": "What is libuv?",
+    "answer": "libuv is a library used in Node.js to handle asynchronous I/O operations, providing event loops and file system abstraction.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-10",
-    "title":"What is V8?",
-    "answer":"V8 is Google's open-source JavaScript engine, used in Chrome and Node.js to execute JavaScript code.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-10",
+    "title": "What is V8?",
+    "answer": "V8 is Google's open-source JavaScript engine, used in Chrome and Node.js to execute JavaScript code.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-11",
-    "title":"What is the difference between returning a callback and just calling a callback?",
-    "answer":"Returning a callback passes control to calling function after execution, while just calling executes without returning control.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-11",
+    "title": "What is the difference between returning a callback and just calling a callback?",
+    "answer": "Returning a callback passes control to calling function after execution, while just calling executes without returning control.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-12",
-    "title":"What is the file package.json?",
-    "answer":"package.json is a file that contains metadata about a Node.js project, including dependencies, scripts, and configuration.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-12",
+    "title": "What is the file package.json?",
+    "answer": "package.json is a file that contains metadata about a Node.js project, including dependencies, scripts, and configuration.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-13",
-    "title":"Name some Built-in Globals in Node.js",
-    "answer":"Globals include __dirname, __filename, process, module, exports, require, and setTimeout.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-13",
+    "title": "Name some Built-in Globals in Node.js",
+    "answer": "Globals include __dirname, __filename, process, module, exports, require, and setTimeout.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-14",
-    "title":"What does Promisifying technique mean in Node.js?",
-    "answer":"Promisifying converts callback-based functions into Promise-returning functions, easing error handling and chaining asynchronous operations.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-14",
+    "title": "What does Promisifying technique mean in Node.js?",
+    "answer": "Promisifying converts callback-based functions into Promise-returning functions, easing error handling and chaining asynchronous operations.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-15",
-    "title":"What's the difference between process.cwd() vs __dirname?",
-    "answer":"process.cwd() returns the current working directory of the process, while __dirname returns the directory name of the current module.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-15",
+    "title": "What's the difference between process.cwd() vs __dirname?",
+    "answer": "process.cwd() returns the current working directory of the process, while __dirname returns the directory name of the current module.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-16",
-    "title":"Why we always require modules at the top of a file? Can we require modules inside of functions?",
-    "answer":"Requiring at the top encourages clarity and top-level declaration prevents repeated import in loops. It's possible but not recommended inside functions.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-16",
+    "title": "Why we always require modules at the top of a file? Can we require modules inside of functions?",
+    "answer": "Requiring at the top encourages clarity and top-level declaration prevents repeated import in loops. It's possible but not recommended inside functions.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-17",
-    "title":"What is Stream Chaining in Node.js?",
-    "answer":"Stream Chaining involves connecting multiple stream operations, allowing data to flow through them sequentially.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-17",
+    "title": "What is Stream Chaining in Node.js?",
+    "answer": "Stream Chaining involves connecting multiple stream operations, allowing data to flow through them sequentially.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-18",
-    "title":"What are Event Emitters?",
-    "answer":"Event Emitters facilitate asynchronous event-driven communication between objects, emitting named events followed by event listener calls.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-18",
+    "title": "What are Event Emitters?",
+    "answer": "Event Emitters facilitate asynchronous event-driven communication between objects, emitting named events followed by event listener calls.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-19",
-    "title":"How does concurrency work in Node.js?",
-    "answer":"Concurrency is achieved using non-blocking I/O operations and an event loop managing multiple callbacks for asynchronous tasks.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-19",
+    "title": "How does concurrency work in Node.js?",
+    "answer": "Concurrency is achieved using non-blocking I/O operations and an event loop managing multiple callbacks for asynchronous tasks.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-20",
-    "title":"What Are Buffer and why to use them in Node.js?",
-    "answer":"Buffers are data structures to handle raw binary data, essential for managing streams, TCP streams, or file data within limited memory.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-20",
+    "title": "What Are Buffer and why to use them in Node.js?",
+    "answer": "Buffers are data structures to handle raw binary data, essential for managing streams, TCP streams, or file data within limited memory.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-21",
-    "title":"What is N-API in Node.js?",
-    "answer":"N-API is Node.js's C API for building native addons, abstracting away runtime differences for module developers.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-21",
+    "title": "What is N-API in Node.js?",
+    "answer": "N-API is Node.js's C API for building native addons, abstracting away runtime differences for module developers.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-22",
-    "title":"Are you familiar with differences between Node.js modules and ES6 modules?",
-    "answer":"Node.js uses CommonJS for synchronous loading, while ES6 modules enable static imports with better performance optimization capabilities.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-22",
+    "title": "Are you familiar with differences between Node.js modules and ES6 modules?",
+    "answer": "Node.js uses CommonJS for synchronous loading, while ES6 modules enable static imports with better performance optimization capabilities.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-23",
-    "title":"What is the difference between setTimeout(fn,0) vs setImmediate(fn)?",
-    "answer":"setImmediate schedules execution after poll phase, whereas setTimeout with 0 ms schedules before I/O events but isn't guaranteed immediate.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-23",
+    "title": "What is the difference between setTimeout(fn,0) vs setImmediate(fn)?",
+    "answer": "setImmediate schedules execution after poll phase, whereas setTimeout with 0 ms schedules before I/O events but isn't guaranteed immediate.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-24",
-    "title":"Could we run an external process with Node.js?",
-    "answer":"Yes, using 'child_process' module to spawn or fork external system processes and handle inter-process communication.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-24",
+    "title": "Could we run an external process with Node.js?",
+    "answer": "Yes, using 'child_process' module to spawn or fork external system processes and handle inter-process communication.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-25",
-    "title":"How do you debug Node.js applications?",
-    "answer":"Debug using the Node.js debugger or third-party tools like Chrome DevTools. Use breakpoints, inspect variables, and analyze call stacks.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-25",
+    "title": "How do you debug Node.js applications?",
+    "answer": "Debug using the Node.js debugger or third-party tools like Chrome DevTools. Use breakpoints, inspect variables, and analyze call stacks.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-26",
-    "title":"What's the Event Loop?",
-    "answer":"The event loop is the mechanism in Node.js that coordinates execution of non-blocking asynchronous operations.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-26",
+    "title": "What's the Event Loop?",
+    "answer": "The event loop is the mechanism in Node.js that coordinates execution of non-blocking asynchronous operations.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-27",
-    "title":"How to avoid Callback Hell in Node.js?",
-    "answer":"Use Promises or async/await construct to write clean, readable, and maintainable asynchronous code.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-27",
+    "title": "How to avoid Callback Hell in Node.js?",
+    "answer": "Use Promises or async/await construct to write clean, readable, and maintainable asynchronous code.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-28",
-    "title":"Explain how does Node.js work?",
-    "answer":"Node.js utilizes a single-threaded event loop with non-blocking I/O operations to handle numerous connections efficiently.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-28",
+    "title": "Explain how does Node.js work?",
+    "answer": "Node.js utilizes a single-threaded event loop with non-blocking I/O operations to handle numerous connections efficiently.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-29",
-    "title":"How does Node.js handle Child Threads?",
-    "answer":"Node.js uses child processes or worker threads for parallel processing since JavaScript executes in a single thread.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-29",
+    "title": "How does Node.js handle Child Threads?",
+    "answer": "Node.js uses child processes or worker threads for parallel processing since JavaScript executes in a single thread.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-30",
-    "title":"What is the relationship between Node.js and V8?",
-    "answer":"Node.js uses V8 as its JavaScript runtime engine to execute code outside of a browser context.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-30",
+    "title": "What is the relationship between Node.js and V8?",
+    "answer": "Node.js uses V8 as its JavaScript runtime engine to execute code outside of a browser context.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-31",
-    "title":"Explain the concept of Domain in Node.js",
-    "answer":"Domains provide a way to handle multiple different I/O operations as a single group, allowing better error handling.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-31",
+    "title": "Explain the concept of Domain in Node.js",
+    "answer": "Domains provide a way to handle multiple different I/O operations as a single group, allowing better error handling.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-32",
-    "title":"What is stream and what are types of streams available in Node.js?",
-    "answer":"Streams handle reading/writing data continuously. Types include Readable, Writable, Duplex, and Transform.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-32",
+    "title": "What is stream and what are types of streams available in Node.js?",
+    "answer": "Streams handle reading/writing data continuously. Types include Readable, Writable, Duplex, and Transform.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-33",
-    "title":"What is Event Loop in Node.js?",
-    "answer":"The Event Loop allows Node.js to perform non-blocking I/O operations by offloading operations to the system kernel.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-33",
+    "title": "What is Event Loop in Node.js?",
+    "answer": "The Event Loop allows Node.js to perform non-blocking I/O operations by offloading operations to the system kernel.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-34",
-    "title":"What is the preferred method of resolving unhandled exceptions in Node.js?",
-    "answer":"Use try-catch blocks, attach error events, or use process 'uncaughtException' to manage unexpected exceptions.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-34",
+    "title": "What is the preferred method of resolving unhandled exceptions in Node.js?",
+    "answer": "Use try-catch blocks, attach error events, or use process 'uncaughtException' to manage unexpected exceptions.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-35",
-    "title":"What is a Blocking Code in Node.js?",
-    "answer":"Blocking code pauses execution until a task completes, hindering performance unlike asynchronous operations in Node.js.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-35",
+    "title": "What is a Blocking Code in Node.js?",
+    "answer": "Blocking code pauses execution until a task completes, hindering performance unlike asynchronous operations in Node.js.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-36",
-    "title":"When should we use Node.js?",
-    "answer":"Use Node.js for real-time apps, single-page applications, or microservices needing high concurrency with low latency.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-36",
+    "title": "When should we use Node.js?",
+    "answer": "Use Node.js for real-time apps, single-page applications, or microservices needing high concurrency with low latency.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-37",
-    "title":"When should I use EventEmitter?",
-    "answer":"Use EventEmitter to handle custom and system events asynchronously in Node.js applications.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-37",
+    "title": "When should I use EventEmitter?",
+    "answer": "Use EventEmitter to handle custom and system events asynchronously in Node.js applications.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-38",
-    "title":"What is difference between synchronous and asynchronous method of fs module?",
-    "answer":"Synchronous methods block execution, waiting for completion, while asynchronous methods proceed without waiting.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-38",
+    "title": "What is difference between synchronous and asynchronous method of fs module?",
+    "answer": "Synchronous methods block execution, waiting for completion, while asynchronous methods proceed without waiting.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-39",
-    "title":"What are the use cases for the Node.js vm core module?",
-    "answer":"Use the vm module for running code within different contexts or sandboxes securely and efficiently.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-39",
+    "title": "What are the use cases for the Node.js vm core module?",
+    "answer": "Use the vm module for running code within different contexts or sandboxes securely and efficiently.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-40",
-    "title":"Provide your favourite reasons to use Node.js",
-    "answer":"Fast execution with V8, strong community support, non-blocking I/O, good for data-intensive real-time apps.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-40",
+    "title": "Provide your favourite reasons to use Node.js",
+    "answer": "Fast execution with V8, strong community support, non-blocking I/O, good for data-intensive real-time apps.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-41",
-    "title":"Provide some of the reasons not to use Node.js",
-    "answer":"Not ideal for CPU-heavy tasks, callback hell complexity, requires handling single-threaded limitations.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-41",
+    "title": "Provide some of the reasons not to use Node.js",
+    "answer": "Not ideal for CPU-heavy tasks, callback hell complexity, requires handling single-threaded limitations.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-42",
-    "title":"What exactly does module.exports do in Node.js, and what would a simple example be?",
-    "answer":"module.exports allows pieces of code or functions to be exported from one file and required in another.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-42",
+    "title": "What exactly does module.exports do in Node.js, and what would a simple example be?",
+    "answer": "module.exports allows pieces of code or functions to be exported from one file and required in another.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-43",
-    "title":"What is the difference between require(x) and ES6 import x in Node.js?",
-    "answer":"require is synchronous with CommonJS, while import uses static ES6 import/export syntax for better optimization.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-43",
+    "title": "What is the difference between require(x) and ES6 import x in Node.js?",
+    "answer": "require is synchronous with CommonJS, while import uses static ES6 import/export syntax for better optimization.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-44",
-    "title":"What is export default in JavaScript?",
-    "answer":"export default allows exporting a single default module, simplifying import syntax.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-44",
+    "title": "What is export default in JavaScript?",
+    "answer": "export default allows exporting a single default module, simplifying import syntax.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-45",
-    "title":"Explain the order of Event Listeners execution in Node.js",
-    "answer":"Event listeners execute in the order they're registered. Removing and re-adding listeners can change this order.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-45",
+    "title": "Explain the order of Event Listeners execution in Node.js",
+    "answer": "Event listeners execute in the order they're registered. Removing and re-adding listeners can change this order.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-46",
-    "title":"Is an Event Emitter Synchronous or Asynchronous?",
-    "answer":"Event Emitter callbacks are executed synchronously by default but can perform asynchronous operations within.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-46",
+    "title": "Is an Event Emitter Synchronous or Asynchronous?",
+    "answer": "Event Emitter callbacks are executed synchronously by default but can perform asynchronous operations within.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-47",
-    "title":"How do I run a Node.js app as a background service?",
-    "answer":"Use tools like pm2 or nohup, or create a systemd service to keep Node.js app running as a background process.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-47",
+    "title": "How do I run a Node.js app as a background service?",
+    "answer": "Use tools like pm2 or nohup, or create a systemd service to keep Node.js app running as a background process.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-48",
-    "title":"What is the purpose of pm2 save?",
-    "answer":"pm2 save stores the current process list for automatic respawn after a system reboot.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-48",
+    "title": "What is the purpose of pm2 save?",
+    "answer": "pm2 save stores the current process list for automatic respawn after a system reboot.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-49",
-    "title":"When would you use cluster module in Node.js?",
-    "answer":"Use cluster module to improve performance by leveraging multi-core systems to handle concurrent requests in Node.js.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-49",
+    "title": "When would you use cluster module in Node.js?",
+    "answer": "Use cluster module to improve performance by leveraging multi-core systems to handle concurrent requests in Node.js.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-50",
-    "title":"Which one is better: Node.js built in cluster or PM2 clustering?",
-    "answer":"PM2 offers more features like monitoring, logging, and process management; Node.js cluster is more basic.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-50",
+    "title": "Which one is better: Node.js built in cluster or PM2 clustering?",
+    "answer": "PM2 offers more features like monitoring, logging, and process management; Node.js cluster is more basic.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-51",
-    "title":"What is the meaning of the @ prefix on npm package?",
-    "answer":"@ prefix indicates a scoped package, usually representing a specific domain or organization.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-51",
+    "title": "What is the meaning of the @ prefix on npm package?",
+    "answer": "@ prefix indicates a scoped package, usually representing a specific domain or organization.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-52",
-    "title":"Would you use Node.js assert library vs. other assert libraries like chai? Why?",
-    "answer":"Use assert for simple node-based assertions; use chai for more expressive syntax in tests.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-52",
+    "title": "Would you use Node.js assert library vs. other assert libraries like chai? Why?",
+    "answer": "Use assert for simple node-based assertions; use chai for more expressive syntax in tests.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-53",
-    "title":"What is Mocha in Node.js userland?",
-    "answer":"Mocha is a testing framework providing a solid base for test suite organization and assertion setup.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-53",
+    "title": "What is Mocha in Node.js userland?",
+    "answer": "Mocha is a testing framework providing a solid base for test suite organization and assertion setup.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-54",
-    "title":"What is chai and chai-http in Node.js userland?",
-    "answer":"Chai is a BDD/TDD assertions library; chai-http extends it for HTTP integration testing.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-54",
+    "title": "What is chai and chai-http in Node.js userland?",
+    "answer": "Chai is a BDD/TDD assertions library; chai-http extends it for HTTP integration testing.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-55",
-    "title":"What is the purpose of using assert module in Node.js",
-    "answer":"The assert module provides basic assertion testing, useful for testing invariants and validating test cases.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-55",
+    "title": "What is the purpose of using assert module in Node.js",
+    "answer": "The assert module provides basic assertion testing, useful for testing invariants and validating test cases.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-56",
-    "title":"What is the difference between browser global scope and Node.js global scope?",
-    "answer":"Global scope differs in constructs; Node.js global lacks window but has global and module-specific variables.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-56",
+    "title": "What is the difference between browser global scope and Node.js global scope?",
+    "answer": "Global scope differs in constructs; Node.js global lacks window but has global and module-specific variables.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-57",
-    "title":"How to use a global variable in Node.js?",
-    "answer":"Define using global object or module exports; avoid extensive global use to maintain code modularity.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-57",
+    "title": "How to use a global variable in Node.js?",
+    "answer": "Define using global object or module exports; avoid extensive global use to maintain code modularity.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-58",
-    "title":"When would you use global variables in Node.js? Are they always bad?",
-    "answer":"Use sparingly in single entry-point apps; excessive use complicates debugging and impairs modularity.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-58",
+    "title": "When would you use global variables in Node.js? Are they always bad?",
+    "answer": "Use sparingly in single entry-point apps; excessive use complicates debugging and impairs modularity.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-59",
-    "title":"What is the difference between cluster and worker_threads packages in Node.js?",
-    "answer":"Cluster creates multiple child processes, worker_threads share memory for more efficient thread-level parallelism.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-59",
+    "title": "What is the difference between cluster and worker_threads packages in Node.js?",
+    "answer": "Cluster creates multiple child processes, worker_threads share memory for more efficient thread-level parallelism.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-60",
-    "title":"Is there any difference between res.send and return res.send in Express.js?",
-    "answer":"Returning res.send ends function execution, ensuring no further code accidentally executes.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-60",
+    "title": "Is there any difference between res.send and return res.send in Express.js?",
+    "answer": "Returning res.send ends function execution, ensuring no further code accidentally executes.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-61",
-    "title":"What are express.json() and express.urlencoded() in Express.js?",
-    "answer":"These middleware parse incoming JSON payloads (express.json) and urlencoded forms (express.urlencoded).",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-61",
+    "title": "What are express.json() and express.urlencoded() in Express.js?",
+    "answer": "These middleware parse incoming JSON payloads (express.json) and urlencoded forms (express.urlencoded).",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-62",
-    "title":"How to gracefully shutdown Node.js server?",
-    "answer":"Close server connections with server.close(); handle active connections and finish operations before exit.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-62",
+    "title": "How to gracefully shutdown Node.js server?",
+    "answer": "Close server connections with server.close(); handle active connections and finish operations before exit.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-63",
-    "title":"Why use Buffer instead of a binary string to handle binary data?",
-    "answer":"Buffers offer more efficient memory manipulation for binary data than strings due to lower-level access.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-63",
+    "title": "Why use Buffer instead of a binary string to handle binary data?",
+    "answer": "Buffers offer more efficient memory manipulation for binary data than strings due to lower-level access.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-64",
-    "title":"How does V8 engine work?",
-    "answer":"V8 compiles JavaScript to native machine code directly for fast execution, using Just-In-Time (JIT) compilation.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-64",
+    "title": "How does V8 engine work?",
+    "answer": "V8 compiles JavaScript to native machine code directly for fast execution, using Just-In-Time (JIT) compilation.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-65",
-    "title":"Does Node.js support multi-core platforms? And is it capable of utilizing all the cores?",
-    "answer":"Yes, through cluster module or worker_threads, Node.js scales apps across cores with concurrent process handling.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-65",
+    "title": "Does Node.js support multi-core platforms? And is it capable of utilizing all the cores?",
+    "answer": "Yes, through cluster module or worker_threads, Node.js scales apps across cores with concurrent process handling.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-66",
-    "title":"Is it possible to use Class in Node.js?",
-    "answer":"Yes, Node.js supports ES6 classes enabling object-oriented programming within JavaScript server environments.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-66",
+    "title": "Is it possible to use Class in Node.js?",
+    "answer": "Yes, Node.js supports ES6 classes enabling object-oriented programming within JavaScript server environments.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-67",
-    "title":"What are LTS releases of Node.js and why should you care?",
-    "answer":"LTS releases offer long-term support with stable features, bug fixes, and security updates essential for production.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-67",
+    "title": "What are LTS releases of Node.js and why should you care?",
+    "answer": "LTS releases offer long-term support with stable features, bug fixes, and security updates essential for production.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-68",
-    "title":"Is Node.js entirely based on a single-thread?",
-    "answer":"Yes, Node.js runs JavaScript in a single-threaded environment, using non-blocking I/O to handle concurrency.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-68",
+    "title": "Is Node.js entirely based on a single-thread?",
+    "answer": "Yes, Node.js runs JavaScript in a single-threaded environment, using non-blocking I/O to handle concurrency.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-69",
-    "title":"When not to use Node.js?",
-    "answer":"Avoid Node.js for CPU-intensive applications due to its single-threaded event loop which can bottleneck performance.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-69",
+    "title": "When not to use Node.js?",
+    "answer": "Avoid Node.js for CPU-intensive applications due to its single-threaded event loop which can bottleneck performance.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-70",
-    "title":"What is Piping in Node?",
-    "answer":"Piping connects readable streams directly to writable streams, transferring data efficiently with minimal code.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-70",
+    "title": "What is Piping in Node?",
+    "answer": "Piping connects readable streams directly to writable streams, transferring data efficiently with minimal code.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-71",
-    "title":"What is the purpose of __filename variable in Node.js?",
-    "answer":"__filename contains the absolute path of the current module file, useful for determining file locations.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-71",
+    "title": "What is the purpose of __filename variable in Node.js?",
+    "answer": "__filename contains the absolute path of the current module file, useful for determining file locations.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-72",
-    "title":"What's the difference between dependencies, devDependencies and peerDependencies in package.json file?",
-    "answer":"Dependencies are used at runtime; devDependencies are for development; peerDependencies dictate compatible versions.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-72",
+    "title": "What's the difference between dependencies, devDependencies and peerDependencies in package.json file?",
+    "answer": "Dependencies are used at runtime; devDependencies are for development; peerDependencies dictate compatible versions.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-73",
-    "title":"How would you handle errors for async code in Node.js?",
-    "answer":"Use try-catch in async/await, promise.then/catch, or attach error handlers to callbacks or events.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-73",
+    "title": "How would you handle errors for async code in Node.js?",
+    "answer": "Use try-catch in async/await, promise.then/catch, or attach error handlers to callbacks or events.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-74",
-    "title":"Can Node.js work without V8?",
-    "answer":"Yes, theoretically possible by using alternative JavaScript engines like SpiderMonkey or ChakraCore.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-74",
+    "title": "Can Node.js work without V8?",
+    "answer": "Yes, theoretically possible by using alternative JavaScript engines like SpiderMonkey or ChakraCore.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-75",
-    "title":"What are async functions in Node? Provide some examples.",
-    "answer":"Async functions enable promise-based asynchronous code with a simpler, cleaner structure using await keyword.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-75",
+    "title": "What are async functions in Node? Provide some examples.",
+    "answer": "Async functions enable promise-based asynchronous code with a simpler, cleaner structure using await keyword.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-76",
-    "title":"What are the Timing features of Node.js?",
-    "answer":"Node.js timing features include setTimeout, setInterval, setImmediate for scheduling async operations.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-76",
+    "title": "What are the Timing features of Node.js?",
+    "answer": "Node.js timing features include setTimeout, setInterval, setImmediate for scheduling async operations.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-77",
-    "title":"Explain usage of NODE_ENV",
-    "answer":"NODE_ENV defines environment type (e.g., development, production) affecting configuration behaviors in Node.js apps.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-77",
+    "title": "Explain usage of NODE_ENV",
+    "answer": "NODE_ENV defines environment type (e.g., development, production) affecting configuration behaviors in Node.js apps.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-78",
-    "title":"How does the Cluster module work? What’s the difference between it and a load balancer?",
-    "answer":"Cluster forks multiple processes to handle connections, while a load balancer distributes traffic among servers.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-78",
+    "title": "How does the Cluster module work? What’s the difference between it and a load balancer?",
+    "answer": "Cluster forks multiple processes to handle connections, while a load balancer distributes traffic among servers.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-79",
-    "title":"When to use Synchronous vs Asynchronous code in Node.js?",
-    "answer":"Use synchronous for simple scripts or initialization; async ensures non-blocking I/O operations for scalability.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-79",
+    "title": "When to use Synchronous vs Asynchronous code in Node.js?",
+    "answer": "Use synchronous for simple scripts or initialization; async ensures non-blocking I/O operations for scalability.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-80",
-    "title":"Does JavaScript have a map function to iterate over an object properties?",
-    "answer":"No, JavaScript map() is an array method; iterate over objects with for...in or Object methods.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-80",
+    "title": "Does JavaScript have a map function to iterate over an object properties?",
+    "answer": "No, JavaScript map() is an array method; iterate over objects with for...in or Object methods.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-81",
-    "title":"When would you use import * as X from 'X'?",
-    "answer":"Use when needing all named exports of a module without importing individually.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-81",
+    "title": "When would you use import * as X from 'X'?",
+    "answer": "Use when needing all named exports of a module without importing individually.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-82",
-    "title":"How would you prevent Callback Hell without using promises, async or generators?",
-    "answer":"Modularize code by breaking functions into smaller parts, maintainable with named functions and higher-order functions.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-82",
+    "title": "How would you prevent Callback Hell without using promises, async or generators?",
+    "answer": "Modularize code by breaking functions into smaller parts, maintainable with named functions and higher-order functions.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-83",
-    "title":"What is the difference between pm2 restart and pm2 reload?",
-    "answer":"pm2 restart restarts with downtime; pm2 reload does zero-downtime restarts by reloading processes seamlessly.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-83",
+    "title": "What is the difference between pm2 restart and pm2 reload?",
+    "answer": "pm2 restart restarts with downtime; pm2 reload does zero-downtime restarts by reloading processes seamlessly.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-84",
-    "title":"What is the difference between Cluster and Fork mode in PM2?",
-    "answer":"Cluster mode distributes instances over cores; fork mode starts independent instances for parallel execution.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-84",
+    "title": "What is the difference between Cluster and Fork mode in PM2?",
+    "answer": "Cluster mode distributes instances over cores; fork mode starts independent instances for parallel execution.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-85",
-    "title":"Compare PM2 Cluster Mode vs. Node.js Cluster module usage",
-    "answer":"PM2 offers extra features like monitoring/logging while Node.js cluster is more primitive and basic.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-85",
+    "title": "Compare PM2 Cluster Mode vs. Node.js Cluster module usage",
+    "answer": "PM2 offers extra features like monitoring/logging while Node.js cluster is more primitive and basic.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-86",
-    "title":"What is the difference between the child_process spawn and execute functions in Node.js? When to use each one?",
-    "answer":"spawn starts new processes without blocking Node.js, suitable for streams; exec buffers the output, blocking larger processes.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-86",
+    "title": "What is the difference between the child_process spawn and execute functions in Node.js? When to use each one?",
+    "answer": "spawn starts new processes without blocking Node.js, suitable for streams; exec buffers the output, blocking larger processes.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-87",
-    "title":"What is the difference between fork() & spawn() in Node.js?",
-    "answer":"fork creates a new Node.js V8 instance, sharing memory and environment; spawn runs any command-line program separately.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-87",
+    "title": "What is the difference between fork() & spawn() in Node.js?",
+    "answer": "fork creates a new Node.js V8 instance, sharing memory and environment; spawn runs any command-line program separately.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-88",
-    "title":"Explain what is Arrange-Act-Assert pattern?",
-    "answer":"Arrange-Act-Assert is a systematic unit testing pattern organizing tests into setup, execution, and verification phases.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-88",
+    "title": "Explain what is Arrange-Act-Assert pattern?",
+    "answer": "Arrange-Act-Assert is a systematic unit testing pattern organizing tests into setup, execution, and verification phases.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-89",
-    "title":"Compare strict vs legacy mode for Assert module in Node.js",
-    "answer":"Strict assertions check for specific error messages, unlike legacy allowing flexibility for non-strict validation.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-89",
+    "title": "Compare strict vs legacy mode for Assert module in Node.js",
+    "answer": "Strict assertions check for specific error messages, unlike legacy allowing flexibility for non-strict validation.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-90",
-    "title":"Is an Event Emitter synchronous or asynchronous?",
-    "answer":"Synchronous by default, executing listeners immediately when events are emitted.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-90",
+    "title": "Is an Event Emitter synchronous or asynchronous?",
+    "answer": "Synchronous by default, executing listeners immediately when events are emitted.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-91",
-    "title":"List some differences between CommonJS module loader and ECMAScript module loader",
-    "answer":"CommonJS loads synchronously, ECMAScript modules use asynchronous loading with static imports for better optimization.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-91",
+    "title": "List some differences between CommonJS module loader and ECMAScript module loader",
+    "answer": "CommonJS loads synchronously, ECMAScript modules use asynchronous loading with static imports for better optimization.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-92",
-    "title":"How can you have one global variable between all clustered workers in Node.js?",
-    "answer":"Use external data stores like Redis to share state between worker processes effectively.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-92",
+    "title": "How can you have one global variable between all clustered workers in Node.js?",
+    "answer": "Use external data stores like Redis to share state between worker processes effectively.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-93",
-    "title":"Do I need Dependency Injection in Node.js and how to deal with it?",
-    "answer":"Dependency Injection improves modularity; use DI libraries like Awilix, or pattern solutions within modules.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-93",
+    "title": "Do I need Dependency Injection in Node.js and how to deal with it?",
+    "answer": "Dependency Injection improves modularity; use DI libraries like Awilix, or pattern solutions within modules.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-94",
-    "title":"How does libuv work under the hood?",
-    "answer":"Libuv manages asynchronous operations in Node.js using an event-driven model with event loop and worker threads.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-94",
+    "title": "How does libuv work under the hood?",
+    "answer": "Libuv manages asynchronous operations in Node.js using an event-driven model with event loop and worker threads.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-95",
-    "title":"Explain what is Reactor Pattern in Node.js?",
-    "answer":"Reactor Pattern manages concurrency by handling events or callbacks, especially in single-threaded environments like Node.js.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-95",
+    "title": "Explain what is Reactor Pattern in Node.js?",
+    "answer": "Reactor Pattern manages concurrency by handling events or callbacks, especially in single-threaded environments like Node.js.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-96",
-    "title":"Can Node.js use other engines than V8?",
-    "answer":"Yes, alternative engines like SpiderMonkey or ChakraCore can theoretically replace V8 but are rare in practice.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-96",
+    "title": "Can Node.js use other engines than V8?",
+    "answer": "Yes, alternative engines like SpiderMonkey or ChakraCore can theoretically replace V8 but are rare in practice.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-97",
-    "title":"Why Node.js devs tend to lean towards the Module Requiring vs Dependency Injection?",
-    "answer":"Module requiring is native to Node.js, providing straightforward require/imports; DI adds complexity and tooling dependency.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-97",
+    "title": "Why Node.js devs tend to lean towards the Module Requiring vs Dependency Injection?",
+    "answer": "Module requiring is native to Node.js, providing straightforward require/imports; DI adds complexity and tooling dependency.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-98",
-    "title":"How to solve Process out of Memory Exception in Node.js?",
-    "answer":"Optimize memory usage, adjust Node.js memory limits, segment workloads, or improve code to reduce memory footprint.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-98",
+    "title": "How to solve Process out of Memory Exception in Node.js?",
+    "answer": "Optimize memory usage, adjust Node.js memory limits, segment workloads, or improve code to reduce memory footprint.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-99",
-    "title":"How would you scale Node application?",
-    "answer":"Scale using load balancing, clustering, containerization, or deploying on multiple servers for distributed load handling.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-99",
+    "title": "How would you scale Node application?",
+    "answer": "Scale using load balancing, clustering, containerization, or deploying on multiple servers for distributed load handling.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-100",
-    "title":"What is the difference between process.nextTick() and setImmediate()?",
-    "answer":"process.nextTick() defers execution to next tick; setImmediate() defers till next event loop iteration.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-100",
+    "title": "What is the difference between process.nextTick() and setImmediate()?",
+    "answer": "process.nextTick() defers execution to next tick; setImmediate() defers till next event loop iteration.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-101",
-    "title":"Explain some Error Handling approaches in Node.js you know about. Which one will you use?",
-    "answer":"Approaches include try-catch, Promises with .catch(), unhandledRejection and uncaughtException handlers; varies with context.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-101",
+    "title": "Explain some Error Handling approaches in Node.js you know about. Which one will you use?",
+    "answer": "Approaches include try-catch, Promises with .catch(), unhandledRejection and uncaughtException handlers; varies with context.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-102",
-    "title":"What is the purpose of using hidden classes in V8?",
-    "answer":"Hidden classes help V8 optimize JavaScript object property access by mimicking class-like structure for fast lookup.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-102",
+    "title": "What is the purpose of using hidden classes in V8?",
+    "answer": "Hidden classes help V8 optimize JavaScript object property access by mimicking class-like structure for fast lookup.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-103",
-    "title":"Why do we need C++ Addons in Node.js?",
-    "answer":"C++ Addons enable performance-critical functionality access, or use system-level resources not directly supported by Node.js.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-103",
+    "title": "Why do we need C++ Addons in Node.js?",
+    "answer": "C++ Addons enable performance-critical functionality access, or use system-level resources not directly supported by Node.js.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-104",
-    "title":"Why should you separate Express app and server?",
-    "answer":"Separating allows modularity, easier testing, and server configurations independent of application logic.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-104",
+    "title": "Why should you separate Express app and server?",
+    "answer": "Separating allows modularity, easier testing, and server configurations independent of application logic.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-105",
-    "title":"What is V8 Templates?",
-    "answer":"V8 Templates aid in efficiently creating and glossing over new object types by caching commonly used objects.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-105",
+    "title": "What is V8 Templates?",
+    "answer": "V8 Templates aid in efficiently creating and glossing over new object types by caching commonly used objects.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-106",
-    "title":"How V8 compiles JavaScript code?",
-    "answer":"V8 uses Just-In-Time (JIT) compilation for converting JavaScript into optimized machine code dynamically.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-106",
+    "title": "How V8 compiles JavaScript code?",
+    "answer": "V8 uses Just-In-Time (JIT) compilation for converting JavaScript into optimized machine code dynamically.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-107",
-    "title":"How many threads does Node actually create?",
-    "answer":"Node.js creates main event loop thread, libuv worker threads in thread pool, and separate threads for other processes.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-107",
+    "title": "How many threads does Node actually create?",
+    "answer": "Node.js creates main event loop thread, libuv worker threads in thread pool, and separate threads for other processes.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-108",
-    "title":"Does JavaScript pass by references or pass by values?",
-    "answer":"JavaScript passes primitive types by value and objects/arrays by reference, affecting mutation behavior.",
-    "level":"junior",
-    "category":"nodejs"
+    "id": "nodejs-108",
+    "title": "Does JavaScript pass by references or pass by values?",
+    "answer": "JavaScript passes primitive types by value and objects/arrays by reference, affecting mutation behavior.",
+    "level": "junior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-109",
-    "title":"What's the difference between pm2 and pm2-runtime and when to use one?",
-    "answer":"pm2-runtime is lightweight for Docker containers, pm2 offers full features like management, monitoring, and logs.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-109",
+    "title": "What's the difference between pm2 and pm2-runtime and when to use one?",
+    "answer": "pm2-runtime is lightweight for Docker containers, pm2 offers full features like management, monitoring, and logs.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-110",
-    "title":"Does the cluster in Node.js utilize the same event loop?",
-    "answer":"No, each worker process in a cluster has its own event loop running concurrently for handling requests.",
-    "level":"mid",
-    "category":"nodejs"
+    "id": "nodejs-110",
+    "title": "Does the cluster in Node.js utilize the same event loop?",
+    "answer": "No, each worker process in a cluster has its own event loop running concurrently for handling requests.",
+    "level": "mid",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-111",
-    "title":"What is the difference between cluster.fork() vs child_process.fork() in Node.js?",
-    "answer":"cluster.fork() leverages built-in cluster module for scalable instances; child_process.fork() creates standalone child processes.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-111",
+    "title": "What is the difference between cluster.fork() vs child_process.fork() in Node.js?",
+    "answer": "cluster.fork() leverages built-in cluster module for scalable instances; child_process.fork() creates standalone child processes.",
+    "level": "senior",
+    "category": "nodejs"
   },
   {
-    "id":"nodejs-112",
-    "title":"How would you implement process communication when using cluster module in Node.js?",
-    "answer":"Use IPC (Inter-Process Communication) with messaging, facilitating communication between master and worker processes.",
-    "level":"senior",
-    "category":"nodejs"
+    "id": "nodejs-112",
+    "title": "How would you implement process communication when using cluster module in Node.js?",
+    "answer": "Use IPC (Inter-Process Communication) with messaging, facilitating communication between master and worker processes.",
+    "level": "senior",
+    "category": "nodejs"
   }
 ]

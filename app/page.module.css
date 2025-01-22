@@ -9,7 +9,7 @@
 
 .navigation {
   background: #16408c;
-    padding: 20px;
+  padding: 20px;
 }
 
 .title {
@@ -25,5 +25,5 @@
 
 .categoriesListItem {
   padding: 10px 0;
-  border-bottom: 0.5px solid rgba(255,255,255,0.8);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
 }

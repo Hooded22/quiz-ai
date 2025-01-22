@@ -1,15 +1,20 @@
-import { MakeAnswerForm } from "../../../components/MakeAnswerForm";
-import {Question} from "../../../types/question";
-import { promises as fs } from "fs";
-import path from "path";
-import {InterviewConfig, QuestionsSetsValues, RoleType, SeniorityLevel} from "../../../types/interviewConfig";
-import {RolesConfig} from "../../../constants/rolesConfig";
+import { MakeAnswerForm } from '../../../components/MakeAnswerForm';
+import { Question } from '../../../types/question';
+import { promises as fs } from 'fs';
+import path from 'path';
+import {
+  InterviewConfig,
+  QuestionsSetsValues,
+  RoleType,
+  SeniorityLevel,
+} from '../../../types/interviewConfig';
+import { RolesConfig } from '../../../constants/rolesConfig';
 
 interface QuestionCategoryProps {
   params: {
     id: RoleType;
   };
-  searchParams: InterviewConfig
+  searchParams: InterviewConfig;
 }
 
 function getRandomInt(min: number, max: number) {
@@ -29,54 +34,71 @@ function generateUniqueRandomNumbers(count: number, min: number, max: number) {
 }
 
 function getRandomQuestionsBasedOnLevel(
-    questions: Question[],
-    numberOfQuestionsToGet: number,
-    difficultyLevel: SeniorityLevel
+  questions: Question[],
+  numberOfQuestionsToGet: number,
+  difficultyLevel: SeniorityLevel
 ) {
   // Filter questions based on difficulty level
-  const filteredQuestions = questions.filter(question => {
-    if(difficultyLevel === SeniorityLevel.ALL) {
+  const filteredQuestions = questions.filter((question) => {
+    if (difficultyLevel === SeniorityLevel.ALL) {
       return true;
     }
 
     if (difficultyLevel === SeniorityLevel.JUNIOR) {
-      return question.level === SeniorityLevel.JUNIOR || question.level === SeniorityLevel.MID;
+      return (
+        question.level === SeniorityLevel.JUNIOR ||
+        question.level === SeniorityLevel.MID
+      );
     }
 
-    return question.level === SeniorityLevel.MID || question.level === SeniorityLevel.SENIOR;
+    return (
+      question.level === SeniorityLevel.MID ||
+      question.level === SeniorityLevel.SENIOR
+    );
   });
 
   const countToGet = Math.min(filteredQuestions.length, numberOfQuestionsToGet);
 
-  const idsArray: number[] = generateUniqueRandomNumbers(countToGet, 0, filteredQuestions.length - 1);
+  const idsArray: number[] = generateUniqueRandomNumbers(
+    countToGet,
+    0,
+    filteredQuestions.length - 1
+  );
 
   return filteredQuestions.filter((_, index) => idsArray.includes(index));
 }
 
-async function getRandomQuestionForTechnology(technologyId: string, questionsNumber: number, seniorityLevel: SeniorityLevel): Promise<Question[]> {
-  const jsonDirectory = path.join(process.cwd(), "/data");
+async function getRandomQuestionForTechnology(
+  technologyId: string,
+  questionsNumber: number,
+  seniorityLevel: SeniorityLevel
+): Promise<Question[]> {
+  const jsonDirectory = path.join(process.cwd(), '/data');
   try {
     const fileContents = await fs.readFile(
       `${jsonDirectory}/${technologyId}.json`,
-      "utf8"
+      'utf8'
     );
-    const questions: Question[] = JSON.parse(fileContents)
+    const questions: Question[] = JSON.parse(fileContents);
 
-
-    return getRandomQuestionsBasedOnLevel(questions, questionsNumber, seniorityLevel);
+    return getRandomQuestionsBasedOnLevel(
+      questions,
+      questionsNumber,
+      seniorityLevel
+    );
   } catch (error) {
-    return []
+    return [];
   }
 }
 
 async function getQuestionsSetForSelectedRole(
-    role: RoleType,
-    questionsLimit: number,
-    seniorityLevel: SeniorityLevel,
+  role: RoleType,
+  questionsLimit: number,
+  seniorityLevel: SeniorityLevel
 ) {
   const rolesSets = RolesConfig[role];
   const sortedRoleSets = Object.entries(rolesSets).sort(
-      ([, a], [, b]) => b - a
+    ([, a], [, b]) => b - a
   ) as [QuestionsSetsValues, number][]; // Sort by percentage
 
   const questionsForRole: Question[] = [];
@@ -106,7 +128,11 @@ async function getQuestionsSetForSelectedRole(
 
   // Fetch questions for each set
   for (const [key, count] of Array.from(questionsNeeded)) {
-    const questionsForSet = await getRandomQuestionForTechnology(key, count, seniorityLevel);
+    const questionsForSet = await getRandomQuestionForTechnology(
+      key,
+      count,
+      seniorityLevel
+    );
     questionsForRole.push(...questionsForSet.slice(0, count));
   }
 
@@ -116,16 +142,32 @@ async function getQuestionsSetForSelectedRole(
 export default async function QuestionCategory(props: QuestionCategoryProps) {
   //based on query params get random number of question for chosen interview
 
-  const roleId = props.params.id
-  const questionsNumber = props.searchParams.questionsNumber ? parseInt(props.searchParams.questionsNumber) : 0
-  const seniorityLevel = props.searchParams.seniorityLevel ?? SeniorityLevel.ALL
+  const roleId = props.params.id;
+  const questionsNumber = props.searchParams.questionsNumber
+    ? parseInt(props.searchParams.questionsNumber)
+    : 0;
+  const seniorityLevel =
+    props.searchParams.seniorityLevel ?? SeniorityLevel.ALL;
 
-
-  const questionsWithAnswers = await getQuestionsSetForSelectedRole(roleId, questionsNumber, seniorityLevel);
+  const questionsWithAnswers = await getQuestionsSetForSelectedRole(
+    roleId,
+    questionsNumber,
+    seniorityLevel
+  );
 
   return (
-    <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100%"}}>
-      <MakeAnswerForm questionsWithAnswers={questionsWithAnswers} topic={props.params.id}/>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
+      }}
+    >
+      <MakeAnswerForm
+        questionsWithAnswers={questionsWithAnswers}
+        topic={props.params.id}
+      />
     </div>
   );
 }
