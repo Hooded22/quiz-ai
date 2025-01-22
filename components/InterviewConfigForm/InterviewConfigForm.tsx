@@ -61,7 +61,7 @@ const QuestionForm = () => {
 
   return (
     <div className={styles.formContainer}>
-      <h2>Create Quiz</h2>
+      <h2 className={styles.header}>Create Quiz</h2>
       <form className={styles.formElement} onSubmit={handleSubmit}>
         <div>
           <label className={styles.label} htmlFor='roleType'>
@@ -143,7 +143,10 @@ const QuestionForm = () => {
         </div>
 
         <div>
-          <label className={styles.label} htmlFor='questionsCanRepeat'>
+          <label
+            className={styles.checkboxWrapper}
+            htmlFor='questionsCanRepeat'
+          >
             <input
               className={styles.checkbox}
               type='checkbox'

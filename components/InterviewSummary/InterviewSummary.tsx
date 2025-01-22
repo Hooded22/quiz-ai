@@ -6,6 +6,7 @@ import {
   SeniorityLevel,
 } from '../../types/interviewConfig';
 import styles from './styles.module.css';
+import { RolesIdsToTextMap } from '../../constants/rolesMap';
 
 export interface InterviewSummaryProps {
   interviewRole: RoleType;
@@ -27,16 +28,19 @@ export const InterviewSummary = ({
 }: InterviewSummaryProps) => {
   const correctAnswers = results.filter((r) => r.isAnswerCorrect).length;
   const incorrectAnswers = results.length - correctAnswers;
+  const roleName =
+    RolesIdsToTextMap[interviewRole] ||
+    interviewRole.replace(/-/g, ' ') + ' Developer';
 
   return (
     <div className={styles.container}>
       <h1 className={styles.header}>
-        {level} {interviewRole.replace(/-/g, ' ')} Developer
+        {level} {roleName}
       </h1>
 
       <div className={styles.resultSection}>
         <h2 className={styles.subHeader}>Results</h2>
-        <div>
+        <div className={styles.resultSectionContent}>
           <span>
             Correct Answers:{' '}
             <strong className={styles.success}>{correctAnswers}</strong>
@@ -76,12 +80,12 @@ export const InterviewSummary = ({
       )}
 
       <div className={styles.actions}>
-        <button className={styles.button} onClick={() => alert('Finish')}>
+        <a className={styles.button} href='/interview'>
           Finish Interview
-        </button>
-        <button className={styles.button} onClick={() => alert('Retry')}>
+        </a>
+        <a className={styles.button} href='/'>
           Try Again
-        </button>
+        </a>
       </div>
     </div>
   );

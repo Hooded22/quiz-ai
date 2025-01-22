@@ -3,16 +3,24 @@
   color: #fff;
   padding: 20px;
   border-radius: 8px;
+  margin-top: 60px;
 }
 
 .header {
   font-size: 24px;
   margin-bottom: 20px;
+  text-transform: capitalize;
 }
 
 .subHeader {
   font-size: 18px;
   margin-bottom: 10px;
+}
+
+.resultSectionContent {
+  display: flex;
+  flex-direction: row;
+  gap: 32px
 }
 
 .resultSection {
