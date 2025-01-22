@@ -3,13 +3,18 @@
   color: #fff;
   padding: 20px;
   border-radius: 8px;
-  margin-top: 60px;
+  max-width: 1200px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto
 }
 
 .header {
   font-size: 24px;
   margin-bottom: 20px;
   text-transform: capitalize;
+  text-align: center;
 }
 
 .subHeader {

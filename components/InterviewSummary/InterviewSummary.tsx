@@ -7,6 +7,7 @@ import {
 } from '../../types/interviewConfig';
 import styles from './styles.module.css';
 import { RolesIdsToTextMap } from '../../constants/rolesMap';
+import { ScoreCounter } from '../ScoreCounter/ScoreCounter';
 
 export interface InterviewSummaryProps {
   interviewRole: RoleType;
@@ -31,6 +32,7 @@ export const InterviewSummary = ({
   const roleName =
     RolesIdsToTextMap[interviewRole] ||
     interviewRole.replace(/-/g, ' ') + ' Developer';
+  const score = (correctAnswers / (correctAnswers + incorrectAnswers)) * 100;
 
   return (
     <div className={styles.container}>
@@ -39,7 +41,7 @@ export const InterviewSummary = ({
       </h1>
 
       <div className={styles.resultSection}>
-        <h2 className={styles.subHeader}>Results</h2>
+        <ScoreCounter score={score} />
         <div className={styles.resultSectionContent}>
           <span>
             Correct Answers:{' '}

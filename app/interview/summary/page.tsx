@@ -8,30 +8,28 @@ import { InterviewSummary } from '../../../components/InterviewSummary/Interview
 
 function Page() {
   return (
-    <div>
-      <InterviewSummary
-        interviewRole={'be-java'}
-        level={'senior'}
-        questionsNumber={10}
-        results={[
-          {
-            questionCategory: 'java',
-            question: 'Test123',
-            isAnswerCorrect: true,
-          },
-          {
-            questionCategory: 'java',
-            question: 'Test1234',
-            isAnswerCorrect: true,
-          },
-          {
-            questionCategory: 'java',
-            question: 'Test1235',
-            isAnswerCorrect: false,
-          },
-        ]}
-      />
-    </div>
+    <InterviewSummary
+      interviewRole={'be-java'}
+      level={'senior'}
+      questionsNumber={10}
+      results={[
+        {
+          questionCategory: 'java',
+          question: 'Test123',
+          isAnswerCorrect: true,
+        },
+        {
+          questionCategory: 'java',
+          question: 'Test1234',
+          isAnswerCorrect: true,
+        },
+        {
+          questionCategory: 'java',
+          question: 'Test1235',
+          isAnswerCorrect: false,
+        },
+      ]}
+    />
   );
 }
 
