@@ -16,4 +16,11 @@ export interface Question {
   title: string;
   answer?: string;
   level?: SeniorityLevel;
+  category: string;
+}
+
+export interface AnswersStatus {
+  question: string;
+  questionCategory: string; 
+  isAnswerCorrect: boolean;
 }

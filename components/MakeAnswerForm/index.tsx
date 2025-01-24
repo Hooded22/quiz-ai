@@ -21,20 +21,36 @@ export function MakeAnswerForm({
   //TODO: when all questions done set quiz results to quiz state and move to next screen
   //TODO: Change text are component to show submit button inside it
 
-  const { isQuestionsLimitReached, currentQuestion, nextQuestion } =
-    useInterviewProcess({ allQuestions: questionsWithAnswers });
-  const { register, onSubmit, resetForm, aiAnswer } = useMakeAnswerForm({
+  const {
+    isQuestionsLimitReached,
     currentQuestion,
-    topic,
-  });
+    nextQuestion,
+    addAnswer,
+    userAnswers
+  } =
+    useInterviewProcess({ allQuestions: questionsWithAnswers });
+  const {
+    register,
+    onSubmit,
+    resetForm,
+    aiAnswer } = useMakeAnswerForm({
+      currentQuestion,
+      topic,
+      addAnswer
+    });
 
   const onNextQuestionButtonClick = () => {
     resetForm();
     nextQuestion();
   };
 
+  const onFinishInterviewButtonClick = () => {
+    console.log("Answers", userAnswers)
+  }
+
   const isLoading =
     aiAnswer.type === 'WAITING_FOR_RESPONSE' && aiAnswer.loading;
+  const isInterviewFinished = isQuestionsLimitReached && aiAnswer.type === 'SUCCESS';
 
   console.log('currentQuestion', currentQuestion.level);
 
@@ -91,10 +107,10 @@ export function MakeAnswerForm({
                   Next question
                 </button>
               )}
-              {isQuestionsLimitReached && aiAnswer.type === 'SUCCESS' && (
+              {isInterviewFinished && (
                 <button
                   className='btn btn-active'
-                  onClick={onNextQuestionButtonClick}
+                  onClick={onFinishInterviewButtonClick}
                 >
                   Finish quiz
                 </button>

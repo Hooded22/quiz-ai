@@ -8,16 +8,13 @@ import {
 import styles from './styles.module.css';
 import { RolesIdsToTextMap } from '../../constants/rolesMap';
 import { ScoreCounter } from '../ScoreCounter/ScoreCounter';
+import { AnswersStatus } from 'types/question';
 
 export interface InterviewSummaryProps {
   interviewRole: RoleType;
   level: SeniorityLevel;
   questionsNumber: number;
-  results: {
-    question: string;
-    questionCategory: string;
-    isAnswerCorrect: boolean;
-  }[];
+  results: AnswersStatus[];
   interviewTime?: number;
 }
 

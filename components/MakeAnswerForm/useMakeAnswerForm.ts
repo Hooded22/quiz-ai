@@ -15,11 +15,13 @@ import {
 import {
   getAnswerCheckResponseWithCorrectAnswer,
   getRandomQuestion,
+  checkIsAnswerCorrect,
 } from '../../utils/question.utils';
 
 export interface UseMakeAnswerFormProps {
   currentQuestion: Question;
   topic: string;
+  addAnswer: (question: string, questionCategory: string, isAnswerCorrect: boolean) => void;
 }
 
 const modelAnswerReducer = (
@@ -56,6 +58,7 @@ const modelAnswerReducer = (
 export const useMakeAnswerForm = ({
   topic,
   currentQuestion,
+  addAnswer,
 }: UseMakeAnswerFormProps) => {
   const [aiAnswer, dispatch] = useReducer(modelAnswerReducer, {
     type: 'START',
@@ -90,6 +93,9 @@ export const useMakeAnswerForm = ({
         dispatch({ type: 'setLoadingForResponse' });
         const GPTResponse = await sendPromptToGPT(GPTPrompt);
 
+        const isAnswerCorrect = checkIsAnswerCorrect(GPTResponse);
+        addAnswer(currentQuestion.title, currentQuestion.category, isAnswerCorrect);
+
         if (currentQuestion.answer) {
           dispatch({
             type: 'setResponseWithKnownCorrectAnswer',
@@ -112,7 +118,7 @@ export const useMakeAnswerForm = ({
         });
       }
     },
-    [currentQuestion]
+    [currentQuestion, addAnswer]
   );
 
   return {
