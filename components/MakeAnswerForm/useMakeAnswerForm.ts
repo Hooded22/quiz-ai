@@ -39,7 +39,8 @@ const modelAnswerReducer = (
         modalOpen: true,
         response: getAnswerCheckResponseWithCorrectAnswer(
           action.payload.response,
-          action.payload.correctAnswer
+          action.payload.correctAnswer,
+          action.payload.isAnswerCorrect
         ),
       };
     case 'setAIModelResponse':
@@ -63,7 +64,7 @@ export const useMakeAnswerForm = ({
   const [aiAnswer, dispatch] = useReducer(modelAnswerReducer, {
     type: 'START',
   });
-  const { register, reset, handleSubmit } = useForm<FormValues>();
+  const { register, reset, handleSubmit, control } = useForm<FormValues>();
 
   const resetForm = () => {
     reset({ answer: '' });
@@ -82,16 +83,18 @@ export const useMakeAnswerForm = ({
 
       const GPTPrompt = currentQuestion.answer
         ? prepareGPTPromptWithCorrectAnswer(
-            currentQuestion.title,
-            myAnswer,
-            currentQuestion.answer,
-            topic
-          )
+          currentQuestion.title,
+          myAnswer,
+          currentQuestion.answer,
+          topic
+        )
         : prepareGPTPrompt(currentQuestion?.title, myAnswer, topic);
 
       try {
         dispatch({ type: 'setLoadingForResponse' });
         const GPTResponse = await sendPromptToGPT(GPTPrompt);
+
+        console.log("GPTResponse", GPTResponse, GPTPrompt, myAnswer)
 
         const isAnswerCorrect = checkIsAnswerCorrect(GPTResponse);
         addAnswer(currentQuestion.title, currentQuestion.category, isAnswerCorrect);
@@ -102,6 +105,7 @@ export const useMakeAnswerForm = ({
             payload: {
               response: GPTResponse,
               correctAnswer: currentQuestion.answer,
+              isAnswerCorrect
             },
           });
         } else {
@@ -121,12 +125,16 @@ export const useMakeAnswerForm = ({
     [currentQuestion, addAnswer]
   );
 
+  const onSubmit = (values: FormValues) => {
+    checkCorrectAnswer(values.answer);
+    resetForm()
+  }
+
   return {
     aiAnswer,
     register,
     resetForm,
-    onSubmit: handleSubmit((values: FormValues) =>
-      checkCorrectAnswer(values.answer)
-    ),
+    onSubmit: handleSubmit(onSubmit),
+    control
   };
 };

@@ -10,14 +10,14 @@ export const checkIsAnswerCorrect = (aiResponse: string) =>
 
 export function getAnswerCheckResponseWithCorrectAnswer(
   aiResponse: string,
-  correctAnswer: string
+  correctAnswer: string,
+  isAnswerCorrect: boolean
 ) {
   console.log(
     'getAnswerCheckResponseWithCorrectAnswer',
     aiResponse,
     correctAnswer
   );
-  const isAnswerCorrect = checkIsAnswerCorrect(aiResponse);
   const answerStatus = isAnswerCorrect
     ? 'Correct answer, good job!'
     : 'Sorry, your answer is incorrect!';

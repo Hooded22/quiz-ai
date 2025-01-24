@@ -27,17 +27,17 @@ export function MakeAnswerForm({
     nextQuestion,
     addAnswer,
     userAnswers
-  } =
-    useInterviewProcess({ allQuestions: questionsWithAnswers });
+  } = useInterviewProcess({ allQuestions: questionsWithAnswers });
   const {
-    register,
     onSubmit,
+    control,
     resetForm,
-    aiAnswer } = useMakeAnswerForm({
-      currentQuestion,
-      topic,
-      addAnswer
-    });
+    aiAnswer
+  } = useMakeAnswerForm({
+    currentQuestion,
+    topic,
+    addAnswer
+  });
 
   const onNextQuestionButtonClick = () => {
     resetForm();
@@ -83,15 +83,16 @@ export function MakeAnswerForm({
         </div>
         <div className={styles.BottomSection}>
           <div className={styles.UserInputContainer}>
-            <DynamicTextarea register={register} name='answer' />
+            <DynamicTextarea control={control} name='answer' />
             <div className={styles.UserInputContainerButtonsWrapper}>
-              <button className={styles.SubmitButton} onClick={onSubmit}>
+              <button className={styles.SubmitButton} onClick={onSubmit} type='button'>
                 Send answer
               </button>
             </div>
           </div>
           <div className={styles.ButtonContainer}>
             <button
+              type='button'
               className='btn btn-error'
               disabled={aiAnswer.type !== 'SUCCESS'}
               onClick={resetForm}
@@ -101,6 +102,7 @@ export function MakeAnswerForm({
             <div className='justify-between gap-8 flex'>
               {!isQuestionsLimitReached && (
                 <button
+                  type='button'
                   className='btn btn-active'
                   onClick={onNextQuestionButtonClick}
                 >
@@ -109,6 +111,7 @@ export function MakeAnswerForm({
               )}
               {isInterviewFinished && (
                 <button
+                  type='button'
                   className='btn btn-active'
                   onClick={onFinishInterviewButtonClick}
                 >
