@@ -1,0 +1,359 @@
+[
+  {
+    "id": "html-1",
+    "title": "What is an iframe and how it works?",
+    "answer": "An iframe is an HTML element that allows embedding another HTML page within the current page. It creates a new browsing context, which is a nested browsing context or another 'window' inside the current document, and can be used to display external content like advertisements or videos.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-2",
+    "title": "What is the purpose of the alt attribute on images?",
+    "answer": "The alt attribute provides alternative text for an image, used by screen readers to describe the image for users with visual impairments and displayed in place of the image if it fails to load.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-3",
+    "title": "Explain meta tags in HTML.",
+    "answer": "Meta tags are HTML elements used in the head section of a document to provide metadata about the page, such as character set, author, description, keywords, and viewport settings. They help with SEO and page rendering.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-4",
+    "title": "What's the difference between an 'attribute' and a 'property' in HTML?",
+    "answer": "Attributes are defined in HTML code and represent initial settings of an element, while properties are accessible via JavaScript and represent the current state of a DOM element.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-5",
+    "title": "What were some of the key goals and motivations for the HTML5 specification?",
+    "answer": "HTML5 aimed to provide better support for multimedia, improve semantic accuracy, enable cross-platform web applications, and reduce dependency on external plugins.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-6",
+    "title": "How can you highlight text in HTML?",
+    "answer": "Text can be highlighted using the <mark> element, which visually highlights the text inside it, often rendering it with a yellow background.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-7",
+    "title": "How Can I Get Indexed Better by Search Engines?",
+    "answer": "To improve indexing, use well-structured HTML, relevant meta tags, keywords, descriptive URLs, alt attributes for images, and ensure fast page loading.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-8",
+    "title": "What is a self closing tag?",
+    "answer": "A self-closing tag is an HTML element that does not have a closing tag and ends with '/>', commonly used for void elements like <img> or <br>.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-9",
+    "title": "Briefly describe the correct usage of the following HTML5 semantic elements: <header>, <article>, <section>, <footer>",
+    "answer": "<header> is for introductory content, <article> for self-contained compositions, <section> for thematic grouping, and <footer> for footer content.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-10",
+    "title": "What is the difference between span and div?",
+    "answer": "<span> is an inline element used for styling parts of text, while <div> is a block-level element used to group larger chunks of content.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-11",
+    "title": "What is Character Encoding?",
+    "answer": "Character encoding is a system that pairs each character in a character set with something that the computer can store and transmit, typically a sequence of numbers. UTF-8 is a common encoding for web pages.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-12",
+    "title": "When is it appropriate to use the small element?",
+    "answer": "The <small> element is used to represent side comments or fine print, typically rendered in a smaller font.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-13",
+    "title": "What are defer and async attributes on a <script> tag?",
+    "answer": "The defer attribute loads scripts in the order they appear in the document and executes them after the HTML is parsed, while async loads and executes scripts asynchronously on its own, not necessarily in order.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-14",
+    "title": "What is the purpose of cache busting and how can you achieve it?",
+    "answer": "Cache busting ensures users receive the most up-to-date versions of files by changing URLs, typically by appending query strings or version numbers.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-15",
+    "title": "What are some differences that XHTML has compared to HTML?",
+    "answer": "XHTML is stricter in syntax (tags must be closed, attributes quoted, lowercase tags) and is XML-based, whereas HTML is more lenient and SGML-based.",
+    "level": "senior",
+    "category": "html"
+  },
+  {
+    "id": "html-16",
+    "title": "What are Web Workers?",
+    "answer": "Web Workers allow background tasks in JavaScript without affecting the main thread's performance, enabling concurrent execution of scripts.",
+    "level": "senior",
+    "category": "html"
+  },
+  {
+    "id": "html-17",
+    "title": "Where and why is the rel=\"noopener\" attribute used?",
+    "answer": "The rel=\"noopener\" attribute is used in links to prevent the new page from being able to access the window.opener property, enhancing security.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-18",
+    "title": "What is the difference between <section> and <div>?",
+    "answer": "<section> is a semantic element used for grouping related content for a particular theme, while <div> is non-semantic and used for layout structure.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-19",
+    "title": "What is WebSQL?",
+    "answer": "WebSQL is a deprecated web API for storing data in a relational database on the client-side using a subset of SQL.",
+    "level": "senior",
+    "category": "html"
+  },
+  {
+    "id": "html-20",
+    "title": "What does a DOCTYPE do?",
+    "answer": "A DOCTYPE specifies the HTML version being used, instructing the browser on how to render the content, preventing quirks mode.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-21",
+    "title": "Describe the difference between a 'cookie', 'sessionStorage' and 'localStorage'.",
+    "answer": "Cookies are sent with server requests and have expiration dates. sessionStorage is session-based, client-side storage limited to the browser session. localStorage provides persistent, client-side storage lasting until explicitly deleted.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-22",
+    "title": "What is the DOM?",
+    "answer": "The Document Object Model (DOM) is a programming interface for HTML documents, representing the document's structure as a tree of objects that can be manipulated programmatically.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-23",
+    "title": "What is HTML5 Web Storage? Explain localStorage and sessionStorage.",
+    "answer": "HTML5 Web Storage allows storing data as key-value pairs. localStorage persists data across sessions, while sessionStorage retains data only during the page session.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-24",
+    "title": "Explain the difference between cookies, session and local storage.",
+    "answer": "Cookies are sent to the server with requests, cap at 4KB, and are set with expiry. sessionStorage and localStorage are accessible only via client-side scripts, with the former limited to session duration and the latter persistent.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-25",
+    "title": "Can a web page contain multiple <header> elements? What about <footer> elements?",
+    "answer": "Yes, a web page can have multiple <header> and <footer> elements, typically within different <section> or <article> elements.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-26",
+    "title": "What are data- attributes good for?",
+    "answer": "Data- attributes allow storing custom data on HTML elements, which can be accessed and manipulated through JavaScript, useful for PWA enhancements.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-27",
+    "title": "Discuss the differences between an HTML specification and a browser’s implementation thereof.",
+    "answer": "The HTML specification is a set of guidelines for web technologies, while browser implementation refers to how a browser interprets and renders those guidelines. Differences occur when browsers don't fully support or interpret specifications uniquely.",
+    "level": "senior",
+    "category": "html"
+  },
+  {
+    "id": "html-28",
+    "title": "What is WebSQL?",
+    "answer": "WebSQL is a deprecated browser feature that used a SQL-based database for client-side data storage, allowing web pages to locally store structured data using a SQL interface.",
+    "level": "senior",
+    "category": "html"
+  },
+  {
+    "id": "html-29",
+    "title": "What is an optional tag?",
+    "answer": "Optional tags are HTML tags that browsers can infer even if omitted, such as <body> or <html>.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-30",
+    "title": "Explain the difference between block elements and inline elements",
+    "answer": "Block elements occupy full width and start a new line by default while inline elements occupy only the space their content needs and flow inline with surrounding content.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-31",
+    "title": "How do you change the direction of html text?",
+    "answer": "Change text direction using the 'dir' attribute, with values 'ltr' (left-to-right) or 'rtl' (right-to-left).",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-32",
+    "title": "How do you serve a page with content in multiple languages?",
+    "answer": "Serve multilingual content using the 'lang' attribute for language-specific HTML elements and hreflang in links for SEO.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-33",
+    "title": "Have you used different HTML templating languages before?",
+    "answer": "Yes, templating languages like Mustache, Handlebars, and EJS dynamically generate HTML by inserting data into templates.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-34",
+    "title": "Explain almost standard, full standard and quirks mode",
+    "answer": "Quirks mode emulates older browsers for legacy sites, almost standard mode relaxes some rules, and full standard mode adheres strictly to current standards.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-35",
+    "title": "How do you set IE compatibility mode?",
+    "answer": "Set IE compatibility mode using a <meta> tag with the 'http-equiv' attribute, like <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+    "level": "senior",
+    "category": "html"
+  },
+  {
+    "id": "html-36",
+    "title": "What's new in HTML 5?",
+    "answer": "HTML5 introduced semantic tags, rich multimedia support (audio/video), new DOM APIs, and improved form controls.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-37",
+    "title": "What is the purpose of 'main' element?",
+    "answer": "The <main> element designates the dominant content of a document, aiding accessibility tools in distinguishing it from repeated content.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-38",
+    "title": "What's the difference between Full Standard, Almost Standard and Quirks Mode?",
+    "answer": "Full Standard mode renders according to the latest web standards, Almost Standard mode is similar with slight adjustments, and Quirks Mode mimics non-standard behavior to support older websites.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-39",
+    "title": "What are the building blocks of HTML5?",
+    "answer": "HTML5 building blocks include semantic elements, multimedia support, CSS3 integration, offline storage, new form elements, and APIs like WebSockets.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-40",
+    "title": "Why to use HTML5 semantic tags?",
+    "answer": "Use HTML5 semantic tags to improve content comprehension for developers and assistive technologies, enhancing SEO and accessibility.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-41",
+    "title": "Why do I need a doctype and what does it do?",
+    "answer": "A doctype specifies the HTML version and instructs the browser on rendering rules to avoid Quirks Mode and ensure standards-compliant display.",
+    "level": "junior",
+    "category": "html"
+  },
+  {
+    "id": "html-42",
+    "title": "Describe the difference between <div>, <section>, and <article>.",
+    "answer": "A <div> is a generic block for layout, <section> groups related content thematically, and <article> represents self-contained content that can be distributed independently.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-43",
+    "title": "How would you select svg or canvas for your site?",
+    "answer": "Use <svg> for vector graphics that require interaction and DOM manipulation, and <canvas> for bitmap graphics with dynamic rendering through JavaScript.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-44",
+    "title": "What is WebP?",
+    "answer": "WebP is a modern image format that provides both lossless and lossy compression, aimed at reducing file sizes and enhancing web performance.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-45",
+    "title": "What is an HTML preprocessor and are you using it?",
+    "answer": "An HTML preprocessor, like JSX or Pug, extends HTML with additional features for templating and easier code management; use depends on project needs.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-46",
+    "title": "What kind of things must you be wary of when designing or developing for multilingual sites?",
+    "answer": "Consider language support (RTL/LTR), character encoding, cultural context, translation accuracy, and SEO using proper hreflang tags.",
+    "level": "senior",
+    "category": "html"
+  },
+  {
+    "id": "html-47",
+    "title": "What is progressive rendering?",
+    "answer": "Progressive rendering improves web performance by prioritizing visible content loading first, enhancing initial page render speed.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-48",
+    "title": "Why you would use a srcset attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.",
+    "answer": "The srcset attribute helps serve responsive images by listing multiple image sources for different device resolutions, allowing browsers to select the most appropriate resource based on current viewport and screensize.",
+    "level": "mid",
+    "category": "html"
+  },
+  {
+    "id": "html-49",
+    "title": "Could you generate a public key in HTML?",
+    "answer": "HTML itself cannot generate a public key; JavaScript libraries are needed for cryptographic operations within a webpage.",
+    "level": "senior",
+    "category": "html"
+  },
+  {
+    "id": "html-50",
+    "title": "What are Web Components?",
+    "answer": "Web Components are a set of standards (Custom Elements, Shadow DOM, HTML Templates) that facilitate creating reusable, encapsulated HTML tags.",
+    "level": "senior",
+    "category": "html"
+  },
+  {
+    "id": "html-51",
+    "title": "What is accessibility & ARIA role means in a web application?",
+    "answer": "Accessibility ensures web content is usable by all, including people with disabilities. ARIA roles enhance accessibility by defining elements' purposes to assistive technologies.",
+    "level": "senior",
+    "category": "html"
+  }
+]

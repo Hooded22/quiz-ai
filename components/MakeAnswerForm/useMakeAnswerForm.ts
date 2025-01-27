@@ -1,91 +1,153 @@
-import {gptMessagesType, sendPromptToGPT} from "utils";
-import { useCallback, useEffect, useReducer, useState } from "react";
-import { useForm } from "react-hook-form";
-import { Actions, FormValues, GPTAnswerState, QuestionsWithAnswer } from "./types";
-import {Question} from "../../types/question";
-import {prepareGPTPrompt, prepareGPTPromptWithCorrectAnswer} from "../../utils/prompts.utils";
-import {getAnswerCheckResponseWithCorrectAnswer, getRandomQuestion} from "../../utils/question.utils";
+import { gptMessagesType, sendPromptToGPT } from 'utils';
+import { useCallback, useEffect, useReducer, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import {
+  Actions,
+  FormValues,
+  GPTAnswerState,
+  QuestionsWithAnswer,
+} from './types';
+import { Question } from '../../types/question';
+import {
+  prepareGPTPrompt,
+  prepareGPTPromptWithCorrectAnswer,
+} from '../../utils/prompts.utils';
+import {
+  getAnswerCheckResponseWithCorrectAnswer,
+  getRandomQuestion,
+  checkIsAnswerCorrect,
+} from '../../utils/question.utils';
+import { useConversation } from "./useConversation";
 
-const modelAnswerReducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
+export interface UseMakeAnswerFormProps {
+  currentQuestion: Question;
+  topic: string;
+  addAnswer: (question: string, questionCategory: string, isAnswerCorrect: boolean) => void;
+}
+
+const modelAnswerReducer = (
+  state: GPTAnswerState,
+  action: Actions
+): GPTAnswerState => {
   switch (action.type) {
-    case "clearForm":
-      return { type: "START" };
-    case "setLoadingForResponse":
-      return { type: "WAITING_FOR_RESPONSE", loading: true };
-    case "setResponseWithKnownCorrectAnswer":
+    case 'clearForm':
+      return { type: 'START' };
+    case 'setLoadingForResponse':
+      return { type: 'WAITING_FOR_RESPONSE', loading: true };
+    case 'setResponseWithKnownCorrectAnswer':
       return {
-        type: "SUCCESS",
+        type: 'SUCCESS',
         modalOpen: true,
-        response: getAnswerCheckResponseWithCorrectAnswer(action.payload.response, action.payload.correctAnswer),
+        response: getAnswerCheckResponseWithCorrectAnswer(
+          action.payload.response,
+          action.payload.correctAnswer,
+          action.payload.isAnswerCorrect
+        ),
       };
-    case "setAIModelResponse":
+    case 'setAIModelResponse':
       return {
-        type: "SUCCESS",
+        type: 'SUCCESS',
         modalOpen: true,
         response: action.payload.response,
       };
-    case "setError":
-      return { type: "ERROR", errorMessage: action.payload.errorMessage };
+    case 'setError':
+      return { type: 'ERROR', errorMessage: action.payload.errorMessage };
     default:
       return state;
   }
 };
 
-export const useMakeAnswerForm = (questionsWithAnswers: QuestionsWithAnswer[], topic: string) => {
-  const [state, dispatch] = useReducer(modelAnswerReducer, { type: "START" });
-  const [drawnQuestion, setDrawnQuestion] = useState<Question>();
-  const { register, reset, handleSubmit } = useForm<FormValues>();
+export const useMakeAnswerForm = ({
+  topic,
+  currentQuestion,
+  addAnswer,
+}: UseMakeAnswerFormProps) => {
+  const [aiAnswer, dispatch] = useReducer(modelAnswerReducer, {
+    type: 'START',
+  });
+  const { register, control, reset, handleSubmit } = useForm<FormValues>();
+  const { addMessage, messages } = useConversation();
 
-  const drawNewQuestion = useCallback(() => {
-    reset({answer: ""});
-    dispatch({type: "clearForm"})
-    setDrawnQuestion(getRandomQuestion<QuestionsWithAnswer>(questionsWithAnswers));
-  }, [questionsWithAnswers, reset]);
+  const resetForm = () => {
+    reset({ answer: '' });
+    dispatch({ type: 'clearForm' });
+  };
 
   const checkCorrectAnswer = useCallback(
     async (myAnswer: string) => {
-      if(!drawnQuestion) {
-        dispatch({ type: "setError", payload: { errorMessage: "Question doesn't exist" } });
-        return
+      if (!currentQuestion) {
+        dispatch({
+          type: 'setError',
+          payload: { errorMessage: "Question doesn't exist" },
+        });
+        return;
       }
 
-      const GPTPrompt = drawnQuestion.answer
-          ? prepareGPTPromptWithCorrectAnswer(drawnQuestion.title, myAnswer, drawnQuestion.answer, topic)
-          : prepareGPTPrompt(drawnQuestion?.title, myAnswer, topic)
+      // Add user's message to conversation
+      resetForm();
+      addMessage("user", myAnswer);
+
+      const GPTPrompt = currentQuestion.answer
+        ? prepareGPTPromptWithCorrectAnswer(
+          currentQuestion.title,
+          myAnswer,
+          currentQuestion.answer,
+          topic
+        )
+        : prepareGPTPrompt(currentQuestion?.title, myAnswer, topic);
 
       try {
-        dispatch({ type: "setLoadingForResponse" });
+        dispatch({ type: 'setLoadingForResponse' });
         const GPTResponse = await sendPromptToGPT(GPTPrompt);
 
-        if(drawnQuestion.answer) {
-          dispatch({ type: "setResponseWithKnownCorrectAnswer", payload: { response: GPTResponse, correctAnswer: drawnQuestion.answer } });
+        const isAnswerCorrect = checkIsAnswerCorrect(GPTResponse);
+        addAnswer(currentQuestion.title, currentQuestion.category, isAnswerCorrect);
+
+        let formattedResponse: string;
+        if (currentQuestion.answer) {
+          formattedResponse = getAnswerCheckResponseWithCorrectAnswer(
+            GPTResponse,
+            currentQuestion.answer,
+            isAnswerCorrect
+          );
+          dispatch({
+            type: 'setResponseWithKnownCorrectAnswer',
+            payload: {
+              response: GPTResponse,
+              correctAnswer: currentQuestion.answer,
+              isAnswerCorrect,
+            },
+          });
         } else {
-          dispatch({ type: "setAIModelResponse", payload: { response: GPTResponse} });
+          formattedResponse = GPTResponse;
+          dispatch({
+            type: 'setAIModelResponse',
+            payload: { response: GPTResponse },
+          });
         }
 
+        // Add AI's response to conversation
+        addMessage("ai", formattedResponse);
+
       } catch (error: any) {
-        console.log("ERR: ", error)
-        dispatch({ type: "setError", payload: { errorMessage: error.message || "Something went wrong" } });
+        console.log('ERR: ', error);
+        dispatch({
+          type: 'setError',
+          payload: { errorMessage: error.message || 'Something went wrong' },
+        });
       }
     },
-    [drawnQuestion]
+    [currentQuestion, addAnswer, addMessage]
   );
 
-  const repeatQuestion = useCallback(() => {
-    dispatch({type: "clearForm"});
-    reset({answer: ""});
-  }, [])
-
-  useEffect(() => {
-    drawNewQuestion();
-  }, [questionsWithAnswers, drawNewQuestion]);
-
   return {
-    drawnQuestion,
-    state,
+    aiAnswer,
     register,
-    drawNewQuestion,
-    repeatQuestion,
-    onSubmit: handleSubmit((values: FormValues) => checkCorrectAnswer(values.answer))
+    control,
+    resetForm,
+    onSubmit: handleSubmit((values: FormValues) =>
+      checkCorrectAnswer(values.answer)
+    ),
+    messages, // Expose messages if needed in the UI
   };
 };

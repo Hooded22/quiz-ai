@@ -1,0 +1,98 @@
+.Wrapper {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 68px;
+  height: 100%;
+  max-width: 800px;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.QuestionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.QuestionTitle {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+.BottomSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 20px;
+}
+
+.UserInputContainer {
+  display: flex;
+  flex-direction: column;
+  background: #333333;
+  border-radius: 16px;
+  width: 100%;
+  padding: 10px 20px 10px 20px;
+}
+
+.UserInputContainer textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.UserInputContainerButtonsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.UserInputContainerButtonsWrapper .SubmitButton {
+  padding: 10px;
+  border-radius: 8px;
+  background: limegreen;
+  font-size: 14px;
+}
+
+.ButtonContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ConversationContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 50px;
+}
+
+.Message {
+  border: 1px solid #333333;
+  border-radius: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+.UserMessage {
+  align-self: flex-end;
+
+}
+
+.AIMessage {
+  align-self: flex-start;
+}

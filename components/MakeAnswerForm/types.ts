@@ -1,47 +1,45 @@
-import { Question } from "../../types/question";
+import { Question } from '../../types/question';
 
 export type GPTAnswerState =
-| {
-    type: "START";
+  | {
+    type: 'START';
   }
-| {
-    type: "WAITING_FOR_RESPONSE";
+  | {
+    type: 'WAITING_FOR_RESPONSE';
     loading: boolean;
   }
-| {
-    type: "SUCCESS";
+  | {
+    type: 'SUCCESS';
     response: string;
     modalOpen: boolean;
   }
-| {
-    type: "ERROR";
+  | {
+    type: 'ERROR';
     errorMessage: string;
   };
 
-
-  export type Actions =
+export type Actions =
   | {
-      type: "clearForm";
-    }
+    type: 'clearForm';
+  }
   | {
-      type: "setLoadingForResponse";
-    }
+    type: 'setLoadingForResponse';
+  }
   | {
-      type: "setAIModelResponse";
-      payload: { response: string };
-    }
+    type: 'setAIModelResponse';
+    payload: { response: string };
+  }
   | {
-      type: "setResponseWithKnownCorrectAnswer";
-      payload: { response: string, correctAnswer: string };
-    }
+    type: 'setResponseWithKnownCorrectAnswer';
+    payload: { response: string; correctAnswer: string, isAnswerCorrect: boolean };
+  }
   | {
-      type: "setError";
-      payload: { errorMessage: string };
-    };
+    type: 'setError';
+    payload: { errorMessage: string };
+  };
 
 export interface FormValues {
-    answer: string;
-  }
+  answer: string;
+}
 
-
-  export type QuestionsWithAnswer = Question
+export type QuestionsWithAnswer = Question;

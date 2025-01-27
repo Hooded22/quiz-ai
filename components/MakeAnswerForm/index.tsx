@@ -1,66 +1,141 @@
-"use client";
+'use client';
 
-import { useMakeAnswerForm } from "./useMakeAnswerForm";
-import { Loader } from "../Loader";
-import { QuestionsWithAnswer } from "./types";
-import {MarkdownRenderer} from "../MarkdownRenderer/MarkdownRenderer";
+import { useMakeAnswerForm } from './useMakeAnswerForm';
+import { Loader } from '../Loader';
+import { QuestionsWithAnswer } from './types';
+import { MarkdownRenderer } from '../MarkdownRenderer/MarkdownRenderer';
+import styles from './styles.module.css';
+import { Tooltip } from '../Tooltip/Tooltip';
+import { useInterviewProcess } from './useInterviewProcess';
+import { DynamicTextarea } from '../DynamicTextArea/DynamicTextArea';
+import { SeniorityLevel } from 'types/interviewConfig';
+import { SeniorityLevelBadge } from 'components/SeniorotyLevelTooltip/SeniorityLevelBadge';
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
   topic: string;
 }
 
-export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormProps) {
-  const { register, onSubmit, drawNewQuestion, drawnQuestion, repeatQuestion, state } =
-    useMakeAnswerForm(questionsWithAnswers, topic);
+export function MakeAnswerForm({
+  questionsWithAnswers,
+  topic,
+}: MakeAnswerFormProps) {
+  //TODO: when all questions done set quiz results to quiz state and move to next screen
+  //TODO: Change text are component to show submit button inside it
 
-  const isLoading = state.type === "WAITING_FOR_RESPONSE" && state.loading;
+  const {
+    isQuestionsLimitReached,
+    currentQuestion,
+    nextQuestion,
+    addAnswer,
+    userAnswers
+  } = useInterviewProcess({ allQuestions: questionsWithAnswers });
+  const {
+    aiAnswer,
+    control,
+    resetForm,
+    onSubmit,
+    messages,
+  } = useMakeAnswerForm({
+    currentQuestion,
+    topic,
+    addAnswer
+  });
+
+
+  const onNextQuestionButtonClick = () => {
+    resetForm();
+    nextQuestion();
+  };
+
+  const onFinishInterviewButtonClick = () => {
+    console.log("Answers", userAnswers)
+  }
+
+  const isLoading =
+    aiAnswer.type === 'WAITING_FOR_RESPONSE' && aiAnswer.loading;
+  const isInterviewFinished = isQuestionsLimitReached && aiAnswer.type === 'SUCCESS';
+  const levelTooltipVariants = {
+    [SeniorityLevel.ALL]: 'success',
+    [SeniorityLevel.JUNIOR]: "success",
+    [SeniorityLevel.MID]: "warning",
+    [SeniorityLevel.SENIOR]: "danger"
+  }
+
 
   return (
-    <div className="card bg-neutral w-3/5 relative">
-      <Loader loading={isLoading} text="Waiting for GPT response" />
-      <div className="card-body">
-        <h1 className="text-xl text-center" data-testid="current-question">
-          {drawnQuestion?.title}
-        </h1>
-        {!!drawnQuestion?.answer && (
-          <div className="flex w-full justify-center">
-            <div
-              className="tooltip tooltip-bottom"
-              data-tip={drawnQuestion.answer}
-            >
-              <div className="badge badge-primary badge-outline uppercase mt-1">
-                answer available
-              </div>
+    <div className={styles.Wrapper}>
+      <div className={styles.Content}>
+        <div className={styles.QuestionHeader}>
+          <h1 className={styles.QuestionTitle} data-testid='current-question'>
+            {currentQuestion?.title}
+          </h1>
+          {currentQuestion.level && <SeniorityLevelBadge level={currentQuestion.level} />}
+          {!!currentQuestion?.answer && (
+            <Tooltip
+              title='Answer available'
+              details={currentQuestion.answer}
+              variant="success"
+            />
+          )}
+        </div>
+        <div className={styles.ConversationContainer}>
+          {
+            messages.map((message, index) => (
+              <div
+                key={index}
+                className={`${styles.Message} ${message.sender === "user" ? styles.UserMessage : styles.AIMessage
+                  }`}
+              >
+                <MarkdownRenderer content={message.content} />
+              </div>))
+          }
+          <Loader loading={isLoading} />
+          {aiAnswer.type === 'ERROR' && (
+            <p className='text-white text-sm text-justify pb-5'>
+              {aiAnswer.errorMessage}
+            </p>
+          )}
+        </div>
+        <div className={styles.BottomSection}>
+          <div className={styles.UserInputContainer}>
+            <DynamicTextarea control={control} name='answer' />
+            <div className={styles.UserInputContainerButtonsWrapper}>
+              <button className={styles.SubmitButton} onClick={onSubmit} type='button'>
+                Send answer
+              </button>
             </div>
           </div>
-        )}
-        <textarea
-          title="answer"
-          className="textarea textarea-bordered mb-10 mt-5 resize-none text-sm"
-          {...register("answer")}
-          rows={5}
-        />
-        {state.type === "SUCCESS" && (
-            <MarkdownRenderer content={state.response}/>
-        )}
-        {state.type === "ERROR" && (
-            <p className="text-white text-sm text-justify pb-5">
-              {state.errorMessage}
-            </p>
-        )}
-        <div className="card-actions justify-between pt-4">
-          <div className='justify-between gap-8 flex'>
-            <button className="btn btn-error" onClick={drawNewQuestion}>
-              Get new question
-            </button>
-            <button className="btn btn-secondary" disabled={state.type !== "SUCCESS"} onClick={repeatQuestion}>
+          <div className={styles.ButtonContainer}>
+            <button
+              type='button'
+              className='btn btn-error'
+              disabled={aiAnswer.type !== 'SUCCESS'}
+              onClick={resetForm}
+            >
               Repeat question
             </button>
+            <div className='justify-between gap-8 flex'>
+              {!isQuestionsLimitReached && (
+                <button
+                  type='button'
+                  className='btn btn-active'
+                  onClick={onNextQuestionButtonClick}
+                >
+                  Next question
+                </button>
+              )}
+              {isInterviewFinished && (
+                <button
+                  type='button'
+                  className='btn btn-active'
+                  onClick={onFinishInterviewButtonClick}
+                >
+                  Finish quiz
+                </button>
+              )}
+            </div>
           </div>
-          <button className="btn btn-primary" onClick={onSubmit}>
-            Send answer
-          </button>
         </div>
       </div>
     </div>

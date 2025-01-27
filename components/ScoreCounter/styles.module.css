@@ -1,0 +1,20 @@
+.scoreContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #181212;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.score {
+    font-size: 100px;
+    font-weight: bold;
+    color: #32cd32;
+}
+
+.scoreHeader {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}

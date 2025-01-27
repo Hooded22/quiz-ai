@@ -1,0 +1,73 @@
+.header {
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #181212;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.formElement {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.label {
+  font-weight: normal;
+  color: #fff;
+  width: 100%;
+  padding-bottom: 8px;
+  display: block;
+}
+
+.select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+}
+
+.checkboxWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #444;
+}
+
+/* Error and status message styles */
+.errorMessages, .submissionStatus {
+  font-size: 14px;
+  background-color: #F87272;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: white;
+}

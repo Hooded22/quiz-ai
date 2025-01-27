@@ -1,1 +1,1 @@
-export type gptMessagesType = { role: "system" | "user", content: string };
+export type gptMessagesType = { role: 'system' | 'user'; content: string };
