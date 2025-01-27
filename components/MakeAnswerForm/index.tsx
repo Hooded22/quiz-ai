@@ -8,6 +8,7 @@ import styles from './styles.module.css';
 import { Tooltip } from '../Tooltip/Tooltip';
 import { useInterviewProcess } from './useInterviewProcess';
 import { DynamicTextarea } from '../DynamicTextArea/DynamicTextArea';
+import { useConversation } from './useConversation';
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
@@ -29,15 +30,18 @@ export function MakeAnswerForm({
     userAnswers
   } = useInterviewProcess({ allQuestions: questionsWithAnswers });
   const {
-    onSubmit,
+    aiAnswer,
     control,
     resetForm,
-    aiAnswer
+    onSubmit,
+    messages,
   } = useMakeAnswerForm({
     currentQuestion,
     topic,
     addAnswer
   });
+
+  const { addMessage, messages: conversationMessages } = useConversation();
 
   const onNextQuestionButtonClick = () => {
     resetForm();
@@ -56,7 +60,6 @@ export function MakeAnswerForm({
 
   return (
     <div className={styles.Wrapper}>
-      <Loader loading={isLoading} text='Waiting for GPT response' />
       <div className={styles.Content}>
         <div className={styles.QuestionHeader}>
           <h1 className={styles.QuestionTitle} data-testid='current-question'>
@@ -70,11 +73,17 @@ export function MakeAnswerForm({
           )}
         </div>
         <div className={styles.ConversationContainer}>
-          {aiAnswer.type === 'SUCCESS' && (
-            <div className={styles.ConversationItem}>
-              <MarkdownRenderer content={aiAnswer.response} />
-            </div>
-          )}
+          {
+            messages.map((message, index) => (
+              <div
+                key={index}
+                className={`${styles.Message} ${message.sender === "user" ? styles.UserMessage : styles.AIMessage
+                  }`}
+              >
+                <MarkdownRenderer content={message.content} />
+              </div>))
+          }
+          <Loader loading={isLoading} />
           {aiAnswer.type === 'ERROR' && (
             <p className='text-white text-sm text-justify pb-5'>
               {aiAnswer.errorMessage}

@@ -29,7 +29,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
               style={{
                 fontSize: '14px',
                 fontWeight: 'normal',
-                marginBottom: '10px',
+                padding: 0
               }}
               {...props}
             />

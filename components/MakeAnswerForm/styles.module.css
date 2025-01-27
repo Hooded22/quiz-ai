@@ -79,8 +79,20 @@
   padding-top: 50px;
 }
 
-.ConversationItem {
+.Message {
   border: 1px solid #333333;
   border-radius: 16px;
-  padding: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+.UserMessage {
+  align-self: flex-end;
+
+}
+
+.AIMessage {
+  align-self: flex-start;
 }

@@ -17,6 +17,7 @@ import {
   getRandomQuestion,
   checkIsAnswerCorrect,
 } from '../../utils/question.utils';
+import { useConversation } from "./useConversation";
 
 export interface UseMakeAnswerFormProps {
   currentQuestion: Question;
@@ -64,7 +65,8 @@ export const useMakeAnswerForm = ({
   const [aiAnswer, dispatch] = useReducer(modelAnswerReducer, {
     type: 'START',
   });
-  const { register, reset, handleSubmit, control } = useForm<FormValues>();
+  const { register, control, reset, handleSubmit } = useForm<FormValues>();
+  const { addMessage, messages } = useConversation();
 
   const resetForm = () => {
     reset({ answer: '' });
@@ -81,6 +83,10 @@ export const useMakeAnswerForm = ({
         return;
       }
 
+      // Add user's message to conversation
+      resetForm();
+      addMessage("user", myAnswer);
+
       const GPTPrompt = currentQuestion.answer
         ? prepareGPTPromptWithCorrectAnswer(
           currentQuestion.title,
@@ -94,26 +100,35 @@ export const useMakeAnswerForm = ({
         dispatch({ type: 'setLoadingForResponse' });
         const GPTResponse = await sendPromptToGPT(GPTPrompt);
 
-        console.log("GPTResponse", GPTResponse, GPTPrompt, myAnswer)
-
         const isAnswerCorrect = checkIsAnswerCorrect(GPTResponse);
         addAnswer(currentQuestion.title, currentQuestion.category, isAnswerCorrect);
 
+        let formattedResponse: string;
         if (currentQuestion.answer) {
+          formattedResponse = getAnswerCheckResponseWithCorrectAnswer(
+            GPTResponse,
+            currentQuestion.answer,
+            isAnswerCorrect
+          );
           dispatch({
             type: 'setResponseWithKnownCorrectAnswer',
             payload: {
               response: GPTResponse,
               correctAnswer: currentQuestion.answer,
-              isAnswerCorrect
+              isAnswerCorrect,
             },
           });
         } else {
+          formattedResponse = GPTResponse;
           dispatch({
             type: 'setAIModelResponse',
             payload: { response: GPTResponse },
           });
         }
+
+        // Add AI's response to conversation
+        addMessage("ai", formattedResponse);
+
       } catch (error: any) {
         console.log('ERR: ', error);
         dispatch({
@@ -122,19 +137,17 @@ export const useMakeAnswerForm = ({
         });
       }
     },
-    [currentQuestion, addAnswer]
+    [currentQuestion, addAnswer, addMessage]
   );
-
-  const onSubmit = (values: FormValues) => {
-    checkCorrectAnswer(values.answer);
-    resetForm()
-  }
 
   return {
     aiAnswer,
     register,
+    control,
     resetForm,
-    onSubmit: handleSubmit(onSubmit),
-    control
+    onSubmit: handleSubmit((values: FormValues) =>
+      checkCorrectAnswer(values.answer)
+    ),
+    messages, // Expose messages if needed in the UI
   };
 };
