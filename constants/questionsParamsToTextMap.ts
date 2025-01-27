@@ -1,4 +1,4 @@
-import { RoleType } from '../types/interviewConfig';
+import { RoleType, SeniorityLevel } from '../types/interviewConfig';
 
 export const RolesIdsToTextMap = {
   [RoleType.BE_NODE]: 'Node Back-end developer',
@@ -6,4 +6,11 @@ export const RolesIdsToTextMap = {
   [RoleType.FE_DEV]: 'Front-end developer',
   [RoleType.FULL_STACK_NODE_REACT]: 'Full-stack developer with Node',
   [RoleType.FE_DEV_REACT]: 'Front-end developer with React',
+};
+
+export const SeniorityLevelToTextMap = {
+  [SeniorityLevel.ALL]: 'All',
+  [SeniorityLevel.JUNIOR]: 'Junior',
+  [SeniorityLevel.MID]: 'Mid',
+  [SeniorityLevel.SENIOR]: 'Senior',
 };

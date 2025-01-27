@@ -8,7 +8,8 @@ import styles from './styles.module.css';
 import { Tooltip } from '../Tooltip/Tooltip';
 import { useInterviewProcess } from './useInterviewProcess';
 import { DynamicTextarea } from '../DynamicTextArea/DynamicTextArea';
-import { useConversation } from './useConversation';
+import { SeniorityLevel } from 'types/interviewConfig';
+import { SeniorityLevelBadge } from 'components/SeniorotyLevelTooltip/SeniorityLevelBadge';
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
@@ -41,7 +42,6 @@ export function MakeAnswerForm({
     addAnswer
   });
 
-  const { addMessage, messages: conversationMessages } = useConversation();
 
   const onNextQuestionButtonClick = () => {
     resetForm();
@@ -55,8 +55,13 @@ export function MakeAnswerForm({
   const isLoading =
     aiAnswer.type === 'WAITING_FOR_RESPONSE' && aiAnswer.loading;
   const isInterviewFinished = isQuestionsLimitReached && aiAnswer.type === 'SUCCESS';
+  const levelTooltipVariants = {
+    [SeniorityLevel.ALL]: 'success',
+    [SeniorityLevel.JUNIOR]: "success",
+    [SeniorityLevel.MID]: "warning",
+    [SeniorityLevel.SENIOR]: "danger"
+  }
 
-  console.log('currentQuestion', currentQuestion.level);
 
   return (
     <div className={styles.Wrapper}>
@@ -65,10 +70,12 @@ export function MakeAnswerForm({
           <h1 className={styles.QuestionTitle} data-testid='current-question'>
             {currentQuestion?.title}
           </h1>
+          {currentQuestion.level && <SeniorityLevelBadge level={currentQuestion.level} />}
           {!!currentQuestion?.answer && (
             <Tooltip
-              title={'Answer available'}
+              title='Answer available'
               details={currentQuestion.answer}
+              variant="success"
             />
           )}
         </div>

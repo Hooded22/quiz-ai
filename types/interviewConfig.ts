@@ -41,7 +41,7 @@ export const TimeLimit = {
 
 // Use the output of the `as const` enums to infer the type for each
 export type RoleType = (typeof RoleType)[keyof typeof RoleType];
-export type SeniorityLevel =
+export type SeniorityLevelType =
   (typeof SeniorityLevel)[keyof typeof SeniorityLevel];
 export type QuestionsNumber =
   (typeof QuestionsNumber)[keyof typeof QuestionsNumber];
@@ -52,7 +52,7 @@ export type QuestionsSetsValues =
 // Update the `InterviewConfig` type to use the enums
 export type InterviewConfig = {
   roleType: RoleType;
-  seniorityLevel: SeniorityLevel;
+  seniorityLevel: SeniorityLevelType;
   questionsNumber: QuestionsNumber;
   timeLimit: TimeLimit;
   questionsCanRepeat: boolean;

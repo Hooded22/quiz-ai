@@ -6,7 +6,8 @@ import {
   InterviewConfig,
   QuestionsSetsValues,
   RoleType,
-  SeniorityLevel,
+  SeniorityLevelType,
+  SeniorityLevel
 } from '../../../types/interviewConfig';
 import { RolesConfig } from '../../../constants/rolesConfig';
 
@@ -36,7 +37,7 @@ function generateUniqueRandomNumbers(count: number, min: number, max: number) {
 function getRandomQuestionsBasedOnLevel(
   questions: Question[],
   numberOfQuestionsToGet: number,
-  difficultyLevel: SeniorityLevel
+  difficultyLevel: SeniorityLevelType
 ) {
   // Filter questions based on difficulty level
   const filteredQuestions = questions.filter((question) => {
@@ -71,7 +72,7 @@ function getRandomQuestionsBasedOnLevel(
 async function getRandomQuestionForTechnology(
   technologyId: string,
   questionsNumber: number,
-  seniorityLevel: SeniorityLevel
+  seniorityLevel: SeniorityLevelType
 ): Promise<Question[]> {
   const jsonDirectory = path.join(process.cwd(), '/data');
   try {
@@ -94,7 +95,7 @@ async function getRandomQuestionForTechnology(
 async function getQuestionsSetForSelectedRole(
   role: RoleType,
   questionsLimit: number,
-  seniorityLevel: SeniorityLevel
+  seniorityLevel: SeniorityLevelType
 ) {
   const rolesSets = RolesConfig[role];
   const sortedRoleSets = Object.entries(rolesSets).sort(

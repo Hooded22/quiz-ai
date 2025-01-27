@@ -3,16 +3,16 @@
 import {
   QuestionsNumber,
   RoleType,
-  SeniorityLevel,
+  SeniorityLevelType,
 } from '../../types/interviewConfig';
 import styles from './styles.module.css';
-import { RolesIdsToTextMap } from '../../constants/rolesMap';
+import { RolesIdsToTextMap } from '../../constants/questionsParamsToTextMap';
 import { ScoreCounter } from '../ScoreCounter/ScoreCounter';
 import { AnswersStatus } from 'types/question';
 
 export interface InterviewSummaryProps {
   interviewRole: RoleType;
-  level: SeniorityLevel;
+  level: SeniorityLevelType;
   questionsNumber: number;
   results: AnswersStatus[];
   interviewTime?: number;
@@ -54,11 +54,10 @@ export const InterviewSummary = ({
           {results.map((result, index) => (
             <div
               key={index}
-              className={`${styles.questionItem} ${
-                result.isAnswerCorrect
+              className={`${styles.questionItem} ${result.isAnswerCorrect
                   ? styles.correctBackground
                   : styles.incorrectBackground
-              }`}
+                }`}
             >
               <span className={styles.questionCategory}>
                 {result.questionCategory}:

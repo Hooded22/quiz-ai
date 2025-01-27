@@ -1,13 +1,18 @@
+
+export type TooltipVariant = "success" | "warning" | "danger"
 export interface TooltipProps {
   title: string;
   details: string;
+  variant: TooltipVariant
 }
 
-export const Tooltip = ({ title, details }: TooltipProps) => {
+import styles from "./styles.module.css";
+
+export const Tooltip = ({ title, variant, details }: TooltipProps) => {
   return (
-    <div className='flex w-full justify-center'>
-      <div className='tooltip tooltip-bottom' data-tip={details}>
-        <div className='badge badge-warning badge-outline uppercase mt-1'>
+    <div className={styles.tooltipWrapper}>
+      <div className={styles.tooltip} data-tip={details}>
+        <div className={`${styles.badge} ${styles[variant]}`}>
           {title}
         </div>
       </div>
