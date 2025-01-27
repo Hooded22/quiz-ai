@@ -12,7 +12,7 @@ module.exports = () => {
       GPT_API_KEY: process.env.GPT_API_KEY,
     },
     compiler: {
-      styledComponents: true,
+      styledComponents: false,
     },
     eslint: {},
   };
