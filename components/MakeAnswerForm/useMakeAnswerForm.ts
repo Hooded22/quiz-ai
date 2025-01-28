@@ -83,10 +83,12 @@ export const useMakeAnswerForm = ({
         return;
       }
 
-      // Add user's message to conversation
       resetForm();
       addMessage("user", myAnswer);
 
+
+      //TODO: Add previous messages to prompt
+      //TODO: Update prompts: at first message indicate if answer is correct or not, at next answrr of user questions etc.
       const GPTPrompt = currentQuestion.answer
         ? prepareGPTPromptWithCorrectAnswer(
           currentQuestion.title,

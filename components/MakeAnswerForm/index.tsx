@@ -55,12 +55,6 @@ export function MakeAnswerForm({
   const isLoading =
     aiAnswer.type === 'WAITING_FOR_RESPONSE' && aiAnswer.loading;
   const isInterviewFinished = isQuestionsLimitReached && aiAnswer.type === 'SUCCESS';
-  const levelTooltipVariants = {
-    [SeniorityLevel.ALL]: 'success',
-    [SeniorityLevel.JUNIOR]: "success",
-    [SeniorityLevel.MID]: "warning",
-    [SeniorityLevel.SENIOR]: "danger"
-  }
 
 
   return (
