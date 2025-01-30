@@ -56,7 +56,7 @@ export default function LoginPage() {
                     Login
                 </button>
                 <p className={styles.authLink}>
-                    Don't have an account? <Link href="/register">Register</Link>
+                    Dont have an account? <Link href="/register">Register</Link>
                 </p>
             </form>
         </div>
