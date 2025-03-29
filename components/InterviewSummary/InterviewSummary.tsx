@@ -28,7 +28,7 @@ export const InterviewSummary = ({
   const incorrectAnswers = results.length - correctAnswers;
   const roleName =
     RolesIdsToTextMap[interviewRole] ||
-    interviewRole.replace(/-/g, ' ') + ' Developer';
+    interviewRole?.replace(/-/g, ' ') + ' Developer';
   const score = (correctAnswers / (correctAnswers + incorrectAnswers)) * 100;
 
   const getAnswerBackgroundClass = (asnwerStatus: typeof ANSWER_STATUS[keyof typeof ANSWER_STATUS]) => {

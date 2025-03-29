@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import { Control } from 'react-hook-form/dist/types/form';
 import { FieldValues } from 'react-hook-form/dist/types/fields';
 import { FieldPath } from 'react-hook-form/dist/types/path';
-import { Controller } from 'react-hook-form';
+import { Controller, useForm, useFormState, useWatch } from 'react-hook-form';
 import { MarkdownRenderer } from '../MarkdownRenderer/MarkdownRenderer';
 
 export interface DynamicTextareaProps<T extends FieldValues> {
@@ -21,6 +21,8 @@ export const DynamicTextarea = <T extends FieldValues>({
   const [mode, setMode] = useState<'edit' | 'preview'>('edit');
   const [containerHeight, setContainerHeight] = useState<string>('auto');
 
+  const textAreaValue = useWatch({ control, name })
+
   const calculateHeight = (value: string | undefined) => {
     if (!textareaRef.current || !value || value === "") {
       return 'auto';
@@ -32,6 +34,10 @@ export const DynamicTextarea = <T extends FieldValues>({
     const newHeight = calculateHeight(value);
     setContainerHeight(newHeight);
   };
+
+  useEffect(() => {
+    updateContainerHeight(textAreaValue);
+  }, [textAreaValue]);
 
   return (
     <div>
@@ -54,9 +60,6 @@ export const DynamicTextarea = <T extends FieldValues>({
         control={control}
         name={name}
         render={({ field: { onChange, value, ref } }) => {
-          useEffect(() => {
-            updateContainerHeight(value);
-          }, [value]);
 
           return (
             <div
