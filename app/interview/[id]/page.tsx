@@ -175,7 +175,7 @@ export default async function QuestionCategory(props: QuestionCategoryProps) {
         padding: '2rem'
       }}>
         <h1>No questions available</h1>
-        <p>Unfortunately, we couldn't find any questions for the selected parameters.</p>
+        <p>Unfortunately, we couldn&apos;t find any questions for the selected parameters.</p>
         <p>Please try a different configuration or check back later.</p>
       </div>
     );
