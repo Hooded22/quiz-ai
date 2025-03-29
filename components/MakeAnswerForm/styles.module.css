@@ -96,3 +96,10 @@
 .AIMessage {
   align-self: flex-start;
 }
+
+.QuestionCounter {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}

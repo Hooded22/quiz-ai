@@ -5,32 +5,32 @@
  * */
 
 import { InterviewSummary } from '../../../components/InterviewSummary/InterviewSummary';
+import { RoleType, SeniorityLevelType } from '../../../types/interviewConfig';
+import { UserAnswer } from '../../../types/question';
 
-function Page() {
+interface PageProps {
+  searchParams: {
+    role?: string;
+    level?: string;
+    questionsNumber?: string;
+    results?: string;
+  };
+}
+
+export default function Page({ searchParams }: PageProps) {
+  const role = searchParams.role as RoleType;
+  const level = searchParams.level as SeniorityLevelType;
+  const questionsNumber = Number(searchParams.questionsNumber);
+  const results = searchParams.results
+    ? JSON.parse(decodeURIComponent(searchParams.results)) as UserAnswer[]
+    : [];
+
   return (
     <InterviewSummary
-      interviewRole={'be-java'}
-      level={'senior'}
-      questionsNumber={10}
-      results={[
-        {
-          questionCategory: 'java',
-          question: 'Test123',
-          isAnswerCorrect: true,
-        },
-        {
-          questionCategory: 'java',
-          question: 'Test1234',
-          isAnswerCorrect: true,
-        },
-        {
-          questionCategory: 'java',
-          question: 'Test1235',
-          isAnswerCorrect: false,
-        },
-      ]}
+      interviewRole={role}
+      level={level}
+      questionsNumber={questionsNumber}
+      results={results}
     />
   );
 }
-
-export default Page;

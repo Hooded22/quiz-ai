@@ -10,6 +10,10 @@ export interface Message {
 export const useConversation = () => {
     const [messages, setMessages] = useState<Message[]>([]);
 
+    const resetMessages = () => {
+        setMessages([]);
+    };
+
     const addMessage = (sender: Sender, content: string): void => {
         setMessages((prevMessages) => [
             ...prevMessages,
@@ -19,7 +23,8 @@ export const useConversation = () => {
 
     return {
         messages,
-        addMessage
+        addMessage,
+        resetMessages
     };
 };
 

@@ -8,8 +8,12 @@ import styles from './styles.module.css';
 import { Tooltip } from '../Tooltip/Tooltip';
 import { useInterviewProcess } from './useInterviewProcess';
 import { DynamicTextarea } from '../DynamicTextArea/DynamicTextArea';
-import { SeniorityLevel } from 'types/interviewConfig';
 import { SeniorityLevelBadge } from 'components/SeniorotyLevelTooltip/SeniorityLevelBadge';
+import { useRouter } from 'next/navigation';
+import { SkipQuestionButton } from '../SkipQuestionButton';
+import { useRef } from 'react';
+
+const SHOW_ANSWER_TOOLTIP = false
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
@@ -23,49 +27,76 @@ export function MakeAnswerForm({
   //TODO: when all questions done set quiz results to quiz state and move to next screen
   //TODO: Change text are component to show submit button inside it
 
+  const router = useRouter();
+  const allQuestions = useRef(questionsWithAnswers)
+
   const {
     isQuestionsLimitReached,
     currentQuestion,
+    currentQuestionIndex,
     nextQuestion,
     addAnswer,
+    skipQuestion,
     userAnswers
-  } = useInterviewProcess({ allQuestions: questionsWithAnswers });
+  } = useInterviewProcess({ allQuestions: allQuestions.current });
+
+
   const {
     aiAnswer,
     control,
     resetForm,
+    resetMessages,
     onSubmit,
     messages,
   } = useMakeAnswerForm({
     currentQuestion,
     topic,
-    addAnswer
+    addAnswer,
   });
 
 
   const onNextQuestionButtonClick = () => {
     resetForm();
+    resetMessages();
     nextQuestion();
   };
 
   const onFinishInterviewButtonClick = () => {
-    console.log("Answers", userAnswers)
+    // Convert answers to a URL-safe string
+    const answersParam = encodeURIComponent(JSON.stringify(userAnswers));
+
+    // Assuming topic contains the role information, adjust if needed
+    const queryParams = new URLSearchParams({
+      role: topic,
+      level: currentQuestion.level || 'junior', // Add default if needed
+      questionsNumber: questionsWithAnswers.length.toString(),
+      results: answersParam
+    });
+
+    // Navigate to summary page with params
+    router.push(`/interview/summary?${queryParams.toString()}`);
   }
+
 
   const isLoading =
     aiAnswer.type === 'WAITING_FOR_RESPONSE' && aiAnswer.loading;
+
   const isInterviewFinished = isQuestionsLimitReached && aiAnswer.type === 'SUCCESS';
+  const isConversationStarted = !!messages.length
 
 
   return (
     <div className={styles.Wrapper}>
       <div className={styles.Content}>
         <div className={styles.QuestionHeader}>
+          <div className={styles.QuestionCounter}>
+            Question {currentQuestionIndex + 1}/{questionsWithAnswers.length}
+          </div>
           <h1 className={styles.QuestionTitle} data-testid='current-question'>
             {currentQuestion?.title}
           </h1>
           {currentQuestion.level && <SeniorityLevelBadge level={currentQuestion.level} />}
-          {!!currentQuestion?.answer && (
+          {!!currentQuestion?.answer && SHOW_ANSWER_TOOLTIP && (
             <Tooltip
               title='Answer available'
               details={currentQuestion.answer}
@@ -95,22 +126,20 @@ export function MakeAnswerForm({
           <div className={styles.UserInputContainer}>
             <DynamicTextarea control={control} name='answer' />
             <div className={styles.UserInputContainerButtonsWrapper}>
-              <button className={styles.SubmitButton} onClick={onSubmit} type='button'>
+              {!isConversationStarted && <button className={styles.SubmitButton} onClick={onSubmit} type='button'>
                 Send answer
-              </button>
+              </button>}
             </div>
           </div>
           <div className={styles.ButtonContainer}>
-            <button
-              type='button'
-              className='btn btn-error'
-              disabled={aiAnswer.type !== 'SUCCESS'}
-              onClick={resetForm}
-            >
-              Repeat question
-            </button>
+            <SkipQuestionButton
+              onSkip={skipQuestion}
+              onLastQuestionSkip={onFinishInterviewButtonClick}
+              isDisabled={isConversationStarted}
+              isLastQuestion={isQuestionsLimitReached}
+            />
             <div className='justify-between gap-8 flex'>
-              {!isQuestionsLimitReached && (
+              {!isQuestionsLimitReached && isConversationStarted && (
                 <button
                   type='button'
                   className='btn btn-active'

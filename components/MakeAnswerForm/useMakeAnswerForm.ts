@@ -66,7 +66,7 @@ export const useMakeAnswerForm = ({
     type: 'START',
   });
   const { register, control, reset, handleSubmit } = useForm<FormValues>();
-  const { addMessage, messages } = useConversation();
+  const { addMessage, resetMessages, messages } = useConversation();
 
   const resetForm = () => {
     reset({ answer: '' });
@@ -147,6 +147,7 @@ export const useMakeAnswerForm = ({
     register,
     control,
     resetForm,
+    resetMessages,
     onSubmit: handleSubmit((values: FormValues) =>
       checkCorrectAnswer(values.answer)
     ),
