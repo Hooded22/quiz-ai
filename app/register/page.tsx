@@ -5,6 +5,8 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "./styles.module.css";
+import { FEATURE_FLAGS } from "constants/featureFlags";
+import { redirect } from 'next/navigation'
 
 interface FormData {
     username: string;
@@ -91,7 +93,7 @@ export default function RegisterPage() {
 
         try {
             await signUp(formData.email, formData.password, formData.username);
-            router.push("/login?message=Please confirm your account via email");
+            redirect("/login?message=Please confirm your account via email");
         } catch (error) {
             setErrors((prev) => ({
                 ...prev,
@@ -99,6 +101,15 @@ export default function RegisterPage() {
             }));
         }
     };
+
+    if (!FEATURE_FLAGS.auth.createAccount) {
+        router.push('/');
+        return (
+            <div className={styles.authContainer}>
+                <p>Registration is currently disabled. Redirecting...</p>
+            </div>
+        );
+    }
 
     return (
         <div className={styles.authContainer}>

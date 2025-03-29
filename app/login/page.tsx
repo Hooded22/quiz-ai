@@ -5,6 +5,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import styles from "./styles.module.css";
+import { FEATURE_FLAGS } from "constants/featureFlags";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
@@ -55,9 +56,9 @@ export default function LoginPage() {
                 <button type="submit" className={styles.authButton}>
                     Login
                 </button>
-                <p className={styles.authLink}>
+                {FEATURE_FLAGS.auth.createAccount && <p className={styles.authLink}>
                     Dont have an account? <Link href="/register">Register</Link>
-                </p>
+                </p>}
             </form>
         </div>
     );
