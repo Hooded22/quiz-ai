@@ -1,7 +1,19 @@
+import { redirect } from 'next/navigation';
 import InterviewConfigForm from '../components/InterviewConfigForm/InterviewConfigForm';
 import styles from './page.module.css';
+import { FEATURE_FLAGS } from 'constants/featureFlags';
 
 export default function Home() {
+
+  if (!FEATURE_FLAGS.auth.createAccount) {
+    redirect('/interview');
+    return (
+      <div className={styles.authContainer}>
+        <p>Registration is currently disabled. Redirecting...</p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>

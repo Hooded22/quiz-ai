@@ -9,6 +9,7 @@ import styles from './styles.module.css';
 import { RolesIdsToTextMap } from '../../constants/questionsParamsToTextMap';
 import { ScoreCounter } from '../ScoreCounter/ScoreCounter';
 import { ANSWER_STATUS, UserAnswer } from 'types/question';
+import { FEATURE_FLAGS } from 'constants/featureFlags';
 
 export interface InterviewSummaryProps {
   interviewRole: RoleType;
@@ -99,9 +100,9 @@ export const InterviewSummary = ({
       )}
 
       <div className={styles.actions}>
-        <a className={styles.button} href='/'>
+        {FEATURE_FLAGS.landingPage && <a className={styles.button} href='/'>
           Finish Interview
-        </a>
+        </a>}
         <a className={styles.button} href='/interview'>
           Try Again
         </a>
