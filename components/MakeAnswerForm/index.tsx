@@ -62,18 +62,18 @@ export function MakeAnswerForm({
   };
 
   const onFinishInterviewButtonClick = () => {
-    // Convert answers to a URL-safe string
+
     const answersParam = encodeURIComponent(JSON.stringify(userAnswers));
 
-    // Assuming topic contains the role information, adjust if needed
+
     const queryParams = new URLSearchParams({
       role: topic,
-      level: currentQuestion.level || 'junior', // Add default if needed
+      level: currentQuestion.level || 'junior',
       questionsNumber: questionsWithAnswers.length.toString(),
       results: answersParam
     });
 
-    // Navigate to summary page with params
+
     router.push(`/interview/summary?${queryParams.toString()}`);
   }
 

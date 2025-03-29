@@ -10,6 +10,7 @@ import {
   TimeLimit,
 } from '../../types/interviewConfig';
 import { useRouter } from 'next/navigation';
+import { FEATURE_FLAGS } from 'constants/featureFlags';
 
 const QuestionForm = () => {
   const [formState, setFormState] = useState<Partial<InterviewConfig>>({
@@ -122,7 +123,7 @@ const QuestionForm = () => {
           </select>
         </div>
 
-        <div>
+        {FEATURE_FLAGS.interviewConfig.time && <div>
           <label className={styles.label} htmlFor='timeLimit'>
             Time Limit
           </label>
@@ -140,9 +141,9 @@ const QuestionForm = () => {
             <option value='30min'>30 min</option>
             <option value='1hour'>1 hour</option>
           </select>
-        </div>
+        </div>}
 
-        <div>
+        {FEATURE_FLAGS.interviewConfig.repeateQuestions && <div>
           <label
             className={styles.checkboxWrapper}
             htmlFor='questionsCanRepeat'
@@ -157,7 +158,7 @@ const QuestionForm = () => {
             />
             Questions can repeat
           </label>
-        </div>
+        </div>}
 
         <button className={styles.button} type='submit'>
           Submit
