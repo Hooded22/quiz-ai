@@ -1,10 +1,11 @@
-import { RefObject, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import styles from './styles.module.css';
 import { Control } from 'react-hook-form/dist/types/form';
 import { FieldValues } from 'react-hook-form/dist/types/fields';
 import { FieldPath } from 'react-hook-form/dist/types/path';
 import { Controller } from 'react-hook-form';
+import { MarkdownRenderer } from '../MarkdownRenderer/MarkdownRenderer';
 
 export interface DynamicTextareaProps<T extends FieldValues> {
   name: FieldPath<T>;
@@ -16,43 +17,87 @@ export const DynamicTextarea = <T extends FieldValues>({
   control
 }: DynamicTextareaProps<T>) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const previewRef = useRef<HTMLDivElement>(null);
+  const [mode, setMode] = useState<'edit' | 'preview'>('edit');
+  const [containerHeight, setContainerHeight] = useState<string>('auto');
 
-  const getStyles = (value: string | undefined, textareaRef: RefObject<HTMLTextAreaElement>) => {
-
+  const calculateHeight = (value: string | undefined) => {
     if (!textareaRef.current || !value || value === "") {
-      return {}
+      return 'auto';
     }
+    return `${Math.min(textareaRef.current.scrollHeight, 400)}px`;
+  };
 
-    return {
-      height: `${Math.min(textareaRef.current.scrollHeight, 200)}px`
-    }
-  }
+  const updateContainerHeight = (value: string | undefined) => {
+    const newHeight = calculateHeight(value);
+    setContainerHeight(newHeight);
+  };
 
   return (
-    <Controller
-      control={control}
-      name={name}
-      render={({ field: { onChange, value, ref } }) => {
+    <div>
+      <div className={styles.Tabs}>
+        <button
+          className={`${styles.Tab} ${mode === 'edit' ? styles.ActiveTab : ''}`}
+          onClick={() => setMode('edit')}
+        >
+          Edit
+        </button>
+        <button
+          className={`${styles.Tab} ${mode === 'preview' ? styles.ActiveTab : ''}`}
+          onClick={() => setMode('preview')}
+        >
+          Preview
+        </button>
+      </div>
 
-        return (
-          <textarea
-            className={styles.TextArea}
-            ref={textareaRef}
-            title='answer'
-            onChange={(e) => {
-              console.log("Text area change")
-              onChange(e);
-            }}
-            value={value}
-            style={
-              {
-                height: "min-content",
-                ...getStyles(value, textareaRef)
-              }
-            }
-          />
-        );
-      }}
-    />
+      <Controller
+        control={control}
+        name={name}
+        render={({ field: { onChange, value, ref } }) => {
+          useEffect(() => {
+            updateContainerHeight(value);
+          }, [value]);
+
+          return (
+            <div
+              className={styles.TextAreaContainer}
+              style={{
+                height: containerHeight !== 'auto' ? containerHeight : undefined,
+                minHeight: '50px'
+              }}
+            >
+              {mode === 'preview' && value ? (
+                <div
+                  ref={previewRef}
+                  className={styles.PreviewContainer}
+                  style={{
+                    height: '100%'
+                  }}
+                >
+                  <MarkdownRenderer content={value} />
+                </div>
+              ) : (
+                <textarea
+                  className={styles.TextArea}
+                  ref={textareaRef}
+                  title='answer'
+                  onChange={(e) => {
+                    onChange(e);
+                    updateContainerHeight(e.target.value);
+                  }}
+                  onFocus={() => {
+                    if (value) {
+                      updateContainerHeight(value);
+                    }
+                  }}
+                  value={value}
+                  style={{ height: '100%' }}
+                />
+              )}
+            </div>
+          );
+        }}
+      />
+    </div>
   );
 };
