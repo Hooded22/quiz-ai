@@ -63,6 +63,10 @@
   background-color: rgba(248, 114, 114, 0.1);
 }
 
+.skippedBackground {
+  background-color: rgba(251, 189, 35, 0.1);
+}
+
 .actions {
   display: flex;
   gap: 10px;

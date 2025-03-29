@@ -150,11 +150,36 @@ export default async function QuestionCategory(props: QuestionCategoryProps) {
   const seniorityLevel =
     props.searchParams.seniorityLevel ?? SeniorityLevel.ALL;
 
+  // Generate a stable key from the URL parameters to ensure we get the same questions
+  // This prevents re-fetching when client-side navigation occurs
+  const stableKey = `${roleId}-${questionsNumber}-${seniorityLevel}`;
+
+  // Create a stable, deterministic seed for the random number generation
+  // This ensures the same questions are selected for the same parameters
   const questionsWithAnswers = await getQuestionsSetForSelectedRole(
     roleId,
     questionsNumber,
     seniorityLevel
   );
+
+  // Handle case where no questions are available
+  if (!questionsWithAnswers || questionsWithAnswers.length === 0) {
+    return (
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
+        textAlign: 'center',
+        padding: '2rem'
+      }}>
+        <h1>No questions available</h1>
+        <p>Unfortunately, we couldn't find any questions for the selected parameters.</p>
+        <p>Please try a different configuration or check back later.</p>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -168,6 +193,7 @@ export default async function QuestionCategory(props: QuestionCategoryProps) {
       <MakeAnswerForm
         questionsWithAnswers={questionsWithAnswers}
         topic={props.params.id}
+        key={stableKey}
       />
     </div>
   );
