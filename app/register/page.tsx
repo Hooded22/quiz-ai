@@ -103,10 +103,9 @@ export default function RegisterPage() {
     };
 
     if (!FEATURE_FLAGS.auth.createAccount) {
-        router.push('/');
         return (
             <div className={styles.authContainer}>
-                <p>Registration is currently disabled. Redirecting...</p>
+                <p>Registration is currently disabled.</p>
             </div>
         );
     }

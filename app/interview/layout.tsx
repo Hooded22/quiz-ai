@@ -1,3 +1,5 @@
+import { ReportIssueButton } from 'components/ReportIssueButton';
+
 export default function RootLayout({
     children,
 }: {
@@ -5,12 +7,18 @@ export default function RootLayout({
 }) {
     return (
         <div>
-            <header className="relative flex items-center justify-center h-16" style={{
+            <header className="flex items-center justify-between h-16 px-6" style={{
                 boxShadow: "0 2px 4px rgba(105, 105, 105, 0.5)"
             }}>
-                <h1 className="text-xl font-semibold">Interview Simulator</h1>
-                <div className="absolute top-2 right-4 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">
-                    Alpha
+                <div className="relative">
+                    <h1 className="text-xl font-semibold whitespace-nowrap">Interview Simulator</h1>
+                    <div className="absolute -top-1 -right-12 px-1.5 py-0.5 text-xs bg-blue-100 text-blue-800 rounded-full text-[10px]">
+                        Alpha
+                    </div>
+                </div>
+                <div className="flex-1"></div>
+                <div className="flex justify-end">
+                    <ReportIssueButton />
                 </div>
             </header>
             {children}

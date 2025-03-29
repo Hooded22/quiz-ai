@@ -44,12 +44,16 @@ export function MessageItem({ message, onReportClick }: MessageItemProps) {
             )}
 
             {showModal && (
-                <div className={styles.ReportModal}>
-                    <div className={styles.ReportModalContent}>
-                        <p>Do you want to report issue with AI answer?</p>
-                        <div className={styles.ReportModalButtons}>
-                            <button onClick={handleConfirmReport}>Yes</button>
-                            <button onClick={handleCancelReport}>No</button>
+                <div className={styles.modalOverlay}>
+                    <div className={styles.modal}>
+                        <p className={styles.modalText}>Do you want to report issue with AI answer?</p>
+                        <div className={styles.modalButtons}>
+                            <button className={styles.modalButtonCancel} onClick={handleCancelReport}>
+                                Cancel
+                            </button>
+                            <button className={styles.modalButtonConfirm} onClick={handleConfirmReport}>
+                                Report
+                            </button>
                         </div>
                     </div>
                 </div>
