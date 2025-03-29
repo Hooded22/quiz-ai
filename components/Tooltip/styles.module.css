@@ -1,0 +1,53 @@
+.tooltipWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    white-space: pre-wrap;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #FBBD23;
+    background: transparent;
+    border: 1px solid #FBBD23;
+    margin-top: 0.25rem;
+}
+
+.warning {
+    color: #FBBD23;
+    border: 1px solid #FBBD23;
+}
+
+.success {
+    color: #32CD32;
+    border: 1px solid #32CD32;
+}
+
+.danger {
+    color: #F87272;
+    border: 1px solid #F87272;
+}
+

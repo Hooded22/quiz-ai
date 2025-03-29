@@ -1,29 +1,71 @@
-.main {
+.container {
+  background-color: #181212;
+  color: #fff;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
 }
 
-.navigation {
-  background: #16408c;
-    padding: 20px;
+.header {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .title {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+
+.button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #444;
+}
+
+.statistics {
   width: 100%;
-  font-size: 24px;
   text-align: center;
-  display: block;
 }
 
-.categoriesList {
-  list-style: disc;
+.sectionTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.categoriesListItem {
-  padding: 10px 0;
-  border-bottom: 0.5px solid rgba(255,255,255,0.8);
+.statList {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.statItem {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  width: 150px;
+}
+
+.statNumber {
+  font-size: 32px;
+  margin-bottom: 14px;
+  color: #32cd32;
+}
+
+.statDescription {
+  font-size: 16px;
 }

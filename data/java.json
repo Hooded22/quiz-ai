@@ -1,0 +1,1009 @@
+[
+  {
+    "id": "java-1",
+    "title": "What is JVM? Why is Java called the \"Platform independent Programming Language\"?",
+    "level": "junior",
+    "answer": "JVM (Java Virtual Machine) is an abstract computing machine that provides a runtime environment for Java bytecode to execute. Java is platform-independent because:\n\n1. Java code is compiled into platform-independent bytecode (.class files)\n2. This bytecode can run on any device with JVM installed\n3. JVM acts as an intermediary, translating bytecode into native machine code\n\nProcess: `JavaCode.java` → `javac` → `ByteCode.class` → JVM → Machine Code",
+    "category": "java"
+  },
+  {
+    "id": "java-2",
+    "title": "What is the difference between an Applet and a Java Application?",
+    "level": "junior",
+    "answer": "Key differences between Applets and Java Applications:\n\n1. **junior Point**: Applications use `main()` method, Applets use `init()` method\n2. **Execution**: Applications run standalone, Applets run in web browsers\n3. **Security**: Applets have restricted access due to security, Applications have full access\n4. **Structure**: \n```java\n// Application\npublic class MyApp {\n    public static void main(String[] args) {\n        // code here\n    }\n}\n\n// Applet\npublic class MyApplet extends Applet {\n    public void init() {\n        // initialization code\n    }\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-3",
+    "title": "What are the two types of Exceptions in Java? Which are the differences between them?",
+    "level": "junior",
+    "answer": "Java has two types of exceptions:\n\n1. **Checked Exceptions**:\n- Caught at compile time\n- Must be handled using try-catch or declared using throws\n- Example: IOException, SQLException\n\n2. **Unchecked Exceptions (Runtime)**:\n- Occur at runtime\n- Don't need explicit handling\n- Example: NullPointerException, ArrayIndexOutOfBoundsException\n\n```java\n// Checked Exception example\ntry {\n    FileReader file = new FileReader(\"file.txt\");\n} catch (FileNotFoundException e) {\n    // Handle exception\n}\n\n// Unchecked Exception example\nint[] arr = new int[5];\narr[10] = 50; // Throws ArrayIndexOutOfBoundsException\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-4",
+    "title": "What is a JSP Page?",
+    "level": "junior",
+    "answer": "JSP (JavaServer Pages) is a technology that helps create dynamically generated web pages based on HTML, XML, or other document types. Key points:\n\n1. JSP files have `.jsp` extension\n2. Combines static HTML with dynamic Java code\n3. Gets converted to Servlet behind the scenes\n\n```jsp\n<%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" %>\n<!DOCTYPE html>\n<html>\n<body>\n    <% \n        String message = \"Hello, JSP!\"; \n        out.println(message);\n    %>\n</body>\n</html>\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-5",
+    "title": "What is a Servlet?",
+    "level": "junior",
+    "answer": "A Servlet is a Java program that runs on a Java-enabled web server, extending server capabilities by:\n\n1. Processing client requests\n2. Generating dynamic content\n3. Managing state and sessions\n\n```java\npublic class HelloServlet extends HttpServlet {\n    protected void doGet(HttpServletRequest request, \n                        HttpServletResponse response) \n            throws ServletException, IOException {\n        response.setContentType(\"text/html\");\n        PrintWriter out = response.getWriter();\n        out.println(\"<html><body>\");\n        out.println(\"<h1>Hello, Servlet!</h1>\");\n        out.println(\"</body></html>\");\n    }\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-6",
+    "title": "What is the Difference between JDK and JRE?",
+    "level": "junior",
+    "answer": "**JDK (Java Development Kit)**:\n- Complete development environment\n- Includes JRE plus development tools\n- Contains compiler (javac), debugger, documentation tools (javadoc)\n\n**JRE (Java Runtime Environment)**:\n- Minimum environment for executing Java applications\n- Contains Java Virtual Machine (JVM)\n- Includes core classes and supporting files\n\nSimple analogy: JDK is like a full kitchen with cooking tools (for developers), while JRE is like a dining room (for running applications)",
+    "category": "java"
+  },
+  {
+    "id": "java-7",
+    "title": "What is an Iterator?",
+    "level": "junior",
+    "answer": "Iterator is an interface in Java Collections Framework used to traverse collections sequentially. Key features:\n\n1. Provides methods: `hasNext()`, `next()`, `remove()`\n2. Safer than traditional for-loop\n3. Prevents ConcurrentModificationException\n\n```java\nArrayList<String> list = new ArrayList<>();\nlist.add(\"A\"); list.add(\"B\");\n\nIterator<String> iterator = list.iterator();\nwhile(iterator.hasNext()) {\n    String element = iterator.next();\n    System.out.println(element);\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-8",
+    "title": "What are the Data Types supported by Java? What is Autoboxing and Unboxing?",
+    "level": "junior",
+    "answer": "Java supports two categories of data types:\n\n**Primitive Types**:\n- byte, short, int, long\n- float, double\n- boolean\n- char\n\n**Reference Types**:\n- Classes, Interfaces, Arrays\n\n**Autoboxing**: Automatic conversion of primitive to wrapper class\n**Unboxing**: Automatic conversion of wrapper class to primitive\n\n```java\n// Autoboxing Integer num = 100;    // int to Integer\n\n// Unboxing\nint value = num;      // Integer to int\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-9",
+    "title": "What are the basic interfaces of Java Collections Framework?",
+    "level": "junior",
+    "answer": "Main interfaces in Java Collections Framework:\n\n1. **Collection**:\n   - Base interface\n   - Extended by List, Set, Queue\n\n2. **List**:\n   - Ordered collection\n   - Allows duplicates\n   - Examples: ArrayList, LinkedList\n\n3. **Set**:\n   - Unique elements\n   - Examples: HashSet, TreeSet\n\n4. **Queue**:\n   - FIFO structure\n   - Examples: PriorityQueue\n\n5. **Map** (technically separate):\n   - Key-value pairs\n   - Examples: HashMap, TreeMap\n\n```java\nList<String> list = new ArrayList<>();\nSet<Integer> set = new HashSet<>();\nMap<String, Integer> map = new HashMap<>();\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-10",
+    "title": "How HashMap works in Java?",
+    "level": "junior",
+    "answer": "HashMap works on the principle of hashing with key-value pairs. Internal working:\n\n1. Uses array of nodes (buckets)\n2. `hashCode()` of key determines bucket location\n3. Multiple entries in same bucket handled by linked list or tree\n4. Load factor determines when to resize\n\n```java\nHashMap<String, Integer> map = new HashMap<>();\nmap.put(\"key\", 1);    // Internally:\n                     // 1. Calculate hash of \"key\"\n                     // 2. Find bucket using (hash & (n-1))\n                     // 3. Store junior in bucket\n\nInteger value = map.get(\"key\"); // Similar process to locate value\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-11",
+    "title": "What is an Java Applet?",
+    "level": "junior",
+    "answer": "A **Java Applet** is a small application written in Java, which is embedded in a web page and can be executed in a web browser using a Java plug-in. It is compatible with all platforms that support Java, enabling cross-platform usability. Applets can perform functions such as playing media, interactive games, or displaying graphics.\n\nExample:\n```html\n<applet code=\"MyApplet.class\" width=\"300\" height=\"300\"></applet>\n```\n*Note: Browser support for applets has diminished over the years.*",
+    "category": "java"
+  },
+  {
+    "id": "java-12",
+    "title": "What are pass by reference and pass by value?",
+    "level": "junior",
+    "answer": "Java actually uses **pass by value** for both primitive types and object references. For primitive types, the method receives a copy of the actual value. For objects, a copy of the reference (pointer) to the object is passed. Hence, you can change the state of the object but cannot reassign the reference to a new object.",
+    "category": "java"
+  },
+  {
+    "id": "java-13",
+    "title": "What is the difference between processes and threads?",
+    "level": "junior",
+    "answer": "A **process** is an independent executing program with its own memory space, while a **thread** is a smaller execution unit within a process. Threads within the same process share the same memory space but operate independently.\n\n**Processes**: \n- Independent execution\n- Own memory space\n\n**Threads**:\n- Share memory with other threads\n- Light-weight, faster context switching",
+    "category": "java"
+  },
+  {
+    "id": "java-14",
+    "title": "When does an Object becomes eligible for Garbage Collection in Java?",
+    "level": "junior",
+    "answer": "An object becomes eligible for **garbage collection** when it is no longer reachable from any live threads or static references. Essentially, when no remaining references point to the object, it will be marked for garbage collection.\n\nExample:\n```java\nSomeObject obj = new SomeObject();\nobj = null; // Now eligible for garbage collection\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-15",
+    "title": "What is the difference between Exception and Error in Java?",
+    "level": "junior",
+    "answer": "In Java, **Exceptions** are conditions that a programmer might want to catch and handle, while **Errors** are usually related to the runtime environment, typically not intended to be caught.\n\n**Exception**:\n- Indicates conditions that an application might want to handle\n- Examples: IOException, NullPointerException\n\n**Error**:\n- Represents serious issues not expected to be handled by applications\n- Examples: OutOfMemoryError, StackOverflowError",
+    "category": "java"
+  },
+  {
+    "id": "java-16",
+    "title": "What is the importance of finally block in exception handling?",
+    "level": "junior",
+    "answer": "The **finally block** in Java's exception handling mechanism is used to execute important code such as closing resources, irrespective of whether an exception is thrown or not. It always executes after try/catch blocks, ensuring cleanup tasks are completed.\n\nExample:\n```java\ntry {\n    // Code that might throw an exception\n} catch (Exception e) {\n    // Handle exception\n} finally {\n    // Execute cleanup code\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-17",
+    "title": "What does the static keyword mean? Can you override private or static method in Java?",
+    "level": "junior",
+    "answer": "The **static** keyword in Java is used for memory management, meaning the static member belongs to the class rather than a specific instance. It can be applied to variables, methods, and blocks. Static methods cannot be overridden, only hidden by subclass methods with the same signature (method hiding).\n\nExample:\n```java\nclass MyClass {\n    static void myMethod() {}\n}\n```\n\n*Private methods cannot be overridden since they are not accessible outside the class.*",
+    "category": "java"
+  },
+  {
+    "id": "java-18",
+    "title": "What is JDBC?",
+    "level": "junior",
+    "answer": "**JDBC** (Java Database Connectivity) is an API that allows Java programs to interact with databases, enabling retrieval, insertion, and update of data. JDBC offers a set of interfaces and classes for connecting to databases like MySQL, Oracle, etc.\n\nExample:\n```java\nConnection conn = DriverManager.getConnection(url, user, password);\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-19",
+    "title": "What is the purpose of Garbage Collection in Java, and when is it used?",
+    "level": "junior",
+    "answer": "**Garbage Collection** in Java automatically reclaims memory by destroying unused objects, preventing memory leaks. It runs periodically or when the JVM determines there is insufficient memory (heap).\n\n*Purpose*: To deallocate memory and make space for new objects.",
+    "category": "java"
+  },
+  {
+    "id": "java-20",
+    "title": "How does Garbage Collection prevent a Java application from going out of memory?",
+    "level": "junior",
+    "answer": "**Garbage Collection** prevents a Java application from going out of memory by automatically identifying and removing objects that are no longer in use, freeing up memory resources for application growth. This process runs on the JVM as needed but does not provide real-time memory management.",
+    "category": "java"
+  },
+  {
+    "id": "java-21",
+    "title": "Explain Serialization and Deserialization.",
+    "level": "junior",
+    "answer": "**Serialization** is the process of converting an object's state into a byte stream, enabling saving to a file or sending over a network. **Deserialization** is the reverse process, reconstructing the object from the byte stream.\n\nExample:\n```java\ntry (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file))){\n    out.writeObject(object);\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-22",
+    "title": "Explain the architecture of a Servlet.",
+    "level": "junior",
+    "answer": "A **Servlet** follows a request-response model and operates on the server-side, handling client requests, processing them, and sending back a response. The basic architecture involves:\n\n1. **Servlet Interface**: Defines lifecycle methods (init, service, destroy).\n2. **Request Handling**: DoGet/DoPost methods handle GET/POST requests.\n3. **Response Generation**: Modifies response object and client receives response.",
+    "category": "java"
+  },
+  {
+    "id": "java-23",
+    "title": "What is reflection and why is it useful?",
+    "level": "junior",
+    "answer": "**Reflection** in Java is the ability to inspect and modify classes, methods, fields at runtime. It is useful for analysis, debugging, and creating adaptable frameworks or libraries that work with multiple types dynamically.\n\nExample:\n```java\nClass<?> clazz = Class.forName(\"MyClass\");\nMethod method = clazz.getDeclaredMethod(\"myMethod\");\nmethod.invoke(objectInstance);\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-24",
+    "title": "What are JSP Actions?",
+    "level": "junior",
+    "answer": "**JSP Actions** are XML tags used in JSP to control the behavior of the servlet engine, such as including another resource, forward a request, or instantiating a JavaBean.\n\nExample:\n```jsp\n<jsp:forward page=\"anotherPage.jsp\"/>\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-25",
+    "title": "What are Declarations?",
+    "level": "junior",
+    "answer": "**Declarations** in JSP are used to declare variables and methods that get inserted into the servlet class's body. Declarations are defined with `<%! %>` and are applied to all requests processed by the JSP.\n\nExample:\n```jsp\n<%! int i = 0; %>\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-26",
+    "title": "What's the difference between sendRedirect and forward methods?",
+    "level": "junior",
+    "answer": "**sendRedirect** and **forward** are used to redirect requests, but behave differently:\n\n**sendRedirect**: \n- Client-side redirection\n- Client's URL changes\n- New request object\n\n**forward**:\n- Server-side redirection\n- Client's URL stays same\n- Same request object\n\nExample for sendRedirect:\n```java\nresponse.sendRedirect(\"otherPage.jsp\");\n```\n\nExample for forward:\n```java\nrequest.getRequestDispatcher(\"otherPage.jsp\").forward(request, response);\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-27",
+    "title": "What is the purpose Class.forName method?",
+    "level": "junior",
+    "answer": "The `Class.forName()` method dynamically loads the class at runtime. It's often used to load JDBC drivers. When a class is loaded using this method, the static initializer of the class is executed, making it a critical component in frameworks.\n\nExample:\n```java\nClass.forName(\"com.mysql.jdbc.Driver\");\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-28",
+    "title": "What is the design pattern that Java uses for all Swing components?",
+    "level": "junior",
+    "answer": "Swing components in Java use the **Model-View-Controller (MVC)** design pattern. This pattern separates a component's functionality (Model), its visual appearance (View), and its response to user interaction (Controller), providing a modular and flexible architecture.",
+    "category": "java"
+  },
+  {
+    "id": "java-29",
+    "title": "How are the JSP requests handled?",
+    "level": "junior",
+    "answer": "JSP requests are handled via the **servlet lifecycle**: the JSP is translated into a servlet, compiled, loaded, initialized, and finally, the `_jspService()` method processes each request. JSPs allow embedding Java code within HTML, streamlining web content development.",
+    "category": "java"
+  },
+  {
+    "id": "java-30",
+    "title": "What is Function Overriding and Overloading in Java?",
+    "level": "junior",
+    "answer": "**Function Overriding** occurs when a subclass provides a specific implementation for a method already defined in its superclass. It's runtime polymorphism.\n\n**Function Overloading** allows the creation of multiple methods with the same name with different parameters (compile-time polymorphism).\n\nExample of Overriding:\n```java\n@Override\nvoid display() {}\n```\n\nExample of Overloading:\n```java\nvoid display(int b) {}\nvoid display(String s) {}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-31",
+    "title": "What do you know about the Big-O notation and can you give some examples with respect to different data structures?",
+    "level": "junior",
+    "answer": "Big-O notation describes the upper limit of the time or space complexity of an algorithm in the worst-case scenario. It's a way to express the performance or scalability of an algorithm as the input size grows.\n\n**Examples:**\n1. **Array:** Access: O(1), Insertion/Deletion: O(n)\n2. **Linked List:** Access: O(n), Insertion/Deletion: O(1)\n3. **Binary Search Tree:** Average: O(log n), Worst: O(n), Insertion/Deletion: O(log n)",
+    "category": "java"
+  },
+  {
+    "id": "java-32",
+    "title": "What are Expressions?",
+    "level": "junior",
+    "answer": "In programming, an expression is a combination of variables, constants, operators, and functions that a programming language interpreter can evaluate to produce another value.\n\n**Example:**\n```java\nint sum = a + b; // 'a + b' is an expression\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-33",
+    "title": "What is the difference between an Interface and an Abstract class?",
+    "level": "junior",
+    "answer": "An **Interface** is a contract that defines methods that a class must implement without providing any implementation. An **Abstract Class** can have both abstract methods (without implementation) and concrete methods (with implementation).\n\nKey Differences:\n- **Interfaces** can't have constructors, but **Abstract Classes** can.\n- **Interfaces** support multiple inheritance, while **Abstract Classes** do not.",
+    "category": "java"
+  },
+  {
+    "id": "java-34",
+    "title": "What will happen to the Exception object after exception handling?",
+    "level": "junior",
+    "answer": "After the exception is handled, the exception object becomes eligible for garbage collection since it goes out of scope, assuming no other references exist to it. Thus, resources linked to the exception object are freed.",
+    "category": "java"
+  },
+  {
+    "id": "java-35",
+    "title": "Explain what is Binary Search.",
+    "level": "junior",
+    "answer": "Binary Search is a search algorithm that finds the position of a target value within a sorted array. It repeatedly divides the array in half, reducing the search area where the target value could exist.\n\n**Pseudo-code example:**\n```java\nint binarySearch(int arr[], int x) {\n    int left = 0, right = arr.length - 1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (arr[mid] == x)\n            return mid;\n        if (arr[mid] < x)\n            left = mid + 1;\n        else\n            right = mid - 1;\n    }\n    return -1;\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-36",
+    "title": "What are Directives?",
+    "level": "junior",
+    "answer": "In programming, directives are special instructions used in the source code to guide compilers and preprocessors. They often modify how the code is compiled or control compilation settings.\n\n**Example:** In C/C++, `#include` and `#define` are directives.",
+    "category": "java"
+  },
+  {
+    "id": "java-37",
+    "title": "What differences exist between HashMap and Hashtable?",
+    "level": "INTERMEDIATE",
+    "answer": "Both are used to store key-value pairs. **HashMap** is part of Java's collection framework, while **Hashtable** is legacy.\n\n**Key Differences:**\n- **Thread-safety:** Hashtable is synchronized, making it thread-safe, while HashMap is not.\n- **Null Handling:** HashMap allows null keys and values; Hashtable does not.\n- **Performance:** Because HashMap isn't synchronized, it's generally faster than Hashtable.",
+    "category": "java"
+  },
+  {
+    "id": "java-38",
+    "title": "What does System.gc() and Runtime.gc() methods do?",
+    "level": "INTERMEDIATE",
+    "answer": "Both `System.gc()` and `Runtime.gc()` suggest that the Java Virtual Machine (JVM) runs the garbage collector, making an effort to reclaim memory resources. However, they don't guarantee immediate execution. `System.gc()` is a static method, while `Runtime.gc()` is an instance method obtained through `Runtime.getRuntime()`.",
+    "category": "java"
+  },
+  {
+    "id": "java-39",
+    "title": "What is difference between fail-fast and fail-safe?",
+    "level": "INTERMEDIATE",
+    "answer": "**Fail-Fast** iterators immediately throw a `ConcurrentModificationException` if the collection is modified (except via the iterator itself) during iteration. **Fail-Safe** iterators operate on a clone of the collection, allowing traversal without throwing an exception on concurrent modification.",
+    "category": "java"
+  },
+  {
+    "id": "java-40",
+    "title": "Compare the sleep() and wait() methods in Java.",
+    "level": "INTERMEDIATE",
+    "answer": "`sleep(long millis)`: Pauses the current thread for the specified duration without releasing any locks.\n\n`wait()`: Called on an object, it releases the lock on that object and waits for another thread to call `notify()` or `notifyAll()` on the same object.\n\n**Key Differences:**\n- Usage: `sleep()` for time-based delay; `wait()` for inter-thread communication.\n- Lock Release: `sleep()` doesn't release locks; `wait()` does.",
+    "category": "java"
+  },
+  {
+    "id": "java-41",
+    "title": "Is there anything like static Class in Java?",
+    "level": "junior",
+    "answer": "In Java, there isn't a concept of a 'static class' as in some other languages. However, you can have a static nested class, which means the nested class can be accessed without creating an instance of the outer class.",
+    "category": "java"
+  },
+  {
+    "id": "java-42",
+    "title": "What are the differences between == and equals?",
+    "level": "mid",
+    "answer": "`==`: Checks if two references point to the same memory location (reference equality).\n\n`equals()`: Checks if two objects are meaningfully equivalent (logical equality). It can be overridden to provide custom equality logic, unlike `==`.",
+    "category": "java"
+  },
+  {
+    "id": "java-43",
+    "title": "How threadsafe is enum in Java?",
+    "level": "mid",
+    "answer": "Enums in Java are inherently thread-safe because they are implemented as static final constants, guaranteeing only one instance. The JVM ensures synchronization of their initialization, providing thread safety.",
+    "category": "java"
+  },
+  {
+    "id": "java-44",
+    "title": "What is meant by JSP Implicit objects and what are they?",
+    "level": "mid",
+    "answer": "JSP implicitly creates certain objects for use within the JSP file, akin to variables available in every JSP page.\n\n**Examples of implicit objects:**\n1. `request` - Represents the HTTP request.\n2. `response` - Represents the HTTP response.\n3. `session` - Represents the user session.\n4. `application` - ServletContext obtained from ServletConfig.",
+    "category": "java"
+  },
+  {
+    "id": "java-45",
+    "title": "What is the advantage of PreparedStatement over Statement?",
+    "level": "mid",
+    "answer": "**PreparedStatement** is used for executing parametrized queries, providing benefits such as:\n\n1. **Precompiled SQL Statements**: Improves performance for repeated executions.\n2. **Security**: Reduces risk of SQL injection by separating SQL logic from data.\n3. **Ease of Use**: Allows for parameterized queries to auto-handle string escape sequences.",
+    "category": "java"
+  },
+  {
+    "id": "java-46",
+    "title": "What is difference between Array and ArrayList? When will you use Array over ArrayList?",
+    "level": "mid",
+    "answer": "An **Array** is a fixed-size data structure with a specific data type, while **ArrayList** is a dynamic-sized collection that can hold objects.\n\n**When to Use Array:**\n- Fixed-size requirement and for primitive types for performance gains.\n- When you need direct manipulation without overhead in type-casting.",
+    "category": "java"
+  },
+  {
+    "id": "java-47",
+    "title": "What is the main difference between StringBuffer and StringBuilder?",
+    "level": "mid",
+    "answer": "Both classes are used for mutable string handling with key differences:\n\n**StringBuffer**: Thread-safe due to synchronized methods; suitable for multi-threaded environments.\n\n**StringBuilder**: Not synchronized, providing better performance for single-threaded contexts.",
+    "category": "java"
+  },
+  {
+    "id": "java-48",
+    "title": "What is Java Priority Queue?",
+    "level": "mid",
+    "answer": "A **PriorityQueue** in Java is a data structure that allows retrieving elements according to their priority, adhering to the natural ordering or a provided comparator.\n\n**Characteristics:**\n- Dynamic array-like storage\n- Elements must be comparable or use a Comparator during creation.",
+    "category": "java"
+  },
+  {
+    "id": "java-49",
+    "title": "Explain different ways of creating a thread. Which one would you prefer and why?",
+    "level": "mid",
+    "answer": "Threads in Java can be created by:\n- **Extending the Thread class**: Override the `run()` method.\n- **Implementing the Runnable interface**: Pass the instance to a `Thread` object.\n\n**Preference:** Implementing `Runnable` as it avoids single inheritance limitations and decouples task from thread management. It may increase flexibility for future changes.",
+    "category": "java"
+  },
+  {
+    "id": "java-50",
+    "title": "What is the importance of hashCode() and equals() methods?",
+    "level": "mid",
+    "answer": "**hashCode()** and **equals()** are crucial for allowing objects to become keys in hash-based collections (e.g., `HashMap`, `HashSet`).\n\n**Importance:**\n- Breach of correctness in hashCode() and equals() relationships can lead to data inconsistency.\n- Both methods ensure object uniqueness and enable efficient data retrieval.",
+    "category": "java"
+  },
+  {
+    "id": "java-51",
+    "title": "What is the volatile keyword useful for?",
+    "level": "mid",
+    "answer": "The `volatile` keyword in Java is used to indicate that a variable’s value will be modified by different threads. Declaring a variable as volatile means: \n- Every read of a volatile variable will be read from the computer's main memory, and not from the CPU cache.\n- It ensures visibility of changes to variables across threads.\n\n```java\nvolatile int sharedVar;\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-52",
+    "title": "Can null be used on enum?",
+    "level": "mid",
+    "answer": "Yes, `null` can be used with enums in Java. An enum reference can be explicitly set to `null`. However, dereferencing it will cause a `NullPointerException` just like any other reference.\n\nExample:\n```java\nenum Color { RED, GREEN, BLUE }\nColor c = null; // valid\nc.toString();  // throws NullPointerException\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-53",
+    "title": "What do the ... dots in the method parameters mean?",
+    "level": "mid",
+    "answer": "The `...` syntax in Java method parameters is known as varargs (variable arguments). It allows you to pass an arbitrary number of arguments to the method. The varargs parameter must be the last parameter of the method.\n\nExample:\n```java\npublic void printNumbers(int... numbers) {\n    for (int num : numbers) {\n        System.out.println(num);\n    }\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-54",
+    "title": "Why does Java have transient fields?",
+    "level": "mid",
+    "answer": "In Java, the `transient` keyword is used to indicate that a field should not be serialized as part of an object's state. When an object is serialized, transient fields are ignored, which is useful when they contain sensitive information that shouldn’t be persisted or is context-specific like I/O streams.\n\nExample: \n```java\nclass User implements Serializable {\n    private transient String password;\n    // other fields\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-55",
+    "title": "Is Java pass-by-reference or pass-by-value?",
+    "level": "mid",
+    "answer": "Java is always pass-by-value. However, for objects, the 'value' is actually the reference to the object, so it might seem like pass-by-reference. Modifying an object inside a method will reflect outside because the reference is being shared, but changing the reference itself will not affect the original reference.\n\nExample:\n```java\nvoid modify(StringBuilder sb) {\n    sb.append(\" more\"); // modifies the original object\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-56",
+    "title": "What is static initializer?",
+    "level": "mid",
+    "answer": "A static initializer block in Java is used to initialize static data members. It is a block of code enclosed in braces and preceded by the `static` keyword, and it executes when the class is first loaded into memory.\n\nExample:\n```java\nclass Example {\n    static int count;\n    static {\n        count = 10;\n        System.out.println(\"Static Initializer\");\n    }\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-57",
+    "title": "What’s the advantage of using getters and setters?",
+    "level": "mid",
+    "answer": "Getters and setters provide controlled access to private fields of a class. They allow for validation, encapsulation, and any additional processing. Using getters and setters can: \n- Enhance control by restricting changes to field values.\n- Ensure that the field is always in a consistent and valid state.\n- Provide flexibility to change the internal implementation later without breaking the codebase.",
+    "category": "java"
+  },
+  {
+    "id": "java-58",
+    "title": "What is the difference between public, protected, package-private and private in Java?",
+    "level": "mid",
+    "answer": "In Java, access modifiers determine the accessibility of classes, methods, and other members.\n- **public**: Accessible from anywhere.\n- **protected**: Accessible within the same package or subclasses.\n- **package-private** (default): Accessible within the same package.\n- **private**: Accessible only within the class.",
+    "category": "java"
+  },
+  {
+    "id": "java-59",
+    "title": "What is the difference between HashMap, LinkedHashMap and TreeMap in Java?",
+    "level": "mid",
+    "answer": "In Java:\n- **HashMap**: Provides constant-time complexity for basic operations. Does not guarantee order.\n- **LinkedHashMap**: Maintains a doubly-linked list, ensuring predictable iteration order (insertion order or access order).\n- **TreeMap**: Implements the NavigableMap, providing log(n) time cost for operations and iterates over keys in sorted order.",
+    "category": "java"
+  },
+  {
+    "id": "java-60",
+    "title": "How and where are Annotations used in Java?",
+    "level": "mid",
+    "answer": "Annotations in Java provide metadata about the code. They can be used:\n- At runtime by reflection or during compile time by the compiler.\n- Common usage includes marking deprecated methods, overriding methods, and defining custom frameworks.\n\nExample of a custom annotation:\n```java\n@interface MyAnnotation {\n    String value();\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-61",
+    "title": "What is the Java Classloader?",
+    "level": "mid",
+    "answer": "The Java ClassLoader is a subsystem of the JVM responsible for loading classes. It loads bytecode into memory when a program is run. Java has three built-in class loaders: \n1. **Bootstrap ClassLoader**: Loads JDK internal classes.\n2. **Extension ClassLoader**: Loads classes from JDK extensions.\n3. **System/Application ClassLoader**: Loads classes from the classpath.",
+    "category": "java"
+  },
+  {
+    "id": "java-62",
+    "title": "Can an enum be extended?",
+    "level": "mid",
+    "answer": "No, an enum type cannot be subclassed in Java. Enum subclasses cannot be created because they are implicitly final classes. Every enum is a subclass of `java.lang.Enum` class, and Java does not support multiple inheritance.",
+    "category": "java"
+  },
+  {
+    "id": "java-63",
+    "title": "What is a JavaBean exactly?",
+    "level": "mid",
+    "answer": "A JavaBean is a reusable software component that follows certain conventions:\n- Provides a default constructor.\n- Contains getter and setter methods to access private fields.\n- Implements `Serializable` interface.\n\nExample of a JavaBean:\n```java\npublic class Person {\n    private String name;\n    public String getName() { return name; }\n    public void setName(String name) { this.name = name; }\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-64",
+    "title": "What is the JIT?",
+    "level": "mid",
+    "answer": "JIT stands for Just-In-Time compiler, which is a part of the Java Runtime Environment (JRE). Its purpose is to improve the performance of Java applications by compiling parts of the bytecode into native machine code at runtime, enabling the execution to be faster.",
+    "category": "java"
+  },
+  {
+    "id": "java-65",
+    "title": "What are the advantages of JSP?",
+    "level": "mid",
+    "answer": "JavaServer Pages (JSP) are used to create dynamic web content. Advantages include:\n- Enables separation of UI and business logic.\n- Facilitates easier maintenance of the web application.\n- Extends Java Servlet API and allows embedding of Java code in HTML using scriptlets or custom tags.",
+    "category": "java"
+  },
+  {
+    "id": "java-66",
+    "title": "How do I break out of nested loops in Java?",
+    "level": "mid",
+    "answer": "To break out of nested loops in Java, you can use labeled break statements.\n\nExample:\n```java\nouter:\nfor (int i = 0; i < 5; i++) {\n    for (int j = 0; j < 5; j++) {\n        if (condition) {\n            break outer;\n        }\n    }\n}\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-67",
+    "title": "How can I synchronize two Java processes?",
+    "level": "mid",
+    "answer": "To synchronize two separate Java processes, you can use inter-process communication (IPC) techniques like:\n- File locking.\n- Sockets for network communication.\n- Using a database or message queue for coordination.",
+    "category": "java"
+  },
+  {
+    "id": "java-68",
+    "title": "What’s the difference between a ClassNotFoundException and NoClassDefFoundError?",
+    "level": "mid",
+    "answer": "- **ClassNotFoundException**: Raised when trying to load a class by `Class.forName()` but the class definition was not found.\n- **NoClassDefFoundError**: Raised when the JVM or a classloader tries to load the definition of a class (which was available at compile time) and fails.",
+    "category": "java"
+  },
+  {
+    "id": "java-69",
+    "title": "Can you access non static variable in static context?",
+    "level": "mid",
+    "answer": "No, you cannot access non-static variables in a static context (like in static methods) because static methods belong to the class itself, not an instance of the class. Non-static fields require an instance to be accessed.",
+    "category": "java"
+  },
+  {
+    "id": "java-70",
+    "title": "What is the difference between final, finalize and finally?",
+    "level": "mid",
+    "answer": "1. **final**: A keyword used to declare constants, prevent inheritance, and prevent method overriding in Java.\n\n2. **finally**: A block used to execute important code such as closing resources, which will always run even if an exception is caught.\n\n3. **finalize()**: A method called by the garbage collector just before an object is destroyed, used to perform cleanup operations.",
+    "category": "java"
+  },
+  {
+    "id": "java-71",
+    "title": "What are the restrictions imposed on Java applets?",
+    "level": "mid",
+    "answer": "Java applets have several security restrictions:\n\n1. **Network Security**: Applets can only communicate with the server they originated from.\n\n2. **File Access**: Applets cannot access the local file system for reading or writing.\n\n3. **Execution Permission**: Cannot execute local programs.\n\n4. **Security Manager**: Applets run within a restricted environment controlled by a security manager.",
+    "category": "java"
+  },
+  {
+    "id": "java-72",
+    "title": "What is the role of stub in RMI?",
+    "level": "mid",
+    "answer": "In Remote Method Invocation (RMI), a **stub** acts as a proxy for the remote object, handling communication for the client-side. It forwards the method calls to the server, thereby providing a transparent remote interaction experience.",
+    "category": "java"
+  },
+  {
+    "id": "java-73",
+    "title": "What is the difference between GenericServlet and HttpServlet?",
+    "level": "mid",
+    "answer": "**GenericServlet** is abstract, protocol-independent class that's used as a base class for creating servlets. \n\n**HttpServlet** is a subclass of GenericServlet tailored for HTTP protocol, implementing and overriding HTTP-specific methods such as doGet(), doPost(), etc.",
+    "category": "java"
+  },
+  {
+    "id": "java-74",
+    "title": "What are Scriptlets?",
+    "level": "mid",
+    "answer": "Scriptlets are pieces of Java code embedded within HTML pages and identified by <% %> tags, used in JSP (JavaServer Pages) to insert dynamic content within static HTML.",
+    "category": "java"
+  },
+  {
+    "id": "java-75",
+    "title": "Explain the life cycle of an Applet.",
+    "level": "mid",
+    "answer": "The life cycle of an applet consists of methods like:\n\n1. **init()**: Initialization of applet.\n2. **start()**: Start or resume execution.\n3. **paint(Graphics g)**: Perform output and drawing.\n4. **stop()**: Halt suspension of applet.\n5. **destroy()**: Clean-up and release resources before the applet is destroyed.",
+    "category": "java"
+  },
+  {
+    "id": "java-76",
+    "title": "Explain the life cycle of a Servlet.",
+    "level": "mid",
+    "answer": "The Servlet life cycle consists of the following stages:\n\n1. **init()**: Initializes the servlet and prepares it to handle requests.\n2. **service()**: Called to process requests from client, containing logic for request handling.\n3. **destroy()**: Cleans up resources and prepares the servlet for being destroyed.",
+    "category": "java"
+  },
+  {
+    "id": "java-77",
+    "title": "Which Swing methods are thread-safe?",
+    "level": "mid",
+    "answer": "Only **repaint()** and **revalidate()** can be called safely from any thread. Most Swing methods should be executed on the **Event Dispatch Thread** to avoid potential thread safety issues.",
+    "category": "java"
+  },
+  {
+    "id": "java-78",
+    "title": "What’s a deadlock?",
+    "level": "mid",
+    "answer": "A **deadlock** is a situation in concurrent programming where two or more threads are blocked forever, each waiting on the other to release a lock.",
+    "category": "java"
+  },
+  {
+    "id": "java-79",
+    "title": "What is the tradeoff between using an unordered array versus an ordered array?",
+    "level": "mid",
+    "answer": "Unordered arrays offer **faster insertion** as items can be added at the end, while ordered arrays provide **faster searching** due to binary search. However, ordered arrays have slower insertion due to the need to position the element correctly.",
+    "category": "java"
+  },
+  {
+    "id": "java-80",
+    "title": "What is the difference between doGet() and doPost()?",
+    "level": "mid",
+    "answer": "**doGet()** appends request parameters to the URL and is limited by URL length.\n\n**doPost()** sends parameters in the request body, allowing larger data transfers and offering better security.",
+    "category": "java"
+  },
+  {
+    "id": "java-81",
+    "title": "What is structure of Java Heap?",
+    "level": "mid",
+    "answer": "Java Heap is divided into generations:\n\n1. **Young Generation**: Stores short-lived objects.\n2. **Old Generation (Tenured Space)**: Holds long-lived objects.\n3. **Permanent Generation (PermGen)**: Non-heap memory area for storing class structures, moved to metaspace in later JVM versions.",
+    "category": "java"
+  },
+  {
+    "id": "java-82",
+    "title": "What differences exist between Iterator and ListIterator?",
+    "level": "mid",
+    "answer": "**Iterator** can traverse collections in one direction and allows element removal.\n\n**ListIterator** extends Iterator, providing both forward and backward traversal of a list along with element modification capabilities.",
+    "category": "java"
+  },
+  {
+    "id": "java-83",
+    "title": "How does finally block differ from finalize() method?",
+    "level": "junior",
+    "answer": "A **finally** block is paired with a try-catch block to handle cleanup after exceptions. It always executes after a try block completes, regardless of success or exception.\n\n**finalize()** is called by the garbage collector on an object when garbage collection determines that there are no more references to the object.",
+    "category": "java"
+  },
+  {
+    "id": "java-84",
+    "title": "Explain the role of Driver in JDBC.",
+    "level": "junior",
+    "answer": "A **JDBC Driver** implements the java.sql.Driver interface, allowing Java applications to interact with various databases by translating Java calls to the database-specific communications protocol.",
+    "category": "java"
+  },
+  {
+    "id": "java-85",
+    "title": "What is the difference between throw and throws?",
+    "level": "junior",
+    "answer": "**throw** is used to explicitly raise an exception in Java.\n\n**throws** is a keyword used in method signatures to declare that a method might throw one or more exceptions.",
+    "category": "java"
+  },
+  {
+    "id": "java-86",
+    "title": "What is Comparable and Comparator Interface? List their differences.",
+    "level": "junior",
+    "answer": "1. **Comparable**: Interface for objects with natural ordering, implemented via compareTo() method and used for sorting collections.\n\n2. **Comparator**: Interface allowing custom ordering, implemented via compare() method, enabling sorting flexibility.",
+    "category": "java"
+  },
+  {
+    "id": "java-87",
+    "title": "What are untrusted applets?",
+    "level": "junior",
+    "answer": "**Untrusted applets** are Java applets that come from unverified sources and are subject to strict security restrictions, limiting actions such as file access and network connections for protection.",
+    "category": "java"
+  },
+  {
+    "id": "java-88",
+    "title": "What is difference between ArrayList and LinkedList?",
+    "level": "junior",
+    "answer": "1. **ArrayList**: Backed by an array, offers faster access with indices but slower insertions due to shifting elements.\n\n2. **LinkedList**: Backed by nodes, offers faster inserts and deletes but slower access since traversal is required.",
+    "category": "java"
+  },
+  {
+    "id": "java-89",
+    "title": "What is the difference between an Applet and a Servlet?",
+    "level": "junior",
+    "answer": "1. **Applet**: Java program that runs within a browser, providing client-side UI.\n\n2. **Servlet**: Runs on server-side to handle HTTP requests and responses in web applications.",
+    "category": "java"
+  },
+  {
+    "id": "java-90",
+    "title": "What are the steps involved to make a RMI program?",
+    "level": "junior",
+    "answer": "Steps to create RMI program:\n\n1. Define remote interface with services.\n2. Implement interface and define remote methods.\n3. Start RMI registry using `rmiregistry`.\n4. Create stub and skeleton using `rmic` tool.\n5. Deploy and start server program.\n6. Write client code to invoke remote methods.",
+    "category": "java"
+  },
+  {
+    "id": "java-91",
+    "title": "Why Collection doesn't extend Cloneable and Serializable interfaces?",
+    "level": "junior",
+    "answer": "Collections don't extend Cloneable and Serializable because not all collections support cloning or serialization, ensuring flexibility and allowing concrete collections to choose whether to implement these interfaces.",
+    "category": "java"
+  },
+  {
+    "id": "java-92",
+    "title": "If an object reference is set to null, will the Garbage Collector immediately free the memory held by that object?",
+    "level": "junior",
+    "answer": "Setting an object reference to null marks it eligible for garbage collection but doesn't guarantee immediate memory release. The JVM's Garbage Collector decides when and if to free the memory based on available resources.",
+    "category": "java"
+  },
+  {
+    "id": "java-93",
+    "title": "What is a Constructor, Constructor Overloading and Copy-Constructor in Java?",
+    "level": "junior",
+    "answer": "1. **Constructor**: A special method initializing new objects of a class.\n\n2. **Constructor Overloading**: Defining multiple constructors with different parameter lists within the same class.\n\n3. **Copy-Constructor**: Although not built-in Java feature, it's a user-defined constructor that creates a copy of an existing object by duplicating another instance's attributes.",
+    "category": "java"
+  },
+  {
+    "id": "java-94",
+    "title": "What's the difference between Enumeration and Iterator interfaces?",
+    "level": "junior",
+    "answer": "1. **Enumeration**: Enumeration interface offers methods like `hasMoreElements()` and `nextElement()`, and doesn't support element removal from the collection.\n\n2. **Iterator**: Iterator interface offers methods like `hasNext()`, `next()`, and `remove()`, allowing traversal and element removal.",
+    "category": "java"
+  },
+  {
+    "id": "java-95",
+    "title": "What is a Server Side Include (SSI)?",
+    "level": "mid",
+    "answer": "Server Side Include (SSI) is a server-based web page scripting language designed to include content such as files, variables, and output of external scripts into static web pages.",
+    "category": "java"
+  },
+  {
+    "id": "java-96",
+    "title": "Does Java support multiple inheritance?",
+    "level": "junior",
+    "answer": "Java doesn't support multiple inheritance with classes to avoid ambiguity known as the Diamond Problem. Instead, Java supports multiple inheritance via interfaces, allowing a class to implement multiple interfaces.",
+    "category": "java"
+  },
+  {
+    "id": "java-97",
+    "title": "What is the relationship between an event-listener interface and an event-adapter class?",
+    "level": "mid",
+    "answer": "An **event-listener interface** declares callback methods for handling various events.\n\nAn **event-adapter class** provides default implementations for a listener interface, focusing on allowing developers to override only the necessary methods.",
+    "category": "java"
+  },
+  {
+    "id": "java-98",
+    "title": "What is the applet security manager, and what does it provide?",
+    "level": "mid",
+    "answer": "The **applet security manager** is a component that enforces a security policy on Java applets, restricting file access, network activity, and system resources to safely run untrusted applets within a browser.",
+    "category": "java"
+  },
+  {
+    "id": "java-99",
+    "title": "What happens when an Applet is loaded?",
+    "level": "junior",
+    "answer": "When an applet loads:\n\n1. **init()** method is called for initial setup.\n2. **start()** is invoked as the applet becomes active.\n3. Applet's UI elements are rendered with **paint(Graphics g)**.\n4. **stop()** pauses execution if applet is not visible or inactive.\n5. **destroy()** runs during applet's removal from memory.",
+    "category": "java"
+  },
+  {
+    "id": "java-100",
+    "title": "When is the finalize() called? What is the purpose of finalization?",
+    "level": "mid",
+    "answer": "The **finalize()** method is called when the garbage collector reclaims the memory occupied by an object. It's used to perform cleanup operations before the object is destroyed.",
+    "category": "java"
+  },
+  {
+    "id": "java-101",
+    "title": "What are some of the best practices relating to the Java Collection Framework?",
+    "level": "junior",
+    "answer": "1. **Choose the right collection type**: Use ArrayList for fast access, LinkedList for fast insertion and deletion.\n2. **Understand the trade-offs**: Know when to use a List, Set, or Map.\n3. **Use iterators**: Safely remove elements while iterating.\n4. **Be aware of thread safety**: Collections like Vector and Hashtable are synchronized, affecting performance.",
+    "category": "java"
+  },
+  {
+    "id": "java-102",
+    "title": "Why is char[] preferred over String for passwords?",
+    "level": "mid",
+    "answer": "**char[]** is preferred over **String** for passwords because strings are immutable, leading to potential security risks if the password is accidentally exposed. Using a char array allows the password to be cleared from memory after use, enhancing security.",
+    "category": "java"
+  },
+  {
+    "id": "java-103",
+    "title": "What are the differences between a HashMap and a Hashtable in Java?",
+    "level": "junior",
+    "answer": "1. **HashMap** is not synchronized, offering better performance.\n2. **Hashtable** is synchronized, providing thread safety.\n3. **HashMap** allows null keys and values, while **Hashtable** does not.\n4. **Hashtable** is legacy class, while **HashMap** is newer and more flexible.",
+    "category": "java"
+  },
+  {
+    "id": "java-104",
+    "title": "What exactly is marker interface in Java?",
+    "level": "junior",
+    "answer": "A **marker interface** is an interface with no methods, used to mark objects with specific characteristics or capabilities. Examples include **Serializable**, **Cloneable**, and **Remote**.",
+    "category": "java"
+  },
+  {
+    "id": "java-105",
+    "title": "When to use LinkedList over ArrayList in Java?",
+    "level": "junior",
+    "answer": "Use **LinkedList** over **ArrayList** when frequent insertions and deletions are required, as it offers faster insertion and deletion operations compared to ArrayList.",
+    "category": "java"
+  },
+  {
+    "id": "java-106",
+    "title": "Why is Spring MVC better than Servlets / JSP?",
+    "level": "senior",
+    "answer": "Spring MVC offers a more structured and flexible approach to building web applications compared to Servlets and JSP. It provides a comprehensive framework for handling web requests, supports multiple view technologies, and promotes a modular architecture.",
+    "category": "java"
+  },
+  {
+    "id": "java-107",
+    "title": "Explain a use case for the Builder Design Pattern",
+    "level": "senior",
+    "category": "java"
+  },
+  {
+    "id": "java-107",
+    "title": "Explain a use case for the Builder Design Pattern",
+    "level": "senior",
+    "answer": "The Builder Design Pattern is useful when constructing a complex object step by step is needed, especially when different representations of the object are possible. For example, consider an immutable `Person` object with many optional parameters (firstName, lastName, age, address, etc.). Using a builder simplifies the creation:\n```java\nPerson person = new Person.Builder(\"John\", \"Doe\")\n                         .age(30)\n                         .address(\"123 Street\")\n                         .build();\n```\nThe `Builder` pattern provides a fluid interface for setting only the desired properties, ensuring the object is immutable once constructed.",
+    "category": "java"
+  },
+  {
+    "id": "java-108",
+    "title": "What is the difference between Applets loaded over the Internet and Applets loaded via the file system?",
+    "level": "mid",
+    "answer": "Applets loaded over the Internet are subject to strict security constraints, including sandboxing, to protect the host system. They can't access local file systems or network connections to other servers (except the originating server). In contrast, applets loaded from the local file system often have relaxed restrictions, allowing more freedom in execution, such as accessing local machine resources.",
+    "category": "java"
+  },
+  {
+    "id": "java-109",
+    "title": "How do you ensure that N threads can access N resources without deadlock?",
+    "level": "senior",
+    "answer": "To avoid deadlocks when N threads access N resources, one approach is to impose a strict order in acquiring resources. This means every thread must request resources in a predetermined, consistent order. For instance:\n\n1. Sort resources and require each thread to lock them in this order.\n2. Use a timeout while waiting for locks and retry if all required locks are not acquired.\n3. Ensure threads are released from the blocked state rather than waiting indefinitely.",
+    "category": "java"
+  },
+  {
+    "id": "java-110",
+    "title": "Does Java support default parameter values?",
+    "level": "junior",
+    "answer": "Java does not support default parameter values like some other languages (e.g., Python or JavaScript). However, you can achieve similar functionality by overloading methods and providing different versions with varying numbers of parameters.",
+    "category": "java"
+  },
+  {
+    "id": "java-111",
+    "title": "What is the purpose of using RMISecurityManager in RMI?",
+    "level": "senior",
+    "answer": "`RMISecurityManager` is used in Java RMI to enforce a security policy for downloaded classes, ensuring they conform to the security constraints applied to code running in an applet-like environment. It uses the `java.security.Policy` class to control access to system resources like file I/O, network access, etc.",
+    "category": "java"
+  },
+  {
+    "id": "java-112",
+    "title": "What is the role of the java.rmi.Naming Class?",
+    "level": "senior",
+    "answer": "`java.rmi.Naming` provides methods to manage the remote objects' namespace in RMI. It allows you to bind, unbind, and lookup remote objects in the RMI registry. This class effectively acts as a directory service, mapping names to remote object references.",
+    "category": "java"
+  },
+  {
+    "id": "java-113",
+    "title": "What is the main difference between an inner class and a static nested class in Java?",
+    "level": "junior",
+    "answer": "An inner class is associated with an instance of its enclosing class and can access its members, even private ones. A static nested class, however, does not have access to instance variables and methods of the outer class because it is not associated with a particular instance.",
+    "category": "java"
+  },
+  {
+    "id": "java-114",
+    "title": "Are there any differences between Protocol in Swift vs Interface in Java?",
+    "level": "senior",
+    "answer": "In Swift, a protocol defines a blueprint of methods, properties, and other requirements for tasks or functionality, which can then be adopted by classes, structs, or enums. Java's interfaces similarly define abstract methods and constants a class must implement, but in Java, interfaces can include default methods with implementation since Java 8. Swift's protocols are flexible and can cater to struct and class, supporting extensions, which allow adding method implementation later.",
+    "category": "java"
+  },
+  {
+    "id": "java-115",
+    "title": "Explain Boyer-Moore Algorithm with Example",
+    "level": "senior",
+    "answer": "The Boyer-Moore algorithm is used for finding the position of a substring within a string in its optimal time complexity of O(n/m), where n is the length of the text and m is the length of the pattern:\n\n1. **Bad Character Heuristic**: If a mismatch occurs, the pattern shifts by more than one position.\n2. **Good Suffix Heuristic**: Shifts the pattern over more than one text position after a partial match failure.\n\nFor example, searching for 'needle' in 'findinahaystackneedle' efficiently shifts past irrelevant matches.",
+    "category": "java"
+  },
+  {
+    "id": "java-116",
+    "title": "What is Servlet Chaining?",
+    "level": "junior",
+    "answer": "Servlet Chaining involves having an output of one servlet act as the input for the next servlet, enabling the process to pass through a chain of servlets sequentially. It's useful for layered processing, such as when a request needs authentication before proxied forwarding.",
+    "category": "java"
+  },
+  {
+    "id": "java-117",
+    "title": "What is the basic principle of RMI architecture?",
+    "level": "mid",
+    "answer": "RMI (Remote Method Invocation) allows Java applications to invoke methods across Java Virtual Machines. It fundamentally relies on stub and skeleton proxies: \n- A stub is a local object representing the remote object on the client side.\n- A skeleton resides on the server side, interacting with the actual remote object and facilitating communication and method execution.",
+    "category": "java"
+  },
+  {
+    "id": "java-118",
+    "title": "What does Connection Pooling mean?",
+    "level": "mid",
+    "answer": "Connection Pooling refers to creating a pool of connections that can be reused across multiple requests, reducing overhead associated with opening/closing database connections. This technique boosts efficiency and performance in handling database operations, valuable in ensuring resources are effectively managed.",
+    "category": "java"
+  },
+  {
+    "id": "java-119",
+    "title": "What is meant by binding in RMI?",
+    "level": "junior",
+    "answer": "Binding in RMI involves associating a reference to a remote object in the RMI registry with a name. This allows clients to lookup and access remote objects using the specified names, facilitating interface interaction and remote method invocation through registry services.",
+    "category": "java"
+  },
+  {
+    "id": "java-120",
+    "title": "How do you find out what client machine is making a request to your servlet?",
+    "level": "junior",
+    "answer": "To determine the client machine making a request to a servlet, use `HttpServletRequest`'s method `getRemoteAddr()` to get the IP address or `getRemoteHost()` to acquire the host's name of the client.",
+    "category": "java"
+  },
+  {
+    "id": "java-121",
+    "title": "Explain Marshalling and Demarshalling.",
+    "level": "junior",
+    "answer": "Marshalling is the process of converting an object into a data format suitable for storage or transmission, while demarshalling is the reverse process: converting data back to a specific object. In RMI context, these processes facilitate transmission of objects over a network.",
+    "category": "java"
+  },
+  {
+    "id": "java-122",
+    "title": "What is the applet class loader, and what does it provide?",
+    "level": "mid",
+    "answer": "The applet class loader loads applet classes from the network and provides a means to load and manage applet code while enforcing a security sandbox. It restricts applet's capabilities to ensure the host system’s protection.",
+    "category": "java"
+  },
+  {
+    "id": "java-123",
+    "title": "What is the difference between a synchronized method and a synchronized block?",
+    "level": "senior",
+    "answer": "A synchronized method controls access to that method by using an object’s intrinsic lock, restricting access to a single thread at a time for the entire method. In contrast, a synchronized block is a critical section marked within a method, providing fine-grained control over which part of the code is synchronized, potentially improving performance by locking only critical parts of the code.",
+    "category": "java"
+  },
+  {
+    "id": "java-124",
+    "title": "What is Double Brace Initialization in Java?",
+    "level": "senior",
+    "answer": "Double Brace Initialization is a technique that simulates initialization blocks within the instance context for collections or map initialization. It creates an anonymous inner class with an instance initializer:\n```java\nList<String> strings = new ArrayList<>() {{\n    add(\"String1\");\n    add(\"String2\");\n}};\n```\nHowever, it can introduce memory leaks and isn't widely recommended.",
+    "category": "java"
+  },
+  {
+    "id": "java-125",
+    "title": "How do I test a private function or a class that has private methods, fields or inner classes?",
+    "level": "senior",
+    "answer": "Testing private methods can be achieved through reflection or using package-private (default visibility) as a practical alternative. It's generally advised to focus on testing the class's public interface to validate the expected behavior, treating private methods as implementation details.",
+    "category": "java"
+  },
+  {
+    "id": "java-126",
+    "title": "What is Perm Gen space in Heap?",
+    "level": "senior",
+    "answer": "Permanent Generation (Perm Gen) space was part of the heap memory model in pre-Java 8 JVMs where class metadata, methods, and internal string pool were stored. Since Java 8, it's replaced with Metaspace, which is not part of the heap memory and improves memory management by residing in native memory.",
+    "category": "java"
+  },
+  {
+    "id": "java-127",
+    "title": "What is the difference between Serial and Throughput Garbage collector?",
+    "level": "senior",
+    "answer": "The Serial Garbage Collector uses a single thread for garbage collection, which might lead to longer pauses but isn't CPU-intensive, making it suitable for smaller applications.\nThe Throughput Garbage Collector, an improvement, uses multiple threads to reduce pause time, emphasizing overall application throughput performance, benefiting larger applications.",
+    "category": "java"
+  },
+  {
+    "id": "java-128",
+    "title": "Explain the available thread states in a high-level.",
+    "level": "senior",
+    "answer": "Java Threads have several states:\n\n1. **New** - Thread is created but not started.\n2. **Runnable** - Thread is either running or ready to run.\n3. **Blocked** - Waiting to acquire a lock.\n4. **Waiting** - Indefinitely waiting for another thread's action.\n5. **Timed Waiting** - Waiting for another thread's action up to a specified waiting time.\n6. **Terminated** - Finished execution.",
+    "category": "java"
+  },
+  {
+    "id": "java-129",
+    "title": "What is the role of Remote Interface in RMI?",
+    "level": "senior",
+    "answer": "Remote Interface in RMI outlines the methods that can be called remotely by the clients. It extends `java.rmi.Remote` and acts as a contract for the server-side objects that clients can access across network boundaries.",
+    "category": "java"
+  },
+  {
+    "id": "java-130",
+    "title": "What is RMI?",
+    "level": "senior",
+    "answer": "RMI (Remote Method Invocation) is a Java API enabling invocation of methods across Java Virtual Machines. It allows seamless communication and operations over a network, letting objects on different JVMs interact as if they reside in the same process.",
+    "category": "java"
+  },
+  {
+    "id": "java-131",
+    "title": "Does Garbage collection occur in permanent generation space in JVM?",
+    "level": "senior",
+    "answer": "In JVMs before Java 8, the Permanent Generation space held class metadata and was prone to `java.lang.OutOfMemoryError: PermGen`. Limited garbage collection occurred here, causing potential memory issues when too many classes were loaded without unloading.",
+    "category": "java"
+  },
+  {
+    "id": "java-132",
+    "title": "What does synchronized mean?",
+    "level": "senior",
+    "answer": "The `synchronized` keyword in Java is used to control access to a block of code or object by ensuring that only one thread can access the synchronized code at a time, preventing thread interference and memory consistency errors.",
+    "category": "java"
+  },
+  {
+    "id": "java-133",
+    "title": "What are the layers of RMI Architecture?",
+    "level": "senior",
+    "answer": "RMI Architecture consists of three key layers:\n\n1. **Stub and Skeleton Layer**: Acts as an intermediary between the application layer and the remote reference layer.\n2. **Remote Reference Layer**: Manages references between clients and servers.\n3. **Transport Layer**: Handles the networking aspect of RMI, based on TCP/IP.",
+    "category": "java"
+  },
+  {
+    "id": "java-134",
+    "title": "What is DGC? And how does it work?",
+    "level": "senior",
+    "answer": "Distributed Garbage Collection (DGC) is used in RMI to automatically manage the freeing of remote objects no longer accessed by applications. Similar to Java's local garbage collection, DGC relies on leasing: clients renew leases to maintain access, ultimately allowing distributed objects to be garbage collected once leases expire and are not renewed.",
+    "category": "java"
+  },
+  {
+    "id": "java-135",
+    "title": "What is the difference between HashSet and TreeSet?",
+    "level": "senior",
+    "answer": "HashSet and TreeSet both implement the `Set` interface but have key differences:\n\n1. **Ordering**: HashSet has no ordering guarantees of the stored objects, while TreeSet maintains sorted order.\n2. **Performance**: HashSet offers constant time performance for basic operations, whereas TreeSet offers logarithmic time.\n3. **Implementations**: HashSet is backed by a HashMap and TreeSet by a NavigableMap.",
+    "category": "java"
+  },
+  {
+    "id": "java-136",
+    "title": "What's wrong with Double Brace Initialization in Java?",
+    "level": "senior",
+    "answer": "Double Brace Initialization creates an anonymous inner class every time it's used, potentially leading to memory leaks because the inner class holds an implicit reference to the containing class. This can also hinder serialization and introduce unexpected behavior and increased memory usage.",
+    "category": "java"
+  },
+  {
+    "id": "java-137",
+    "title": "How does thread synchronization occurs inside a monitor? What levels of synchronization can you apply?",
+    "level": "senior",
+    "answer": "A monitor is a synchronization construct that ensures that only one thread can execute inside a critical section of code at a time:\n\n- **Synchronized Methods**: Entire methods require a lock on the method's object.\n- **Synchronized Blocks**: Code blocks synchronize on a specified object, allowing for more granular control over the locking mechanism within methods, optimizing performance and enhancing concurrency control.",
+    "category": "java"
+  },
+  {
+    "id": "java-138",
+    "title": "Why isn’t String's length() accurate?",
+    "level": "senior",
+    "answer": "The `length()` method in Java's String class returns the number of `char` values (UTF-16 code units) rather than the actual Unicode code points, meaning supplemental characters are counted as two `char` units. To accurately count code points in a `String`, use:\n```java\nString str = \"𝄞A\"; // Musical symbol G clef\nint codePointCount = str.codePointCount(0, str.length());\n// Correctly counts large Unicode characters\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-139",
+    "title": "Provide some examples when a finally block won't be executed in Java?",
+    "level": "senior",
+    "answer": "There are few rare scenarios when finally block won't execute:\n\n1. **System.exit()** called before finally block:\n```java\ntry {\n    System.exit(0);\n} finally {\n    System.out.println(\"This won't execute\");\n}\n```\n\n2. **JVM Crash/Death of Thread**:\n```java\ntry {\n    Runtime.getRuntime().halt(0);\n    // or\n    Thread.currentThread().stop();\n} finally {\n    System.out.println(\"Won't execute\");\n}\n```\n\n3. **Infinite Loop** in try block:\n```java\ntry {\n    while(true) { /* infinite loop */ }\n} finally {\n    System.out.println(\"Never reaches here\");\n}\n```\n\n4. **Fatal Error** in JVM (OutOfMemoryError, StackOverflowError)",
+    "category": "java"
+  },
+  {
+    "id": "java-140",
+    "title": "Compare volatile vs static variables in Java",
+    "level": "senior",
+    "answer": "Key differences between volatile and static variables:\n\n1. **Purpose**:\n- `volatile`: Ensures visibility across threads\n- `static`: Shares single copy across all instances\n\n2. **Memory**:\n- `volatile`: Always read/written from main memory\n- `static`: Can be cached\n\n3. **Thread Safety**:\n```java\n// Volatile ensures visibility but not atomicity\nvolatile int counter = 0;\n\n// Thread-safe increment needs synchronization\nsynchronized void increment() {\n    counter++;\n}\n\n// Static variable shared across instances\nstatic int sharedCounter = 0;\n```\n\n4. **Use Cases**:\n- `volatile`: Flag variables, one-writer scenarios\n- `static`: Constants, utility methods, singletons",
+    "category": "java"
+  },
+  {
+    "id": "java-141",
+    "title": "Why ArrayList are preferable in many more use-cases than LinkedList?",
+    "level": "senior",
+    "answer": "ArrayList is often preferred over LinkedList for several reasons:\n\n1. **Memory Efficiency**:\n- ArrayList: Contiguous memory, less overhead\n- LinkedList: Extra memory for node pointers\n\n2. **CPU Cache Performance**:\n```java\n// ArrayList: Better cache locality\nArrayList<Integer> list = new ArrayList<>();\nfor(int i = 0; i < 1000000; i++) {\n    list.get(i); // Fast due to cache hits\n}\n\n// LinkedList: Poor cache locality\nLinkedList<Integer> linked = new LinkedList<>();\nfor(int i = 0; i < 1000000; i++) {\n    linked.get(i); // Slower due to cache misses\n}\n```\n\n3. **Random Access**: O(1) in ArrayList vs O(n) in LinkedList\n4. **Modern Hardware**: Benefits ArrayList's sequential memory access",
+    "category": "java"
+  },
+  {
+    "id": "java-142",
+    "title": "What's the difference between SoftReference and WeakReference in Java?",
+    "level": "senior",
+    "answer": "SoftReference and WeakReference differ in their reference strength and garbage collection behavior:\n\n1. **SoftReference**:\n- Garbage collected only when memory is tight\n- Ideal for caching\n```java\nObject strongRef = new Object();\nSoftReference<Object> softRef = new SoftReference<>(strongRef);\nstrongRef = null; // Object still cached until memory pressure\n```\n\n2. **WeakReference**:\n- Garbage collected in next cycle when strongly unreachable\n- Used for canonical mapping\n```java\nObject strongRef = new Object();\nWeakReference<Object> weakRef = new WeakReference<>(strongRef);\nstrongRef = null; // Object eligible for immediate GC\n```\n\n3. **Common Use**:\n```java\n// Cache implementation\nMap<Key, SoftReference<Value>> cache = new HashMap<>();\n\n// WeakHashMap for observer pattern\nWeakHashMap<Key, Value> observerMap = new WeakHashMap<>();\n```",
+    "category": "java"
+  },
+  {
+    "id": "java-143",
+    "title": "What is an efficient way to implement a singleton pattern in Java?",
+    "level": "senior",
+    "answer": "Several efficient singleton implementations, each with trade-offs:\n\n1. **Enum Singleton** (Best Practice):\n```java\npublic enum Singleton {\n    INSTANCE;\n    \n    public void doSomething() {\n        // singleton behavior\n    }\n}\n```\n\n2. **Double-Checked Locking** (Classic):\n```java\npublic class Singleton {\n    private static volatile Singleton instance;\n    \n    private Singleton() {}\n    \n    public static Singleton getInstance() {\n        if (instance == null) {\n            synchronized(Singleton.class) {\n                if (instance == null) {\n                    instance = new Singleton();\n                }\n            }\n        }\n        return instance;\n    }\n}\n```\n\n3. **Static Holder** (Lazy Loading):\n```java\npublic class Singleton {\n    private Singleton() {}\n    \n    private static class SingletonHolder {\n        static final Singleton INSTANCE = new Singleton();\n    }\n    \n    public static Singleton getInstance() {\n        return SingletonHolder.INSTANCE;\n    }\n}\n```\n\nEnum approach is preferred as it provides serialization safety and thread-safety automatically.",
+    "category": "java"
+  }
+]
