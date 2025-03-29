@@ -12,6 +12,9 @@ import { SeniorityLevelBadge } from 'components/SeniorotyLevelTooltip/SeniorityL
 import { useRouter } from 'next/navigation';
 import { SkipQuestionButton } from '../SkipQuestionButton';
 import { useRef } from 'react';
+import { MessageItem } from './MessageItem';
+import { ISSUE_CODE } from 'constants/issueCode';
+import { useAuth } from 'contexts/AuthContext';
 
 const SHOW_ANSWER_TOOLTIP = false
 
@@ -29,6 +32,7 @@ export function MakeAnswerForm({
 
   const router = useRouter();
   const allQuestions = useRef(questionsWithAnswers)
+  const { user } = useAuth()
 
   const {
     isQuestionsLimitReached,
@@ -83,7 +87,45 @@ export function MakeAnswerForm({
 
   const isInterviewFinished = isQuestionsLimitReached && aiAnswer.type === 'SUCCESS';
   const isConversationStarted = !!messages.length
+  const handleReportIssue = async (aiMessageIndex: number) => {
+    // Implement your report handling logic here
+    const aiMessage = messages[aiMessageIndex].content;
+    const userAnswer = aiMessageIndex !== 0 ? messages[aiMessageIndex - 1].content : ''
+    const title = ISSUE_CODE.wrongAnswer;
+    const description = `
+      ### Question
+      ${currentQuestion.title}
 
+      ### AI answer
+      ${aiMessage}
+
+      ### User answer
+      ${userAnswer}
+    `;
+
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title,
+          description,
+          user_id: user?.id
+        }),
+      });
+
+      if (response.ok) {
+        console.log("Issue reported successfully");
+        // You can add some UI feedback here
+      } else {
+        console.error("Failed to report issue");
+      }
+    } catch (error) {
+      console.error("Error reporting issue:", error);
+    }
+  };
 
   return (
     <div className={styles.Wrapper}>
@@ -107,13 +149,12 @@ export function MakeAnswerForm({
         <div className={styles.ConversationContainer}>
           {
             messages.map((message, index) => (
-              <div
+              <MessageItem
                 key={index}
-                className={`${styles.Message} ${message.sender === "user" ? styles.UserMessage : styles.AIMessage
-                  }`}
-              >
-                <MarkdownRenderer content={message.content} />
-              </div>))
+                message={message}
+                onReportClick={() => handleReportIssue(index)}
+              />
+            ))
           }
           <Loader loading={isLoading} />
           {aiAnswer.type === 'ERROR' && (
