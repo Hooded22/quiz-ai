@@ -163,6 +163,8 @@ export function MakeAnswerForm({
             </p>
           )}
         </div>
+      </div>
+      <div className={styles.Footer}>
         <div className={styles.BottomSection}>
           <div className={styles.UserInputContainer}>
             <DynamicTextarea control={control} name='answer' />
