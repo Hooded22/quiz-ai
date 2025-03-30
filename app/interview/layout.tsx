@@ -6,7 +6,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div>
+        <div className="flex flex-col w-full h-full pb-5">
             <header className="flex items-center justify-between h-16 px-6" style={{
                 boxShadow: "0 2px 4px rgba(105, 105, 105, 0.5)"
             }}>
