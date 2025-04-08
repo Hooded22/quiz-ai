@@ -1,0 +1,247 @@
+[
+    {
+        "id": "sql-1",
+        "title": "Define a Temp Table",
+        "answer": "A **temporary table** in SQL is a table that is created for storing temporary data. It exists only during the session in which it is created and is automatically dropped after the session ends. Temporary tables are useful for storing data that needs to be referenced multiple times in a query. An example of creating a temporary table: ```sql\nCREATE TEMPORARY TABLE temp_table_name (\n    column1 datatype,\n    column2 datatype,\n    ...\n);\n```\n",
+        "level": "junior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-2",
+        "title": "What is PRIMARY KEY?",
+        "answer": "A **PRIMARY KEY** is a field in a table that uniquely identifies each record. A primary key must contain unique values and cannot have NULL values. Each table can have only one primary key. An example of defining a primary key: ```sql\nCREATE TABLE table_name (\n    column1 int PRIMARY KEY,\n    column2 datatype,\n    ...\n);\n```\n",
+        "level": "junior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-3",
+        "title": "What is a VIEW?",
+        "answer": "A **VIEW** in SQL is a virtual table that is based on the result of a SELECT query. It contains rows and columns, just like a real table, and you can query a view like a table. Views simplify complex queries, enhance security by restricting access to specific data, and consolidate data from multiple tables. An example of creating a view: ```sql\nCREATE VIEW view_name AS\nSELECT column1, column2\nFROM table_name\nWHERE condition;\n```\n",
+        "level": "junior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-4",
+        "title": "What is Normalisation?",
+        "answer": "**Normalization** is the process of organizing database structure to reduce data redundancy and improve data integrity. It involves dividing large tables into smaller tables and defining relationships between them. The levels of normalization are called normal forms, and each has a stringent requirement to achieve greater database efficiency. The basic normal forms include: 1NF, 2NF, 3NF, BCNF, etc.",
+        "level": "junior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-5",
+        "title": "What is the difference between Data Definition Language (DDL) and Data Manipulation Language (DML)?",
+        "answer": "**Data Definition Language (DDL)** includes SQL commands used to define the database schema, such as creating, altering, or dropping tables and indexes. Common DDL commands are `CREATE`, `ALTER`, `DROP`, and `TRUNCATE`.\n\n**Data Manipulation Language (DML)** involves SQL commands for data manipulation, such as inserting, deleting, or updating records. Common DML commands are `INSERT`, `UPDATE`, `DELETE`, and `SELECT`. DDL affects the structure of the database, whereas DML affects the data within the schema.",
+        "level": "junior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-6",
+        "title": "What is the difference between TRUNCATE and DELETE?",
+        "answer": "Both **TRUNCATE** and **DELETE** are used to remove records from a table, but they function differently. `TRUNCATE` removes all records from a table and is faster as it does not generate individual row delete logs, whereas `DELETE` removes one row at a time and logs each row deletion. `TRUNCATE` resets any identity column values to the seed value, while `DELETE` preserves them.\n\nExample of `DELETE`:\n```sql\nDELETE FROM table_name WHERE condition;\n```\n\nExample of `TRUNCATE`:\n```sql\nTRUNCATE TABLE table_name;\n```\n",
+        "level": "junior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-7",
+        "title": "What is DEFAULT?",
+        "answer": "A **DEFAULT** constraint in SQL is used to provide a default value for a column if no value is specified during the record's insertion. If a default is defined, the database uses this value as the column's value when an INSERT operation does not specify a column value. Example:\n```sql\nCREATE TABLE table_name (\n    column1 datatype DEFAULT default_value,\n    column2 datatype\n);\n```\n",
+        "level": "junior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-8",
+        "title": "What is FOREIGN KEY?",
+        "answer": "A **FOREIGN KEY** is a field (or collection of fields) in one table that uniquely identifies a row in another table. It establishes and enforces a link between the data in two tables to maintain referential integrity. The table containing the foreign key is called the child table, and the table containing the referenced primary key is called the parent table. Example:\n```sql\n CREATE TABLE child_table (\n   column1 datatype,\n   column2 datatype,\n   FOREIGN KEY (column1) REFERENCES parent_table(primary_key_column)\n);\n```\n",
+        "level": "junior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-9",
+        "title": "What is the difference between INNER JOIN, OUTER JOIN, FULL OUTER JOIN?",
+        "answer": "**INNER JOIN** returns rows when there is a match in both tables. **OUTER JOIN** includes left outer join, right outer join, and full outer join, which return rows with a match in one of the joined tables. **LEFT OUTER JOIN** returns all rows from the left table along with matching rows from the right table, filling in missing matches with NULL. **RIGHT OUTER JOIN** does the opposite. **FULL OUTER JOIN** returns rows from both tables regardless of match, filling in missing matches with NULL.\n\nExample of `INNER JOIN`:\n```sql\nSELECT columns\nFROM table1\nINNER JOIN table2 ON table1.id = table2.id;\n```\n",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-10",
+        "title": "What is the difference between UNION and UNION ALL?",
+        "answer": "**UNION** combines the result sets of two or more SELECT queries into a single result set and removes any duplicate rows. **UNION ALL** also combines the result sets but includes duplicate rows. UNION incurs performance overhead due to the duplicate removal process, whereas UNION ALL is faster as it simply appends the result sets.\n\nExample of `UNION`:\n```sql\nSELECT column_name FROM table1\nUNION\nSELECT column_name FROM table2;\n```\n",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-11",
+        "title": "Describe the difference between truncate and delete",
+        "answer": "The difference between `TRUNCATE` and `DELETE` in SQL is that `TRUNCATE` deletes all rows in a table without logging individual row deletions and quickly resets the table by deallocating data pages. `DELETE`, on the other hand, deletes individual rows based on the WHERE clause and logs each deleted row, which can be slower. `TRUNCATE` resets identity columns, which `DELETE` doesn't.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-12",
+        "title": "What is Denormalization?",
+        "answer": "**Denormalization** is the process of combining normalized tables in a database to reduce the time it takes to retrieve data by adding redundant copies of data or combining tables. It optimizes read performance by reducing the number of joins needed but can require more storage and may compromise data integrity if not managed carefully.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-13",
+        "title": "What's the difference between a Primary Key and a Unique Key?",
+        "answer": "A **Primary Key** is a field (or combination of fields) that uniquely identifies a record in a table. Every table can have only one primary key, and it cannot contain NULL values. A **Unique Key** also ensures uniqueness of the column but allows for multiple unique keys in a table, and it may contain a single NULL value. Primary keys create clustered indexes by default, whereas unique keys create non-clustered indexes.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-14",
+        "title": "What are the difference between Clustered and a Non-clustered index?",
+        "answer": "A **Clustered Index** sorts and stores the data rows of the table in order based on the index key values, meaning that there can be only one clustered index per table as the physical order of the data is aligned with the index. A **Non-clustered Index** creates a separate structure from the data rows, maintaining pointers to the data rows. A table can have multiple non-clustered indexes. Clustered indexes are typically faster for data retrieval on a large dataset due to the aligned storage, whereas non-clustered indexes may be used for a wider range of queries without changing data order.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-15",
+        "title": "How does a Hash index work?",
+        "answer": "A **Hash Index** uses a hash table to determine the location of rows, providing O(1) complexity for lookups. Data is hashed into a specific location based on key values. It is highly efficient for equality searches but doesn't work well for range queries. Hash indexes limit the number of keys that hash to the same slot to minimize collisions. They provide fast access times for queries that filter on exact matches.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-16",
+        "title": "How a database index can help performance?",
+        "answer": "A **database index** improves performance by reducing the amount of data the database engine needs to process for a query. By allowing the engine to quickly locate the data associated with the query, indexes reduce the amount of I/O operations needed. They effectively sort data in a manner that optimizes search times, leading to faster retrieval and improving the efficiency for SELECT operations.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-17",
+        "title": "What is the difference between WHERE clause and HAVING clause?",
+        "answer": "The **WHERE clause** is used to filter records before applying group functions like `SUM` or `AVG`. The **HAVING clause** is used to filter records after aggregation. `WHERE` operates on rows that are selected and not yet aggregated, while `HAVING` filters data after it has been aggregated using GROUP BY.\n\nExample of `HAVING`:\n```sql\nSELECT column, aggregate_function(column)\nFROM table\nGROUP BY column\nHAVING condition;\n```\n",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-18",
+        "title": "What is the difference between JOIN and UNION?",
+        "answer": "**JOIN** is used to retrieve data from two or more tables based on a related column between them. **UNION** combines the results of two or more SELECT queries into a single result set. JOIN combines columns of different tables, while UNION combines rows. Each kind serves different purposes in SQL data retrieval.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-19",
+        "title": "What is Collation?",
+        "answer": "**Collation** refers to a set of rules that determine how data is sorted and compared. It includes comparisons of letters with accents, and the rules for sort order. Collation affects operations like ORDER BY and string comparison. Every SQL Server collation specifies the language, case sensitivity, accent sensitivity, and other sorting rules.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-20",
+        "title": "What is the difference between INNER JOIN and OUTER JOIN?",
+        "answer": "**INNER JOIN** only returns rows with matching values in both tables. It excludes rows without matches. **OUTER JOIN** returns all rows from one table and the matched rows from the second table; if there is no match, it still returns rows from the primary table with NULLs for unmatched columns. The outer join can be a LEFT OUTER JOIN, RIGHT OUTER JOIN, or FULL OUTER JOIN.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-21",
+        "title": "How can VIEW be used to provide security layer for your app?",
+        "answer": "A **VIEW** can be used as a security layer by restricting access to certain data within a table. By granting permissions on views instead of tables, you can control the exact data users can view and interact with. Views hide sensitive data from users who only need to access a subset of columns or rows, improving security and enforcing data encapsulation.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-22",
+        "title": "Discuss INNER JOIN ON vs WHERE clause (with multiple FROM tables)",
+        "answer": "Using **INNER JOIN ON** or **WHERE** with multiple FROM tables can affect how SQL queries are constructed. `INNER JOIN ON` explicitly defines how two tables should connect using a join condition. In contrast, `WHERE` can also define table relationships, but doing so often results in implicit joins and may complicate the query logic. Using `JOIN ON` is typically more readable and helps prevent errors in complex queries by clearly stating the relation.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-23",
+        "title": "Define ACID Properties",
+        "answer": "ACID properties ensure reliability in database transactions:\n1. **Atomicity**: Transactions are all-or-nothing.\n2. **Consistency**: Transactions bring the database from one valid state to another.\n3. **Isolation**: Concurrent transactions don't affect each other's execution.\n4. **Durability**: Once committed, changes are persistent, even after a crash.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-24",
+        "title": "What’s the difference between Azure SQL Database and Azure SQL Managed Instance?",
+        "answer": "**Azure SQL Database** is a fully managed PaaS database engine offering database services with built-in intelligence. **Azure SQL Managed Instance** provides near 100% compatibility with the SQL Server capabilities for easier lift-and-shift of on-premises applications to the cloud. Managed Instance offers more SQL Server-like control and features than a SQL Database.",
+        "level": "mid",
+        "category": "sql"
+    },
+    {
+        "id": "sql-25",
+        "title": "What is the cost of having a database index?",
+        "answer": "The cost of having a database index includes increased storage requirements, as each index occupies space. Indexes require maintenance during data modifications such as INSERTs, UPDATEs, and DELETEs, which can cause additional processing overhead. The performance benefit for SELECTs must be balanced against these costs.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-26",
+        "title": "What is faster, one big query or many small queries?",
+        "answer": "The performance depends on context. One big query often incurs less overhead by reducing round-trip times to the database and may allow optimizations like set-based operations. However, many small queries can minimize locking duration and may be better for complex logic or scenarios requiring conditional logic. Reviewing execution plans can aid in choosing the best approach.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-27",
+        "title": "What is the difference among UNION, MINUS and INTERSECT?",
+        "answer": "**UNION** combines results from multiple queries and removes duplicates. **MINUS** (or DIFFERENCE) returns distinct rows from the first query not found in the second. **INTERSECT** returns distinct rows that are common to both queries. These set operations manage data across different result sets, subjecting to database support for these specific constructs.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-28",
+        "title": "Explain the difference between Exclusive Lock and Update Lock",
+        "answer": "An **Exclusive Lock** prevents any other transaction from accessing the locked resource, either for reading or writing, ensuring that the locking transaction can modify the resource exclusively. An **Update Lock** prevents other transactions from acquiring exclusive locks on the resource by locking for the purpose of updating. It's used to prevent deadlocks when the lock status may be escalated to exclusive.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-29",
+        "title": "How does B-trees Index work?",
+        "answer": "B-trees index works by maintaining a balanced tree data structure. It optimizes searches, insertions, deletions by ensuring most nodes contain multiple values (data) and are balanced. Each node contains keys and pointers pointing to children nodes or the data location for fast retrieval. They are efficient for a large range of queries as they maintain an ordered structure.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-30",
+        "title": "Name some disadvantages of a Hash index",
+        "answer": "Hash indexes are unsuitable for range queries as they don't maintain order of data. They require additional space for buckets and have poor performance with high collision rates. Additionally, because they don't support ordered scans, operations needing sorted results can't benefit from hash indexes.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-31",
+        "title": "What are some other types of Indexes (vs B-Trees)?",
+        "answer": "Other than B-trees, indexes include **Hash indexes** for exact searches, **Bitmap indexes** for low-cardinality columns, **Clustered indexes** that dictate data order on disk, **Full-text indexes** for text search operations, and **R-tree indexes** for multidimensional data such as spatial queries.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-32",
+        "title": "How does database Indexing work?",
+        "answer": "Database indexing works by creating a data structure that improves the speed of data retrieval operations on a database table. The index stores a separate structure that contains pointers to efficiently locate data without scanning the entire table. Types like B-trees or Hash indexes support various operation efficiencies.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-33",
+        "title": "What is Optimistic Locking and Pessimistic Locking?",
+        "answer": "**Optimistic Locking** assumes minimal conflicts and checks data integrity before committing by comparing versions/timestamp. Locks are not acquired when data is read and only checked when updated. **Pessimistic Locking** involves acquiring locks on data during both read and write to avoid concurrency issues, aiming to prevent any other transaction from modifying the data.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-34",
+        "title": "What is the difference between B-Tree, R-Tree and Hash indexing?",
+        "answer": "**B-Tree indexes** are balanced tree data structures maintaining order for range queries. **R-Tree indexes** are suited for multidimensional data like spatial data using rectangles to index. **Hash indexes** are optimized for equal comparisons, using hash functions without maintaining data order.",
+        "level": "senior",
+        "category": "sql"
+    },
+    {
+        "id": "sql-35",
+        "title": "What is Index Cardinality and why does it matter?",
+        "answer": "**Index Cardinality** refers to the uniqueness of data values contained in an index. High cardinality indicates more distinct values, aiding selective queries. Cardinality impacts whether an index is useful for optimizing a particular query; high cardinality indexes generally offer better performance for big equal searches.",
+        "level": "senior",
+        "category": "sql"
+    }
+]

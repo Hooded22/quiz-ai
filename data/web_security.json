@@ -1,0 +1,429 @@
+[
+  {
+    "id": "web-security-1",
+    "title": "What is a DDOS attack?",
+    "answer": "A **DDoS (Distributed Denial of Service) attack** is an attempt to make an online service unavailable by overwhelming it with traffic from multiple sources. Attackers use numerous compromised systems as sources of traffic, which makes it hard to stop the attack by blocking a single IP address. Such attacks can slow down or crash websites, resulting in a loss of service for legitimate users.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-2",
+    "title": "What is “Vulnerability”?",
+    "answer": "A **vulnerability** is a weakness in a system or application that could be exploited by a threat actor, such as an attacker, to perform unauthorized actions within a computer system. Vulnerabilities can be found in operating systems, applications, APIs, and even hardware, and they can lead to different types of attacks, such as data breaches or system takeovers.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-3",
+    "title": "What is SQL injection?",
+    "answer": "**SQL injection** is a type of security vulnerability that occurs when an attacker is able to insert or \"inject\" a SQL query into the input data channel of an application. This can lead to unauthorized access to the database, allowing the attacker to view, modify, or delete data. To prevent SQL injection, use parameterized queries or prepared statements.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-4",
+    "title": "What is a botnet?",
+    "answer": "A **botnet** is a network of private computers infected with malicious software and controlled as a group without the owners' knowledge. Botnets are commonly used to perform DDoS attacks, send spam, and commit other types of cyber crimes. Criminals gain control over these 'zombie' computers and use them to carry out large-scale operations.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-5",
+    "title": "What is the difference between Authentication vs Authorization?",
+    "answer": "**Authentication** is the process of verifying the identity of a user or system; it's about ensuring that they are who they claim to be, usually via passwords, biometric verification, or tokens. **Authorization**, on the other hand, is about ensuring that a user or system has the correct permissions to access a resource or perform an action. Essentially, authentication verifies identity, whereas authorization verifies access rights.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-6",
+    "title": "What is Security Testing?",
+    "answer": "**Security Testing** is a process intended to reveal flaws in the security mechanisms of an information system that protect data and maintain functionality as intended. It involves testing the system for vulnerabilities, weaknesses, and threats that could lead to data breaches or loss. Common types of security testing include vulnerability scanning, penetration testing, risk assessment, and security auditing.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-7",
+    "title": "List the various methodologies in Security testing?",
+    "answer": "Some common **security testing methodologies** include:\n\n1. **Penetration Testing**: Simulates an attack on the system to identify vulnerabilities.\n2. **Vulnerability Scanning**: Scans the system for known security vulnerabilities.\n3. **Security Auditing**: A manual or automated review of the system to ensure compliance with security standards.\n4. **Risk Assessment**: Identifies potential risks and assesses the impact and likelihood of those risks.\n5. **Ethical Hacking**: Authorized attempts to bypass system security to improve defenses.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-8",
+    "title": "What is Content Security Policy?",
+    "answer": "**Content Security Policy (CSP)** is a security feature that helps prevent vulnerabilities such as Cross-Site Scripting (XSS) by specifying which dynamic resources are allowed to load. CSP is implemented by adding a `Content-Security-Policy` HTTP header to the web server's response, specifying permitted content sources for scripts, styles, images, etc.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-9",
+    "title": "What is Cross Site Scripting (XSS)?",
+    "answer": "**Cross Site Scripting (XSS)** is a type of security vulnerability typically found in web applications. It allows attackers to inject malicious scripts into content from otherwise trusted websites. This can lead to various attacks such as session hijacking, defacement, or redirecting users to malicious websites. To prevent XSS, input and output should be properly sanitized and escaped.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-10",
+    "title": "How can we Protect Web Applications From Forced Browsing?",
+    "answer": "To protect web applications from **forced browsing**, which occurs when unauthorized users access non-public resources, it's vital to:\n\n1. **Implement Proper Access Controls**: Ensure that the application enforces adequate authentication and authorization checks before granting access to sensitive resources.\n2. **Use Secure URL Patterns**: Avoid predictable URL patterns for sensitive resources.\n3. **Leverage Web Application Firewalls**: Use WAFs to detect and block automated forced browsing attempts.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-11",
+    "title": "Explain what threat arises from not flagging HTTP cookies with tokens as secure?",
+    "answer": "If HTTP cookies with sensitive tokens (such as session cookies) are not flagged as **secure**, they may be transmitted over non-secure connections, like HTTP. This makes them vulnerable to interception via man-in-the-middle attacks. By flagging cookies as `Secure`, you ensure they are only sent over HTTPS, reducing the risk of interception and theft.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-12",
+    "title": "What is an SSL Certificate?",
+    "answer": "An **SSL Certificate** is a digital certificate that authenticates a website's identity and enables an encrypted connection. SSL stands for Secure Sockets Layer, a security protocol that creates an encrypted link between a web server and a web browser. Websites with SSL certificates display HTTPS in their URLs, indicating secure communication between the user and the website.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-13",
+    "title": "How to mitigate the SQL Injection risks?",
+    "answer": "To mitigate the risk of **SQL Injection**:\n\n1. **Use Prepared Statements**: Ensure database queries are written using parameterized statements to prevent attackers from injecting malicious SQL code.\n2. **Input Validation**: Validate and sanitize all user inputs before processing them.\n3. **Use ORM Libraries**: Use Object-Relational Mapping libraries, which are less prone to SQL injection.\n4. **Limit Database Permissions**: Grant only the necessary permission levels to accounts used for connecting to the database.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-14",
+    "title": "What is Session Hijacking?",
+    "answer": "**Session Hijacking** is an attack that involves stealing or manipulating the session ID of a user's session to gain unauthorized access to an online service. Once an attacker has control of the user's session ID, they can masquerade as the user and perform unauthorized actions. Protect against session hijacking by using HTTPS, regenerating session IDs on login, and implementing secure cookie flags.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-15",
+    "title": "Mention what flaw arises from session tokens having poor randomness across a range of values?",
+    "answer": "If **session tokens** have poor randomness, they are susceptible to a flaw known as an **increase in predictability**. Predictable session tokens allow attackers to guess or brute-force session tokens, enabling them to hijack sessions and impersonate users. Ensuring session tokens have high entropy and using secure random number generators reduces this risk.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-16",
+    "title": "What is DOM-based XSS?",
+    "answer": "**DOM-based XSS** is a type of Cross-Site Scripting (XSS) attack where the vulnerability is in the client-side code, specifically within the Document Object Model (DOM). In this form of XSS, the server is not involved; instead, the malicious payload manipulates the web page's DOM environment, causing the script to execute in the user's browser. Prevent DOM-based XSS by avoiding inserting untrusted data into the DOM and using secure JavaScript coding practices.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-17",
+    "title": "What is CORS and how to enable one?",
+    "answer": "**CORS (Cross-Origin Resource Sharing)** is a security feature implemented by web browsers to control how web pages request resources from a different domain outside the one from which they were served. To enable CORS, the server hosting the resource must include appropriate headers (like `Access-Control-Allow-Origin`) in its responses to specify which origins are allowed to access its resources.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-18",
+    "title": "What is Intrusion Detection System (IDS)?",
+    "answer": "An **Intrusion Detection System (IDS)** is a software or hardware solution that monitors network or system activities for malicious activities or policy violations and produces alerts. IDS can be categorized into host-based (HIDS) and network-based (NIDS), and they are used to detect threats and report suspicious activities to help protect against unauthorized access or data breaches.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-19",
+    "title": "What is Cross-Site Scripting (XSS)?",
+    "answer": "**Cross-Site Scripting (XSS)** is a vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts can run in the victim's browser, potentially leading to session hijacking, defacement, or stealing cookies. XSS can be mitigated by properly encoding outputs, validating inputs, and utilizing Content Security Policy (CSP).",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-20",
+    "title": "Why is the Root Certificate important?",
+    "answer": "A **Root Certificate** is important because it is the top-most certificate in a chain of trust, issued by trusted Certificate Authorities (CAs). Trust in the internet infrastructure is based on these certificates, which are used to validate the authenticity of a website or a software publisher. Browsers, operating systems, and other systems use root certificates to verify the integrity and security of certificates signed by the subordinate CAs.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-21",
+    "title": "What is impersonation?",
+    "answer": "**Impersonation** is a security threat whereby an attacker acts as someone else, usually to gain unauthorized access to confidential information or systems. Impersonation can be achieved through techniques such as phishing or credential theft. To protect against impersonation, utilize multi-factor authentication (MFA) and implement robust access controls.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-22",
+    "title": "How can I prevent XSS?",
+    "answer": "To prevent **Cross-Site Scripting (XSS)** attacks:\n\n1. **Sanitize Inputs**: Ensure inputs are validated and sanitized to remove harmful characters or scripts.\n2. **Output Encoding**: Encode data before rendering it in the browser to escape HTML, JavaScript, CSS, etc.\n3. **Use CSP**: Implement Content Security Policy to whitelist trusted sources for content loading.\n4. **Avoid Unsafe APIs**: Refrain from using functions or APIs that can introduce XSS vulnerabilities, such as `innerHTML`.",
+    "level": "junior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-23",
+    "title": "Apart from mailing links of error pages, are there other methods of exploiting XSS?",
+    "answer": "Yes, there are other methods of exploiting **XSS (Cross-Site Scripting)** attacks beyond just mailing links to error pages:\n\n1. **Session Theft**: Capture session cookies and impersonate the user.\n2. **Keystroke Logging**: Insert scripts to capture user inputs on forms.\n3. **Content Manipulation**: Deface or modify the content displayed to users.\n4. **Redirecting Victims**: Automatically redirect users to a malicious site separate from the original source.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-24",
+    "title": "Can XSS be prevented without modifying the source code?",
+    "answer": "While preventing **XSS (Cross-Site Scripting)** without modifying the source code is challenging, some measures can mitigate the risk:\n\n1. **Implementing Web Application Firewalls (WAFs)**: WAFs can filter or block malicious traffic.\n2. **Content Security Policy (CSP)**: Utilized at the server level to control what resources the browser can execute.\n3. **Security Headers**: Configure HTTP headers on servers such as `X-XSS-Protection` to block suspected XSS content.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-25",
+    "title": "List the attributes of Security Testing",
+    "answer": "Attributes of **Security Testing** include:\n\n1. **Confidentiality**: Ensuring that information is not disclosed to unauthorized users.\n2. **Integrity**: Ensuring that data is not altered or tampered with during transmission.\n3. **Authentication**: Verifying the identity of users and systems.\n4. **Access Control**: Ensuring users have appropriate access levels based on their roles.\n5. **Non-repudiation**: Guaranteeing actions by users are not denied.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-26",
+    "title": "How to mitigate the risk of Sensitive Data Exposure?",
+    "answer": "To mitigate the risk of **Sensitive Data Exposure**:\n\n1. **Encrypt Sensitive Data**: Use strong algorithms for both data at rest and in transit.\n2. **Limit Data Collection**: Only collect necessary information and avoid storing unnecessary sensitive data.\n3. **Implement Strong Access Controls**: Ensure that only authorized users have access to sensitive data.\n4. **Regular Audits**: Conduct security audits to ensure compliance and reveal weaknesses.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-27",
+    "title": "Name the elements of PKI",
+    "answer": "The principal elements of **Public Key Infrastructure (PKI)** include:\n\n1. **Certification Authority (CA)**: Issues and verifies digital certificates.\n2. **Registration Authority (RA)**: Acts as a mediator between users and CAs to verify user requests.\n3. **Certificate Repository**: Stores certificates and CRLs (Certificate Revocation Lists).\n4. **PKI Users**: End entities that are authenticated and use certificates for encrypted communication.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-28",
+    "title": "What is the difference between IDS and firewalls?",
+    "answer": "**Intrusion Detection Systems (IDS)** and **Firewalls** serve different purposes:\n\n- **Firewalls**: Act as a barrier between an internal network and external networks by monitoring and controlling incoming and outgoing network traffic based on predefined security rules.\n- **IDS**: Primarily a monitoring tool that detects and alerts on suspicious activities, anomalies, and potential threats within the network but doesn't actively block them (which is the job of an IPS - Intrusion Prevention System).",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-29",
+    "title": "List Top 10 OWASP Vulnerabilities",
+    "answer": "As of the latest OWASP Top 10 list, common vulnerabilities include:\n\n1. **Injection**\n2. **Broken Authentication**\n3. **Sensitive Data Exposure**\n4. **XML External Entities (XXE)**\n5. **Broken Access Control**\n6. **Security Misconfiguration**\n7. **Cross-Site Scripting (XSS)**\n8. **Insecure Deserialization**\n9. **Using Components with Known Vulnerabilities**\n10. **Insufficient Logging & Monitoring**",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-30",
+    "title": "Mention what threat can be avoided by having unique usernames produced with a high degree of entropy?",
+    "answer": "Having unique usernames produced with a high degree of entropy avoids the threat of **username enumeration** attacks. With high entropy, attackers are unable to predict valid usernames easily, making it more challenging to execute brute force or credential stuffing attacks effectively.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-32",
+    "title": "What is Cross-Site Request Forgery?",
+    "answer": "**Cross-Site Request Forgery (CSRF)** is a type of attack that forces an authenticated user to perform unwanted actions on a web application in which they're currently authenticated. By impersonating the user, the attacker can exploit the user's legitimate credentials to execute unwanted actions. CSRF exploits the trust a web application has in the user's browser.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-33",
+    "title": "What is PKI?",
+    "answer": "**Public Key Infrastructure (PKI)** is a framework that enables secure, encrypted communication and data transfer over networks. PKI uses a pair of keys: a public key that can be shared openly and a private key that is kept secret by the owner. Certifying Authorities (CAs) issue digital certificates, which verify the ownership of a public key within a certificate. PKI supports several security services including encryption, authentication, and digital signatures.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-34",
+    "title": "What is Cross-site request forgery and how to mitigate it?",
+    "answer": "**Cross-site request forgery (CSRF)** is an exploit of a web application where a malicious site tricks a user’s browser into performing unwanted actions on another site in which they are authenticated. To mitigate CSRF:\n\n1. **Use Anti-CSRF Tokens**: Implement random tokens in requests sent by authenticated users. \n2. **SameSite Cookie Attribute**: Set cookies with the `SameSite` attribute to prevent CSRF attacks. \n3. **Custom Headers**: Utilize custom request headers that are not accessible by cross-origin requests.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-35",
+    "title": "Could you explain the difference between penetration testing and other forms of security testing?",
+    "answer": "**Penetration Testing** is a specific type of security testing method that mimics real-world attacks to find vulnerabilities that could be exploited. While standard security testing might involve automated checks and scans, penetration testing involves skilled testers trying to exploit vulnerabilities to demonstrate potential loopholes. Other forms of security testing include vulnerability scans, code reviews, and security assessments which analyze a wider scope but might not include active exploitation.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-36",
+    "title": "What is Failure to Restrict URL Access?",
+    "answer": "Failure to restrict URL access occurs when web applications do not enforce proper authorization checks for accessing specific URLs or resources and rely solely on client-side controls. Attackers may bypass encryption or security measures and directly access URLs or resources by manipulating the input. This can be mitigated by implementing server-side checks to ensure authorization requirements are met.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-37",
+    "title": "What is the difference between encryption, encoding, and hashing?",
+    "answer": "**Encryption**: Transforms data into another format using keys for confidentiality, reversible if keys are known.\n\n**Encoding**: Converts data into another format using a scheme for usability (not secrecy), reversible by design.\n\n**Hashing**: Transforms data into a fixed-length value using a hash function, for data integrity verification, irreversible; used often in storing passwords.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-38",
+    "title": "How to mitigate the risk of Weak authentication and session management?",
+    "answer": "To mitigate the risk of **Weak Authentication and Session Management**:\n\n1. **Strong Password Policies**: Enforce complex passwords and password change policies.\n2. **Use Multi-Factor Authentication**: Add layers of verification beyond usernames and passwords.\n3. **Secure Session IDs**: Use secure, random session identifiers and regenerate them on login.\n4. **Secure Transmission**: Use HTTPS to protect credentials during transmission.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-39",
+    "title": "What is HTTP Public Key Pinning and when to use it?",
+    "answer": "**HTTP Public Key Pinning (HPKP)** is a security feature that allows HTTPS websites to resist impersonation due to fraudulently issued certificates. It is used by specifying which public keys should be accepted by browsers, thus restricting which certificates they can trust for the domain. HPKP is used to prevent Man-in-the-Middle (MITM) attacks, particularly when concerns exist over the trustworthiness of Certificate Authorities.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-40",
+    "title": "Mention what happens when an application takes user inserted data and sends it to a web browser without proper validation and escaping?",
+    "answer": "Without proper validation and escaping, sending user-inserted data to a web browser can lead to **Cross-Site Scripting (XSS)** vulnerabilities. Malicious data can execute scripts in the user's browser, which may lead to session hijacking, defacement, redirecting users to malicious sites, or stealing sensitive data.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-41",
+    "title": "What is a Honeypot?",
+    "answer": "A **Honeypot** is a security mechanism set up to detect, deflect, or study hacking attempts and gather information about their methods. It acts as a decoy, appearing to be a legitimate part of the network infrastructure to attract attackers, thereby allowing actual systems to remain secure and undetected.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-42",
+    "title": "What is ClickJacking?",
+    "answer": "**Clickjacking** is a malicious technique where an attacker tricks a user into clicking on something different from what the user perceives, potentially revealing sensitive information or taking control of the computer while clicking seemingly harmless web pages. Clickjacking is mitigated by using frame-busting scripts and the `X-Frame-Options` HTTP header to prevent content from being framed.",
+    "level": "mid",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-43",
+    "title": "Is it possible to decrypt MD5 hashes? Explain.",
+    "answer": "MD5 is a cryptographic hash function that produces a 128-bit hash value, not encryption. While it cannot be 'decrypted', MD5 can be 'cracked' as it's a deterministic function. MD5 is susceptible to collisions and attacks due to its predictable outputs. Techniques like rainbow tables and brute force can reveal original data when protection relies solely on MD5.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-44",
+    "title": "If you can decode JWT, how are they secure?",
+    "answer": "JSON Web Tokens (JWT) are encoded—not encrypted—so it's possible to decode and view their payload with any Base64 library. Security in JWTs relies on **signatures**, which verify the token's integrity and authenticity. As long as the secret key remains secure, the token's signature cannot be forged, ensuring that unauthorized modifications can be detected.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-45",
+    "title": "How to ensure that a file can only be decrypted after a specific date?",
+    "answer": "To ensure a file can only be decrypted after a specific date, employ **Time-Based Key Encryption** or **Time-Locked Encryption** methods. Encrypt the file using a public key generated with time as the parameter. The corresponding private key, required for decryption, is only available after the set date, potentially using a time server to validate current time as part of decryption criteria.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-46",
+    "title": "What's the difference between OpenID and OAuth?",
+    "answer": "**OpenID** is an authentication protocol for users to log in to different platforms with a single set of credentials, focusing on authentication. **OAuth** is an authorization protocol that allows a user's account details on one site to be accessed via API authorization without directly using their credentials. While OpenID verifies the user's identity, OAuth grants access to user data for secondary applications.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-47",
+    "title": "How does SSL/TLS work?",
+    "answer": "**SSL/TLS** employs both asymmetric and symmetric encryption to secure communications between client and server. During a handshake, the client and server exchange keys to establish a secure connection. Asymmetric cryptography verifies identities and exchanges keys, while symmetric encryption secures data exchanged afterwards. SSL/TLS ensures data confidentiality, integrity, and authentication.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-48",
+    "title": "Explain briefly CORS (Cross-Origin Resource Sharing)?",
+    "answer": "**Cross-Origin Resource Sharing (CORS)** is a security feature implemented by web browsers to allow controlled access to resources on a different domain than the one serving web pages. CORS is managed using HTTP headers to instruct browsers about which origins may access resources. It helps enforce a controlled relaxation of the same-origin policy, enabling safe cross-origin requests for authorized domains.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-49",
+    "title": "What is a Bug Bounty?",
+    "answer": "A **Bug Bounty** program is an initiative that offers rewards to individuals for discovering and reporting bugs or vulnerabilities in software applications or websites. It incentivizes ethical hacking and helps organizations improve security by leveraging a community of security researchers to identify issues before malicious actors can exploit them.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-50",
+    "title": "What is Stored XSS?",
+    "answer": "**Stored XSS** (also known as Persistent XSS) occurs when a malicious script is stored on the server, usually within a database, and injected into web pages viewed by users. Unlike reflected XSS, stored XSS persists across user sessions. It's dangerous as it can execute whenever a user accesses the affected page, potentially stealing data or altering content.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-51",
+    "title": "What is Reflected XSS?",
+    "answer": "**Reflected XSS** occurs when a malicious script is reflected off a web server, usually via URL or query string, onto a user's browser. The attack is typically executed when the user clicks a crafted link or submits a form, causing immediate script execution and exploiting the user’s session. Proper input validation and output encoding can prevent reflected XSS.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-52",
+    "title": "What are X-Frame-Options?",
+    "answer": "The **X-Frame-Options** HTTP response header can be used to indicate whether a browser should be allowed to render a page in a `<frame>`, `<iframe>`, `<embed>`, or `<object>`. It helps protect web applications from Clickjacking attacks. The header can take values such as `DENY`, `SAMEORIGIN`, or `ALLOW-FROM uri`, clarifying how to handle frame requests.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-53",
+    "title": "What is Cross Site Tracing (XST)? How can it be prevented?",
+    "answer": "**Cross Site Tracing (XST)** is an attack in which an attacker makes a TRACE HTTP request to capture sensitive headers in HTTP responses (like cookies). XST might exploit Cross-Site Scripting weaknesses if combined with other attacks. To prevent XST, disable HTTP TRACE method support on web servers. Configure them to handle XSS mitigation strategies correctly.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-54",
+    "title": "How to Prevent Breaches Due to Failure to Restrict URL Access?",
+    "answer": "Prevent breaches from **Failure to Restrict URL Access** by:\n\n1. **Enforcing Authorization**: Apply proper authorization checks server-side for every resource request.\n2. **Avoiding Hidden URLs**: Don’t rely on security through obscurity by concealing URLs or portions of the site.\n3. **Role-Based Access Control (RBAC)**: Implement granular and role-based permissions to control access.\n4. **Audit Logs**: Maintain detailed auditing logs to track access and detect potential issues.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-55",
+    "title": "What is HSTS?",
+    "answer": "**HTTP Strict Transport Security (HSTS)** is a web security policy mechanism which helps to protect websites against man-in-the-middle attacks such as protocol downgrade attacks and cookie hijacking by enforcing secure connections over HTTP. HSTS capable browsers will refuse all HTTP connections and prevent users from accepting insecure SSL certificates by redirecting to secure HTTPS connections automatically.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-56",
+    "title": "What are the types of XSS?",
+    "answer": "Common types of **Cross-Site Scripting (XSS)** include:\n\n1. **Stored XSS**: Malicious script is saved on the server and executed when users access specific data.\n2. **Reflected XSS**: Script is reflected off a web server, executed immediately when a user interacts with a crafted link or form.\n3. **DOM-based XSS**: The attack takes place on the client side; JavaScript manipulates the DOM, causing the browser to execute malicious code.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-57",
+    "title": "Mention what is the basic design of OWASP ESAPI?",
+    "answer": "The basic design of **OWASP Enterprise Security API (ESAPI)** is to provide a robust set of security controls and secure coding libraries designed to prevent insecure operations in web applications. These controls include encoding, validation, authentication, access control, cryptography, HTTP security, and logging mechanisms. ESAPI serves to standardize security practices and make secure coding easier.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-58",
+    "title": "How to use Content Security Policy (CSP) against clickjacking?",
+    "answer": "Using **Content Security Policy (CSP)** to prevent clickjacking involves repairing or limiting which resources can be framed. Add `Content-Security-Policy: frame-ancestors 'none';` to HTTP headers to prevent any domain from embedding your pages. Alternatively, use `frame-ancestors` with specific URIs if only certain domains should be permitted, thereby avoiding unauthorized framing.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-59",
+    "title": "How to use CHAP Authentication (Challenge Response Authentication) for webSockets?",
+    "answer": "**Challenge Handshake Authentication Protocol (CHAP)** isn't natively supported in WebSocket; however, similar concepts can be implemented by creating a challenge-response mechanism where the server sends a challenge, and the client responds with a hash salted by a shared secret. By leveraging secure libraries to handle hashing and salting, custom authentication over unsecure WebSockets can mimic CHAP functionality.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-60",
+    "title": "How would you secure WebSockets communication on your project?",
+    "answer": "To secure **WebSockets communication** in a project:\n\n1. **Use WSS Protocol**: Ensure WebSockets operate over secure TLS/SSL (wss://). \n2. **Set Proper Authentication**: Implement token-based authentication (e.g., JWT).\n3. **Encrypt Data Streams**: Encrypt data passing through WebSockets using strong encryption algorithms.\n4. **Validate Data**: Sanitize and validate all inputs from clients.\n5. **Keep Connections Controlled**: Implement limits on the number of concurrent connections per user.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-61",
+    "title": "What is Content Security Policy (CSP)?",
+    "answer": "**Content Security Policy (CSP)** is a security measure used to prevent a variety of attacks, including XSS and data injection, by specifying which sources of content are permissible. CSP is implemented by delivering a `Content-Security-Policy` header that instructs the browser to allow or block the loading of resources based on its origin. It acts as a server-set whitelist policy configured by the developer.",
+    "level": "senior",
+    "category": "web_security"
+  },
+  {
+    "id": "web-security-62",
+    "title": "What is a Salt and How Does It Make Password Hashing More Secure?",
+    "answer": "A **Salt** is a random value added to a password before it is hashed to ensure that the hash is unique even for identical passwords. This prevents attackers from using pre-computed tables (rainbow tables) for hash attacks and forces them to brute force each hash individually. A salt improves security by ensuring password hashes are not static and predictable.",
+    "level": "senior",
+    "category": "web_security"
+  }
+]

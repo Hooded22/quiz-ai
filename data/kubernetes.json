@@ -1,0 +1,191 @@
+[
+  {
+    "id": "kubernetes-1",
+    "title": "What is Kubernetes? Why organizations are using it?",
+    "answer": "Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It groups containers that make up an application into logical units for easy management and discovery. Organizations use Kubernetes because it provides powerful and flexible ways to manage and deploy applications with high availability, scalability, and resilience against failures.",
+    "level": "junior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-2",
+    "title": "What is a Kubernetes Cluster?",
+    "answer": "A Kubernetes Cluster is a set of node machines for running containerized applications. A cluster consists of a master node, which is responsible for coordinating the cluster, and worker nodes that run the actual applications. The master node handles the control plane, including scheduling workloads, managing cluster state, and orchestrating network and storage resources.",
+    "level": "junior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-3",
+    "title": "What is a Pod?",
+    "answer": "A Pod is the smallest deployable unit in Kubernetes and represents a single instance of a running process in a cluster. It can contain one or more containers that share storage, network, and a specification for how to run the containers. Pods encapsulate application containers, storage resources, and a unique network IP.",
+    "level": "junior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-4",
+    "title": "How can containers within a pod communicate with each other?",
+    "answer": "Containers within a pod share the same network namespace, including the IP address and port space, which allows them to communicate with each other directly using localhost. They can also share volumes, enabling file-based communication.",
+    "level": "junior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-5",
+    "title": "What does a Pod do?",
+    "answer": "A Pod acts as a wrapper around a single or multiple containers, providing them with shared resources like networking and storage. It ensures that the containers within it are run with the necessary configurations and can be managed as a single unit in the Kubernetes cluster.",
+    "level": "junior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-6",
+    "title": "What is Kubernetes, exactly?",
+    "answer": "Kubernetes is a container orchestration system that automates the deployment, scaling, and operations of application containers across clusters of hosts. It provides container-centric infrastructure that abstracts complex configurations and scales easily, allowing developers to focus on deployment and management of applications.",
+    "level": "junior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-7",
+    "title": "What happens when a master fails? What happens when a worker fails?",
+    "answer": "When a master node in Kubernetes fails, cluster control might be disrupted temporarily, although the worker nodes continue to run the scheduled pods. In highly available setups, multiple master nodes ensure platform stability. When a worker node fails, the pods scheduled on that node are terminated, and the scheduler automatically reschedules them to other nodes available in the cluster.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-8",
+    "title": "What are namespaces? What is the problem with using one default namespace?",
+    "answer": "Namespaces in Kubernetes provide a mechanism to divide a single cluster into virtual clusters, allowing resource isolation, quotas, and access control. Using only the default namespace can lead to resource contention and permissions issues because it doesn't isolate resources among different teams or projects.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-9",
+    "title": "What does it mean that \"pods are ephemeral\"?",
+    "answer": "Pods being ephemeral means they are temporary and short-lived. They can be created, destroyed, replicated, and moved around dynamically by Kubernetes. Pods don't persist through reboots or failures; they are managed by higher abstraction controllers like Deployments to ensure the desired state of applications.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-10",
+    "title": "What is a DaemonSet?",
+    "answer": "A DaemonSet in Kubernetes ensures that one or a copy of a Pod is running across all (or some selected) nodes in the cluster. They are used for logging, monitoring, or other node-specific services, ensuring they are deployed on every node or a subset of nodes.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-11",
+    "title": "Why may you have Pod is in a Pending state?",
+    "answer": "A Pod may be in a Pending state when it is scheduled to a node but cannot start due to resource constraints (like insufficient CPU, memory), absence of a suitable node, or unsatisfied scheduling restraints (like node selectors, tolerations, or deadlines).",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-12",
+    "title": "What is an Ingress Controller?",
+    "answer": "An Ingress Controller is a component that manages access to the services in a Kubernetes cluster, typically HTTP and HTTPS, from outside the cluster. It processes Ingress resources and rule definitions that dictate how external requests can forward to services inside the cluster.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-13",
+    "title": "Explain what is a Master Node and what component does it consist of?",
+    "answer": "A Master Node is responsible for managing the Kubernetes cluster and orchestrating workloads. It consists of several components like the API Server (entry point for the cluster), etcd (distributed key-value store for configuration data), Controller Manager (handles nodes and endpoints), and Scheduler (allocates work to different nodes).",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-14",
+    "title": "When to use StatefulSet?",
+    "answer": "StatefulSets should be used when applications require stable, unique network identifiers, persistence, ordered, graceful scaling, and deployment. They are ideal for stateful applications where operations like scaling up/down must be performed sequentially and data persistence is crucial.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-15",
+    "title": "What is a StatefulSet in Kubernetes?",
+    "answer": "A StatefulSet is a Kubernetes API object that manages the deployment and scaling of a set of Pods, and provides guarantees about their ordering and uniqueness. They are specifically used for stateful applications where persistent storage and unique network identities are needed.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-16",
+    "title": "What are the benefits of a Pod?",
+    "answer": "The benefits of a Pod include container co-location and resource sharing, simplified network and storage management, and logical grouping for easier management and deployment within a Kubernetes cluster.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-17",
+    "title": "Explain what are some Pods usage patterns?",
+    "answer": "Pods can be used in single-container or multi-container patterns. Single-container Pods are the most common, encapsulating one container. Multi-container Pods can have tightly-coupled helper containers sharing resources and working in close communication (often sidecar, ambassador, or adapter patterns).",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-18",
+    "title": "Which problems does a Container Orchestration solve?",
+    "answer": "Container orchestration solves issues related to deployment, scaling, networking, and lifecycle management of containers. It automates the placement, scaling, and operation of containers to optimize resource utilization, ensuring high availability and resilience.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-19",
+    "title": "Explain when to use Docker vs Docker Compose vs Docker Swarm vs Kubernetes",
+    "answer": "Docker is used for building and running individual containers, Docker Compose is for defining and running multi-container applications, Docker Swarm is for simplistic orchestration of containers with Docker, and Kubernetes is for complex, large-scale orchestration providing advanced features like auto-scaling, load-balancing, and service discovery.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-20",
+    "title": "What is the difference between Kubernetes and Docker?",
+    "answer": "Docker is a platform for developing, shipping, and running individual containers, while Kubernetes provides orchestration of containers, managing multiple Docker containers deployed across clusters, with capabilities like scaling, load balancing, and self-healing.",
+    "level": "mid",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-21",
+    "title": "How does Kubernetes use etcd?",
+    "answer": "Kubernetes uses etcd as a distributed key-value store to hold the configuration data and state of the cluster. It stores metadata of the cluster, API objects, and their states, enabling stateful persistence and reliable retrieval during any cluster operation.",
+    "level": "senior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-22",
+    "title": "How to rollback a Deployment?",
+    "answer": "You can rollback a Deployment in Kubernetes using the `kubectl rollout undo deployment/<deployment-name>` command. This will revert the Deployment to its previous revision or to a specified revision using the `--to-revision=<revision>` flag.",
+    "level": "senior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-23",
+    "title": "Why do we need Kubernetes (and other orchestrators) above containers?",
+    "answer": "We need Kubernetes and other orchestrators above containers to manage complex application deployment, scaling, and operations, ensuring high availability, efficient resource utilization, and automated recovery from failure. They provide a unified platform for managing containerized workloads and services, with powerful features for scheduling, networking, and monitoring.",
+    "level": "senior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-24",
+    "title": "How does StatefulSets use differ from the use of \"stateless\" Pods with Persistent Volumes?",
+    "answer": "StatefulSets manage the deployment and scaling of a set of Pods with guaranteed ordering and uniqueness, crucial for stateful applications. In contrast, stateless Pods with Persistent Volumes can store data persistently but lack the guarantees of unique identities and ordered deployment provided by StatefulSets.",
+    "level": "senior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-25",
+    "title": "How do I build a High Availability (HA) cluster?",
+    "answer": "To build a High Availability (HA) Kubernetes cluster, you should have multiple master nodes with active replication of etcd across these nodes. Ensure load balancing for API servers and services, such as using HAProxy or similar, and monitor nodes and applications to ensure resilience.",
+    "level": "senior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-26",
+    "title": "Can you explain a relationship between container runtime and container orchestration?",
+    "answer": "Container runtime is responsible for running individual containers, like Docker or containerd, while container orchestration, such as Kubernetes, manages the deployment, networking, scaling, and operation of multiple containers across a cluster, abstracting and automating workload management.",
+    "level": "senior",
+    "category": "kubernetes"
+  },
+  {
+    "id": "kubernetes-27",
+    "title": "Explain what are Taints in Kubernetes?",
+    "answer": "Taints in Kubernetes are a mechanism to repel a set of Pods from being scheduled on to certain nodes. They prevent Pods that do not have matching tolerations from being scheduled, helping administrators to explicitly control which workloads run on specific nodes.",
+    "level": "senior",
+    "category": "kubernetes"
+  }
+]
