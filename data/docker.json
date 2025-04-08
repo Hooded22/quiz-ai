@@ -1,0 +1,443 @@
+[
+  {
+    "id": "docker-1",
+    "title": "What is Docker?",
+    "answer": "Docker is an open platform for developing, shipping, and running applications. It enables you to separate your applications from your infrastructure, so you can deliver software quickly. By using Docker, you can manage your infrastructure in the same ways you manage your applications.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-2",
+    "title": "What does Containerization mean?",
+    "answer": "Containerization is a lightweight form of virtualization that involves encapsulating an application and its dependencies into a container. This allows it to run reliably across different computing environments. Containers are isolated, ensuring consistency during deployment.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-3",
+    "title": "Can you remove ('docker rm') a container that is paused?",
+    "answer": "No, you cannot directly remove a paused container using 'docker rm'. You need to first stop or unpause the container before removing it.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-4",
+    "title": "Do I lose my data when the Docker container exits?",
+    "answer": "When a Docker container exits, the data within the container is not lost as long as it is stored in a data volume or a bind mount. By default, data generated inside a container is stored on a writable container layer, which is lost when the container is removed.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-5",
+    "title": "What is Build Cache in Docker?",
+    "answer": "Docker's Build Cache is a feature that allows Docker to reuse layers from previous builds when the Dockerfile instructions have not changed. This speeds up the build process and reduces overhead.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-6",
+    "title": "What’s the difference between a repository and a registry?",
+    "answer": "A Docker Registry is a storage and content delivery system, holding named Docker images, available in different tagged versions. A Docker Repository is a collection of related images, usually providing different versions of the same application or service.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-7",
+    "title": "How to build environment-agnostic systems with Docker?",
+    "answer": "By containerizing applications with Docker, you can create environment-agnostic systems. This involves writing a Dockerfile, specifying dependencies and environment variables. With Docker Compose, you can configure multi-container applications, ensuring they work consistently across environments.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-8",
+    "title": "How to link containers?",
+    "answer": "In Docker, linking containers is often done by using networks. You can create a Docker network and then run containers within the same network, allowing them to communicate with each other using specified names.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-9",
+    "title": "What type of applications - Stateless or Stateful are more suitable for Docker Container?",
+    "answer": "Stateless applications are more suitable for Docker Containers because they do not rely on stored data and can be easily scaled. However, stateful applications can also be containerized with careful management of persistent storage solutions.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-10",
+    "title": "What is Docker image?",
+    "answer": "A Docker image is a lightweight, standalone, executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, and environment variables. Images are the building blocks of Docker and are used to create containers.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-11",
+    "title": "What is Docker container?",
+    "answer": "A Docker container is a lightweight, standalone, and executable package of software that includes everything needed to run an application, isolated from the host system. Containers are created from Docker images.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-12",
+    "title": "What is the difference between CMD and ENTRYPOINT in a Dockerfile?",
+    "answer": "The CMD instruction provides default arguments for the ENTRYPOINT instruction, and to execute a specific command. ENTRYPOINT allows you to configure a container that will run as an executable. While both define what should execute in a container, ENTRYPOINT is preferred for containers meant to be run as a specific application.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-13",
+    "title": "What is the difference between 'docker run' and 'docker create'?",
+    "answer": "'docker run' creates and starts a container simultaneously. 'docker create', however, only creates a container and doesn't start it. The container created using 'docker create' can be started later using 'docker start'.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-14",
+    "title": "Is there a way to identify the status of a Docker container?",
+    "answer": "Yes, you can identify the status of a Docker container using the 'docker ps' command. This command lists the running containers and their statuses. To see all containers including stopped ones, use 'docker ps -a'.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-15",
+    "title": "What are the most common instructions in Dockerfile?",
+    "answer": "The most common instructions in a Dockerfile are:\n- **FROM**: Specifies the base image to use.\n- **COPY/ADD**: Copies files/directories into the image.\n- **RUN**: Executes commands to install packages.\n- **CMD**: Execution command when a container is run.\n- **ENTRYPOINT**: Configures container to run as executable.\n- **EXPOSE**: Specifies port container listens on.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-16",
+    "title": "What are the various states that a Docker container can be in at any given point in time?",
+    "answer": "A Docker container can be in the following states:\n- **Created**: Newly created but not started.\n- **Running**: Actively running.\n- **Paused**: Running processes are paused using SIGSTOP.\n- **Stopped**: Initially running but was stopped.\n- **Exited**: Completed its task and stopped.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-17",
+    "title": "What is Docker hub?",
+    "answer": "Docker Hub is a cloud-based repository where Docker users and partners create, test, store and distribute container images. It is the world's largest library of container images, providing a wide array of popular repositories available for use.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-18",
+    "title": "What is the difference between the COPY and ADD commands in a Dockerfile?",
+    "answer": "The **COPY** command is used to copy files/folders from the host to the image's filesystem at a specified path. **ADD** is similar but includes additional functionalities like the ability to extract tar files and fetching URLs.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-19",
+    "title": "When would you use 'docker kill' or 'docker rm -f'?",
+    "answer": "'docker kill' is used to abruptly stop a container by sending a SIGKILL. 'docker rm -f' is used to forcefully remove a running container, first stopping it, then removing.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-20",
+    "title": "What is the difference between a Docker image and a container?",
+    "answer": "A Docker image is a template used to create containers—it's a static descriptor of what the container's contents should look like. A container is a runtime instance of an image, including the application, dependencies, and execution environment.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-21",
+    "title": "What is Hypervisor?",
+    "answer": "A Hypervisor, also known as a virtual machine monitor (VMM), is software that creates and runs virtual machines (VMs). It allows multiple operating systems to share a single hardware host, where each OS appears to have the host's processor, memory, and resources to itself.",
+    "level": "junior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-22",
+    "title": "How can we control the startup order of services in Docker compose?",
+    "answer": "Docker Compose itself does not manage service dependencies directly. However, you can control the startup order by using scripts that check service availability, or by specifying 'depends_on' in the Docker Compose file, although it only dictates order without waiting for readiness.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-23",
+    "title": "Explain a use case for Docker",
+    "answer": "A popular use case for Docker is development and testing environments. Docker provides developers with consistent environments across different stages of deployment, preventing the common 'works on my machine' problem. It allows testing different components of an application independently.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-24",
+    "title": "Explain what are some Pods usage patterns?",
+    "answer": "In Kubernetes, a pod is the smallest deployable unit. Common usage patterns include single-container pods, multi-container pods where sidecar, ambassador, or adapter containers are used to enhance the primary container's functionality.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-25",
+    "title": "Which problems does a Container Orchestration solve?",
+    "answer": "Container orchestration solves problems involving deployment, scaling, networking, and availability of containerized applications. It automates the management and scaling of containerized applications, ensuring high availability and optimal resource management.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-26",
+    "title": "Explain when to use Docker vs Docker Compose vs Docker Swarm vs Kubernetes",
+    "answer": "Use **Docker** for containerization of single applications. **Docker Compose** is ideal for defining and running multi-container Docker applications. **Docker Swarm** provides native clustering within Docker, suited for simple orchestration. **Kubernetes** provides advanced orchestration and is suitable for complex multi-container application deployment and management.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-27",
+    "title": "What is the preferred way of removing containers - 'docker rm -f' or 'docker stop' then followed by a 'docker rm'?",
+    "answer": "The preferred way is to use 'docker stop' followed by 'docker rm'. This ensures applications running in the container shut down cleanly before the container is removed. 'docker rm -f' force deletes a running container, which might not allow applications to shut down properly.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-28",
+    "title": "What is the difference between Kubernetes and Docker?",
+    "answer": "Docker is a platform for developing, shipping, and running containers. Kubernetes is an orchestration tool for managing and scaling containerized applications. Docker handles container creation, while Kubernetes provides a host of other functionalities including load balancing, distribution, and scaling.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-29",
+    "title": "What is the default CPU limit set for a container?",
+    "answer": "By default, Docker does not set any CPU limits for containers. Containers can potentially use as much CPU as is available on the host system, unless explicitly restricted using resource constraints.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-30",
+    "title": "What is the purpose of EXPOSE command in Dockerfile?",
+    "answer": "The **EXPOSE** instruction in a Dockerfile is used to specify that the container listens on a specified network port at runtime. It does not publish the port, but rather serves as a form of documentation about the intended network use.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-31",
+    "title": "What is the difference between “expose” and “publish” in Docker?",
+    "answer": "The **EXPOSE** directive in a Dockerfile indicates that the application intends to listen on the specified port, serving as documentation. **Publish** refers to using '-p' or '-P' with the 'docker run' command to map container ports to host ports for external connectivity.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-32",
+    "title": "Should I use Vagrant or Docker for creating an isolated environment?",
+    "answer": "Use **Docker** for containerization and when you need lightweight environments that can be booted up in seconds. Use **Vagrant** for VM-based environments when you require a more complete OS environment and are not constrained by startup times and overhead.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-33",
+    "title": "How will you monitor Docker in production?",
+    "answer": "Docker can be monitored in production using tools like **Prometheus** for metrics collection and monitoring, **Grafana** for visualization, and **ELK Stack** for logging. Tools like **Docker Enterprise Edition** offer built-in monitoring solutions.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-34",
+    "title": "Could you explain what is Emulation?",
+    "answer": "Emulation is the process of mimicking another system's hardware or software. It allows one system to behave like another, facilitating software compatibility across different platforms without requiring the original hardware or software environment.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-35",
+    "title": "What is the difference between CMD and ENTRYPOINT in a Dockerfile?",
+    "answer": "Both **CMD** and **ENTRYPOINT** specify what to run in a container. **CMD** sets default parameters that can be overridden, while **ENTRYPOINT** configures a container to run as an executable with mandatory arguments. Mixing both can provide flexibility while maintaining required commands.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-36",
+    "title": "What is virtualisation?",
+    "answer": "Virtualization is the process of creating a software-based (or virtual) version of something, such as an operating system, a server, a storage device, or network resources. It allows multiple systems to run on a single physical hardware unit.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-37",
+    "title": "Docker Compose vs. Dockerfile - which is better?",
+    "answer": "They serve different purposes. A **Dockerfile** is used for creating an individual Docker image with related dependencies. **Docker Compose** is a tool for defining and running multi-container Docker applications and is better for applications requiring multiple services.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-38",
+    "title": "What exactly do you mean by “Dockerized node”? Can this node be on-premises or in the cloud?",
+    "answer": "A “Dockerized node” is a node where applications are encapsulated in Docker containers. It can be on-premises or in the cloud, providing flexibility to run containerized applications consistently across various environments.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-39",
+    "title": "What happens if you add more than one CMD instruction to a Dockerfile?",
+    "answer": "When a Dockerfile has multiple **CMD** instructions, only the last CMD instruction is effective. The commands from previous CMD instructions are ignored, as Dockerfile allows only one CMD instruction to be active.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-40",
+    "title": "Explain basic Docker usage workflow",
+    "answer": "Basic Docker workflow involves:\n1. Writing a Dockerfile to define the image.\n2. Building the image using 'docker build'.\n3. Running the container from the image using 'docker run'.\n4. Managing and monitoring using various Docker commands and tools.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-41",
+    "title": "What is the difference between Docker Image and Layer?",
+    "answer": "A **Docker Image** is built from a series of **layers**, each representing an instruction in the Dockerfile. A layer is a set of read-only files from the previous layer plus any additional changes. Images are composed of these layers stacked on top of each other.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-42",
+    "title": "Can you create containers without their own PID namespace?",
+    "answer": "No, containers are designed to have their own PID namespace to ensure process isolation from other containers. This isolation ensures that processes within a container do not have visibility or access to processes in other containers or on the host.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-43",
+    "title": "What is Docker Swarm?",
+    "answer": "Docker Swarm is Docker's native clustering and orchestration tool. It allows Docker users to manage a cluster of Docker hosts and schedule container workloads across nodes using familiar Docker commands.",
+    "level": "mid",
+    "category": "docker"
+  },
+  {
+    "id": "docker-44",
+    "title": "Can you explain dockerfile ONBUILD instruction?",
+    "answer": "The **ONBUILD** instruction in a Dockerfile adds a trigger instruction to the image. It means that when the image is used as the base for a new build, the ONBUILD command will execute. It's useful for child images where customization is needed.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-45",
+    "title": "Can you run Docker containers natively on Windows?",
+    "answer": "Yes, Docker containers can run natively on Windows using Windows containers. For Linux containers, the Docker Desktop for Windows provides a LinuxKit-based solution to run Docker's Linux containers.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-46",
+    "title": "Is it good practice to run stateful applications on Docker? What are the scenarios where Docker best fits in?",
+    "answer": "Running stateful applications on Docker is possible but requires careful management of data persistence and scaling. Docker is best suited for stateless applications, microservices, and development environments where rapid deployment and isolation are crucial.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-47",
+    "title": "What are the different kinds of namespaces available in a Container?",
+    "answer": "Containers utilize several Linux namespaces:\n- **PID namespace**: Process isolation.\n- **Network namespace**: Separate network stack.\n- **Mount namespace**: Separate filesystem access.\n- **UTS namespace**: Isolated hostnames.\n- **IPC namespace**: Shared memory access.\n- **User namespace**: User and group ID mapping.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-48",
+    "title": "Why do we need Kubernetes (and other orchestrators) above containers?",
+    "answer": "Orchestrators like Kubernetes manage the deployment (replication, scaling), networking, and load balancing of containerized applications across clusters of servers. They provide automated container scheduling, scaling, monitoring, and management, simplifying complex deployments.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-49",
+    "title": "What is the difference between Docker RUN, CMD and ENTRYPOINT?",
+    "answer": "The **RUN** command executes commands to set up the image, like package installations. **CMD** provides default arguments for ENTRYPOINT. **ENTRYPOINT** sets up a container to run as an executable. Combining CMD and ENTRYPOINT defines both the executable and its default parameters.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-50",
+    "title": "How is Container different from a Virtual Machine?",
+    "answer": "Containers run directly on the host OS and share its kernel, making them more lightweight and faster to boot than virtual machines, which have their own OS and run on a hypervisor. Containers are better for applications that need to use fewer resources.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-51",
+    "title": "What is Paravirtualization?",
+    "answer": "Paravirtualization improves virtual machine performance by exposing APIs that a guest OS can use instead of emulating hardware. This requires modifications to the guest OS but results in improved efficiency and speed compared to full virtualization.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-52",
+    "title": "When you limit the memory for a container, does it reserve (guarantee) the memory?",
+    "answer": "No, limiting memory for a container only sets a maximum usage limit. It does not reserve or guarantee the memory will be there, as containers share the host's physical resources alongside other containers.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-53",
+    "title": "Is it possible to generate a Dockerfile from an image?",
+    "answer": "There is no direct way to generate a complete Dockerfile from an image, but you can inspect an image's history with 'docker history', although it won't give a comprehensive Dockerfile, only layers and command information.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-54",
+    "title": "What is an orphan volume and how to remove it?",
+    "answer": "An orphan volume is a Docker volume that's not associated with any containers. You can remove orphan volumes by using the 'docker volume prune' command, which removes volumes not used by at least one container.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-55",
+    "title": "How virtualization works at low level?",
+    "answer": "At a low level, virtualization uses a hypervisor to abstract hardware resources into distinct and isolated virtual machines, utilizing specialized techniques (e.g., CPU extensions like Intel VT-x). It controls and manages resources allocation and VM isolation.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-56",
+    "title": "How is Docker different from a virtual machine?",
+    "answer": "Docker containers share the host OS kernel and leverage its resources, making them lightweight and quick to start. VMs, on the other hand, run a full OS on virtualized hardware which adds overhead, making them more resource-intensive.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-57",
+    "title": "How to use Docker with multiple environments?",
+    "answer": "Using different Dockerfiles for environments, Docker's support for environment variables, and Docker Compose's possibility of managing multi-container environments enable handling dev, test, and prod across various setups effectively.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-58",
+    "title": "Why did Docker jump from version 1.13 to 17.03?",
+    "answer": "Docker versioning moved from a Release Candidate model to a time-based release strategy, with version numbers indicating the year and month. Thus, 17.03 was the March 2017 release, offering a clearer versioning process.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-59",
+    "title": "How containers works at low level?",
+    "answer": "At a low level, containers operate using Linux kernel features like namespaces for resource isolation, control groups (cgroups) for resource limiting, and filesystem features like chroot to provide an isolated environment distinct from the host.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-60",
+    "title": "How does Docker run containers in non-Linux systems?",
+    "answer": "Docker runs Linux containers on non-Linux systems using a lightweight VM or LinuxKit. Tools like Docker Desktop use this approach to provide a Linux-compatible environment necessary for container execution.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-61",
+    "title": "Why Docker compose does not wait for a container to be ready before moving on to start next service in dependency order?",
+    "answer": "In Docker Compose, services start independently by default. To ensure readiness, coordination scripts that poll service availability are recommended, as the 'depends_on' attribute only dictates starting order not readiness.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-62",
+    "title": "Name some limitations of containers vs VM",
+    "answer": "Containers have fewer isolation features and security boundaries than VMs because they share the host OS. They can't run different OS kernels and are subject to greater limitations in terms of resource allocation and host reliance.",
+    "level": "senior",
+    "category": "docker"
+  },
+  {
+    "id": "docker-63",
+    "title": "Can you explain a relationship between container runtime and container orchestration?",
+    "answer": "A container runtime, like Docker, manages the lifecycle and execution of containers. Container orchestration, provided by tools like Kubernetes, manages multiple containers, scaling, networking, and service discovery, leveraging container runtimes for deployment and execution.",
+    "level": "senior",
+    "category": "docker"
+  }
+]

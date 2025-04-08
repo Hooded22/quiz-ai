@@ -4,6 +4,7 @@ export const RoleType = {
   FULL_STACK_NODE_REACT: 'full-stack-node-react',
   BE_NODE: 'be-node',
   BE_JAVA: 'be-java',
+  DEV_OPS: 'dev-ops',
 } as const;
 
 export const QuestionsSets = {
@@ -14,6 +15,10 @@ export const QuestionsSets = {
   TYPESCRIPT: 'typescript',
   HTML: 'html',
   CSS: 'css',
+  SQL: 'sql',
+  DOCKER: 'docker',
+  WEB_SECURITY: 'web_security',
+  KUBERNETES: 'kubernetes',
 } as const;
 
 export const SeniorityLevel = {
@@ -41,13 +46,10 @@ export const TimeLimit = {
 
 // Use the output of the `as const` enums to infer the type for each
 export type RoleType = (typeof RoleType)[keyof typeof RoleType];
-export type SeniorityLevelType =
-  (typeof SeniorityLevel)[keyof typeof SeniorityLevel];
-export type QuestionsNumber =
-  (typeof QuestionsNumber)[keyof typeof QuestionsNumber];
+export type SeniorityLevelType = (typeof SeniorityLevel)[keyof typeof SeniorityLevel];
+export type QuestionsNumber = (typeof QuestionsNumber)[keyof typeof QuestionsNumber];
 export type TimeLimit = (typeof TimeLimit)[keyof typeof TimeLimit];
-export type QuestionsSetsValues =
-  (typeof QuestionsSets)[keyof typeof QuestionsSets];
+export type QuestionsSetsValues = (typeof QuestionsSets)[keyof typeof QuestionsSets];
 
 // Update the `InterviewConfig` type to use the enums
 export type InterviewConfig = {

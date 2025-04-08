@@ -1,8 +1,4 @@
-import {
-  QuestionsSets,
-  QuestionsSetsValues,
-  RoleType,
-} from '../types/interviewConfig';
+import { QuestionsSets, QuestionsSetsValues, RoleType } from '../types/interviewConfig';
 
 export type RolesConfigType = {
   [key in RoleType]: Partial<{
@@ -31,5 +27,11 @@ export const RolesConfig: RolesConfigType = {
     [QuestionsSets.JAVASCRIPT]: 60,
     [QuestionsSets.NODEJS]: 20,
     [QuestionsSets.REACT]: 20,
+  },
+  [RoleType.DEV_OPS]: {
+    [QuestionsSets.SQL]: 10,
+    [QuestionsSets.DOCKER]: 30,
+    [QuestionsSets.KUBERNETES]: 30,
+    [QuestionsSets.WEB_SECURITY]: 30,
   },
 };
