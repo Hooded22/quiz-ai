@@ -6,6 +6,7 @@ export const RolesIdsToTextMap = {
   [RoleType.FE_DEV]: 'Front-end developer',
   [RoleType.FULL_STACK_NODE_REACT]: 'Full-stack developer with Node',
   [RoleType.FE_DEV_REACT]: 'Front-end developer with React',
+  [RoleType.DEV_OPS]: 'DevOps developer',
 };
 
 export const SeniorityLevelToTextMap = {

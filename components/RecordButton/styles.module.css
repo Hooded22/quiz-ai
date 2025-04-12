@@ -1,0 +1,28 @@
+.recordButton {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #d32f2f;
+    border-radius: 100px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+.recordButton::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background-color: #d32f2f;
+    border: 2px solid #f44336;
+    border-radius: 50%;
+}

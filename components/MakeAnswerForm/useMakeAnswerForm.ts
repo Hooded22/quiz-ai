@@ -1,23 +1,15 @@
 import { gptMessagesType, sendPromptToGPT } from 'utils';
 import { useCallback, useEffect, useReducer, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import {
-  Actions,
-  FormValues,
-  GPTAnswerState,
-  QuestionsWithAnswer,
-} from './types';
+import { Actions, FormValues, GPTAnswerState, QuestionsWithAnswer } from './types';
 import { Question } from '../../types/question';
-import {
-  prepareGPTPrompt,
-  prepareGPTPromptWithCorrectAnswer,
-} from '../../utils/prompts.utils';
+import { prepareGPTPrompt, prepareGPTPromptWithCorrectAnswer } from '../../utils/prompts.utils';
 import {
   getAnswerCheckResponseWithCorrectAnswer,
   getRandomQuestion,
   checkIsAnswerCorrect,
 } from '../../utils/question.utils';
-import { useConversation } from "./useConversation";
+import { useConversation } from './useConversation';
 
 export interface UseMakeAnswerFormProps {
   currentQuestion: Question;
@@ -25,10 +17,7 @@ export interface UseMakeAnswerFormProps {
   addAnswer: (question: string, questionCategory: string, isAnswerCorrect: boolean) => void;
 }
 
-const modelAnswerReducer = (
-  state: GPTAnswerState,
-  action: Actions
-): GPTAnswerState => {
+const modelAnswerReducer = (state: GPTAnswerState, action: Actions): GPTAnswerState => {
   switch (action.type) {
     case 'clearForm':
       return { type: 'START' };
@@ -41,7 +30,7 @@ const modelAnswerReducer = (
         response: getAnswerCheckResponseWithCorrectAnswer(
           action.payload.response,
           action.payload.correctAnswer,
-          action.payload.isAnswerCorrect
+          action.payload.isAnswerCorrect,
         ),
       };
     case 'setAIModelResponse':
@@ -57,15 +46,11 @@ const modelAnswerReducer = (
   }
 };
 
-export const useMakeAnswerForm = ({
-  topic,
-  currentQuestion,
-  addAnswer,
-}: UseMakeAnswerFormProps) => {
+export const useMakeAnswerForm = ({ topic, currentQuestion, addAnswer }: UseMakeAnswerFormProps) => {
   const [aiAnswer, dispatch] = useReducer(modelAnswerReducer, {
     type: 'START',
   });
-  const { register, control, reset, handleSubmit } = useForm<FormValues>();
+  const { register, control, reset, handleSubmit, setValue } = useForm<FormValues>();
   const { addMessage, resetMessages, messages } = useConversation();
 
   const resetForm = () => {
@@ -84,18 +69,12 @@ export const useMakeAnswerForm = ({
       }
 
       resetForm();
-      addMessage("user", myAnswer);
-
+      addMessage('user', myAnswer);
 
       //TODO: Add previous messages to prompt
       //TODO: Update prompts: at first message indicate if answer is correct or not, at next answrr of user questions etc.
       const GPTPrompt = currentQuestion.answer
-        ? prepareGPTPromptWithCorrectAnswer(
-          currentQuestion.title,
-          myAnswer,
-          currentQuestion.answer,
-          topic
-        )
+        ? prepareGPTPromptWithCorrectAnswer(currentQuestion.title, myAnswer, currentQuestion.answer, topic)
         : prepareGPTPrompt(currentQuestion?.title, myAnswer, topic);
 
       try {
@@ -110,7 +89,7 @@ export const useMakeAnswerForm = ({
           formattedResponse = getAnswerCheckResponseWithCorrectAnswer(
             GPTResponse,
             currentQuestion.answer,
-            isAnswerCorrect
+            isAnswerCorrect,
           );
           dispatch({
             type: 'setResponseWithKnownCorrectAnswer',
@@ -129,8 +108,7 @@ export const useMakeAnswerForm = ({
         }
 
         // Add AI's response to conversation
-        addMessage("ai", formattedResponse);
-
+        addMessage('ai', formattedResponse);
       } catch (error: any) {
         console.log('ERR: ', error);
         dispatch({
@@ -139,8 +117,12 @@ export const useMakeAnswerForm = ({
         });
       }
     },
-    [currentQuestion, addAnswer, addMessage]
+    [currentQuestion, addAnswer, addMessage],
   );
+
+  const changeAnswer = (answer: string) => {
+    setValue('answer', answer);
+  };
 
   return {
     aiAnswer,
@@ -148,9 +130,8 @@ export const useMakeAnswerForm = ({
     control,
     resetForm,
     resetMessages,
-    onSubmit: handleSubmit((values: FormValues) =>
-      checkCorrectAnswer(values.answer)
-    ),
+    changeAnswer,
+    onSubmit: handleSubmit((values: FormValues) => checkCorrectAnswer(values.answer)),
     messages, // Expose messages if needed in the UI
   };
 };

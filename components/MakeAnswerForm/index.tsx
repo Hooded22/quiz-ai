@@ -11,28 +11,28 @@ import { DynamicTextarea } from '../DynamicTextArea/DynamicTextArea';
 import { SeniorityLevelBadge } from 'components/SeniorotyLevelTooltip/SeniorityLevelBadge';
 import { useRouter } from 'next/navigation';
 import { SkipQuestionButton } from '../SkipQuestionButton';
-import { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MessageItem } from './MessageItem';
 import { ISSUE_CODE } from 'constants/issueCode';
 import { useAuth } from 'contexts/AuthContext';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { RecordButton } from '../RecordButton';
 
-const SHOW_ANSWER_TOOLTIP = false
+const SHOW_ANSWER_TOOLTIP = false;
 
 interface MakeAnswerFormProps {
   questionsWithAnswers: QuestionsWithAnswer[];
   topic: string;
 }
 
-export function MakeAnswerForm({
-  questionsWithAnswers,
-  topic,
-}: MakeAnswerFormProps) {
+export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormProps) {
   //TODO: when all questions done set quiz results to quiz state and move to next screen
   //TODO: Change text are component to show submit button inside it
 
   const router = useRouter();
-  const allQuestions = useRef(questionsWithAnswers)
-  const { user } = useAuth()
+  const allQuestions = useRef(questionsWithAnswers);
+  const { user } = useAuth();
+  const { transcript, listening, resetTranscript, browserSupportsSpeechRecognition } = useSpeechRecognition();
 
   const {
     isQuestionsLimitReached,
@@ -41,23 +41,14 @@ export function MakeAnswerForm({
     nextQuestion,
     addAnswer,
     skipQuestion,
-    userAnswers
+    userAnswers,
   } = useInterviewProcess({ allQuestions: allQuestions.current });
 
-
-  const {
-    aiAnswer,
-    control,
-    resetForm,
-    resetMessages,
-    onSubmit,
-    messages,
-  } = useMakeAnswerForm({
+  const { aiAnswer, control, resetForm, resetMessages, changeAnswer, onSubmit, messages } = useMakeAnswerForm({
     currentQuestion,
     topic,
     addAnswer,
   });
-
 
   const onNextQuestionButtonClick = () => {
     resetForm();
@@ -66,31 +57,26 @@ export function MakeAnswerForm({
   };
 
   const onFinishInterviewButtonClick = () => {
-
     const answersParam = encodeURIComponent(JSON.stringify(userAnswers));
-
 
     const queryParams = new URLSearchParams({
       role: topic,
       level: currentQuestion.level || 'junior',
       questionsNumber: questionsWithAnswers.length.toString(),
-      results: answersParam
+      results: answersParam,
     });
 
-
     router.push(`/interview/summary?${queryParams.toString()}`);
-  }
+  };
 
-
-  const isLoading =
-    aiAnswer.type === 'WAITING_FOR_RESPONSE' && aiAnswer.loading;
+  const isLoading = aiAnswer.type === 'WAITING_FOR_RESPONSE' && aiAnswer.loading;
 
   const isInterviewFinished = isQuestionsLimitReached && aiAnswer.type === 'SUCCESS';
-  const isConversationStarted = !!messages.length
+  const isConversationStarted = !!messages.length;
   const handleReportIssue = async (aiMessageIndex: number) => {
     // Implement your report handling logic here
     const aiMessage = messages[aiMessageIndex].content;
-    const userAnswer = aiMessageIndex !== 0 ? messages[aiMessageIndex - 1].content : ''
+    const userAnswer = aiMessageIndex !== 0 ? messages[aiMessageIndex - 1].content : '';
     const title = ISSUE_CODE.wrongAnswer;
     const description = `
       ### Question
@@ -112,20 +98,32 @@ export function MakeAnswerForm({
         body: JSON.stringify({
           title,
           description,
-          user_id: user?.id
+          user_id: user?.id,
         }),
       });
 
       if (response.ok) {
-        console.log("Issue reported successfully");
+        console.log('Issue reported successfully');
         // You can add some UI feedback here
       } else {
-        console.error("Failed to report issue");
+        console.error('Failed to report issue');
       }
     } catch (error) {
-      console.error("Error reporting issue:", error);
+      console.error('Error reporting issue:', error);
     }
   };
+
+  const startListening = () => {
+    SpeechRecognition.startListening({ language: 'pl', continuous: true });
+  };
+
+  const stopListening = () => {
+    SpeechRecognition.stopListening();
+  };
+
+  useEffect(() => {
+    changeAnswer(transcript);
+  }, [transcript]);
 
   return (
     <div className={styles.Wrapper}>
@@ -139,29 +137,15 @@ export function MakeAnswerForm({
           </h1>
           {currentQuestion.level && <SeniorityLevelBadge level={currentQuestion.level} />}
           {!!currentQuestion?.answer && SHOW_ANSWER_TOOLTIP && (
-            <Tooltip
-              title='Answer available'
-              details={currentQuestion.answer}
-              variant="success"
-            />
+            <Tooltip title='Answer available' details={currentQuestion.answer} variant='success' />
           )}
         </div>
         <div className={styles.ConversationContainer}>
-          {
-            messages.map((message, index) => (
-              <MessageItem
-                key={index}
-                message={message}
-                onReportClick={() => handleReportIssue(index)}
-              />
-            ))
-          }
+          {messages.map((message, index) => (
+            <MessageItem key={index} message={message} onReportClick={() => handleReportIssue(index)} />
+          ))}
           <Loader loading={isLoading} />
-          {aiAnswer.type === 'ERROR' && (
-            <p className='text-white text-sm text-justify pb-5'>
-              {aiAnswer.errorMessage}
-            </p>
-          )}
+          {aiAnswer.type === 'ERROR' && <p className='text-white text-sm text-justify pb-5'>{aiAnswer.errorMessage}</p>}
         </div>
       </div>
       <div className={styles.Footer}>
@@ -169,9 +153,14 @@ export function MakeAnswerForm({
           <div className={styles.UserInputContainer}>
             <DynamicTextarea control={control} name='answer' />
             <div className={styles.UserInputContainerButtonsWrapper}>
-              {!isConversationStarted && <button className={styles.SubmitButton} onClick={onSubmit} type='button'>
-                Send answer
-              </button>}
+              {browserSupportsSpeechRecognition && (
+                <RecordButton onMouseDown={startListening} onMouseUp={stopListening} />
+              )}
+              {!isConversationStarted && (
+                <button className={styles.SubmitButton} onClick={onSubmit} type='button'>
+                  Send answer
+                </button>
+              )}
             </div>
           </div>
           <div className={styles.ButtonContainer}>
@@ -183,20 +172,12 @@ export function MakeAnswerForm({
             />
             <div className='justify-between gap-8 flex'>
               {!isQuestionsLimitReached && isConversationStarted && (
-                <button
-                  type='button'
-                  className='btn btn-active'
-                  onClick={onNextQuestionButtonClick}
-                >
+                <button type='button' className='btn btn-active' onClick={onNextQuestionButtonClick}>
                   Next question
                 </button>
               )}
               {isInterviewFinished && (
-                <button
-                  type='button'
-                  className='btn btn-active'
-                  onClick={onFinishInterviewButtonClick}
-                >
+                <button type='button' className='btn btn-active' onClick={onFinishInterviewButtonClick}>
                   Finish quiz
                 </button>
               )}
