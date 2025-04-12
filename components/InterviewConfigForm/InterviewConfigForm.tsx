@@ -2,13 +2,7 @@
 
 import { useState } from 'react';
 import styles from './styles.module.css';
-import {
-  InterviewConfig,
-  QuestionsNumber,
-  RoleType,
-  SeniorityLevel,
-  TimeLimit,
-} from '../../types/interviewConfig';
+import { InterviewConfig, QuestionsNumber, RoleType, SeniorityLevel, TimeLimit } from '../../types/interviewConfig';
 import { useRouter } from 'next/navigation';
 import { FEATURE_FLAGS } from 'constants/featureFlags';
 
@@ -23,9 +17,7 @@ const QuestionForm = () => {
   const [submissionStatus, setSubmissionStatus] = useState<string | null>(null);
   const { push } = useRouter();
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     const { name, value, type } = e.target;
     setFormState((prevState) => ({
       ...prevState,
@@ -51,9 +43,7 @@ const QuestionForm = () => {
       seniorityLevel: formState.seniorityLevel || 'All',
       questionsNumber: formState.questionsNumber.toString(),
       timeLimit: formState.timeLimit || 'none',
-      questionsCanRepeat: formState.questionsCanRepeat
-        ? formState.questionsCanRepeat.toString()
-        : '',
+      questionsCanRepeat: formState.questionsCanRepeat ? formState.questionsCanRepeat.toString() : '',
     });
 
     const redirectUrl = `/interview/${formState.roleType.toLowerCase()}/?${searchParams.toString()}`;
@@ -80,9 +70,8 @@ const QuestionForm = () => {
             <option value={RoleType.FE_DEV}>Front-end</option>
             <option value={RoleType.BE_JAVA}>Back-end with Java</option>
             <option value={RoleType.BE_NODE}>Back-end with Node</option>
-            <option value={RoleType.FULL_STACK_NODE_REACT}>
-              Full-stack with React and Node
-            </option>
+            <option value={RoleType.FULL_STACK_NODE_REACT}>Full-stack with React and Node</option>
+            <option value={RoleType.DEV_OPS}>Dev Ops</option>
           </select>
         </div>
 
@@ -123,42 +112,43 @@ const QuestionForm = () => {
           </select>
         </div>
 
-        {FEATURE_FLAGS.interviewConfig.time && <div>
-          <label className={styles.label} htmlFor='timeLimit'>
-            Time Limit
-          </label>
-          <select
-            className={styles.select}
-            id='timeLimit'
-            name='timeLimit'
-            value={formState.timeLimit}
-            onChange={handleChange}
-          >
-            <option value='none'>None</option>
-            <option value='5min'>5 min</option>
-            <option value='10min'>10 min</option>
-            <option value='15min'>15 min</option>
-            <option value='30min'>30 min</option>
-            <option value='1hour'>1 hour</option>
-          </select>
-        </div>}
-
-        {FEATURE_FLAGS.interviewConfig.repeateQuestions && <div>
-          <label
-            className={styles.checkboxWrapper}
-            htmlFor='questionsCanRepeat'
-          >
-            <input
-              className={styles.checkbox}
-              type='checkbox'
-              id='questionsCanRepeat'
-              name='questionsCanRepeat'
-              checked={formState.questionsCanRepeat}
+        {FEATURE_FLAGS.interviewConfig.time && (
+          <div>
+            <label className={styles.label} htmlFor='timeLimit'>
+              Time Limit
+            </label>
+            <select
+              className={styles.select}
+              id='timeLimit'
+              name='timeLimit'
+              value={formState.timeLimit}
               onChange={handleChange}
-            />
-            Questions can repeat
-          </label>
-        </div>}
+            >
+              <option value='none'>None</option>
+              <option value='5min'>5 min</option>
+              <option value='10min'>10 min</option>
+              <option value='15min'>15 min</option>
+              <option value='30min'>30 min</option>
+              <option value='1hour'>1 hour</option>
+            </select>
+          </div>
+        )}
+
+        {FEATURE_FLAGS.interviewConfig.repeateQuestions && (
+          <div>
+            <label className={styles.checkboxWrapper} htmlFor='questionsCanRepeat'>
+              <input
+                className={styles.checkbox}
+                type='checkbox'
+                id='questionsCanRepeat'
+                name='questionsCanRepeat'
+                checked={formState.questionsCanRepeat}
+                onChange={handleChange}
+              />
+              Questions can repeat
+            </label>
+          </div>
+        )}
 
         <button className={styles.button} type='submit'>
           Submit
