@@ -34,4 +34,8 @@ export const RolesConfig: RolesConfigType = {
     [QuestionsSets.KUBERNETES]: 30,
     [QuestionsSets.WEB_SECURITY]: 30,
   },
+  [RoleType.RN_DEV]: {
+    [QuestionsSets.REACT_NATIVE]: 90,
+    [QuestionsSets.JAVASCRIPT]: 10,
+  },
 };

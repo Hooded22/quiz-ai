@@ -72,6 +72,7 @@ const QuestionForm = () => {
             <option value={RoleType.BE_NODE}>Back-end with Node</option>
             <option value={RoleType.FULL_STACK_NODE_REACT}>Full-stack with React and Node</option>
             <option value={RoleType.DEV_OPS}>Dev Ops</option>
+            <option value={RoleType.RN_DEV}>React Native developer</option>
           </select>
         </div>
 
