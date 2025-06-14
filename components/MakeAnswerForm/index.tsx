@@ -113,12 +113,12 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
     }
   };
 
-  const startListening = () => {
-    SpeechRecognition.startListening({ language: 'pl', continuous: true });
-  };
-
-  const stopListening = () => {
-    SpeechRecognition.stopListening();
+  const toggleRecording = () => {
+    if (listening) {
+      SpeechRecognition.stopListening();
+    } else {
+      SpeechRecognition.startListening({ language: 'pl', continuous: true });
+    }
   };
 
   useEffect(() => {
@@ -154,7 +154,7 @@ export function MakeAnswerForm({ questionsWithAnswers, topic }: MakeAnswerFormPr
             <DynamicTextarea control={control} name='answer' />
             <div className={styles.UserInputContainerButtonsWrapper}>
               {browserSupportsSpeechRecognition && (
-                <RecordButton onMouseDown={startListening} onMouseUp={stopListening} />
+                <RecordButton onClick={toggleRecording} isRecording={listening} />
               )}
               {!isConversationStarted && (
                 <button className={styles.SubmitButton} onClick={onSubmit} type='button'>
