@@ -1,0 +1,86 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 500;
+  color: var(--color-landing-page);
+  font-size: 0.875rem;
+}
+
+.input {
+  padding: 10px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--landing-page-button-radius);
+  font-size: 1rem;
+  font-family: var(--font-poppins), sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--background-landing-page);
+  color: var(--color-landing-page);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--landing-page-primary-color);
+  box-shadow: 0 0 0 3px rgba(31, 159, 108, 0.1);
+}
+
+.input::placeholder {
+  color: var(--landing-page-subtitle-color);
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--color-accent) inset !important;
+  -webkit-text-fill-color: var(--color-landing-page) !important;
+  border-color: var(--landing-page-primary-color) !important;
+}
+
+.submitButton {
+  background-color: var(--landing-page-dark-primary);
+  color: var(--color-text-secondary);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--landing-page-button-radius);
+  font-size: 1rem;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.submitButton:hover {
+  opacity: 0.9;
+}
+
+.submitButton:disabled {
+  background-color: var(--landing-page-subtitle-color);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.disclaimer {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 0.75rem;
+  color: var(--landing-page-subtitle-color);
+  text-align: center;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}

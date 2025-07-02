@@ -1,0 +1,130 @@
+.demoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 60px 0;
+  padding: 20px 0;
+  background-color: #f8f9fa;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--color-landing-page);
+  margin-bottom: 16px;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.highlight {
+  color: var(--landing-page-primary-color);
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #717D6C;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.videoContainer {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  display: block;
+  outline: none;
+}
+
+.video::-webkit-media-controls-panel {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fullscreenButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.fullscreenButton:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+}
+
+.fullscreenButton:active {
+  transform: scale(0.95);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .videoContainer {
+    padding: 0 20px;
+  }
+
+  .video {
+    min-height: 250px;
+  }
+
+  .fullscreenButton {
+    top: 12px;
+    right: 12px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .video {
+    min-height: 200px;
+  }
+}

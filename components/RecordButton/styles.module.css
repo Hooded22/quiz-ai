@@ -26,3 +26,13 @@
     border: 2px solid #f44336;
     border-radius: 50%;
 }
+
+.recordButton.recording {
+    border: none;
+}
+
+.recordButton.recording::before {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 2px;
+}

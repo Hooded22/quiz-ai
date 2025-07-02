@@ -5,6 +5,7 @@ export const RoleType = {
   BE_NODE: 'be-node',
   BE_JAVA: 'be-java',
   DEV_OPS: 'dev-ops',
+  RN_DEV: 'rn-dev',
 } as const;
 
 export const QuestionsSets = {
@@ -19,6 +20,7 @@ export const QuestionsSets = {
   DOCKER: 'docker',
   WEB_SECURITY: 'web_security',
   KUBERNETES: 'kubernetes',
+  REACT_NATIVE: 'react_native',
 } as const;
 
 export const SeniorityLevel = {
