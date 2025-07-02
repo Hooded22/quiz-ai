@@ -68,6 +68,16 @@
     cursor: pointer;
 }
 
+.heroVideo {
+    width: 90%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    transform: perspective(500px) rotateY(-8deg);
+    object-fit: cover;
+    display: block;
+}
+
 .photoPlaceholder {
     width: 90%;
     height: 100%;
