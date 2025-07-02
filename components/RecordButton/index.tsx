@@ -2,19 +2,16 @@ import React from 'react';
 import styles from './styles.module.css';
 
 interface RecordButtonProps {
-  onMouseDown: () => void;
-  onMouseUp: () => void;
+  onClick: () => void;
+  isRecording: boolean;
 }
 
-export const RecordButton = ({ onMouseDown, onMouseUp }: RecordButtonProps) => {
+export const RecordButton = ({ onClick, isRecording }: RecordButtonProps) => {
   return (
     <button
-      className={styles.recordButton}
+      className={`${styles.recordButton} ${isRecording ? styles.recording : ''}`}
       type='button'
-      onTouchStart={onMouseDown}
-      onMouseDown={onMouseDown}
-      onTouchEnd={onMouseUp}
-      onMouseUp={onMouseUp}
+      onClick={onClick}
     ></button>
   );
 };

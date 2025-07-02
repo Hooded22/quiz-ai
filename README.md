@@ -8,6 +8,9 @@ Local enviromnets required to use app in **.env.local**
 
 ```js
 GPT_API_KEY = 'YOUR_OPENAI_API_KEY';
+NEXT_PUBLIC_SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+NEXT_PUBLIC_SUPABASE_URL = 'YOUR_SUPABASE_URL';
+VERSION=alpha
 ```
 
 Run the development server:

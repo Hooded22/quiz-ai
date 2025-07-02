@@ -1,0 +1,32 @@
+.promoStats {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.promoStatItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  padding: 20px;
+}
+
+.promoStatTitle {
+  font-size: 32px;
+  color: #1F9F6C;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.promoStatSubtitle {
+  font-size: 20px;
+  color: #717D6C;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
+}

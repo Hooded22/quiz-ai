@@ -10,9 +10,9 @@
   margin: 80px auto;
   padding: 20px;
   border-radius: 10px;
-  background-color: #181212;
+  background-color: var(--color-background-primary);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  color: var(--color-text-primary);
 }
 
 .formElement {
@@ -23,7 +23,7 @@
 
 .label {
   font-weight: normal;
-  color: #fff;
+  color: var(--color-text-primary);
   width: 100%;
   padding-bottom: 8px;
   display: block;
@@ -32,9 +32,9 @@
 .select {
   padding: 8px;
   border-radius: 5px;
-  border: 1px solid #333;
-  background-color: #333;
-  color: #fff;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-primary);
   width: 100%;
 }
 
@@ -53,21 +53,21 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: #333;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-text-secondary);
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: #444;
+  background-color: var(--color-primary-hover);
 }
 
 /* Error and status message styles */
 .errorMessages, .submissionStatus {
   font-size: 14px;
-  background-color: #F87272;
+  background-color: var(--color-error);
   padding: 10px;
   border-radius: 5px;
   margin-top: 10px;
-  color: white;
+  color: var(--color-text-secondary);
 }

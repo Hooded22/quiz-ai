@@ -1,0 +1,501 @@
+[
+  {
+    "id": "react-native-1",
+    "title": "What are native apps?",
+    "answer": "Native apps are applications built for a specific platform, either iOS or Android, using the platform's respective programming languages such as Swift or Objective-C for iOS, and Java or Kotlin for Android. These apps have direct access to device hardware like the camera, GPS, etc., and tend to have high performance and a seamless user experience.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-2",
+    "title": "What is React Native?",
+    "answer": "React Native is a popular open-source framework developed by Facebook for building mobile applications using JavaScript and React. It allows developers to build natively rendering mobile apps for iOS and Android from a single codebase, with components that translate to native UI elements, providing a near-native look and feel.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-3",
+    "title": "What are hybrid apps?",
+    "answer": "Hybrid apps are mobile applications that are built using web technologies like HTML, CSS, and JavaScript, and are encapsulated within a native application shell. This approach allows developers to write code once and deploy it across multiple platforms, but may result in slightly less performance compared to native apps.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-4",
+    "title": "List some benefits of using React Native for building mobile apps?",
+    "answer": "React Native offers several benefits including:\n\n1. **Cross-Platform Development:** Allows a shared codebase for iOS and Android.\n2. **Hot Reloading:** Facilitates instant feedback by refreshing the app without recompilation.\n3. **Native Performance:** Offers smooth animations and components by rendering native components.\n4. **Large Community Support:** Ample resources and community support for troubleshooting and optimization.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-5",
+    "title": "What are the advantages of hybrid apps over native apps?",
+    "answer": "Hybrid apps have several advantages over native apps:\n\n1. **Cross-Platform Compatibility:** One codebase can run on multiple platforms, saving development time.\n2. **Faster Deployment:** Reduced development efforts and costs mean quicker time to market.\n3. **Easier Maintenance:** Updates and maintenance can be done quickly by modifying a single codebase.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-6",
+    "title": "Why do we use curly brace while importing some library?",
+    "answer": "In JavaScript, curly braces are used for named imports. They allow you to import specific components, functions, or variables from a module or library. This is useful for importing only the necessary parts of a library, optimizing resource use and minimizing the bundle size.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-7",
+    "title": "What determines the size of a component and what are the ways?",
+    "answer": "The size of a React Native component is determined by its layout properties such as width, height, padding, and margin. You can set dimensions explicitly using stylesheets, or use flexbox properties like `flex`, `alignItems`, and `justifyContent` to create responsive designs.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-8",
+    "title": "Tell us some options of storing persisting data in a react native app?",
+    "answer": "In React Native, you can persist data using several methods:\n\n1. **AsyncStorage:** A simple, unencrypted, asynchronous, persistent, key-value storage system.\n2. **SQLite:** Provides an in-app database for structured data management.\n3. **Local Databases:** Using libraries like Realm for more complex data needs.\n4. **Redux Persist:** Integrates with Redux to automatically save and restore Redux state.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-9",
+    "title": "When would you use ScrollView over FlatList or vice-versa?",
+    "answer": "Use `ScrollView` when you have a small list of elements that won’t change in size or frequency, as it renders all child components at once. `FlatList` is preferred for large lists as it lazily renders items and provides better performance with features like virtualization and viewability callbacks.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-10",
+    "title": "What are the advantages of native apps over hybrid apps?",
+    "answer": "Native apps have several advantages:\n\n1. **Performance:** Direct access to device resources creates smoother and faster apps.\n2. **UI Consistency:** Designed for the specific platform UI conventions.\n3. **Access to Native APIs:** Full access to platform-specific features such as the camera, GPS, and sensors.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-11",
+    "title": "Will this piece of code work?",
+    "answer": "Without the specific code snippet, it's impossible to determine if it will work. Ensure code correctness by verifying syntax, logical flow, and the APIs used.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-12",
+    "title": "What does the Gesture Responder System do?",
+    "answer": "The Gesture Responder System in React Native manages the lifecycle of touch events in the app. It allows components to become 'responsible' for touch gestures by claiming and receiving touch events in a particular order, ensuring intuitive and responsive interfaces.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-13",
+    "title": "How is React Native different from ReactJs?",
+    "answer": "ReactJS is a JavaScript library for building web interfaces, focusing on rendering components in a browser. React Native, on the other hand, allows for building native mobile apps using similar JavaScript and React syntax but translates components to native UI elements.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-14",
+    "title": "What are components?",
+    "answer": "Components in React Native are the building blocks of the user interface, similar to classes in OOP, responsible for rendering parts of the interface. They can be functional or class-based, reusable, and can manage their own state and lifecycle methods.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-15",
+    "title": "What are the types of data that control a component?",
+    "answer": "In React Native, components can be controlled by two types of data:\n\n1. **Props:** Short for 'properties', are immutable and passed down from parent to child components to configure them.\n2. **State:** Mutable and privately maintained by the component. They represent dynamic data that can change over time.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-16",
+    "title": "What are some ways of styling a react native component?",
+    "answer": "Styling in React Native can be done using:\n\n1. **Stylesheets:** Inline styles or external StyleSheets using JavaScript objects.\n2. **Styled-Components:** Utilizing tagged template literals for styling components.\n3. **CSS-in-JS Libraries:** Libraries like `styled-components` or `emotion` that maintain CSS rules in the JS file.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-17",
+    "title": "What are props in React Native?",
+    "answer": "Props, short for properties, are immutable data passed from parent to child components. They allow component reusability by passing configuration values to child components. They can be any type of data, including objects, arrays, or functions.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-18",
+    "title": "What is JSX?",
+    "answer": "JSX stands for JavaScript XML. It is a syntax extension for JavaScript used in React to describe what the UI should look like. It looks similar to HTML and can include JavaScript expressions wrapped in curly braces, making code easier to write and understand.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-19",
+    "title": "How do you dismiss the keyboard in react native?",
+    "answer": "To dismiss the keyboard in React Native, use the `Keyboard` API to manually trigger dismissal: `Keyboard.dismiss()`. Alternatively, wrap UI elements in a `TouchableWithoutFeedback` and trigger keyboard dismissal on press.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  {
+    "id": "react-native-20",
+    "title": "What are Refs used for in React Native?",
+    "answer": "Refs in React Native are used to access DOM elements or React elements directly. They allow obtaining a reference to a component instance and can be useful for managing focus, text selection, or media playback.",
+    "level": "junior",
+    "category": "react_native"
+  },
+  [
+    {
+      "id": "react-native-21",
+      "title": "How do you perform logging in React native?",
+      "answer": "In React Native, you can perform logging using `console.log()`, `console.warn()`, and `console.error()` for different levels of logging messages. You can also use third-party libraries like `react-native-logs` for more advanced logging features.",
+      "level": "junior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-22",
+      "title": "What is flex dimension and how is it different from fixed dimension?",
+      "answer": "Flex dimensions in React Native allow components to alter their dimensions based on the flex properties of their parent container using `flexbox` layout. This is dynamic and adaptable. Fixed dimensions use explicit width and height properties, which are static and not responsive to the screen size or orientation.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-23",
+      "title": "What is the use of ScrollView component?",
+      "answer": "The `ScrollView` component in React Native is used to create a scrollable container for a collection of items that won't fit on the screen. It's suitable for small lists of items as it renders all child components at once, which might cause a performance hit for larger lists.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-24",
+      "title": "How do you style a component in react native?",
+      "answer": "Styling in React Native is done using JavaScript objects to define CSS-like styles. You can either inline the styles directly in components using a style attribute or define them elsewhere using `StyleSheet.create()` to optimize. Libraries such as `styled-components` can also be used.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-25",
+      "title": "In Fast Refresh, what will happen if you edit files imported by modules outside of the React Tree?",
+      "answer": "If you edit files that are imported by modules outside of the React Tree in Fast Refresh, it may trigger a full reload or certain functionalities may not be updated, as Fast Refresh is designed to handle component-level changes within the React component hierarchy efficiently.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-26",
+      "title": "What is Lifting State Up?",
+      "answer": "Lifting State Up refers to the process of moving state from child components to their closest common ancestor. This is done to share the state or manage it at a higher level in the component hierarchy, improving the data flow and state management across components.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-27",
+      "title": "What is \"autolinking\" in react-native?",
+      "answer": "Autolinking in React Native automatically links native dependencies during the build process for both iOS and Android. This feature removes the manual linking process for packages that contain native code, streamlining package implementation.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-28",
+      "title": "How is flexbox different in React Native and browser?",
+      "answer": "Flexbox in React Native is similar to web, but uses default `flexDirection: 'column'` rather than `'row'` as in browser CSS. React Native's flexbox also doesn't support certain CSS-style layout properties like floats or percentages.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-29",
+      "title": "What is the use of FlatList?",
+      "answer": "The `FlatList` component in React Native is optimized for displaying large lists of data as it only renders the visible rows and reuses them. It provides features like horizontal scrolling, item separators, header and footer support, and more.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-30",
+      "title": "Explain the use of Flexbox in React Native?",
+      "answer": "Flexbox in React Native is used for layout design. It allows for a sophisticated arrangement of elements for creating responsive and adaptive layouts using properties like `flexDirection`, `justifyContent`, `alignItems`, etc., which dynamically adjust to screen sizes and orientations.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-31",
+      "title": "What happens if you edit a module that only exports React components in Fast Refresh?",
+      "answer": "When you edit a module exporting only React components in Fast Refresh, the changes will apply immediately without losing the current UI state, allowing for a quick and streamlined development iteration process.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-32",
+      "title": "What are some best practices to consider for an action?",
+      "answer": "Some best practices for defining actions in applications include:\n\n1. **Descriptive Names:** Clearly describe what the action does.\n2. **Payload Consistency:** Keep the payload structure consistent.\n3. **Action Creators:** Use functions to create actions to ensure integrity and reusability.\n4. **Async handling:** Manage side-effects with middleware like Redux Thunk or Sagas.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-33",
+      "title": "How are props and state different?",
+      "answer": "In React, `props` are immutable data passed from parent to child components to customize or configure them, while `state` is mutable, managed within the component, and can change over time during component lifecycle.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-34",
+      "title": "How do you re-render a FlatList?",
+      "answer": "You can force a `FlatList` to re-render by providing it with a new `keyExtractor`, altering the `extraData` prop, or modifying `data` to trigger a change recognition.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-35",
+      "title": "How are Hot Reloading and Live Reloading in React Native different?",
+      "answer": "Hot Reloading refreshes specific modules without losing the application state, whereas Live Reloading refreshes the entire application, resetting the application state, useful for static or state-independent testing.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-36",
+      "title": "What is 'Fast Refresh'?",
+      "answer": "Fast Refresh is a React Native feature that provides a modern and immediate feedback loop on edits to React components, blending the features of live and hot reloading by maintaining the state and updating changes live in the app.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-37",
+      "title": "What is View and how important is it?",
+      "answer": "The `View` component in React Native is akin to a `div` element in web; it is a fundamental building block for the UI, used for layout, styling, and handling touches, with the capability to nest or contain other components for creating complex interfaces.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-38",
+      "title": "What does TouchableHighlight do and when do you use it?",
+      "answer": "`TouchableHighlight` is a React Native wrapper for making any component touchable, responding to presses by dimming the wrapped element to indicate an interaction. It's used for creating buttons or clickable areas, primarily where visual feedback is needed.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-39",
+      "title": "What are Touchable Interactions in React Native?",
+      "answer": "Touchable interactions in React Native provide feedback to user actions and respond to touch events using components like `TouchableOpacity`, `TouchableHighlight`, `TouchableWithoutFeedback`, etc., facilitating user experience with interactive UI elements.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-40",
+      "title": "What does StyleSheet.create do and why is it useful?",
+      "answer": "`StyleSheet.create` in React Native optimizes and validates styling properties, reducing overhead and improving performance by defining styles outside of the render method, thus saving computational resources.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-41",
+      "title": "What is State in react native?",
+      "answer": "State in React Native is an object within a component that holds dynamic data influencing the component's behavior and rendering. It is managed internally by components and can change during the component's lifecycle.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-42",
+      "title": "What are some features of Fast Refresh?",
+      "answer": "Fast Refresh features include:\n\n1. **Component-Level Refreshes:** Automatically applies changes to only updated components.\n2. **Preserves State:** Keeps the state of the React component intact during code changes.\n3. **Handles Errors Gracefully:** Attempts resolving errors without interrupting the development process.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-43",
+      "title": "What happens if you edit modules with exports that aren't React components in Fast Refresh?",
+      "answer": "Editing modules with exports that aren’t React components in Fast Refresh may not trigger a UI state preservation or might require a full refresh as Fast Refresh primarily focuses on React component updates.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-44",
+      "title": "What is AppRegistry? Why is it required early in 'require' sequence?",
+      "answer": "`AppRegistry` registers the root component for the application and handles rendering instructions sent by the native environment. It is required early in the 'require' sequence to ensure the correct lifecycle and rendering setup for the app.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-45",
+      "title": "Differentiate ScrollView and FlatList.",
+      "answer": "`ScrollView` renders the entire scrollable content, suitable for smaller data sets, while `FlatList` optimizes performance for large lists by only rendering visible components, providing additional handling features like lazy loading and viewability callbacks.",
+      "level": "mid",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-46",
+      "title": "How would you implement animations on events?",
+      "answer": "In React Native, you can implement animations using:\n\n1. **Animated API:** Provides animation effects via methods like `Animated.timing`, `Animated.spring`, etc.\n2. **LayoutAnimation:** Automatically handles layout transitions.\n3. **Reanimated Library:** For complex animations and gesture handling.\nCreate triggers for actions to initiate animations.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-47",
+      "title": "What are Container/Smart components?",
+      "answer": "Container or Smart components are responsible for handling application logic, data fetching, and maintaining state. They typically do not render HTML/JSX but delegate rendering to Presentational/Dumb components, promoting separation of concerns.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-48",
+      "title": "Does React Native compile JavaScript into Java for Android?",
+      "answer": "No, React Native does not convert JavaScript into Java. It uses a JavaScript engine to interpret the JavaScript code and provides a bridge to interact with Native code for executing platform-specific operations.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-49",
+      "title": "What is Component Driven Development (CDD)?",
+      "answer": "Component Driven Development (CDD) focuses on building UIs using isolated components as fundamental units. CDD promotes reusability, testing, and scalability by individually developing and testing components before integrating into larger systems.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-50",
+      "title": "What are Presentational/Dumb Components?",
+      "answer": "Presentational or Dumb components are focused on rendering UI. They rely purely on props to display data and contain little or no logic, reducing complexity while achieving clean and separate concerns.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-51",
+      "title": "How many threads run in a React Native app?",
+      "answer": "React Native apps typically execute on three main threads: **JavaScript Thread**, handling JS execution; **UI Thread**, dealing with native UI rendering; **Shadow Thread**, calculating layout computations asynchronously.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-52",
+      "title": "What are the features of Container/Smart components?",
+      "answer": "Features of Container/Smart components include:\n\n1. **Data Fetching:** Retrieve and manage data lifecycle.\n2. **State Management:** Handle and maintain the state.\n3. **Business Logic:** Encapsulation of application logic like processing user interactions or API calls.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-53",
+      "title": "State the lifecycle of Gesture Responder System?",
+      "answer": "The Gesture Responder System in React Native comprises the lifecycle of touch interactions as follows:\n\n1. **Capture Phase:** Start watching touch events.\n2. **Bubble Phase:** Touches are dispatched to every component.\n3. **Target Phase:** Final responders to touch are decided and gesture action is executed.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-54",
+      "title": "Are libraries such as TypeScript that compile to JavaScript compatible with React Naive?",
+      "answer": "Yes, TypeScript and other languages compiling to JavaScript, like Flow and Reason, are compatible with React Native as it supports JavaScript syntax, and these are precompiled to JavaScript before execution.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-55",
+      "title": "What are some limitations of using react-native-cli for instantiating a project?",
+      "answer": "Limitations of using `react-native-cli` include:\n\n1. **Manual Linking:** Some modules might require manual setup for linking.\n2. **Platform-Specific Issues:** Minimized abstraction layers might increase platform-specific challenges.\n3. **Outdated Templates:** Might not reflect the latest practices or libraries.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-56",
+      "title": "What is AsyncStorage and how do you use it?",
+      "answer": "`AsyncStorage` is an unencrypted, asynchronous, persistent, key-value storage system in React Native. It's mainly used for caching and persisting application data. You can use `setItem` and `getItem` for storing and retrieving data.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-57",
+      "title": "What is Higher Order Component or HOC?",
+      "answer": "A Higher-Order Component (HOC) is a function that takes a component and returns a new component by adding additional functionality. HOCs are used to reuse component logic, manipulate props, and abstract global concerns.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-59",
+      "title": "What JavaScript engine does React native use?",
+      "answer": "React Native primarily uses JavaScriptCore on iOS and Hermes on Android as its JavaScript engine. Hermes is optimized for React Native performance improvements with lower memory usage and faster app launch times.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-60",
+      "title": "What are some advantages of Component Driven Development?",
+      "answer": "Advantages of Component Driven Development include:\n\n1. **Reusability:** Promotes creation of reusable and portable components.\n2. **Maintainability:** Enhances code quality and organization.\n3. **Scalability:** Facilitates scalable design by making it easier to manage larger codebases.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-61",
+      "title": "What are features of presentational/dumb components?",
+      "answer": "Features of Presentational/Dumb components include:\n\n1. **Focus on UI:** Primarily rendering content, typically seen in UI elements.\n2. **Receiving Props:** Depend on props for dynamic content rendering.\n3. **Stateless:** Very little to no logic and minimal state functionality.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-62",
+      "title": "What is Fabric in React Native?",
+      "answer": "Fabric is the new React Native architecture designed to re-architect the rendering system. It focuses on improved user experience, flexibility, and bringing JSI-based communication that allows for direct calls between native and JavaScript realms.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-63",
+      "title": "What is InteractionManager and how is it used?",
+      "answer": "`InteractionManager` allows you to manage longer-running operations that should run only after animations, navigations, or UI transitions, providing a better user experience by scheduling deferred execution of slow tasks.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-64",
+      "title": "What are the disadvantages of StyleSheet.create?",
+      "answer": "Disadvantages of `StyleSheet.create` include:\n\n1. **Static limitations:** Styles are always static, capping dynamic style changes.\n2. **Objects can't be reused across modules without externalization.\n3. **Lack of theme support:** Native limitations in inherent theming capabilities.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-65",
+      "title": "What is wrong with this code for querying a native API?",
+      "answer": "Without seeing the specific code, it's hard to identify issues. Common issues include incorrect native module linking, improper method signatures, and platform-specific API configurations or incorrect use of asynchronous handling in JavaScript.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-66",
+      "title": "Does React Native have a Virtual DOM?",
+      "answer": "React Native does not use the Virtual DOM in the same way as React for the web. Instead, it uses a bridge to communicate with native components where JavaScript components correspond to native UI elements, with real-time updates.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-67",
+      "title": "How does the Fabric architecture work?",
+      "answer": "Fabric is a new architecture introduced in React Native to closely connect native and JavaScript threads using a more efficient rendering system, targeting improved performance, concurrency, and flexibility, leveraging JSI (JavaScript Interface).",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-68",
+      "title": "How is InteractionManager important?",
+      "answer": "`InteractionManager` plays a key role in ensuring smooth user interfaces by strategically deferring heavy operations until the animations or transitions complete, prioritizing rendering over slow background tasks.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-69",
+      "title": "What are some benefits of Container-Presentational pattern?",
+      "answer": "Benefits include:\n\n1. **Separation of Concerns:** Clear division between logic and presentation.\n2. **Reusability:** Isolates components for reusability.\n3. **Ease of Testing:** Simplifies unit testing by focusing on single concerns.",
+      "level": "senior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-70",
+      "title": "What will be the output of following snippet?",
+      "answer": "Without seeing the actual code snippet, it's impossible to determine the output. Provide the code for precise analysis and explanation of its behavior.",
+      "level": "junior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-71",
+      "title": "How do you check if the react native app is in debug or release build?",
+      "answer": "To check if a React Native app is in debug or release build, conditionally check `__DEV__`, which is true in debug builds, or use build-specific configurations during the native build process.",
+      "level": "junior",
+      "category": "react_native"
+    },
+    {
+      "id": "react-native-72",
+      "title": "How to fetch data from local JSON file on React Native?",
+      "answer": "To fetch data from a local JSON file in React Native, you can use `require()` with the file path to import the data as JavaScript objects, or use `import` if the JSON structure is small and defined at compile time.",
+      "level": "mid",
+      "category": "react_native"
+    }
+  ]
+]

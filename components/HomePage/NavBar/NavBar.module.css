@@ -1,0 +1,73 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    height: 100px;
+    width: 100%;
+    background-color: #ffffff;
+    color: var(--color-landing-page);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    max-width: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    flex: 0.2;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc; /* Placeholder color for the circle */
+}
+
+.linksContainer {
+    display: flex;
+    gap: 45px; /* Minimum space between links */
+    justify-content: center;
+    align-content: center;
+    flex: 1
+}
+
+.navLink {
+    text-decoration: none;
+    color: var(--color-landing-page);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navLink.active {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.waitlistButton {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.waitlistButton:hover {
+    opacity: 0.9;
+}
