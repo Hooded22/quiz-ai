@@ -2,6 +2,7 @@
     background-color: var(--background-landing-page);
     color: var(--color-text-primary);
     padding: 40px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -28,9 +28,26 @@ export default function Home() {
     setIsWaitlistModalOpen(false);
   };
 
-  const handleWaitlistSubmit = (data: { name: string; role: string; email: string }) => {
-    console.log('Waitlist submission:', data);
-    setIsWaitlistModalOpen(false);
+  const handleWaitlistSubmit = async (data: { name: string; role: string; email: string }) => {
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        console.log('Successfully added to waitlist');
+        setIsWaitlistModalOpen(false);
+      } else {
+        const errorData = await response.json();
+        console.error('Failed to add to waitlist:', errorData.error);
+      }
+    } catch (error) {
+      console.error('Error submitting to waitlist:', error);
+    }
   };
 
   return (
